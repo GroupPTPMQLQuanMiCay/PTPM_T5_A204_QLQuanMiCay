@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CustomControls
 {
-    internal class TestCustomsFild
+    public class TestCustomsFild
     {
+
     }
 }

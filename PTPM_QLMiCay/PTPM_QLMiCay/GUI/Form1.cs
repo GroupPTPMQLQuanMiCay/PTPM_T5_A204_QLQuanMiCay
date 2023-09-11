@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTPM_QLMiCay
+namespace PTPM_QLMiCay.GUI
 {
     public partial class Form1 : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace PTPM_QLMiCay
+﻿namespace PTPM_QLMiCay.GUI
 {
     partial class Form1
     {

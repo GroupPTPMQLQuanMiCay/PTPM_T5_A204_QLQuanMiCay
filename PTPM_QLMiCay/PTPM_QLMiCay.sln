@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTPM_QLMiCay", "PTPM_QLMiCay\PTPM_QLMiCay.csproj", "{D0F383A8-90E1-43F2-842D-DD0848F22B7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "CustomControls\CustomControls.csproj", "{E97AE2A7-3AFB-4A40-8308-9582D7F0444B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D0F383A8-90E1-43F2-842D-DD0848F22B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0F383A8-90E1-43F2-842D-DD0848F22B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0F383A8-90E1-43F2-842D-DD0848F22B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97AE2A7-3AFB-4A40-8308-9582D7F0444B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97AE2A7-3AFB-4A40-8308-9582D7F0444B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97AE2A7-3AFB-4A40-8308-9582D7F0444B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97AE2A7-3AFB-4A40-8308-9582D7F0444B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
