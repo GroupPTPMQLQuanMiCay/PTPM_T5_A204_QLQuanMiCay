@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomControls
+namespace CustomControl
 {
-    public class TestCustomsFild
+    public class Class1
     {
-
     }
 }
