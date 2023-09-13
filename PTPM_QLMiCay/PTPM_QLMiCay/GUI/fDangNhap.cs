@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomControl.FormCustom;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PTPM_QLMiCay.GUI
 {
-    public partial class Form1 : Form
+    public partial class fDangNhap : FormEntity
     {
-        public Form1()
+        public fDangNhap()
         {
             InitializeComponent();
         }
