@@ -55,6 +55,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlCustom\CButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlCustom\CButtonClose.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlCustom\CLable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlCustom\CLableTitle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlCustom\CTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="FormCustom\FormEntity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,7 +79,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ControlCustom\" />
+    <Folder Include="Icon\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormCustom\FormEntity.resx">

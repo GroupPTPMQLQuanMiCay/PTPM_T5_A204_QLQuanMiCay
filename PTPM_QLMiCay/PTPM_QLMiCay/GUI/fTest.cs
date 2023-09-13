@@ -11,16 +11,11 @@ using System.Windows.Forms;
 
 namespace PTPM_QLMiCay.GUI
 {
-    public partial class fDangNhap : FormEntity
+    public partial class fTest : FormEntity
     {
-        public fDangNhap()
+        public fTest()
         {
             InitializeComponent();
-        }
-
-        private void cButtonClose1_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

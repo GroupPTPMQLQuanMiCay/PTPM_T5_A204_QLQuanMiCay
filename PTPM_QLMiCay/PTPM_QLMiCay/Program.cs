@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CustomControl.FormCustom;
 using PTPM_QLMiCay.GUI;
 
 namespace PTPM_QLMiCay
