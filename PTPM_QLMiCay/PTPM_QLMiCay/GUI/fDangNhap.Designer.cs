@@ -38,6 +38,8 @@
             this.cLable2 = new CustomControl.ControlCustom.CLable();
             this.cTextBox2 = new CustomControl.ControlCustom.CTextBox();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.cButton1 = new CustomControl.ControlCustom.CButton();
+            this.cButton2 = new CustomControl.ControlCustom.CButton();
             ((System.ComponentModel.ISupportInitialize)(this.cButtonClose1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,7 +146,7 @@
             this.cTextBox2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.cTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cTextBox2.isPassword = true;
-            this.cTextBox2.Location = new System.Drawing.Point(521, 230);
+            this.cTextBox2.Location = new System.Drawing.Point(521, 218);
             this.cTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.cTextBox2.Name = "cTextBox2";
             this.cTextBox2.Size = new System.Drawing.Size(370, 29);
@@ -156,18 +158,70 @@
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(521, 287);
+            this.bunifuSeparator2.Location = new System.Drawing.Point(521, 266);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(370, 35);
             this.bunifuSeparator2.TabIndex = 6;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
             // 
+            // cButton1
+            // 
+            this.cButton1.ActiveBorderThickness = 1;
+            this.cButton1.ActiveCornerRadius = 20;
+            this.cButton1.ActiveFillColor = System.Drawing.Color.Orange;
+            this.cButton1.ActiveForecolor = System.Drawing.Color.White;
+            this.cButton1.ActiveLineColor = System.Drawing.Color.Orange;
+            this.cButton1.BackColor = System.Drawing.Color.White;
+            this.cButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton1.BackgroundImage")));
+            this.cButton1.ButtonText = "Đăng Nhập";
+            this.cButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cButton1.ForeColor = System.Drawing.Color.Orange;
+            this.cButton1.IdleBorderThickness = 1;
+            this.cButton1.IdleCornerRadius = 20;
+            this.cButton1.IdleFillColor = System.Drawing.Color.White;
+            this.cButton1.IdleForecolor = System.Drawing.Color.Orange;
+            this.cButton1.IdleLineColor = System.Drawing.Color.Orange;
+            this.cButton1.Location = new System.Drawing.Point(521, 309);
+            this.cButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cButton1.Name = "cButton1";
+            this.cButton1.Size = new System.Drawing.Size(370, 41);
+            this.cButton1.TabIndex = 22;
+            this.cButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cButton2
+            // 
+            this.cButton2.ActiveBorderThickness = 1;
+            this.cButton2.ActiveCornerRadius = 20;
+            this.cButton2.ActiveFillColor = System.Drawing.Color.Orange;
+            this.cButton2.ActiveForecolor = System.Drawing.Color.White;
+            this.cButton2.ActiveLineColor = System.Drawing.Color.Orange;
+            this.cButton2.BackColor = System.Drawing.Color.White;
+            this.cButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton2.BackgroundImage")));
+            this.cButton2.ButtonText = "Thoát";
+            this.cButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cButton2.ForeColor = System.Drawing.Color.Orange;
+            this.cButton2.IdleBorderThickness = 1;
+            this.cButton2.IdleCornerRadius = 20;
+            this.cButton2.IdleFillColor = System.Drawing.Color.White;
+            this.cButton2.IdleForecolor = System.Drawing.Color.Orange;
+            this.cButton2.IdleLineColor = System.Drawing.Color.Orange;
+            this.cButton2.Location = new System.Drawing.Point(521, 360);
+            this.cButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cButton2.Name = "cButton2";
+            this.cButton2.Size = new System.Drawing.Size(370, 41);
+            this.cButton2.TabIndex = 22;
+            this.cButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // fDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 483);
+            this.Controls.Add(this.cButton2);
+            this.Controls.Add(this.cButton1);
             this.Controls.Add(this.bunifuSeparator2);
             this.Controls.Add(this.cTextBox2);
             this.Controls.Add(this.cLable2);
@@ -196,5 +250,7 @@
         private CustomControl.ControlCustom.CLable cLable2;
         private CustomControl.ControlCustom.CTextBox cTextBox2;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
+        private CustomControl.ControlCustom.CButton cButton1;
+        private CustomControl.ControlCustom.CButton cButton2;
     }
 }

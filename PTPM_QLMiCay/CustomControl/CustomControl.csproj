@@ -61,6 +61,9 @@
     <Compile Include="ControlCustom\CButtonClose.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ControlCustom\CButtonFlat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ControlCustom\CLable.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -80,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Icon\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormCustom\FormEntity.resx">
