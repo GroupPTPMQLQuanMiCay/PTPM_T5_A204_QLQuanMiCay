@@ -66,5 +66,10 @@
   <ItemGroup>
     <Folder Include="ControlCustom\" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormCustom\FormEntity.resx">
+      <DependentUpon>FormEntity.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
