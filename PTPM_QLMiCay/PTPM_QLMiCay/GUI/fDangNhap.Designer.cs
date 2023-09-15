@@ -1,4 +1,6 @@
-﻿namespace PTPM_QLMiCay.GUI
+﻿
+
+namespace PTPM_QLMiCay.GUI
 {
     partial class fDangNhap
     {
