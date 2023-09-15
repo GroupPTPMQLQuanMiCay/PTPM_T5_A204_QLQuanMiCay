@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using PTPM_QLMiCay.GUI;
+using System;
 using System.Windows.Forms;
-using CustomControl.FormCustom;
-using PTPM_QLMiCay.GUI;
 
 namespace PTPM_QLMiCay
 {
@@ -18,7 +14,7 @@ namespace PTPM_QLMiCay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fTrangChu());
+            Application.Run(new fTest());
         }
     }
 }
