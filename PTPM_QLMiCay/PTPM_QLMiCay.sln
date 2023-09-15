@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTPM_QLMiCay", "PTPM_QLMiCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControl", "CustomControl\CustomControl.csproj", "{694652D6-5CBD-4201-B81F-5525F5A15691}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormControl", "FormControl\FormControl.csproj", "{1809F332-36D1-4650-B366-A31A5EB746D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{694652D6-5CBD-4201-B81F-5525F5A15691}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{694652D6-5CBD-4201-B81F-5525F5A15691}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{694652D6-5CBD-4201-B81F-5525F5A15691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1809F332-36D1-4650-B366-A31A5EB746D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1809F332-36D1-4650-B366-A31A5EB746D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1809F332-36D1-4650-B366-A31A5EB746D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1809F332-36D1-4650-B366-A31A5EB746D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

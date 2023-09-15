@@ -4,11 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{694652D6-5CBD-4201-B81F-5525F5A15691}</ProjectGuid>
+    <ProjectGuid>{1809F332-36D1-4650-B366-A31A5EB746D9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CustomControl</RootNamespace>
-    <AssemblyName>CustomControl</AssemblyName>
+    <RootNamespace>FormControl</RootNamespace>
+    <AssemblyName>FormControl</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -45,59 +44,48 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlCustom\CButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlCustom\CButtonClose.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ControlCustom\CButtonFlat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlCustom\CCombobox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ControlCustom\CDataGirdView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ControlCustom\CGroupBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ControlCustom\CLable.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ControlCustom\CLableTitle.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ControlCustom\CTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="FormCustom\FormEntity.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UFNguyenLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFNguyenLieu.Designer.cs">
+      <DependentUpon>UFNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFTrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFTrangChu.Designer.cs">
+      <DependentUpon>UFTrangChu.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UFNguyenLieu.resx">
+      <DependentUpon>UFNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFTrangChu.resx">
+      <DependentUpon>UFTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomControl\CustomControl.csproj">
+      <Project>{694652D6-5CBD-4201-B81F-5525F5A15691}</Project>
+      <Name>CustomControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Icon\" />
-    <Folder Include="Images\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="FormCustom\FormEntity.resx">
-      <DependentUpon>FormEntity.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

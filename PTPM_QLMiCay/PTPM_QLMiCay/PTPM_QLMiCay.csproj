@@ -119,6 +119,10 @@
       <Project>{694652d6-5cbd-4201-b81f-5525f5a15691}</Project>
       <Name>CustomControl</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FormControl\FormControl.csproj">
+      <Project>{1809f332-36d1-4650-b366-a31a5eb746d9}</Project>
+      <Name>FormControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

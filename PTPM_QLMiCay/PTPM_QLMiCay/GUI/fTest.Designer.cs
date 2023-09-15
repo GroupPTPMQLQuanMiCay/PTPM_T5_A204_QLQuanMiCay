@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTest));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cLable1 = new CustomControl.ControlCustom.CLable();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -36,14 +37,19 @@
             this.cTextBox2 = new CustomControl.ControlCustom.CTextBox();
             this.cTextBox3 = new CustomControl.ControlCustom.CTextBox();
             this.cTextBox4 = new CustomControl.ControlCustom.CTextBox();
-            this.cButton1 = new CustomControl.ControlCustom.CButton();
             this.cButton2 = new CustomControl.ControlCustom.CButton();
             this.cLable2 = new CustomControl.ControlCustom.CLable();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.cButtonFlat1 = new CustomControl.ControlCustom.CButtonFlat();
-            this.cButtonFlat2 = new CustomControl.ControlCustom.CButtonFlat();
             this.cButtonFlat3 = new CustomControl.ControlCustom.CButtonFlat();
             this.cButtonFlat4 = new CustomControl.ControlCustom.CButtonFlat();
+            this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
+            this.cCombobox1 = new CustomControl.ControlCustom.CCombobox();
+            this.cDataGirdView1 = new CustomControl.ControlCustom.CDataGirdView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cLable1
@@ -162,31 +168,6 @@
             this.cTextBox4.Text = "cTextBox4";
             this.cTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // cButton1
-            // 
-            this.cButton1.ActiveBorderThickness = 1;
-            this.cButton1.ActiveCornerRadius = 20;
-            this.cButton1.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.cButton1.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton1.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.cButton1.BackColor = System.Drawing.Color.White;
-            this.cButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton1.BackgroundImage")));
-            this.cButton1.ButtonText = "ThinButton";
-            this.cButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton1.ForeColor = System.Drawing.Color.Orange;
-            this.cButton1.IdleBorderThickness = 1;
-            this.cButton1.IdleCornerRadius = 20;
-            this.cButton1.IdleFillColor = System.Drawing.Color.White;
-            this.cButton1.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.cButton1.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.cButton1.Location = new System.Drawing.Point(722, 144);
-            this.cButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton1.Name = "cButton1";
-            this.cButton1.Size = new System.Drawing.Size(262, 42);
-            this.cButton1.TabIndex = 22;
-            this.cButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // cButton2
             // 
             this.cButton2.ActiveBorderThickness = 1;
@@ -257,74 +238,6 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // cButtonFlat1
-            // 
-            this.cButtonFlat1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.cButtonFlat1.BackColor = System.Drawing.Color.Orange;
-            this.cButtonFlat1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cButtonFlat1.BorderRadius = 0;
-            this.cButtonFlat1.ButtonText = "cButtonFlat1";
-            this.cButtonFlat1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButtonFlat1.DisabledColor = System.Drawing.Color.Gray;
-            this.cButtonFlat1.Iconcolor = System.Drawing.Color.Transparent;
-            this.cButtonFlat1.Iconimage = ((System.Drawing.Image)(resources.GetObject("cButtonFlat1.Iconimage")));
-            this.cButtonFlat1.Iconimage_right = null;
-            this.cButtonFlat1.Iconimage_right_Selected = null;
-            this.cButtonFlat1.Iconimage_Selected = null;
-            this.cButtonFlat1.IconMarginLeft = 0;
-            this.cButtonFlat1.IconMarginRight = 0;
-            this.cButtonFlat1.IconRightVisible = true;
-            this.cButtonFlat1.IconRightZoom = 0D;
-            this.cButtonFlat1.IconVisible = true;
-            this.cButtonFlat1.IconZoom = 90D;
-            this.cButtonFlat1.IsTab = false;
-            this.cButtonFlat1.Location = new System.Drawing.Point(885, 287);
-            this.cButtonFlat1.Name = "cButtonFlat1";
-            this.cButtonFlat1.Normalcolor = System.Drawing.Color.Orange;
-            this.cButtonFlat1.OnHovercolor = System.Drawing.Color.OrangeRed;
-            this.cButtonFlat1.OnHoverTextColor = System.Drawing.Color.White;
-            this.cButtonFlat1.selected = false;
-            this.cButtonFlat1.Size = new System.Drawing.Size(188, 48);
-            this.cButtonFlat1.TabIndex = 25;
-            this.cButtonFlat1.Text = "cButtonFlat1";
-            this.cButtonFlat1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cButtonFlat1.Textcolor = System.Drawing.Color.White;
-            this.cButtonFlat1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // cButtonFlat2
-            // 
-            this.cButtonFlat2.Activecolor = System.Drawing.Color.Orange;
-            this.cButtonFlat2.BackColor = System.Drawing.Color.Orange;
-            this.cButtonFlat2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cButtonFlat2.BorderRadius = 0;
-            this.cButtonFlat2.ButtonText = "cButtonFlat2";
-            this.cButtonFlat2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButtonFlat2.DisabledColor = System.Drawing.Color.Gray;
-            this.cButtonFlat2.Iconcolor = System.Drawing.Color.Transparent;
-            this.cButtonFlat2.Iconimage = ((System.Drawing.Image)(resources.GetObject("cButtonFlat2.Iconimage")));
-            this.cButtonFlat2.Iconimage_right = null;
-            this.cButtonFlat2.Iconimage_right_Selected = null;
-            this.cButtonFlat2.Iconimage_Selected = null;
-            this.cButtonFlat2.IconMarginLeft = 0;
-            this.cButtonFlat2.IconMarginRight = 0;
-            this.cButtonFlat2.IconRightVisible = true;
-            this.cButtonFlat2.IconRightZoom = 0D;
-            this.cButtonFlat2.IconVisible = true;
-            this.cButtonFlat2.IconZoom = 90D;
-            this.cButtonFlat2.IsTab = false;
-            this.cButtonFlat2.Location = new System.Drawing.Point(855, 233);
-            this.cButtonFlat2.Name = "cButtonFlat2";
-            this.cButtonFlat2.Normalcolor = System.Drawing.Color.Orange;
-            this.cButtonFlat2.OnHovercolor = System.Drawing.Color.OrangeRed;
-            this.cButtonFlat2.OnHoverTextColor = System.Drawing.Color.White;
-            this.cButtonFlat2.selected = false;
-            this.cButtonFlat2.Size = new System.Drawing.Size(241, 48);
-            this.cButtonFlat2.TabIndex = 26;
-            this.cButtonFlat2.Text = "cButtonFlat2";
-            this.cButtonFlat2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cButtonFlat2.Textcolor = System.Drawing.Color.Black;
-            this.cButtonFlat2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // cButtonFlat3
             // 
             this.cButtonFlat3.Activecolor = System.Drawing.Color.Orange;
@@ -393,19 +306,87 @@
             this.cButtonFlat4.Textcolor = System.Drawing.Color.Black;
             this.cButtonFlat4.TextFont = new System.Drawing.Font("Segoe UI", 10F);
             // 
+            // cGroupBox1
+            // 
+            this.cGroupBox1.BackColor = System.Drawing.Color.White;
+            this.cGroupBox1.Controls.Add(this.cDataGirdView1);
+            this.cGroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cGroupBox1.ForeColor = System.Drawing.Color.Orange;
+            this.cGroupBox1.Location = new System.Drawing.Point(786, 79);
+            this.cGroupBox1.Name = "cGroupBox1";
+            this.cGroupBox1.Size = new System.Drawing.Size(330, 411);
+            this.cGroupBox1.TabIndex = 29;
+            this.cGroupBox1.TabStop = false;
+            this.cGroupBox1.Text = "cGroupBox1";
+            // 
+            // cCombobox1
+            // 
+            this.cCombobox1.FormattingEnabled = true;
+            this.cCombobox1.ItemHeight = 23;
+            this.cCombobox1.Location = new System.Drawing.Point(509, 189);
+            this.cCombobox1.Name = "cCombobox1";
+            this.cCombobox1.Size = new System.Drawing.Size(203, 29);
+            this.cCombobox1.TabIndex = 30;
+            this.cCombobox1.UseSelectable = true;
+            // 
+            // cDataGirdView1
+            // 
+            this.cDataGirdView1.AllowUserToAddRows = false;
+            this.cDataGirdView1.AllowUserToDeleteRows = false;
+            this.cDataGirdView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            this.cDataGirdView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.cDataGirdView1.BackgroundColor = System.Drawing.Color.White;
+            this.cDataGirdView1.ColumnHeadersHeight = 25;
+            this.cDataGirdView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.cDataGirdView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column3,
+            this.Column2});
+            this.cDataGirdView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cDataGirdView1.GridColor = System.Drawing.Color.White;
+            this.cDataGirdView1.Location = new System.Drawing.Point(3, 25);
+            this.cDataGirdView1.Name = "cDataGirdView1";
+            this.cDataGirdView1.ReadOnly = true;
+            this.cDataGirdView1.RowHeadersVisible = false;
+            this.cDataGirdView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cDataGirdView1.Size = new System.Drawing.Size(324, 383);
+            this.cDataGirdView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 57;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "đơn vị tính";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "tên đăng nhập";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 120;
+            // 
             // fTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 776);
+            this.Controls.Add(this.cCombobox1);
+            this.Controls.Add(this.cGroupBox1);
             this.Controls.Add(this.cButtonFlat4);
             this.Controls.Add(this.cButtonFlat3);
-            this.Controls.Add(this.cButtonFlat2);
-            this.Controls.Add(this.cButtonFlat1);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.cLable2);
             this.Controls.Add(this.cButton2);
-            this.Controls.Add(this.cButton1);
             this.Controls.Add(this.cTextBox4);
             this.Controls.Add(this.cTextBox3);
             this.Controls.Add(this.cTextBox2);
@@ -415,6 +396,8 @@
             this.Controls.Add(this.cLable1);
             this.Name = "fTest";
             this.Text = "fTest";
+            this.cGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,13 +412,16 @@
         private CustomControl.ControlCustom.CTextBox cTextBox2;
         private CustomControl.ControlCustom.CTextBox cTextBox3;
         private CustomControl.ControlCustom.CTextBox cTextBox4;
-        private CustomControl.ControlCustom.CButton cButton1;
         private CustomControl.ControlCustom.CButton cButton2;
         private CustomControl.ControlCustom.CLable cLable2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private CustomControl.ControlCustom.CButtonFlat cButtonFlat1;
-        private CustomControl.ControlCustom.CButtonFlat cButtonFlat2;
         private CustomControl.ControlCustom.CButtonFlat cButtonFlat3;
         private CustomControl.ControlCustom.CButtonFlat cButtonFlat4;
+        private CustomControl.ControlCustom.CGroupBox cGroupBox1;
+        private CustomControl.ControlCustom.CCombobox cCombobox1;
+        private CustomControl.ControlCustom.CDataGirdView cDataGirdView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
