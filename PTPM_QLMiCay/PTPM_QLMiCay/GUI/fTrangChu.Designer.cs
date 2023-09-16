@@ -40,7 +40,11 @@
             this.cButtonFlat3 = new CustomControl.ControlCustom.CButtonFlat();
             this.cButtonFlat2 = new CustomControl.ControlCustom.CButtonFlat();
             this.cButtonFlat1 = new CustomControl.ControlCustom.CButtonFlat();
+            this.ufDanhMuc1 = new FormControl.UFDanhMuc();
+            this.ufNhaCungCap1 = new FormControl.UFNhaCungCap();
+            this.ufNguyenLieu1 = new FormControl.UFNguyenLieu();
             this.ufTrangChu1 = new FormControl.UFTrangChu();
+            this.ufNhanVIen1 = new FormControl.UFNhanVIen();
             this.bunifuGradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +70,7 @@
             this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
-            this.bunifuGradientPanel2.Size = new System.Drawing.Size(199, 597);
+            this.bunifuGradientPanel2.Size = new System.Drawing.Size(168, 597);
             this.bunifuGradientPanel2.TabIndex = 4;
             // 
             // cButtonFlat10
@@ -96,7 +100,7 @@
             this.cButtonFlat10.OnHovercolor = System.Drawing.Color.OrangeRed;
             this.cButtonFlat10.OnHoverTextColor = System.Drawing.Color.White;
             this.cButtonFlat10.selected = false;
-            this.cButtonFlat10.Size = new System.Drawing.Size(199, 48);
+            this.cButtonFlat10.Size = new System.Drawing.Size(185, 48);
             this.cButtonFlat10.TabIndex = 9;
             this.cButtonFlat10.Text = "Thoát";
             this.cButtonFlat10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,6 +276,7 @@
             this.cButtonFlat5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cButtonFlat5.Textcolor = System.Drawing.Color.Black;
             this.cButtonFlat5.TextFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.cButtonFlat5.Click += new System.EventHandler(this.cButtonFlat5_Click);
             // 
             // cButtonFlat4
             // 
@@ -306,6 +311,7 @@
             this.cButtonFlat4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cButtonFlat4.Textcolor = System.Drawing.Color.Black;
             this.cButtonFlat4.TextFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.cButtonFlat4.Click += new System.EventHandler(this.cButtonFlat4_Click);
             // 
             // cButtonFlat3
             // 
@@ -340,6 +346,7 @@
             this.cButtonFlat3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cButtonFlat3.Textcolor = System.Drawing.Color.Black;
             this.cButtonFlat3.TextFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.cButtonFlat3.Click += new System.EventHandler(this.cButtonFlat3_Click);
             // 
             // cButtonFlat2
             // 
@@ -374,6 +381,7 @@
             this.cButtonFlat2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cButtonFlat2.Textcolor = System.Drawing.Color.Black;
             this.cButtonFlat2.TextFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.cButtonFlat2.Click += new System.EventHandler(this.cButtonFlat2_Click);
             // 
             // cButtonFlat1
             // 
@@ -408,24 +416,62 @@
             this.cButtonFlat1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cButtonFlat1.Textcolor = System.Drawing.Color.Black;
             this.cButtonFlat1.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cButtonFlat1.Click += new System.EventHandler(this.cButtonFlat1_Click);
+            // 
+            // ufDanhMuc1
+            // 
+            this.ufDanhMuc1.BackColor = System.Drawing.Color.White;
+            this.ufDanhMuc1.Location = new System.Drawing.Point(174, 0);
+            this.ufDanhMuc1.Name = "ufDanhMuc1";
+            this.ufDanhMuc1.Size = new System.Drawing.Size(980, 542);
+            this.ufDanhMuc1.TabIndex = 8;
+            // 
+            // ufNhaCungCap1
+            // 
+            this.ufNhaCungCap1.BackColor = System.Drawing.Color.White;
+            this.ufNhaCungCap1.Location = new System.Drawing.Point(174, 0);
+            this.ufNhaCungCap1.Name = "ufNhaCungCap1";
+            this.ufNhaCungCap1.Size = new System.Drawing.Size(1021, 590);
+            this.ufNhaCungCap1.TabIndex = 7;
+            // 
+            // ufNguyenLieu1
+            // 
+            this.ufNguyenLieu1.BackColor = System.Drawing.Color.White;
+            this.ufNguyenLieu1.Location = new System.Drawing.Point(174, 0);
+            this.ufNguyenLieu1.Name = "ufNguyenLieu1";
+            this.ufNguyenLieu1.Size = new System.Drawing.Size(958, 577);
+            this.ufNguyenLieu1.TabIndex = 6;
             // 
             // ufTrangChu1
             // 
             this.ufTrangChu1.BackColor = System.Drawing.Color.White;
-            this.ufTrangChu1.Location = new System.Drawing.Point(205, 7);
+            this.ufTrangChu1.Location = new System.Drawing.Point(174, 0);
             this.ufTrangChu1.Name = "ufTrangChu1";
             this.ufTrangChu1.Size = new System.Drawing.Size(908, 577);
             this.ufTrangChu1.TabIndex = 5;
+            // 
+            // ufNhanVIen1
+            // 
+            this.ufNhanVIen1.BackColor = System.Drawing.Color.White;
+            this.ufNhanVIen1.Location = new System.Drawing.Point(174, 0);
+            this.ufNhanVIen1.Name = "ufNhanVIen1";
+            this.ufNhanVIen1.Size = new System.Drawing.Size(1010, 603);
+            this.ufNhanVIen1.TabIndex = 9;
             // 
             // fTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 583);
+            this.ClientSize = new System.Drawing.Size(1228, 583);
+            this.Controls.Add(this.ufNhanVIen1);
+            this.Controls.Add(this.ufDanhMuc1);
+            this.Controls.Add(this.ufNhaCungCap1);
+            this.Controls.Add(this.ufNguyenLieu1);
             this.Controls.Add(this.ufTrangChu1);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Name = "fTrangChu";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.fTrangChu_Load);
             this.bunifuGradientPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -444,5 +490,9 @@
         private CustomControl.ControlCustom.CButtonFlat cButtonFlat2;
         private CustomControl.ControlCustom.CButtonFlat cButtonFlat10;
         private FormControl.UFTrangChu ufTrangChu1;
+        private FormControl.UFNguyenLieu ufNguyenLieu1;
+        private FormControl.UFNhaCungCap ufNhaCungCap1;
+        private FormControl.UFDanhMuc ufDanhMuc1;
+        private FormControl.UFNhanVIen ufNhanVIen1;
     }
 }

@@ -56,11 +56,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UFDanhMuc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFDanhMuc.Designer.cs">
+      <DependentUpon>UFDanhMuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="UFNguyenLieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UFNguyenLieu.Designer.cs">
       <DependentUpon>UFNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFNhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFNhaCungCap.Designer.cs">
+      <DependentUpon>UFNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFNhanVIen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFNhanVIen.Designer.cs">
+      <DependentUpon>UFNhanVIen.cs</DependentUpon>
     </Compile>
     <Compile Include="UFTrangChu.cs">
       <SubType>UserControl</SubType>
@@ -71,8 +89,17 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UFDanhMuc.resx">
+      <DependentUpon>UFDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UFNguyenLieu.resx">
       <DependentUpon>UFNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFNhaCungCap.resx">
+      <DependentUpon>UFNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFNhanVIen.resx">
+      <DependentUpon>UFNhanVIen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UFTrangChu.resx">
       <DependentUpon>UFTrangChu.cs</DependentUpon>
