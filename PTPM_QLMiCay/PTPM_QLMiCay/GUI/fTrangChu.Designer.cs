@@ -40,11 +40,13 @@
             this.cButtonFlat3 = new CustomControl.ControlCustom.CButtonFlat();
             this.cButtonFlat2 = new CustomControl.ControlCustom.CButtonFlat();
             this.cButtonFlat1 = new CustomControl.ControlCustom.CButtonFlat();
+            this.ufNhanVIen1 = new FormControl.UFNhanVIen();
             this.ufDanhMuc1 = new FormControl.UFDanhMuc();
             this.ufNhaCungCap1 = new FormControl.UFNhaCungCap();
             this.ufNguyenLieu1 = new FormControl.UFNguyenLieu();
             this.ufTrangChu1 = new FormControl.UFTrangChu();
-            this.ufNhanVIen1 = new FormControl.UFNhanVIen();
+            this.ufQuyen1 = new FormControl.UFQuyen();
+            this.ufHoaDon1 = new FormControl.UFHoaDon();
             this.bunifuGradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,6 +176,7 @@
             this.cButtonFlat8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cButtonFlat8.Textcolor = System.Drawing.Color.Black;
             this.cButtonFlat8.TextFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.cButtonFlat8.Click += new System.EventHandler(this.cButtonFlat8_Click);
             // 
             // cButtonFlat7
             // 
@@ -418,6 +421,14 @@
             this.cButtonFlat1.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cButtonFlat1.Click += new System.EventHandler(this.cButtonFlat1_Click);
             // 
+            // ufNhanVIen1
+            // 
+            this.ufNhanVIen1.BackColor = System.Drawing.Color.White;
+            this.ufNhanVIen1.Location = new System.Drawing.Point(174, 0);
+            this.ufNhanVIen1.Name = "ufNhanVIen1";
+            this.ufNhanVIen1.Size = new System.Drawing.Size(1010, 603);
+            this.ufNhanVIen1.TabIndex = 9;
+            // 
             // ufDanhMuc1
             // 
             this.ufDanhMuc1.BackColor = System.Drawing.Color.White;
@@ -450,19 +461,29 @@
             this.ufTrangChu1.Size = new System.Drawing.Size(908, 577);
             this.ufTrangChu1.TabIndex = 5;
             // 
-            // ufNhanVIen1
+            // ufQuyen1
             // 
-            this.ufNhanVIen1.BackColor = System.Drawing.Color.White;
-            this.ufNhanVIen1.Location = new System.Drawing.Point(174, 0);
-            this.ufNhanVIen1.Name = "ufNhanVIen1";
-            this.ufNhanVIen1.Size = new System.Drawing.Size(1010, 603);
-            this.ufNhanVIen1.TabIndex = 9;
+            this.ufQuyen1.BackColor = System.Drawing.Color.White;
+            this.ufQuyen1.Location = new System.Drawing.Point(174, 3);
+            this.ufQuyen1.Name = "ufQuyen1";
+            this.ufQuyen1.Size = new System.Drawing.Size(1010, 574);
+            this.ufQuyen1.TabIndex = 10;
+            // 
+            // ufHoaDon1
+            // 
+            this.ufHoaDon1.BackColor = System.Drawing.Color.White;
+            this.ufHoaDon1.Location = new System.Drawing.Point(172, 0);
+            this.ufHoaDon1.Name = "ufHoaDon1";
+            this.ufHoaDon1.Size = new System.Drawing.Size(960, 533);
+            this.ufHoaDon1.TabIndex = 11;
             // 
             // fTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 583);
+            this.Controls.Add(this.ufHoaDon1);
+            this.Controls.Add(this.ufQuyen1);
             this.Controls.Add(this.ufNhanVIen1);
             this.Controls.Add(this.ufDanhMuc1);
             this.Controls.Add(this.ufNhaCungCap1);
@@ -494,5 +515,7 @@
         private FormControl.UFNhaCungCap ufNhaCungCap1;
         private FormControl.UFDanhMuc ufDanhMuc1;
         private FormControl.UFNhanVIen ufNhanVIen1;
+        private FormControl.UFQuyen ufQuyen1;
+        private FormControl.UFHoaDon ufHoaDon1;
     }
 }

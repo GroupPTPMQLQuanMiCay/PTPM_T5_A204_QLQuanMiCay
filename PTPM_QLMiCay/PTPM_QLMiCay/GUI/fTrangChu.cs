@@ -36,6 +36,7 @@ namespace PTPM_QLMiCay.GUI
             ufNhaCungCap1.Hide();
             ufDanhMuc1.Hide();
             ufNhanVIen1.Hide();
+            ufQuyen1.Hide();
         }
 
         private void cButtonFlat1_Click(object sender, EventArgs e)
@@ -45,6 +46,7 @@ namespace PTPM_QLMiCay.GUI
             ufNhaCungCap1.Hide();
             ufDanhMuc1.Hide();
             ufNhanVIen1.Hide();
+            ufQuyen1.Hide();
             //Show current usercontrol
             ufTrangChu1.Show();
             ufTrangChu1.BringToFront();
@@ -57,6 +59,7 @@ namespace PTPM_QLMiCay.GUI
             ufNhaCungCap1.Hide();
             ufDanhMuc1.Hide();
             ufNhanVIen1.Hide();
+            ufQuyen1.Hide();
             //Show current usercontrol
             ufNguyenLieu1.Show();
             ufNguyenLieu1.BringToFront();
@@ -69,6 +72,7 @@ namespace PTPM_QLMiCay.GUI
             ufDanhMuc1.Hide();
             ufNguyenLieu1.Hide();
             ufNhanVIen1.Hide();
+            ufQuyen1.Hide();
             //Show current usercontrol
             ufNhaCungCap1.Show();
             ufNhaCungCap1.BringToFront();
@@ -81,6 +85,7 @@ namespace PTPM_QLMiCay.GUI
             ufNhaCungCap1.Hide();
             ufNguyenLieu1.Hide();
             ufNhanVIen1.Hide();
+            ufQuyen1.Hide();
             //Show current usercontrol
             ufDanhMuc1.Show();
             ufDanhMuc1.BringToFront();
@@ -93,9 +98,23 @@ namespace PTPM_QLMiCay.GUI
             ufNhaCungCap1.Hide();
             ufNguyenLieu1.Hide();
             ufDanhMuc1.Hide();
+            ufQuyen1.Hide();
             //Show current usercontrol
             ufNhanVIen1.Show();
             ufNhanVIen1.BringToFront();
+        }
+
+        private void cButtonFlat8_Click(object sender, EventArgs e)
+        {
+            //Hide other user control
+            ufTrangChu1.Hide();
+            ufNhaCungCap1.Hide();
+            ufNguyenLieu1.Hide();
+            ufDanhMuc1.Hide();
+            ufNhanVIen1.Hide();
+            //Show current usercontrol
+            ufQuyen1.Show();
+            ufQuyen1.BringToFront();
         }
     }
 }

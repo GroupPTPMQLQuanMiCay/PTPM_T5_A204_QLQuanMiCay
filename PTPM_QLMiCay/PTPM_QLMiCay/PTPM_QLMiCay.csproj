@@ -64,6 +64,36 @@
     <Compile Include="GUI\fDangNhap.Designer.cs">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fDatNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fDatNguyenLieu.Designer.cs">
+      <DependentUpon>fDatNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fHoaDonNhap.Designer.cs">
+      <DependentUpon>fHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fLichSuGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fLichSuGia.Designer.cs">
+      <DependentUpon>fLichSuGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fNhapNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fNhapNguyenLieu.Designer.cs">
+      <DependentUpon>fNhapNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fNhomQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fNhomQuyen.Designer.cs">
+      <DependentUpon>fNhomQuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +110,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fDatNguyenLieu.resx">
+      <DependentUpon>fDatNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fHoaDonNhap.resx">
+      <DependentUpon>fHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fLichSuGia.resx">
+      <DependentUpon>fLichSuGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fNhapNguyenLieu.resx">
+      <DependentUpon>fNhapNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fNhomQuyen.resx">
+      <DependentUpon>fNhomQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fTest.resx">
       <DependentUpon>fTest.cs</DependentUpon>
