@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControl", "CustomCont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormControl", "FormControl\FormControl.csproj", "{1809F332-36D1-4650-B366-A31A5EB746D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFirstEntities", "DataFirstEntities\DataFirstEntities.csproj", "{9A3DC52C-1C8E-4ED1-91AA-667EFF08027C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1809F332-36D1-4650-B366-A31A5EB746D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1809F332-36D1-4650-B366-A31A5EB746D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1809F332-36D1-4650-B366-A31A5EB746D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A3DC52C-1C8E-4ED1-91AA-667EFF08027C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A3DC52C-1C8E-4ED1-91AA-667EFF08027C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A3DC52C-1C8E-4ED1-91AA-667EFF08027C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A3DC52C-1C8E-4ED1-91AA-667EFF08027C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -46,7 +46,7 @@
             this.ufNguyenLieu1 = new FormControl.UFNguyenLieu();
             this.ufTrangChu1 = new FormControl.UFTrangChu();
             this.ufQuyen1 = new FormControl.UFQuyen();
-            this.ufHoaDon1 = new FormControl.UFHoaDon();
+         
             this.bunifuGradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -469,20 +469,14 @@
             this.ufQuyen1.Size = new System.Drawing.Size(1010, 574);
             this.ufQuyen1.TabIndex = 10;
             // 
-            // ufHoaDon1
-            // 
-            this.ufHoaDon1.BackColor = System.Drawing.Color.White;
-            this.ufHoaDon1.Location = new System.Drawing.Point(172, 0);
-            this.ufHoaDon1.Name = "ufHoaDon1";
-            this.ufHoaDon1.Size = new System.Drawing.Size(960, 533);
-            this.ufHoaDon1.TabIndex = 11;
+        
             // 
             // fTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 583);
-            this.Controls.Add(this.ufHoaDon1);
+       
             this.Controls.Add(this.ufQuyen1);
             this.Controls.Add(this.ufNhanVIen1);
             this.Controls.Add(this.ufDanhMuc1);
@@ -516,6 +510,6 @@
         private FormControl.UFDanhMuc ufDanhMuc1;
         private FormControl.UFNhanVIen ufNhanVIen1;
         private FormControl.UFQuyen ufQuyen1;
-        private FormControl.UFHoaDon ufHoaDon1;
+        
     }
 }
