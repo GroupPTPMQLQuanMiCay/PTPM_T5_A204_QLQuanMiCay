@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataFirstEntities.Entity
 {
@@ -21,12 +17,10 @@ namespace DataFirstEntities.Entity
         [Column(Order = 2)]
         public DateTime NgayThayDoi { get; set;}
 
-        public int NL_Gia { get; set; }
+        public double NL_Gia { get; set; }
 
         public string NV_Id { get; set; }
         [ForeignKey("NV_Id")]
         public virtual NhanVien NhanVien { get; set; }
-
-
     }
 }

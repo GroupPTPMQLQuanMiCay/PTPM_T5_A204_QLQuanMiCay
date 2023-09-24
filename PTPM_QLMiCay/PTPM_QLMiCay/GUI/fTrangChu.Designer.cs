@@ -1,4 +1,7 @@
-﻿namespace PTPM_QLMiCay.GUI
+﻿using DataHelper.Entity;
+using FormControl.Service;
+
+namespace PTPM_QLMiCay.GUI
 {
     partial class fTrangChu
     {
@@ -6,6 +9,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private string connectionString = Properties.Settings.Default.HoangConnection;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -43,7 +47,7 @@
             this.ufNhanVIen1 = new FormControl.UFNhanVIen();
             this.ufDanhMuc1 = new FormControl.UFDanhMuc();
             this.ufNhaCungCap1 = new FormControl.UFNhaCungCap();
-            this.ufNguyenLieu1 = new FormControl.UFNguyenLieu();
+            this.ufNguyenLieu1 = new FormControl.UFNguyenLieu(connectionString);
             this.ufTrangChu1 = new FormControl.UFTrangChu();
             this.ufQuyen1 = new FormControl.UFQuyen();
          

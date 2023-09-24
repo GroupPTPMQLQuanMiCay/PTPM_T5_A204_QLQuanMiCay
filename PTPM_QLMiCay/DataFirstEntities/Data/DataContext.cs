@@ -10,7 +10,7 @@ namespace DataFirstEntities.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base(@"Server=NEWSEAA\SQLEXPRESS;Database=qlMiCay;Trusted_Connection=True;")
+        public DataContext() : base(@"Server=DESKTOP-U88ERP0;Database=QLQuanMiCay;Trusted_Connection=True;")
         {
         
         }

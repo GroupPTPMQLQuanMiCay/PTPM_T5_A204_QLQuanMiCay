@@ -154,3 +154,8 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+PTPM_QLMiCay/PTPM_QLMiCay/Properties/Settings.settings
+PTPM_QLMiCay/PTPM_QLMiCay/Properties/Resources.resx
+PTPM_QLMiCay/DataFirstEntities/Data/DataContext.cs
+PTPM_QLMiCay/DataFirstEntities/Data/DataContext.cs
+PTPM_QLMiCay/PTPM_QLMiCay/App.config
