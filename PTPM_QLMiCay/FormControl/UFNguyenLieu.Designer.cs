@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFNguyenLieu));
             this.cGroupBox4 = new CustomControl.ControlCustom.CGroupBox();
             this.drvNguyenLieu = new CustomControl.ControlCustom.CDataGirdView();
@@ -46,7 +46,7 @@
             this.txtTenNL = new CustomControl.ControlCustom.CTextBox();
             this.cboDonViTinh = new CustomControl.ControlCustom.CCombobox();
             this.txtId = new CustomControl.ControlCustom.CTextBox();
-            this.cCombobox1 = new CustomControl.ControlCustom.CCombobox();
+            this.cboNhaCungCap = new CustomControl.ControlCustom.CCombobox();
             this.cLable5 = new CustomControl.ControlCustom.CLable();
             this.cLable4 = new CustomControl.ControlCustom.CLable();
             this.cLable3 = new CustomControl.ControlCustom.CLable();
@@ -78,10 +78,10 @@
             // drvNguyenLieu
             // 
             this.drvNguyenLieu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
-            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.drvNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.drvNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvNguyenLieu.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -92,7 +92,7 @@
             this.drvNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drvNguyenLieu.Size = new System.Drawing.Size(457, 386);
             this.drvNguyenLieu.TabIndex = 0;
-            this.drvNguyenLieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drvNguyenLieu_CellContentClick);
+            this.drvNguyenLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drvNguyenLieu_CellClick);
             // 
             // cGroupBox3
             // 
@@ -124,7 +124,7 @@
             this.txtTimTenNL.Size = new System.Drawing.Size(360, 29);
             this.txtTimTenNL.TabIndex = 11;
             this.txtTimTenNL.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtTimTenNL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimTenNL_KeyPress);
+            this.txtTimTenNL.OnValueChanged += new System.EventHandler(this.txtTimTenNL_OnValueChanged);
             // 
             // cGroupBox2
             // 
@@ -301,7 +301,7 @@
             this.cGroupBox1.Controls.Add(this.txtTenNL);
             this.cGroupBox1.Controls.Add(this.cboDonViTinh);
             this.cGroupBox1.Controls.Add(this.txtId);
-            this.cGroupBox1.Controls.Add(this.cCombobox1);
+            this.cGroupBox1.Controls.Add(this.cboNhaCungCap);
             this.cGroupBox1.Controls.Add(this.cLable5);
             this.cGroupBox1.Controls.Add(this.cLable4);
             this.cGroupBox1.Controls.Add(this.cLable3);
@@ -381,15 +381,16 @@
             this.txtId.TabIndex = 0;
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // cCombobox1
+            // cboNhaCungCap
             // 
-            this.cCombobox1.FormattingEnabled = true;
-            this.cCombobox1.ItemHeight = 23;
-            this.cCombobox1.Location = new System.Drawing.Point(11, 54);
-            this.cCombobox1.Name = "cCombobox1";
-            this.cCombobox1.Size = new System.Drawing.Size(203, 29);
-            this.cCombobox1.TabIndex = 5;
-            this.cCombobox1.UseSelectable = true;
+            this.cboNhaCungCap.FormattingEnabled = true;
+            this.cboNhaCungCap.ItemHeight = 23;
+            this.cboNhaCungCap.Location = new System.Drawing.Point(11, 54);
+            this.cboNhaCungCap.Name = "cboNhaCungCap";
+            this.cboNhaCungCap.Size = new System.Drawing.Size(203, 29);
+            this.cboNhaCungCap.TabIndex = 5;
+            this.cboNhaCungCap.UseSelectable = true;
+            this.cboNhaCungCap.SelectedIndexChanged += new System.EventHandler(this.cboNhaCungCap_SelectedIndexChanged);
             // 
             // cLable5
             // 
@@ -500,7 +501,7 @@
         private CustomControl.ControlCustom.CGroupBox cGroupBox2;
         private CustomControl.ControlCustom.CCombobox cboDonViTinh;
         private CustomControl.ControlCustom.CTextBox txtId;
-        private CustomControl.ControlCustom.CCombobox cCombobox1;
+        private CustomControl.ControlCustom.CCombobox cboNhaCungCap;
         private CustomControl.ControlCustom.CLable cLable5;
         private CustomControl.ControlCustom.CLable cLable4;
         private CustomControl.ControlCustom.CLable cLable3;

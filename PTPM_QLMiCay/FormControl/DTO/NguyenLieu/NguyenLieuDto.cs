@@ -1,6 +1,6 @@
 ﻿namespace DataHelper.DTO.NguyenLieu
 {
-    public class NguyenLieuDto : BaseDto
+    public class NguyenLieuDto
     {
         private int NL_Id;
         private string NL_Ten { get; set;}
