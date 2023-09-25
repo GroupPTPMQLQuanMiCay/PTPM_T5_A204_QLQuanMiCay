@@ -1,4 +1,5 @@
-﻿using DataHelper.DTO.NguyenLieu;
+﻿using DataHelper;
+using DataHelper.DTO.NguyenLieu;
 using DataHelper.Entity;
 using FormControl.Repository;
 using System;
@@ -50,6 +51,19 @@ namespace FormControl.Service
             }
         }
 
+        public DataTable getNguyenLieuDtoByNhaCungCap(int nccId)
+        {
+            try
+            {
+                DataTable dt = _repository.getNguyenLieuDtoByNhaCungCap(nccId);
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public NguyenLieuDto getById(int id)
         {
             throw new NotImplementedException();
@@ -58,6 +72,18 @@ namespace FormControl.Service
         public int update(int id, NguyenLieuDto entity)
         {
             throw new NotImplementedException();
+        }
+
+        public DataTable getNguyenLieuDtoByNhaCungCapAndName(int nccId, string name)
+        {
+            try
+            {
+                return _repository.getNguyenLieuDtoByNhaCungCapAndName(nccId, name);
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
