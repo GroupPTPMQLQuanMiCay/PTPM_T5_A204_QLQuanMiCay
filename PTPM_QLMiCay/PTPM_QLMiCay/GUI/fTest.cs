@@ -16,6 +16,7 @@ namespace PTPM_QLMiCay.GUI
         public fTest()
         {
             InitializeComponent();
+            cCombobox1.Text = "Test nè bây";
         }
     }
 }

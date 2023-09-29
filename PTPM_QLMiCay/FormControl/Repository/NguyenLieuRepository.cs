@@ -15,9 +15,19 @@ namespace FormControl.Repository
             _sqlHelper = sqlHelper;
         }
 
-        public NguyenLieu create(NguyenLieu entity)
+        public int create(NguyenLieu entity)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return _sqlHelper.executeNonQuery(string.Format("insert into NguyenLieu(" +
+                    "NL_Ten, NL_DonViTinh, NL_SoLuong, NCC_Id) values(N'{0}', " +
+                    "N'{1}', {2}, {3})", entity.nl_Ten(), entity.nl_DonViTinh(),
+                    entity.nl_SoLuong(), entity.ncc_Id()));
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         public int delete(int id)

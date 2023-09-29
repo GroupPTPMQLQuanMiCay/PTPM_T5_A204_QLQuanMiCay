@@ -3,9 +3,14 @@
     public class NguyenLieuDto
     {
         private int NL_Id;
-        private string NL_Ten { get; set;}
-        private string NL_Donvitinh { get; set;}
-        private double NL_Gia { get; set; }
+        private string NL_Ten;
+        private string NL_Donvitinh;
+        private double NL_Gia;
+        private int NL_NccId;
+
+        private int NL_SoLuong;
+        public int nl_SoLuong { get => NL_SoLuong; set => NL_SoLuong = value; }
+        public int nl_nccId { get => NL_NccId; set => NL_NccId = value; }
 
         public int nl_Id() { return NL_Id; }
         public void nl_Id(int Id) { NL_Id = Id; }

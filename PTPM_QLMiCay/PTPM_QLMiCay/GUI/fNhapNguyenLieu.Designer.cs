@@ -33,6 +33,7 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
+            this.cLable6 = new CustomControl.ControlCustom.CLable();
             this.cTextBox4 = new CustomControl.ControlCustom.CTextBox();
             this.cLable5 = new CustomControl.ControlCustom.CLable();
             this.cTextBox3 = new CustomControl.ControlCustom.CTextBox();
@@ -43,13 +44,12 @@
             this.cTextBox1 = new CustomControl.ControlCustom.CTextBox();
             this.cLable1 = new CustomControl.ControlCustom.CLable();
             this.cButtonClose1 = new CustomControl.ControlCustom.CButtonClose();
-            this.cLable6 = new CustomControl.ControlCustom.CLable();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
             this.cDataGirdView1 = new CustomControl.ControlCustom.CDataGirdView();
             this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
             this.cTextBox5 = new CustomControl.ControlCustom.CTextBox();
+            this.btnThem = new CustomControl.ControlCustom.CButton();
             this.cLable4 = new CustomControl.ControlCustom.CLable();
-            this.cButton3 = new CustomControl.ControlCustom.CButton();
             this.cGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cButtonClose1)).BeginInit();
             this.cGroupBox2.SuspendLayout();
@@ -101,6 +101,17 @@
             this.cGroupBox1.TabIndex = 4;
             this.cGroupBox1.TabStop = false;
             this.cGroupBox1.Text = "Thông tin nhập";
+            // 
+            // cLable6
+            // 
+            this.cLable6.AutoSize = true;
+            this.cLable6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cLable6.ForeColor = System.Drawing.Color.Orange;
+            this.cLable6.Location = new System.Drawing.Point(234, 108);
+            this.cLable6.Name = "cLable6";
+            this.cLable6.Size = new System.Drawing.Size(108, 21);
+            this.cLable6.TabIndex = 10;
+            this.cLable6.Text = "Nhà cung cấp:";
             // 
             // cTextBox4
             // 
@@ -240,17 +251,6 @@
             this.cButtonClose1.TabStop = false;
             this.cButtonClose1.Zoom = 10;
             // 
-            // cLable6
-            // 
-            this.cLable6.AutoSize = true;
-            this.cLable6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cLable6.ForeColor = System.Drawing.Color.Orange;
-            this.cLable6.Location = new System.Drawing.Point(234, 108);
-            this.cLable6.Name = "cLable6";
-            this.cLable6.Size = new System.Drawing.Size(108, 21);
-            this.cLable6.TabIndex = 10;
-            this.cLable6.Text = "Nhà cung cấp:";
-            // 
             // cGroupBox2
             // 
             this.cGroupBox2.BackColor = System.Drawing.Color.White;
@@ -286,7 +286,7 @@
             // 
             this.cGroupBox3.BackColor = System.Drawing.Color.White;
             this.cGroupBox3.Controls.Add(this.cTextBox5);
-            this.cGroupBox3.Controls.Add(this.cButton3);
+            this.cGroupBox3.Controls.Add(this.btnThem);
             this.cGroupBox3.Controls.Add(this.cLable4);
             this.cGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
@@ -315,6 +315,31 @@
             this.cTextBox5.TabIndex = 24;
             this.cTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // btnThem
+            // 
+            this.btnThem.ActiveBorderThickness = 1;
+            this.btnThem.ActiveCornerRadius = 20;
+            this.btnThem.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnThem.ActiveForecolor = System.Drawing.Color.White;
+            this.btnThem.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnThem.BackColor = System.Drawing.Color.White;
+            this.btnThem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThem.BackgroundImage")));
+            this.btnThem.ButtonText = "Nhập nguyên liệu";
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnThem.ForeColor = System.Drawing.Color.Orange;
+            this.btnThem.IdleBorderThickness = 1;
+            this.btnThem.IdleCornerRadius = 20;
+            this.btnThem.IdleFillColor = System.Drawing.Color.White;
+            this.btnThem.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnThem.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnThem.Location = new System.Drawing.Point(24, 40);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(163, 41);
+            this.btnThem.TabIndex = 25;
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // cLable4
             // 
             this.cLable4.AutoSize = true;
@@ -325,31 +350,6 @@
             this.cLable4.Size = new System.Drawing.Size(89, 21);
             this.cLable4.TabIndex = 26;
             this.cLable4.Text = "Thành Tiền:";
-            // 
-            // cButton3
-            // 
-            this.cButton3.ActiveBorderThickness = 1;
-            this.cButton3.ActiveCornerRadius = 20;
-            this.cButton3.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton3.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton3.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton3.BackColor = System.Drawing.Color.White;
-            this.cButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton3.BackgroundImage")));
-            this.cButton3.ButtonText = "Nhập nguyên liệu";
-            this.cButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton3.ForeColor = System.Drawing.Color.Orange;
-            this.cButton3.IdleBorderThickness = 1;
-            this.cButton3.IdleCornerRadius = 20;
-            this.cButton3.IdleFillColor = System.Drawing.Color.White;
-            this.cButton3.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton3.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton3.Location = new System.Drawing.Point(24, 40);
-            this.cButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton3.Name = "cButton3";
-            this.cButton3.Size = new System.Drawing.Size(163, 41);
-            this.cButton3.TabIndex = 25;
-            this.cButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fNhapNguyenLieu
             // 
@@ -396,7 +396,7 @@
         private CustomControl.ControlCustom.CDataGirdView cDataGirdView1;
         private CustomControl.ControlCustom.CGroupBox cGroupBox3;
         private CustomControl.ControlCustom.CTextBox cTextBox5;
-        private CustomControl.ControlCustom.CButton cButton3;
+        private CustomControl.ControlCustom.CButton btnThem;
         private CustomControl.ControlCustom.CLable cLable4;
     }
 }

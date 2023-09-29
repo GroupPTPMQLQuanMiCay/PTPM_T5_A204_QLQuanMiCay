@@ -1,6 +1,7 @@
 ﻿using DataHelper;
 using DataHelper.DTO.NguyenLieu;
 using DataHelper.Entity;
+using FormControl.Converter;
 using FormControl.Repository;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,16 @@ namespace FormControl.Service
             _repository = repository;
         }
 
-        public NguyenLieuDto create(NguyenLieuDto entity)
+        public int create(NguyenLieuDto dto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                NguyenLieu nlieu = NguyenLieuConverter.toNguyenLieuEntity(dto);
+                return _repository.create(nlieu);
+            } catch
+            {
+                return 0;
+            }
         }
 
         public int delete(int id)

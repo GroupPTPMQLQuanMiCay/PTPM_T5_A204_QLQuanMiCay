@@ -89,6 +89,9 @@
     <Compile Include="ControlCustom\CLableTitle.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ControlCustom\CNumericTextbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ControlCustom\CTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

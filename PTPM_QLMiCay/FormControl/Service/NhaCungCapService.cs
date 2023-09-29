@@ -14,7 +14,7 @@ namespace FormControl.Service
             _repository = repository;
         }
 
-        public NhaCungCapDto create(NhaCungCapDto entity)
+        public int create(NhaCungCapDto entity)
         {
             throw new NotImplementedException();
         }

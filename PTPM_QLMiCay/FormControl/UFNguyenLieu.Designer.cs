@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFNguyenLieu));
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.cGroupBox4 = new CustomControl.ControlCustom.CGroupBox();
             this.drvNguyenLieu = new CustomControl.ControlCustom.CDataGirdView();
             this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
             this.txtTimTenNL = new CustomControl.ControlCustom.CTextBox();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
-            this.cButton6 = new CustomControl.ControlCustom.CButton();
-            this.cButton5 = new CustomControl.ControlCustom.CButton();
+            this.btnLuu = new CustomControl.ControlCustom.CButton();
+            this.btnThem = new CustomControl.ControlCustom.CButton();
             this.cButton4 = new CustomControl.ControlCustom.CButton();
             this.cButton3 = new CustomControl.ControlCustom.CButton();
             this.cButton2 = new CustomControl.ControlCustom.CButton();
             this.cButton1 = new CustomControl.ControlCustom.CButton();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
-            this.txtDonGia = new CustomControl.ControlCustom.CTextBox();
+            this.txtDonGia = new CustomControl.ControlCustom.CNumericTextbox();
             this.txtTenNL = new CustomControl.ControlCustom.CTextBox();
             this.cboDonViTinh = new CustomControl.ControlCustom.CCombobox();
             this.txtId = new CustomControl.ControlCustom.CTextBox();
@@ -52,14 +54,36 @@
             this.cLable3 = new CustomControl.ControlCustom.CLable();
             this.cLable2 = new CustomControl.ControlCustom.CLable();
             this.cLable1 = new CustomControl.ControlCustom.CLable();
-            this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cGroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drvNguyenLieu)).BeginInit();
             this.cGroupBox3.SuspendLayout();
             this.cGroupBox2.SuspendLayout();
             this.cGroupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(10, 40);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(929, 35);
+            this.bunifuSeparator1.TabIndex = 5;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // cLableTitle1
+            // 
+            this.cLableTitle1.AutoSize = true;
+            this.cLableTitle1.Font = new System.Drawing.Font("Segoe UI", 21F);
+            this.cLableTitle1.ForeColor = System.Drawing.Color.Orange;
+            this.cLableTitle1.Location = new System.Drawing.Point(7, 1);
+            this.cLableTitle1.Name = "cLableTitle1";
+            this.cLableTitle1.Size = new System.Drawing.Size(174, 38);
+            this.cLableTitle1.TabIndex = 4;
+            this.cLableTitle1.Text = "Nguyên Liệu";
             // 
             // cGroupBox4
             // 
@@ -78,10 +102,10 @@
             // drvNguyenLieu
             // 
             this.drvNguyenLieu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
-            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.drvNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.drvNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvNguyenLieu.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -129,8 +153,8 @@
             // cGroupBox2
             // 
             this.cGroupBox2.BackColor = System.Drawing.Color.White;
-            this.cGroupBox2.Controls.Add(this.cButton6);
-            this.cGroupBox2.Controls.Add(this.cButton5);
+            this.cGroupBox2.Controls.Add(this.btnLuu);
+            this.cGroupBox2.Controls.Add(this.btnThem);
             this.cGroupBox2.Controls.Add(this.cButton4);
             this.cGroupBox2.Controls.Add(this.cButton3);
             this.cGroupBox2.Controls.Add(this.cButton2);
@@ -144,55 +168,57 @@
             this.cGroupBox2.TabStop = false;
             this.cGroupBox2.Text = "Chức năng";
             // 
-            // cButton6
+            // btnLuu
             // 
-            this.cButton6.ActiveBorderThickness = 1;
-            this.cButton6.ActiveCornerRadius = 20;
-            this.cButton6.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton6.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton6.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton6.BackColor = System.Drawing.Color.White;
-            this.cButton6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton6.BackgroundImage")));
-            this.cButton6.ButtonText = "Lưu";
-            this.cButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton6.ForeColor = System.Drawing.Color.Orange;
-            this.cButton6.IdleBorderThickness = 1;
-            this.cButton6.IdleCornerRadius = 20;
-            this.cButton6.IdleFillColor = System.Drawing.Color.White;
-            this.cButton6.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton6.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton6.Location = new System.Drawing.Point(242, 168);
-            this.cButton6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton6.Name = "cButton6";
-            this.cButton6.Size = new System.Drawing.Size(163, 41);
-            this.cButton6.TabIndex = 24;
-            this.cButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLuu.ActiveBorderThickness = 1;
+            this.btnLuu.ActiveCornerRadius = 20;
+            this.btnLuu.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnLuu.ActiveForecolor = System.Drawing.Color.White;
+            this.btnLuu.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnLuu.BackColor = System.Drawing.Color.White;
+            this.btnLuu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLuu.BackgroundImage")));
+            this.btnLuu.ButtonText = "Lưu";
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLuu.ForeColor = System.Drawing.Color.Orange;
+            this.btnLuu.IdleBorderThickness = 1;
+            this.btnLuu.IdleCornerRadius = 20;
+            this.btnLuu.IdleFillColor = System.Drawing.Color.White;
+            this.btnLuu.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnLuu.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnLuu.Location = new System.Drawing.Point(242, 168);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(163, 41);
+            this.btnLuu.TabIndex = 24;
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // cButton5
+            // btnThem
             // 
-            this.cButton5.ActiveBorderThickness = 1;
-            this.cButton5.ActiveCornerRadius = 20;
-            this.cButton5.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton5.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton5.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton5.BackColor = System.Drawing.Color.White;
-            this.cButton5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton5.BackgroundImage")));
-            this.cButton5.ButtonText = "Thêm";
-            this.cButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton5.ForeColor = System.Drawing.Color.Orange;
-            this.cButton5.IdleBorderThickness = 1;
-            this.cButton5.IdleCornerRadius = 20;
-            this.cButton5.IdleFillColor = System.Drawing.Color.White;
-            this.cButton5.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton5.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton5.Location = new System.Drawing.Point(10, 168);
-            this.cButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton5.Name = "cButton5";
-            this.cButton5.Size = new System.Drawing.Size(163, 41);
-            this.cButton5.TabIndex = 23;
-            this.cButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThem.ActiveBorderThickness = 1;
+            this.btnThem.ActiveCornerRadius = 20;
+            this.btnThem.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnThem.ActiveForecolor = System.Drawing.Color.White;
+            this.btnThem.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnThem.BackColor = System.Drawing.Color.White;
+            this.btnThem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThem.BackgroundImage")));
+            this.btnThem.ButtonText = "Thêm";
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnThem.ForeColor = System.Drawing.Color.Orange;
+            this.btnThem.IdleBorderThickness = 1;
+            this.btnThem.IdleCornerRadius = 20;
+            this.btnThem.IdleFillColor = System.Drawing.Color.White;
+            this.btnThem.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnThem.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnThem.Location = new System.Drawing.Point(10, 168);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(163, 41);
+            this.btnThem.TabIndex = 23;
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // cButton4
             // 
@@ -297,6 +323,7 @@
             // cGroupBox1
             // 
             this.cGroupBox1.BackColor = System.Drawing.Color.White;
+            this.cGroupBox1.Controls.Add(this.comboBox1);
             this.cGroupBox1.Controls.Add(this.txtDonGia);
             this.cGroupBox1.Controls.Add(this.txtTenNL);
             this.cGroupBox1.Controls.Add(this.cboDonViTinh);
@@ -332,7 +359,7 @@
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(203, 29);
-            this.txtDonGia.TabIndex = 8;
+            this.txtDonGia.TabIndex = 0;
             this.txtDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtTenNL
@@ -447,28 +474,13 @@
             this.cLable1.TabIndex = 0;
             this.cLable1.Text = "Nhà cung cấp:";
             // 
-            // cLableTitle1
+            // comboBox1
             // 
-            this.cLableTitle1.AutoSize = true;
-            this.cLableTitle1.Font = new System.Drawing.Font("Segoe UI", 21F);
-            this.cLableTitle1.ForeColor = System.Drawing.Color.Orange;
-            this.cLableTitle1.Location = new System.Drawing.Point(7, 1);
-            this.cLableTitle1.Name = "cLableTitle1";
-            this.cLableTitle1.Size = new System.Drawing.Size(174, 38);
-            this.cLableTitle1.TabIndex = 4;
-            this.cLableTitle1.Text = "Nguyên Liệu";
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(10, 40);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(929, 35);
-            this.bunifuSeparator1.TabIndex = 5;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(242, 183);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 29);
+            this.comboBox1.TabIndex = 8;
             // 
             // UFNguyenLieu
             // 
@@ -507,13 +519,12 @@
         private CustomControl.ControlCustom.CLable cLable3;
         private CustomControl.ControlCustom.CLable cLable2;
         private CustomControl.ControlCustom.CLable cLable1;
-        private CustomControl.ControlCustom.CTextBox txtDonGia;
         private CustomControl.ControlCustom.CTextBox txtTenNL;
         private CustomControl.ControlCustom.CButton cButton3;
         private CustomControl.ControlCustom.CButton cButton2;
         private CustomControl.ControlCustom.CButton cButton1;
-        private CustomControl.ControlCustom.CButton cButton6;
-        private CustomControl.ControlCustom.CButton cButton5;
+        private CustomControl.ControlCustom.CButton btnLuu;
+        private CustomControl.ControlCustom.CButton btnThem;
         private CustomControl.ControlCustom.CButton cButton4;
         private CustomControl.ControlCustom.CGroupBox cGroupBox3;
         private CustomControl.ControlCustom.CGroupBox cGroupBox4;
@@ -521,5 +532,7 @@
         private CustomControl.ControlCustom.CDataGirdView drvNguyenLieu;
         private CustomControl.ControlCustom.CLableTitle cLableTitle1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private CustomControl.ControlCustom.CNumericTextbox txtDonGia;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -14,7 +14,7 @@ namespace FormControl.Repository
             _sqlHelper = sqlHelper;
         }
 
-        public NhaCungCap create(NhaCungCap entity)
+        public int create(NhaCungCap entity)
         {
             throw new System.NotImplementedException();
         }
