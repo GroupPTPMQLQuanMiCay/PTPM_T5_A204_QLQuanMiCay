@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QLQuanMiCay">
+  <DataContextMoniker Name="/QLQuanMiCayDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d2176be9-c049-46e7-89ec-314481a796c5" absoluteBounds="3.625, 2.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLQuanMiCayDataContext/Mon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="781fde3e-3806-45a4-94bc-e674e4ee4000" absoluteBounds="3.64, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLQuanMiCay", "QLQuanMiCay\QLQuanMiCay.csproj", "{9C9DC687-DD99-4966-A90E-EDF15AEF795A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_DAL", "BLL_DAL\BLL_DAL.csproj", "{6211CDB7-AF4C-48EA-949E-B322E91CEF02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C9DC687-DD99-4966-A90E-EDF15AEF795A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9DC687-DD99-4966-A90E-EDF15AEF795A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9DC687-DD99-4966-A90E-EDF15AEF795A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9DC687-DD99-4966-A90E-EDF15AEF795A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6211CDB7-AF4C-48EA-949E-B322E91CEF02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6211CDB7-AF4C-48EA-949E-B322E91CEF02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6211CDB7-AF4C-48EA-949E-B322E91CEF02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6211CDB7-AF4C-48EA-949E-B322E91CEF02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
