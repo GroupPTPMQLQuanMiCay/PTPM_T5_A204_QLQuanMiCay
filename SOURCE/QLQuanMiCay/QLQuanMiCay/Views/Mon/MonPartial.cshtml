@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BLL_DAL.Mon>
+<ul class="list-group list-group-flush text-left">
+    @{
+        foreach (var mon in Model)
+        {
+            <li class="list-group-item">
+                <a>@mon.M_Ten</a>
+            </li>
+        }
+    }
+</ul>

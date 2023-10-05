@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLQuanMiCay" Class="QLQuanMiCayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True" SettingsObjectName="Linq.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Mon" Member="Mons">
+    <Type Name="Mon">
+      <Column Name="M_Ten" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DM_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="M_Gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="M_IMG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
