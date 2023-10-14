@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL_DAL.XuLy
 {
@@ -13,6 +10,12 @@ namespace BLL_DAL.XuLy
         public List<Mon> getAll()
         {
             var mons = _context.Mons.Select(m => m).ToList();
+            return mons;
+        }
+
+        public List<Mon> getMonByDanhMucId(int id)
+        {
+            var mons = _context.Mons.Where(m => m.DM_Id == id).Select(m => m).ToList();
             return mons;
         }
     }

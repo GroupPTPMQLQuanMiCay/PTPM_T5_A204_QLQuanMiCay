@@ -6,6 +6,15 @@
       <Column Name="DM_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="M_Gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="M_IMG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DanhMuc_Mon" Member="DanhMuc" ThisKey="DM_Id" OtherKey="DM_Id" Type="DanhMuc" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DanhMuc" Member="DanhMucs">
+    <Type Name="DanhMuc">
+      <Column Name="DM_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DM_Ten" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="QA_DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DanhMuc_Mon" Member="Mons" ThisKey="DM_Id" OtherKey="DM_Id" Type="Mon" />
     </Type>
   </Table>
 </Database>
