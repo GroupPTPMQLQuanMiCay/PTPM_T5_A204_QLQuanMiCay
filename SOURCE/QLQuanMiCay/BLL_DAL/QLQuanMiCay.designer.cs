@@ -33,6 +33,9 @@ namespace BLL_DAL
     partial void InsertMon(Mon instance);
     partial void UpdateMon(Mon instance);
     partial void DeleteMon(Mon instance);
+    partial void InsertDanhMuc(DanhMuc instance);
+    partial void UpdateDanhMuc(DanhMuc instance);
+    partial void DeleteDanhMuc(DanhMuc instance);
     #endregion
 		
 		public QLQuanMiCayDataContext() : 
@@ -72,6 +75,14 @@ namespace BLL_DAL
 				return this.GetTable<Mon>();
 			}
 		}
+		
+		public System.Data.Linq.Table<DanhMuc> DanhMucs
+		{
+			get
+			{
+				return this.GetTable<DanhMuc>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Mon")]
@@ -87,6 +98,8 @@ namespace BLL_DAL
 		private int _M_Gia;
 		
 		private string _M_IMG;
+		
+		private EntityRef<DanhMuc> _DanhMuc;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -104,6 +117,7 @@ namespace BLL_DAL
 		
 		public Mon()
 		{
+			this._DanhMuc = default(EntityRef<DanhMuc>);
 			OnCreated();
 		}
 		
@@ -138,6 +152,10 @@ namespace BLL_DAL
 			{
 				if ((this._DM_Id != value))
 				{
+					if (this._DanhMuc.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnDM_IdChanging(value);
 					this.SendPropertyChanging();
 					this._DM_Id = value;
@@ -187,6 +205,40 @@ namespace BLL_DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DanhMuc_Mon", Storage="_DanhMuc", ThisKey="DM_Id", OtherKey="DM_Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public DanhMuc DanhMuc
+		{
+			get
+			{
+				return this._DanhMuc.Entity;
+			}
+			set
+			{
+				DanhMuc previousValue = this._DanhMuc.Entity;
+				if (((previousValue != value) 
+							|| (this._DanhMuc.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DanhMuc.Entity = null;
+						previousValue.Mons.Remove(this);
+					}
+					this._DanhMuc.Entity = value;
+					if ((value != null))
+					{
+						value.Mons.Add(this);
+						this._DM_Id = value.DM_Id;
+					}
+					else
+					{
+						this._DM_Id = default(int);
+					}
+					this.SendPropertyChanged("DanhMuc");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -205,6 +257,144 @@ namespace BLL_DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DanhMuc")]
+	public partial class DanhMuc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DM_Id;
+		
+		private string _DM_Ten;
+		
+		private string _QA_DiaChi;
+		
+		private EntitySet<Mon> _Mons;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDM_IdChanging(int value);
+    partial void OnDM_IdChanged();
+    partial void OnDM_TenChanging(string value);
+    partial void OnDM_TenChanged();
+    partial void OnQA_DiaChiChanging(string value);
+    partial void OnQA_DiaChiChanged();
+    #endregion
+		
+		public DanhMuc()
+		{
+			this._Mons = new EntitySet<Mon>(new Action<Mon>(this.attach_Mons), new Action<Mon>(this.detach_Mons));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DM_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int DM_Id
+		{
+			get
+			{
+				return this._DM_Id;
+			}
+			set
+			{
+				if ((this._DM_Id != value))
+				{
+					this.OnDM_IdChanging(value);
+					this.SendPropertyChanging();
+					this._DM_Id = value;
+					this.SendPropertyChanged("DM_Id");
+					this.OnDM_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DM_Ten", DbType="NVarChar(MAX)")]
+		public string DM_Ten
+		{
+			get
+			{
+				return this._DM_Ten;
+			}
+			set
+			{
+				if ((this._DM_Ten != value))
+				{
+					this.OnDM_TenChanging(value);
+					this.SendPropertyChanging();
+					this._DM_Ten = value;
+					this.SendPropertyChanged("DM_Ten");
+					this.OnDM_TenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QA_DiaChi", DbType="NVarChar(50)")]
+		public string QA_DiaChi
+		{
+			get
+			{
+				return this._QA_DiaChi;
+			}
+			set
+			{
+				if ((this._QA_DiaChi != value))
+				{
+					this.OnQA_DiaChiChanging(value);
+					this.SendPropertyChanging();
+					this._QA_DiaChi = value;
+					this.SendPropertyChanged("QA_DiaChi");
+					this.OnQA_DiaChiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DanhMuc_Mon", Storage="_Mons", ThisKey="DM_Id", OtherKey="DM_Id")]
+		public EntitySet<Mon> Mons
+		{
+			get
+			{
+				return this._Mons;
+			}
+			set
+			{
+				this._Mons.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Mons(Mon entity)
+		{
+			this.SendPropertyChanging();
+			entity.DanhMuc = this;
+		}
+		
+		private void detach_Mons(Mon entity)
+		{
+			this.SendPropertyChanging();
+			entity.DanhMuc = null;
 		}
 	}
 }

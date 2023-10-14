@@ -8,5 +8,18 @@
         <elementListCompartment Id="781fde3e-3806-45a4-94bc-e674e4ee4000" absoluteBounds="3.64, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="4b9fe3af-6252-4623-9b73-c75b31c1a272" absoluteBounds="0.875, 1.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/QLQuanMiCayDataContext/DanhMuc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="408e7b81-ee7e-40ff-8618-b99eab20099d" absoluteBounds="0.89000000000000012, 1.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 2.56814697265625); (3.625 : 2.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLQuanMiCayDataContext/DanhMuc/DanhMuc_Mon" />
+      <nodes>
+        <classShapeMoniker Id="4b9fe3af-6252-4623-9b73-c75b31c1a272" />
+        <classShapeMoniker Id="d2176be9-c049-46e7-89ec-314481a796c5" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

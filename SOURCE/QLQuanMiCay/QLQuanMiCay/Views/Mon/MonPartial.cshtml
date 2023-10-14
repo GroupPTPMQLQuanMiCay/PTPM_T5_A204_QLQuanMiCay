@@ -1,11 +1,19 @@
-﻿@model IEnumerable<BLL_DAL.Mon>
-<ul class="list-group list-group-flush text-left">
-    @{
-        foreach (var mon in Model)
-        {
-            <li class="list-group-item">
-                <a>@mon.M_Ten</a>
-            </li>
+﻿@model IPagedList<BLL_DAL.Mon>
+@using PagedList.Mvc
+@using PagedList
+
+<div id="partialMon">
+    <ul class="list-group list-group-flush text-left">
+        @{
+            foreach (var mon in Model)
+            {
+                <li class="list-group-item">
+                    @mon.M_Ten
+                </li>
+            }
         }
-    }
-</ul>
+    </ul>
+</div>
+
+
+@Html.PagedListPager(Model, i => Url.Action("Index", "Home", new { index = i }))

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using BLL_DAL;
+﻿using BLL_DAL;
 using BLL_DAL.XuLy;
+using System.Collections.Generic;
+using System.Web.Mvc;
+using PagedList.Mvc;
+using PagedList;
 
 namespace QLQuanMiCay.Controllers
 {
@@ -13,16 +12,19 @@ namespace QLQuanMiCay.Controllers
         MonBll monBll = new MonBll();
         //
         // GET: /Mon/
-        public ActionResult Index()
+        public ActionResult MonPartial(int Id, int? index)
         {
-            List<Mon> mons = monBll.getAll();
-            return View(mons);
+            List<Mon> mons = null;
+            if (Id == -1)
+            {
+                mons = monBll.getAll();
+            }
+            else
+            {
+                mons = monBll.getMonByDanhMucId(Id);
+            }
+            ViewBag.Id = Id;
+            return View(mons.ToPagedList(index ?? 1, 12));
         }
-
-        public ActionResult MonPartial()
-        {
-            List<Mon> mons = monBll.getAll();
-            return View(mons);
-        }
-	}
+    }
 }
