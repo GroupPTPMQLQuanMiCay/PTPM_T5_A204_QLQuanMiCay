@@ -72,6 +72,7 @@
     <Compile Include="Entity\GiaNguyenLieu.cs" />
     <Compile Include="Entity\HoaDon.cs" />
     <Compile Include="Entity\HoaDonNhap.cs" />
+    <Compile Include="Entity\LoaiTinTuc.cs" />
     <Compile Include="Entity\Mon.cs" />
     <Compile Include="Entity\MonCoNguyenLieu.cs" />
     <Compile Include="Entity\NguoiDung.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Entity\TaiKhoan.cs" />
     <Compile Include="Entity\TinhTrangMon.cs" />
     <Compile Include="Entity\TinhTrangThucHien.cs" />
+    <Compile Include="Entity\TinTuc.cs" />
     <Compile Include="Migrations\202309171426404_MigrationsFist.cs" />
     <Compile Include="Migrations\202309171426404_MigrationsFist.designer.cs">
       <DependentUpon>202309171426404_MigrationsFist.cs</DependentUpon>
@@ -98,6 +100,10 @@
     <Compile Include="Migrations\202309180601271_Migration_Update_2.cs" />
     <Compile Include="Migrations\202309180601271_Migration_Update_2.designer.cs">
       <DependentUpon>202309180601271_Migration_Update_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310201630575_ThemLoaiTin.cs" />
+    <Compile Include="Migrations\202310201630575_ThemLoaiTin.designer.cs">
+      <DependentUpon>202310201630575_ThemLoaiTin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309180601271_Migration_Update_2.resx">
       <DependentUpon>202309180601271_Migration_Update_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310201630575_ThemLoaiTin.resx">
+      <DependentUpon>202310201630575_ThemLoaiTin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,7 +24,7 @@ namespace QLQuanMiCay.Controllers
                 mons = monBll.getMonByDanhMucId(Id);
             }
             ViewBag.Id = Id;
-            return View(mons.ToPagedList(index ?? 1, 12));
+            return PartialView(mons.ToPagedList(index ?? 1, 12));
         }
     }
 }

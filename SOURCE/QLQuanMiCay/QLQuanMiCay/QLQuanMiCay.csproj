@@ -111,6 +111,11 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="packages.config" />
     <Content Include="Views\Mon\MonPartial.cshtml" />
+    <Content Include="Views\ThucDon\Index.cshtml" />
+    <Content Include="Views\TinTuc\Index.cshtml" />
+    <Content Include="Views\TuyenDung\Index.cshtml" />
+    <Content Include="Views\LienHe\Index.cshtml" />
+    <Content Include="Views\TrangChu\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -144,14 +149,17 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\MonController.cs" />
+    <Compile Include="Controllers\ThucDonController.cs" />
+    <Compile Include="Controllers\TinTucController.cs" />
+    <Compile Include="Controllers\TrangChuController.cs" />
+    <Compile Include="Controllers\TuyenDungController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

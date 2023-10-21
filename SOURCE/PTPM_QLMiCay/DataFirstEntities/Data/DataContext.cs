@@ -35,5 +35,8 @@ namespace DataFirstEntities.Data
         public DbSet<Mon> Mons { get;set; }
         public DbSet<OrDer> orDers { get; set; }
         public DbSet<MonCoNguyenLieu> MonCoNguyenLieus { get; set; }
+        public DbSet<LoaiTinTuc> LoaiTinTucs { get; set; }
+        public DbSet<TinTuc> TinTucs { get; set; }
+
     }
 }
