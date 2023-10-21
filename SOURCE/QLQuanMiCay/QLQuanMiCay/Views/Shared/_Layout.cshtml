@@ -9,12 +9,35 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-            </div>
+    <div class="navbar navbar-inverse">
+        <div style="display: flex; flex-direction:row; justify-content: space-between">
             <div class="navbar-collapse collapse">
+                <img class="navbar-brand" src="https://gimji.vn/webs_image/uploads/website/LogoGimji2_-1-.png" width="100px" />
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","TrangChu")">Trang chủ</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link" href="@Url.Action("Index","ThucDon")">Thực đơn</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link" href="@Url.Action("Index","TinTuc")">Tin tức</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link" href="@Url.Action("Index","TuyenDung")">Tuyển dụng</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link" href="@Url.Action("Index","LienHe")">Liên hệ</a>
+                    </li>
+                </ul>
             </div>
+
+            <form class="form-inline p-2">
+                <input class="d-inline form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <a href="#">
+                    <button type="submit">Search</button> 
+                </a>    
+            </form>
         </div>
     </div>
 

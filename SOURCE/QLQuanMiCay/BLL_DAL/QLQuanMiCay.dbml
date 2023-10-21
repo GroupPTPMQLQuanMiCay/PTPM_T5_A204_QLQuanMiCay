@@ -17,4 +17,21 @@
       <Association Name="DanhMuc_Mon" Member="Mons" ThisKey="DM_Id" OtherKey="DM_Id" Type="Mon" />
     </Type>
   </Table>
+  <Table Name="dbo.TinTuc" Member="TinTucs">
+    <Type Name="TinTuc">
+      <Column Name="TinTuc_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NgayDang" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NV_Id" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LoaiTin_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiTinTuc_TinTuc" Member="LoaiTinTuc" ThisKey="LoaiTin_Id" OtherKey="LoaiTin_Id" Type="LoaiTinTuc" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiTinTuc" Member="LoaiTinTucs">
+    <Type Name="LoaiTinTuc">
+      <Column Name="LoaiTin_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenLoaiTin" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="LoaiTinTuc_TinTuc" Member="TinTucs" ThisKey="LoaiTin_Id" OtherKey="LoaiTin_Id" Type="TinTuc" />
+    </Type>
+  </Table>
 </Database>
