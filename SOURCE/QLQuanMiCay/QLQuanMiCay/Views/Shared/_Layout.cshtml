@@ -33,9 +33,9 @@
             </div>
 
             <form class="form-inline p-2">
-                <input class="d-inline form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <a href="#">
-                    <button type="submit">Search</button> 
+                <input id="searchText" class="d-inline form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <a class="btn btn-primary" onclick="searchWithText()">
+                    Search
                 </a>    
             </form>
         </div>
@@ -44,5 +44,14 @@
     <div class="container body-content">
         @RenderBody()
     </div>
+
+    <script>
+        function searchWithText() {
+            var searchText = document.getElementById('searchText').value
+            var url = '@Url.Action("Index", "TimKiem", new { text = "abc" })'
+            url = url.replace("abc", searchText)
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>

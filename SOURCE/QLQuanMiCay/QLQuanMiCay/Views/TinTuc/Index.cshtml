@@ -1,9 +1,32 @@
-﻿
+﻿@model IEnumerable<BLL_DAL.LoaiTinTuc>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div id="partialLoaiTin">
+    <div class="row">
+        <div class="col-sm-3">
+            <ul class="list-group list-group-flush text-left">
+                @{
+                    foreach (var loaiTin in Model)
+                    {
+                        <li class="list-group-item">
+                            <a onclick="showTinTucByLoaiTin('@loaiTin.LoaiTin_Id')">@loaiTin.TenLoaiTin</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
 
-<h3>Đây là trang tin tức</h3>
+        <div class="col-sm-9" id="tinTucPartialZone">
+            @Html.Action("TinTucPartial", "TinTuc", new { Id = -1, index = ViewBag.Index})
+        </div>
+    </div>
+
+    <script>
+        function showTinTucByLoaiTin(id) {
+            $('#tinTucPartialZone').load("/TinTuc/TinTucPartial", { Id: id, index: 1 })
+        }
+    </script>
+</div>

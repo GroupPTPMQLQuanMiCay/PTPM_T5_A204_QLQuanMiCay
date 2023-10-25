@@ -36,12 +36,12 @@ namespace BLL_DAL
     partial void InsertDanhMuc(DanhMuc instance);
     partial void UpdateDanhMuc(DanhMuc instance);
     partial void DeleteDanhMuc(DanhMuc instance);
-    partial void InsertTinTuc(TinTuc instance);
-    partial void UpdateTinTuc(TinTuc instance);
-    partial void DeleteTinTuc(TinTuc instance);
     partial void InsertLoaiTinTuc(LoaiTinTuc instance);
     partial void UpdateLoaiTinTuc(LoaiTinTuc instance);
     partial void DeleteLoaiTinTuc(LoaiTinTuc instance);
+    partial void InsertTinTuc(TinTuc instance);
+    partial void UpdateTinTuc(TinTuc instance);
+    partial void DeleteTinTuc(TinTuc instance);
     #endregion
 		
 		public QLQuanMiCayDataContext() : 
@@ -90,19 +90,19 @@ namespace BLL_DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<TinTuc> TinTucs
-		{
-			get
-			{
-				return this.GetTable<TinTuc>();
-			}
-		}
-		
 		public System.Data.Linq.Table<LoaiTinTuc> LoaiTinTucs
 		{
 			get
 			{
 				return this.GetTable<LoaiTinTuc>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TinTuc> TinTucs
+		{
+			get
+			{
+				return this.GetTable<TinTuc>();
 			}
 		}
 	}
@@ -420,6 +420,120 @@ namespace BLL_DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiTinTuc")]
+	public partial class LoaiTinTuc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _LoaiTin_Id;
+		
+		private string _TenLoaiTin;
+		
+		private EntitySet<TinTuc> _TinTucs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLoaiTin_IdChanging(int value);
+    partial void OnLoaiTin_IdChanged();
+    partial void OnTenLoaiTinChanging(string value);
+    partial void OnTenLoaiTinChanged();
+    #endregion
+		
+		public LoaiTinTuc()
+		{
+			this._TinTucs = new EntitySet<TinTuc>(new Action<TinTuc>(this.attach_TinTucs), new Action<TinTuc>(this.detach_TinTucs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiTin_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int LoaiTin_Id
+		{
+			get
+			{
+				return this._LoaiTin_Id;
+			}
+			set
+			{
+				if ((this._LoaiTin_Id != value))
+				{
+					this.OnLoaiTin_IdChanging(value);
+					this.SendPropertyChanging();
+					this._LoaiTin_Id = value;
+					this.SendPropertyChanged("LoaiTin_Id");
+					this.OnLoaiTin_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiTin", DbType="NVarChar(MAX)")]
+		public string TenLoaiTin
+		{
+			get
+			{
+				return this._TenLoaiTin;
+			}
+			set
+			{
+				if ((this._TenLoaiTin != value))
+				{
+					this.OnTenLoaiTinChanging(value);
+					this.SendPropertyChanging();
+					this._TenLoaiTin = value;
+					this.SendPropertyChanged("TenLoaiTin");
+					this.OnTenLoaiTinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiTinTuc_TinTuc", Storage="_TinTucs", ThisKey="LoaiTin_Id", OtherKey="LoaiTin_Id")]
+		public EntitySet<TinTuc> TinTucs
+		{
+			get
+			{
+				return this._TinTucs;
+			}
+			set
+			{
+				this._TinTucs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TinTucs(TinTuc entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiTinTuc = this;
+		}
+		
+		private void detach_TinTucs(TinTuc entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiTinTuc = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinTuc")]
 	public partial class TinTuc : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -435,6 +549,8 @@ namespace BLL_DAL
 		private string _NV_Id;
 		
 		private int _LoaiTin_Id;
+		
+		private string _TieuDe;
 		
 		private EntityRef<LoaiTinTuc> _LoaiTinTuc;
 		
@@ -452,6 +568,8 @@ namespace BLL_DAL
     partial void OnNV_IdChanged();
     partial void OnLoaiTin_IdChanging(int value);
     partial void OnLoaiTin_IdChanged();
+    partial void OnTieuDeChanging(string value);
+    partial void OnTieuDeChanged();
     #endregion
 		
 		public TinTuc()
@@ -564,6 +682,26 @@ namespace BLL_DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TieuDe", DbType="NVarChar(MAX)")]
+		public string TieuDe
+		{
+			get
+			{
+				return this._TieuDe;
+			}
+			set
+			{
+				if ((this._TieuDe != value))
+				{
+					this.OnTieuDeChanging(value);
+					this.SendPropertyChanging();
+					this._TieuDe = value;
+					this.SendPropertyChanged("TieuDe");
+					this.OnTieuDeChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiTinTuc_TinTuc", Storage="_LoaiTinTuc", ThisKey="LoaiTin_Id", OtherKey="LoaiTin_Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public LoaiTinTuc LoaiTinTuc
 		{
@@ -616,120 +754,6 @@ namespace BLL_DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiTinTuc")]
-	public partial class LoaiTinTuc : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _LoaiTin_Id;
-		
-		private string _TenLoaiTin;
-		
-		private EntitySet<TinTuc> _TinTucs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnLoaiTin_IdChanging(int value);
-    partial void OnLoaiTin_IdChanged();
-    partial void OnTenLoaiTinChanging(string value);
-    partial void OnTenLoaiTinChanged();
-    #endregion
-		
-		public LoaiTinTuc()
-		{
-			this._TinTucs = new EntitySet<TinTuc>(new Action<TinTuc>(this.attach_TinTucs), new Action<TinTuc>(this.detach_TinTucs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiTin_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int LoaiTin_Id
-		{
-			get
-			{
-				return this._LoaiTin_Id;
-			}
-			set
-			{
-				if ((this._LoaiTin_Id != value))
-				{
-					this.OnLoaiTin_IdChanging(value);
-					this.SendPropertyChanging();
-					this._LoaiTin_Id = value;
-					this.SendPropertyChanged("LoaiTin_Id");
-					this.OnLoaiTin_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiTin", DbType="NVarChar(MAX)")]
-		public string TenLoaiTin
-		{
-			get
-			{
-				return this._TenLoaiTin;
-			}
-			set
-			{
-				if ((this._TenLoaiTin != value))
-				{
-					this.OnTenLoaiTinChanging(value);
-					this.SendPropertyChanging();
-					this._TenLoaiTin = value;
-					this.SendPropertyChanged("TenLoaiTin");
-					this.OnTenLoaiTinChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiTinTuc_TinTuc", Storage="_TinTucs", ThisKey="LoaiTin_Id", OtherKey="LoaiTin_Id")]
-		public EntitySet<TinTuc> TinTucs
-		{
-			get
-			{
-				return this._TinTucs;
-			}
-			set
-			{
-				this._TinTucs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TinTucs(TinTuc entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiTinTuc = this;
-		}
-		
-		private void detach_TinTucs(TinTuc entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiTinTuc = null;
 		}
 	}
 }

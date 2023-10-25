@@ -51,10 +51,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLQuanMiCay.dbml</DependentUpon>
     </Compile>
-    <Compile Include="ResponseObject\MonResponse.cs" />
     <Compile Include="XuLy\DanhMucBLL.cs" />
+    <Compile Include="XuLy\LoaiTinBLL.cs" />
     <Compile Include="XuLy\MonBll.cs" />
-    <Compile Include="ResponseObject\Response.cs" />
+    <Compile Include="XuLy\TinTucBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

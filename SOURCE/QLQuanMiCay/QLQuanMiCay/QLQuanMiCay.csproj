@@ -116,6 +116,10 @@
     <Content Include="Views\TuyenDung\Index.cshtml" />
     <Content Include="Views\LienHe\Index.cshtml" />
     <Content Include="Views\TrangChu\Index.cshtml" />
+    <Content Include="Views\TinTuc\TinTucPartial.cshtml" />
+    <Content Include="Views\TimKiem\Index.cshtml" />
+    <Content Include="Views\TimKiem\MonSearchPartial.cshtml" />
+    <Content Include="Views\TimKiem\TinSearchPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,6 +161,7 @@
     <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\MonController.cs" />
     <Compile Include="Controllers\ThucDonController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TinTucController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Controllers\TuyenDungController.cs" />

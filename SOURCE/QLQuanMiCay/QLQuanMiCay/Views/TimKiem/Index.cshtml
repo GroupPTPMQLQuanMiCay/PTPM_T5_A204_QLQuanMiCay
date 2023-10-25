@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bạn vừa tìm kiếm từ khóa <b>"@ViewBag.Text"</b></h2>
+<hr />
+<div class="row">
+    <div class="col-sm-3">
+        <a style="display: inline-block; font-size: 28px" onclick="showMon()">
+            Món ăn (@ViewBag.slMon)
+        </a>
+        <a style="display: inline-block; font-size: 28px" onclick="showTin()">
+            Tin tức (@ViewBag.slTin)
+        </a>
+    </div>
+
+    <div class="col-sm-9" id="searchResultZone">
+        <div id="searchMonResult">
+            @Html.Action("MonSearchPartial", "TimKiem", new { text = @ViewBag.Text, index = @ViewBag.Index, searchBy = @ViewBag.searchBy })
+        </div>
+        <div id="searchTinResult" style="display: none">
+            @Html.Action("TinSearchPartial", "TimKiem", new { text = @ViewBag.Text, index = @ViewBag.Index, searchBy = @ViewBag.searchBy })
+        </div>
+    </div>
+
+    <script>
+        function showMon() {
+            $('#searchMonResult').css('display', '')
+            $('#searchTinResult').css('display', 'none')
+        }
+
+        function showTin() {
+            $('#searchMonResult').css('display', 'none')
+            $('#searchTinResult').css('display', '')
+        }
+    </script>
+</div>
+

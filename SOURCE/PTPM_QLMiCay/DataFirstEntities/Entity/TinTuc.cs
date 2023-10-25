@@ -11,6 +11,7 @@ namespace DataFirstEntities.Entity
         public int TinTuc_Id { get; set; }
 
         public DateTime NgayDang { get; set; }
+        public string TieuDe { get; set; }
         public string NoiDung { get; set; }
         public string NV_Id { get; set; }
         [ForeignKey("NV_Id")]

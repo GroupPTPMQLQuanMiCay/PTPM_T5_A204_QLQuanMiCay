@@ -1,0 +1,18 @@
+﻿@model IPagedList<BLL_DAL.TinTuc>
+@using PagedList
+@using PagedList.Mvc
+
+<div id="partialTinTuc">
+    <ul class="list-group list-group-flush text-left">
+        @{
+            foreach (var tt in Model)
+            {
+                <li class="list-group-item">
+                    @tt.TieuDe
+                </li>
+            }
+        }
+    </ul>
+</div>
+
+@Html.PagedListPager(Model, i => Url.Action("Index", "TinTuc", new { index = i }))
