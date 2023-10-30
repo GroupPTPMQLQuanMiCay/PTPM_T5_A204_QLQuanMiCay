@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FormControl.LinqObject
+namespace BLL_DAL
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -23,7 +23,7 @@ namespace FormControl.LinqObject
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLQuanMiCay")]
-	public partial class QuanMiCayDataContext : System.Data.Linq.DataContext
+	public partial class QLQuanMiCayDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -101,31 +101,31 @@ namespace FormControl.LinqObject
     partial void DeleteTinhTrangThucHien(TinhTrangThucHien instance);
     #endregion
 		
-		public QuanMiCayDataContext() : 
-				base(global::FormControl.Properties.Settings.Default.QLQuanMiCayConnectionString1, mappingSource)
+		public QLQuanMiCayDataContext() : 
+				base(global::BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public QuanMiCayDataContext(string connection) : 
+		public QLQuanMiCayDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public QuanMiCayDataContext(System.Data.IDbConnection connection) : 
+		public QLQuanMiCayDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public QuanMiCayDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public QLQuanMiCayDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public QuanMiCayDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public QLQuanMiCayDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
