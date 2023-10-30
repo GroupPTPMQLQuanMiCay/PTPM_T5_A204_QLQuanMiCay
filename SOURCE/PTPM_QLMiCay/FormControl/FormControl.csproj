@@ -69,13 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converter\NguyenLieuConverter.cs" />
-    <Compile Include="DTO\NguyenLieu\NguyenLieuDto.cs" />
-    <Compile Include="DTO\NhaCungCap\NhaCungCapDto.cs" />
-    <Compile Include="Entity\BaseEntity.cs" />
-    <Compile Include="Entity\GiaNguyenLieu.cs" />
-    <Compile Include="Entity\NguyenLieu.cs" />
-    <Compile Include="Entity\NhaCungCap.cs" />
     <Compile Include="LinqObject\QuanMiCay.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,12 +81,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\NguyenLieuRepository.cs" />
-    <Compile Include="Repository\NhaCungCapRepository.cs" />
-    <Compile Include="Service\IService.cs" />
-    <Compile Include="Service\NguyenLieuService.cs" />
-    <Compile Include="Service\NhaCungCapService.cs" />
     <Compile Include="UFDanhMuc.cs">
       <SubType>UserControl</SubType>
     </Compile>

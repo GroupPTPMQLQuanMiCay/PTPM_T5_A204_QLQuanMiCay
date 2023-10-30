@@ -33,6 +33,9 @@ namespace FormControl.LinqObject
     partial void InsertBan(Ban instance);
     partial void UpdateBan(Ban instance);
     partial void DeleteBan(Ban instance);
+    partial void InsertTinTuc(TinTuc instance);
+    partial void UpdateTinTuc(TinTuc instance);
+    partial void DeleteTinTuc(TinTuc instance);
     partial void InsertChiTietNhap(ChiTietNhap instance);
     partial void UpdateChiTietNhap(ChiTietNhap instance);
     partial void DeleteChiTietNhap(ChiTietNhap instance);
@@ -51,6 +54,9 @@ namespace FormControl.LinqObject
     partial void InsertHoaDonNhap(HoaDonNhap instance);
     partial void UpdateHoaDonNhap(HoaDonNhap instance);
     partial void DeleteHoaDonNhap(HoaDonNhap instance);
+    partial void InsertLoaiTinTuc(LoaiTinTuc instance);
+    partial void UpdateLoaiTinTuc(LoaiTinTuc instance);
+    partial void DeleteLoaiTinTuc(LoaiTinTuc instance);
     partial void InsertMon(Mon instance);
     partial void UpdateMon(Mon instance);
     partial void DeleteMon(Mon instance);
@@ -96,7 +102,7 @@ namespace FormControl.LinqObject
     #endregion
 		
 		public QuanMiCayDataContext() : 
-				base(global::FormControl.Properties.Settings.Default.QLQuanMiCayConnectionString, mappingSource)
+				base(global::FormControl.Properties.Settings.Default.QLQuanMiCayConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -130,6 +136,14 @@ namespace FormControl.LinqObject
 			get
 			{
 				return this.GetTable<Ban>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TinTuc> TinTucs
+		{
+			get
+			{
+				return this.GetTable<TinTuc>();
 			}
 		}
 		
@@ -178,6 +192,14 @@ namespace FormControl.LinqObject
 			get
 			{
 				return this.GetTable<HoaDonNhap>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LoaiTinTuc> LoaiTinTucs
+		{
+			get
+			{
+				return this.GetTable<LoaiTinTuc>();
 			}
 		}
 		
@@ -405,6 +427,270 @@ namespace FormControl.LinqObject
 		{
 			this.SendPropertyChanging();
 			entity.Ban = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinTuc")]
+	public partial class TinTuc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TinTuc_Id;
+		
+		private System.DateTime _NgayDang;
+		
+		private string _NoiDung;
+		
+		private string _NV_Id;
+		
+		private int _LoaiTin_Id;
+		
+		private string _TieuDe;
+		
+		private EntityRef<LoaiTinTuc> _LoaiTinTuc;
+		
+		private EntityRef<NhanVien> _NhanVien;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTinTuc_IdChanging(int value);
+    partial void OnTinTuc_IdChanged();
+    partial void OnNgayDangChanging(System.DateTime value);
+    partial void OnNgayDangChanged();
+    partial void OnNoiDungChanging(string value);
+    partial void OnNoiDungChanged();
+    partial void OnNV_IdChanging(string value);
+    partial void OnNV_IdChanged();
+    partial void OnLoaiTin_IdChanging(int value);
+    partial void OnLoaiTin_IdChanged();
+    partial void OnTieuDeChanging(string value);
+    partial void OnTieuDeChanged();
+    #endregion
+		
+		public TinTuc()
+		{
+			this._LoaiTinTuc = default(EntityRef<LoaiTinTuc>);
+			this._NhanVien = default(EntityRef<NhanVien>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TinTuc_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int TinTuc_Id
+		{
+			get
+			{
+				return this._TinTuc_Id;
+			}
+			set
+			{
+				if ((this._TinTuc_Id != value))
+				{
+					this.OnTinTuc_IdChanging(value);
+					this.SendPropertyChanging();
+					this._TinTuc_Id = value;
+					this.SendPropertyChanged("TinTuc_Id");
+					this.OnTinTuc_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDang", DbType="DateTime NOT NULL")]
+		public System.DateTime NgayDang
+		{
+			get
+			{
+				return this._NgayDang;
+			}
+			set
+			{
+				if ((this._NgayDang != value))
+				{
+					this.OnNgayDangChanging(value);
+					this.SendPropertyChanging();
+					this._NgayDang = value;
+					this.SendPropertyChanged("NgayDang");
+					this.OnNgayDangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NVarChar(MAX)")]
+		public string NoiDung
+		{
+			get
+			{
+				return this._NoiDung;
+			}
+			set
+			{
+				if ((this._NoiDung != value))
+				{
+					this.OnNoiDungChanging(value);
+					this.SendPropertyChanging();
+					this._NoiDung = value;
+					this.SendPropertyChanged("NoiDung");
+					this.OnNoiDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NV_Id", DbType="NVarChar(128)")]
+		public string NV_Id
+		{
+			get
+			{
+				return this._NV_Id;
+			}
+			set
+			{
+				if ((this._NV_Id != value))
+				{
+					if (this._NhanVien.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnNV_IdChanging(value);
+					this.SendPropertyChanging();
+					this._NV_Id = value;
+					this.SendPropertyChanged("NV_Id");
+					this.OnNV_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiTin_Id", DbType="Int NOT NULL")]
+		public int LoaiTin_Id
+		{
+			get
+			{
+				return this._LoaiTin_Id;
+			}
+			set
+			{
+				if ((this._LoaiTin_Id != value))
+				{
+					if (this._LoaiTinTuc.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLoaiTin_IdChanging(value);
+					this.SendPropertyChanging();
+					this._LoaiTin_Id = value;
+					this.SendPropertyChanged("LoaiTin_Id");
+					this.OnLoaiTin_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TieuDe", DbType="NVarChar(MAX)")]
+		public string TieuDe
+		{
+			get
+			{
+				return this._TieuDe;
+			}
+			set
+			{
+				if ((this._TieuDe != value))
+				{
+					this.OnTieuDeChanging(value);
+					this.SendPropertyChanging();
+					this._TieuDe = value;
+					this.SendPropertyChanged("TieuDe");
+					this.OnTieuDeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiTinTuc_TinTuc", Storage="_LoaiTinTuc", ThisKey="LoaiTin_Id", OtherKey="LoaiTin_Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public LoaiTinTuc LoaiTinTuc
+		{
+			get
+			{
+				return this._LoaiTinTuc.Entity;
+			}
+			set
+			{
+				LoaiTinTuc previousValue = this._LoaiTinTuc.Entity;
+				if (((previousValue != value) 
+							|| (this._LoaiTinTuc.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LoaiTinTuc.Entity = null;
+						previousValue.TinTucs.Remove(this);
+					}
+					this._LoaiTinTuc.Entity = value;
+					if ((value != null))
+					{
+						value.TinTucs.Add(this);
+						this._LoaiTin_Id = value.LoaiTin_Id;
+					}
+					else
+					{
+						this._LoaiTin_Id = default(int);
+					}
+					this.SendPropertyChanged("LoaiTinTuc");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_TinTuc", Storage="_NhanVien", ThisKey="NV_Id", OtherKey="NV_Id", IsForeignKey=true)]
+		public NhanVien NhanVien
+		{
+			get
+			{
+				return this._NhanVien.Entity;
+			}
+			set
+			{
+				NhanVien previousValue = this._NhanVien.Entity;
+				if (((previousValue != value) 
+							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NhanVien.Entity = null;
+						previousValue.TinTucs.Remove(this);
+					}
+					this._NhanVien.Entity = value;
+					if ((value != null))
+					{
+						value.TinTucs.Add(this);
+						this._NV_Id = value.NV_Id;
+					}
+					else
+					{
+						this._NV_Id = default(string);
+					}
+					this.SendPropertyChanged("NhanVien");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1029,7 +1315,7 @@ namespace FormControl.LinqObject
 		
 		private System.DateTime _NgayThayDoi;
 		
-		private int _NL_Gia;
+		private double _NL_Gia;
 		
 		private string _NV_Id;
 		
@@ -1045,7 +1331,7 @@ namespace FormControl.LinqObject
     partial void OnNL_IdChanged();
     partial void OnNgayThayDoiChanging(System.DateTime value);
     partial void OnNgayThayDoiChanged();
-    partial void OnNL_GiaChanging(int value);
+    partial void OnNL_GiaChanging(double value);
     partial void OnNL_GiaChanged();
     partial void OnNV_IdChanging(string value);
     partial void OnNV_IdChanged();
@@ -1102,8 +1388,8 @@ namespace FormControl.LinqObject
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NL_Gia", DbType="Int NOT NULL")]
-		public int NL_Gia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NL_Gia", DbType="Float NOT NULL")]
+		public double NL_Gia
 		{
 			get
 			{
@@ -1792,6 +2078,120 @@ namespace FormControl.LinqObject
 		{
 			this.SendPropertyChanging();
 			entity.HoaDonNhap = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiTinTuc")]
+	public partial class LoaiTinTuc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _LoaiTin_Id;
+		
+		private string _TenLoaiTin;
+		
+		private EntitySet<TinTuc> _TinTucs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLoaiTin_IdChanging(int value);
+    partial void OnLoaiTin_IdChanged();
+    partial void OnTenLoaiTinChanging(string value);
+    partial void OnTenLoaiTinChanged();
+    #endregion
+		
+		public LoaiTinTuc()
+		{
+			this._TinTucs = new EntitySet<TinTuc>(new Action<TinTuc>(this.attach_TinTucs), new Action<TinTuc>(this.detach_TinTucs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiTin_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int LoaiTin_Id
+		{
+			get
+			{
+				return this._LoaiTin_Id;
+			}
+			set
+			{
+				if ((this._LoaiTin_Id != value))
+				{
+					this.OnLoaiTin_IdChanging(value);
+					this.SendPropertyChanging();
+					this._LoaiTin_Id = value;
+					this.SendPropertyChanged("LoaiTin_Id");
+					this.OnLoaiTin_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiTin", DbType="NVarChar(MAX)")]
+		public string TenLoaiTin
+		{
+			get
+			{
+				return this._TenLoaiTin;
+			}
+			set
+			{
+				if ((this._TenLoaiTin != value))
+				{
+					this.OnTenLoaiTinChanging(value);
+					this.SendPropertyChanging();
+					this._TenLoaiTin = value;
+					this.SendPropertyChanged("TenLoaiTin");
+					this.OnTenLoaiTinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiTinTuc_TinTuc", Storage="_TinTucs", ThisKey="LoaiTin_Id", OtherKey="LoaiTin_Id")]
+		public EntitySet<TinTuc> TinTucs
+		{
+			get
+			{
+				return this._TinTucs;
+			}
+			set
+			{
+				this._TinTucs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TinTucs(TinTuc entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiTinTuc = this;
+		}
+		
+		private void detach_TinTucs(TinTuc entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiTinTuc = null;
 		}
 	}
 	
@@ -2927,6 +3327,8 @@ namespace FormControl.LinqObject
 		
 		private string _QA_DiaChiId;
 		
+		private EntitySet<TinTuc> _TinTucs;
+		
 		private EntitySet<GiaNguyenLieu> _GiaNguyenLieus;
 		
 		private EntitySet<HoaDon> _HoaDons;
@@ -2961,6 +3363,7 @@ namespace FormControl.LinqObject
 		
 		public NhanVien()
 		{
+			this._TinTucs = new EntitySet<TinTuc>(new Action<TinTuc>(this.attach_TinTucs), new Action<TinTuc>(this.detach_TinTucs));
 			this._GiaNguyenLieus = new EntitySet<GiaNguyenLieu>(new Action<GiaNguyenLieu>(this.attach_GiaNguyenLieus), new Action<GiaNguyenLieu>(this.detach_GiaNguyenLieus));
 			this._HoaDons = new EntitySet<HoaDon>(new Action<HoaDon>(this.attach_HoaDons), new Action<HoaDon>(this.detach_HoaDons));
 			this._HoaDonNhaps = new EntitySet<HoaDonNhap>(new Action<HoaDonNhap>(this.attach_HoaDonNhaps), new Action<HoaDonNhap>(this.detach_HoaDonNhaps));
@@ -3133,6 +3536,19 @@ namespace FormControl.LinqObject
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_TinTuc", Storage="_TinTucs", ThisKey="NV_Id", OtherKey="NV_Id")]
+		public EntitySet<TinTuc> TinTucs
+		{
+			get
+			{
+				return this._TinTucs;
+			}
+			set
+			{
+				this._TinTucs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_GiaNguyenLieu", Storage="_GiaNguyenLieus", ThisKey="NV_Id", OtherKey="NV_Id")]
 		public EntitySet<GiaNguyenLieu> GiaNguyenLieus
 		{
@@ -3237,6 +3653,18 @@ namespace FormControl.LinqObject
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_TinTucs(TinTuc entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhanVien = this;
+		}
+		
+		private void detach_TinTucs(TinTuc entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhanVien = null;
 		}
 		
 		private void attach_GiaNguyenLieus(GiaNguyenLieu entity)

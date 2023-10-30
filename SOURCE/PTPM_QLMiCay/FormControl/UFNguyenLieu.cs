@@ -1,23 +1,14 @@
-﻿using DataHelper;
-using FormControl.Repository;
-using FormControl.Service;
+﻿
 using System;
 using System.Data;
 using System.Windows.Forms;
 using FormControl.Message;
-using DataHelper.DTO.NguyenLieu;
 using CustomControl.ControlCustom;
 
 namespace FormControl
 {
     public partial class UFNguyenLieu : UserControl
     {
-        private SqlHelper sqlHelper;
-        private NguyenLieuRepository _repository;
-        private NguyenLieuService _service;
-
-        private NhaCungCapRepository _nccRepository;
-        private NhaCungCapService _nccService;
 
         private bool isAdd;
         public bool IsAdd;
@@ -25,13 +16,6 @@ namespace FormControl
         public UFNguyenLieu(string connectionString)
         {
             InitializeComponent();
-            sqlHelper = new SqlHelper(connectionString);
-            _repository = new NguyenLieuRepository(sqlHelper);
-            _service = new NguyenLieuService(_repository);
-            _nccRepository = new NhaCungCapRepository(sqlHelper);
-            _nccService = new NhaCungCapService(_nccRepository);
-
-            drvNguyenLieu.DataSource = _service.getAll().DefaultView;
         }
 
         private void cGroupBox4_Enter(object sender, EventArgs e)
@@ -46,24 +30,8 @@ namespace FormControl
 
         private void UFNguyenLieu_Load(object sender, EventArgs e)
         {
-            if (sqlHelper == null)
-            {
-                MessageBox.Show("Error occurs when connect to database");
-                return;
-            }
-
-            DataTable dtNcc = _nccService.getAll();
-            if (dtNcc != null)
-            {
-                DataRow dr = dtNcc.NewRow();
-                dr["NCC_Ten"] = "Tất cả";
-                dr["NCC_Id"] = 0;
-                dtNcc.Rows.Add(dr);
-                cboNhaCungCap.DataSource = dtNcc;
-                cboNhaCungCap.DisplayMember = "NCC_Ten";
-                cboNhaCungCap.ValueMember = "NCC_Id";
-                cboNhaCungCap.SelectedValue = 0;
-            }
+           
+            
         }
 
         private void txtTimTenNL_OnValueChanged(object sender, EventArgs e)
@@ -76,11 +44,11 @@ namespace FormControl
                 {
                     if ("".Equals(tenNL))
                     {
-                        drvNguyenLieu.DataSource = _service.getAll().DefaultView;
+                        //drvNguyenLieu.DataSource = _service.getAll().DefaultView;
                     }
                     else
                     {
-                        drvNguyenLieu.DataSource = _service.getNguyenLieuDtoByName(tenNL).DefaultView;
+                        //drvNguyenLieu.DataSource = _service.getNguyenLieuDtoByName(tenNL).DefaultView;
                     }
                 }
                 else
@@ -88,11 +56,11 @@ namespace FormControl
                     int nccId = int.Parse(cboNhaCungCap.SelectedValue.ToString());
                     if ("".Equals(tenNL))
                     {
-                        drvNguyenLieu.DataSource = _service.getNguyenLieuDtoByNhaCungCap(nccId).DefaultView;
+                        //drvNguyenLieu.DataSource = _service.getNguyenLieuDtoByNhaCungCap(nccId).DefaultView;
                     }
                     else
                     {
-                        drvNguyenLieu.DataSource = _service.getNguyenLieuDtoByNhaCungCapAndName(nccId, tenNL).DefaultView;
+                        //drvNguyenLieu.DataSource = _service.getNguyenLieuDtoByNhaCungCapAndName(nccId, tenNL).DefaultView;
                     }
                 }
             }
@@ -108,12 +76,12 @@ namespace FormControl
             {
                 if (int.Parse(cboNhaCungCap.SelectedValue.ToString()) == 0)
                 {
-                    drvNguyenLieu.DataSource = _service.getAll().DefaultView;
+                    //drvNguyenLieu.DataSource = _service.getAll().DefaultView;
                 }
                 else
                 {
                     int nccId = int.Parse(cboNhaCungCap.SelectedValue.ToString());
-                    drvNguyenLieu.DataSource = _service.getNguyenLieuDtoByNhaCungCap(nccId).DefaultView;
+                    //drvNguyenLieu.DataSource = _service.getNguyenLieuDtoByNhaCungCap(nccId).DefaultView;
                 }
             }
             catch
@@ -146,25 +114,25 @@ namespace FormControl
             {
                 if (checkUserInputForAdding())
                     return;
-                NguyenLieuDto dto = new NguyenLieuDto();
-                dto.nl_Ten(txtTenNL.Text);
-                dto.nl_Gia(double.Parse(txtDonGia.Text));
-                dto.nl_DonViTinh(cboDonViTinh.SelectedText);
-                dto.nl_nccId = int.Parse(cboNhaCungCap.SelectedValue.ToString());
+                //NguyenLieuDto dto = new NguyenLieuDto();
+                //dto.nl_Ten(txtTenNL.Text);
+                //dto.nl_Gia(double.Parse(txtDonGia.Text));
+                //dto.nl_DonViTinh(cboDonViTinh.SelectedText);
+                //dto.nl_nccId = int.Parse(cboNhaCungCap.SelectedValue.ToString());
 
-                try
-                {
-                    if (_service.create(dto) > 0)
-                    {
-                        Message.Message.showCreateSuccessfully("nguyên liệu");
-                    } else
-                    {
-                        Message.Message.showCreateFailed("nguyên liệu");
-                    }
-                } catch
-                {
-                    Message.Message.showFailedDBExecution("thêm nguyên liệu", "nguyên liệu");
-                }
+                //try
+                //{
+                //    if (_service.create(dto) > 0)
+                //    {
+                //        Message.Message.showCreateSuccessfully("nguyên liệu");
+                //    } else
+                //    {
+                //        Message.Message.showCreateFailed("nguyên liệu");
+                //    }
+                //} catch
+                //{
+                //    Message.Message.showFailedDBExecution("thêm nguyên liệu", "nguyên liệu");
+                //}
             }
         }
 
