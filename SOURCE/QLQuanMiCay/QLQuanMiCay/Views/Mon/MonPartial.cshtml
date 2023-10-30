@@ -2,18 +2,35 @@
 @using PagedList.Mvc
 @using PagedList
 
-<div id="partialMon">
-    <ul class="list-group list-group-flush text-left">
+
+<div class="container">
+    <div class="row gx-3">
         @{
+            int count = 0;
             foreach (var mon in Model)
             {
-                <li class="list-group-item">
-                    @mon.M_Ten
-                </li>
+                if (count == 0)
+                {
+                    <div class="col-sm-12 col-md-5 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
+                        <div class="">@mon.M_Ten</div>
+                        <img src="~/images/@mon.M_IMG" style="margin-bottom: 5px"/>
+                        <button class="btn btn-danger" style="margin-bottom: 5px">Đặt món</button>
+                    </div>
+                    count++;
+                }
+                else
+                {
+                    <div class="col-sm-12 col-md-5 col-md-offset-1 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
+                        <div class="">@mon.M_Ten</div>
+                        <img src="~/images/@mon.M_IMG" style="margin-bottom: 5px"/>
+                        <button class="btn btn-danger" style="margin-bottom: 5px">Đặt món</button>
+                    </div>
+                    count = 0;
+                }
+                
             }
         }
-    </ul>
+    </div>
 </div>
-
 
 @Html.PagedListPager(Model, i => Url.Action("Index", "ThucDon", new { index = i }))
