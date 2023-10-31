@@ -7,42 +7,216 @@
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <style media="screen and (min-width: 740px) and (max-width: 1024px)" >
+        .wrap-content {
+            min-height: 640px;
+        } 
+        
+        .logo-wrapper {
+            float: left;
+            background-color: #ecdcc7;
+            border-radius: 0 0 10px 10px;
+            display: inline-block;
+            margin-left: 30px;
+            padding-top: 10px;
+        }
+
+        .form-search-pc {
+            display: block !important;
+        }
+
+        .menu-mobile {
+            display: none !important;
+        }
+
+        .modal-mobile {
+            display: none !important;
+        }
+    </style>
+    <style media="screen and (min-width: 1024px)" >
+        .logo-wrapper {
+            float: left;
+            background-color: #ecdcc7;
+            border-radius: 0 0 10px 10px;
+            display: inline-block;
+            padding-top: 10px;
+            margin-left: 30px;
+        }
+
+        .navbar-menu-pc {
+            display: block;
+        }
+
+        .mon-item {
+            margin-bottom: 5px;
+            display: inline-block;
+            align-self: auto;
+        }
+
+        .mon-item img {
+            width: 220px;
+            height: 280px;
+        }
+
+        .form-search-pc {
+            display: block !important;
+        }
+
+        .menu-mobile {
+            display: none !important;
+        }
+
+        .modal-mobile {
+            display: none !important;
+        }
+    </style>
+
+    <style media="screen and (max-width: 740px)">
+        .logo-wrapper {
+            margin-left: 30px;
+            float: left;
+            background-color: #ecdcc7;
+            border-radius: 0 0 10px 10px;
+            display: inline-block;
+            padding-top: 10px;
+        }
+
+        .navbar-menu-pc {
+            display: none;
+        }
+
+        .mon-item {
+            margin-bottom: 5px;
+            display: inline-block;
+            align-self: auto;
+        }
+
+        .mon-item img {
+            width: 220px;
+            height: 280px;
+        }
+
+        .form-search-pc {
+            display: none !important;
+        }
+
+        .modal-mobile {
+            display: block !important;
+            position: fixed;
+            z-index: 1001;
+            background-color: #BE1E2D;
+            top: 0;
+            bottom: 0;
+            right: 120px;
+            left: 0;
+        }
+
+        .modal-mobile ul li {
+            list-style-type: none;
+            line-height: 42px;
+        }
+
+        .nav-link-modal-mobile {
+            padding-left: 20px;
+        }
+        
+        .nav-link-modal-mobile a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+
+        .nav-link-modal-mobile:hover {
+            background-color: rgba(255, 255, 255, .3);
+        }
+
+        .search-text-mobile {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 0px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 0px;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse">
-        <div style="display: flex; flex-direction:row; justify-content: space-between">
-            <div class="navbar-collapse collapse">
-                <img class="navbar-brand" src="https://gimji.vn/webs_image/uploads/website/LogoGimji2_-1-.png" width="100px" />
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index","TrangChu")">Trang chủ</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="@Url.Action("Index","ThucDon")">Thực đơn</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="@Url.Action("Index","TinTuc")">Tin tức</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="@Url.Action("Index","TuyenDung")">Tuyển dụng</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="@Url.Action("Index","LienHe")">Liên hệ</a>
-                    </li>
-                </ul>
+    <div class="wrap-content" style="min-height: 640px;">
+        <div class="navbar navbar-inverse" style="background-color: #be1e2d; min-width: 740px">
+            <div style="display: flex; flex-direction:row; justify-content: space-between; position: relative">
+                <div>
+                    <div class="logo-wrapper" style="position:absolute">
+                        <img class="navbar-brand" src="https://gimji.vn/webs_image/uploads/website/LogoGimji2_-1-.png" width="100px" />
+                    </div>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-menu-pc" style="margin-left: 125px;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","TrangChu")">Trang chủ</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link" href="@Url.Action("Index","ThucDon")">Thực đơn</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link" href="@Url.Action("Index","TinTuc")">Tin tức</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link" href="@Url.Action("Index","TuyenDung")">Tuyển dụng</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link" href="@Url.Action("Index","LienHe")">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="display: flex">
+                    <form class="p-2 mr-5 form-search-mobile" style="display: flex; flex-direction: row; padding-left: 5px; padding-right: 15px; margin-top: 7px; ">
+                        <input id="searchText" class="form-control mr-sm-2 search-text-mobile" type="search" placeholder="Tìm kiếm" style="display: inline-block; width: 400px; border-bottom-left-radius: 15px; border-top-left-radius: 15px;">
+                        <a class="btn" onclick="searchWithText()" style="background-color: #ffecc9; border-bottom-left-radius: 0px; border-bottom-right-radius: 15px; border-top-left-radius: 0px; border-top-right-radius: 15px; display: block; height: 34px;">
+                            <img src="~/images/search.png" />
+                        </a>
+                    </form>
+
+                    <a href="#" class="mx-3 text-danger position-relative" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px;">
+                        <img src="~/images/shopping-bag.png" />
+                        <span class="position-absolute quantity" style="font-size: 12px; color: #000; position: absolute; margin-top: -5px;">0</span>
+                    </a>
+
+                    <a onclick="hienThiModal()" class="mx-3 text-danger position-relative menu-mobile" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px; cursor: pointer">
+                        <img src="~/images/menu.png" />
+                    </a>
+                </div>
             </div>
-
-            <form class="form-inline p-2">
-                <input id="searchText" class="d-inline form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <a class="btn btn-primary" onclick="searchWithText()">
-                    Search
-                </a>    
-            </form>
         </div>
-    </div>
 
-    <div class="container body-content">
-        @RenderBody()
+        <div class="modal-mobile" style="max-width: 600px">
+            <form class="p-2 mr-5 form-search-mobile" style="display: flex; flex-direction: row; padding-top: 30px; padding-bottom: 20px; padding-left: 5px; padding-right: 5px">
+                <input id="searchText" class="form-control mr-sm-2 search-text-mobile" type="search" placeholder="Tìm kiếm" style="display: inline-block; width: 400px">
+                <a class="btn" onclick="searchWithText()" style="background-color: #ffecc9; border-bottom-left-radius: 0px; border-bottom-right-radius: 15px; border-top-left-radius: 0px; border-top-right-radius: 15px; ">
+                    <img src="~/images/search.png" />
+                </a>
+            </form>
+
+            <ul style="padding-left: 0 imprtant!; margin-left: -40px;">
+                <li class="nav-link-modal-mobile">
+                    <a class="nav-link" href="@Url.Action("Index","TrangChu")">TRANG CHỦ</a>
+                </li>
+                <li class="nav-link-modal-mobile">
+                    <a class="nav-link" href="@Url.Action("Index","ThucDon")">THỰC ĐƠN</a>
+                </li>
+                <li class="nav-link-modal-mobile">
+                    <a class="nav-link" href="@Url.Action("Index","TinTuc")">TIN TỨC</a>
+                </li>
+                <li class="nav-link-modal-mobile">
+                    <a class="nav-link" href="@Url.Action("Index","TuyenDung")">TUYỂN DỤNG</a>
+                </li>
+                <li class="nav-link-modal-mobile">
+                    <a class="nav-link" href="@Url.Action("Index","LienHe")">LIÊN HỆ</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+        </div>
     </div>
 
     <script>
@@ -51,6 +225,10 @@
             var url = '@Url.Action("Index", "TimKiem", new { text = "abc" })'
             url = url.replace("abc", searchText)
             window.location.href = url;
+        }
+
+        function hienThiModal() {
+            alert('Nhấn nút hiển thị modal');
         }
     </script>
 </body>
