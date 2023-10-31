@@ -32,7 +32,7 @@ namespace PTPM_QLMiCay.GUI
         private void fTrangChu_Load(object sender, EventArgs e)
         {
             ufTrangChu1.Show();
-            ufNguyenLieu1.Hide();
+            //ufNguyenLieu1.Hide();
             ufNhaCungCap1.Hide();
             ufDanhMuc1.Hide();
             ufNhanVIen1.Hide();
@@ -42,7 +42,8 @@ namespace PTPM_QLMiCay.GUI
         private void cButtonFlat1_Click(object sender, EventArgs e)
         {
             //Hide other user control
-            ufNguyenLieu1.Hide();
+            //ufNguyenLieu1.Hide();
+            
             ufNhaCungCap1.Hide();
             ufDanhMuc1.Hide();
             ufNhanVIen1.Hide();
@@ -61,8 +62,8 @@ namespace PTPM_QLMiCay.GUI
             ufNhanVIen1.Hide();
             ufQuyen1.Hide();
             //Show current usercontrol
-            ufNguyenLieu1.Show();
-            ufNguyenLieu1.BringToFront();
+            //ufNguyenLieu1.Show();
+            //ufNguyenLieu1.BringToFront();
         }
 
         private void cButtonFlat3_Click(object sender, EventArgs e)
@@ -70,12 +71,13 @@ namespace PTPM_QLMiCay.GUI
             //Hide other user control
             ufTrangChu1.Hide();
             ufDanhMuc1.Hide();
-            ufNguyenLieu1.Hide();
+            //ufNguyenLieu1.Hide();
             ufNhanVIen1.Hide();
             ufQuyen1.Hide();
             //Show current usercontrol
             ufNhaCungCap1.Show();
             ufNhaCungCap1.BringToFront();
+            
         }
 
         private void cButtonFlat4_Click(object sender, EventArgs e)
@@ -83,7 +85,7 @@ namespace PTPM_QLMiCay.GUI
             //Hide other user control
             ufTrangChu1.Hide();
             ufNhaCungCap1.Hide();
-            ufNguyenLieu1.Hide();
+            //ufNguyenLieu1.Hide();
             ufNhanVIen1.Hide();
             ufQuyen1.Hide();
             //Show current usercontrol
@@ -96,7 +98,7 @@ namespace PTPM_QLMiCay.GUI
             //Hide other user control
             ufTrangChu1.Hide();
             ufNhaCungCap1.Hide();
-            ufNguyenLieu1.Hide();
+            //ufNguyenLieu1.Hide();
             ufDanhMuc1.Hide();
             ufQuyen1.Hide();
             //Show current usercontrol
@@ -109,12 +111,23 @@ namespace PTPM_QLMiCay.GUI
             //Hide other user control
             ufTrangChu1.Hide();
             ufNhaCungCap1.Hide();
-            ufNguyenLieu1.Hide();
+            //ufNguyenLieu1.Hide();
             ufDanhMuc1.Hide();
             ufNhanVIen1.Hide();
             //Show current usercontrol
             ufQuyen1.Show();
             ufQuyen1.BringToFront();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void fTrangChu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.formDangNhap = new fDangNhap();
+            Program.formDangNhap.Show();
         }
     }
 }

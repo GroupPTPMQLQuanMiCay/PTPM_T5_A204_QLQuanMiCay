@@ -36,12 +36,12 @@ namespace PTPM_QLMiCay.GUI
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.cLable1 = new CustomControl.ControlCustom.CLable();
-            this.cTextBox1 = new CustomControl.ControlCustom.CTextBox();
+            this.txt_TenDN = new CustomControl.ControlCustom.CTextBox();
             this.cLable2 = new CustomControl.ControlCustom.CLable();
-            this.cTextBox2 = new CustomControl.ControlCustom.CTextBox();
+            this.txt_MK = new CustomControl.ControlCustom.CTextBox();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.cButton1 = new CustomControl.ControlCustom.CButton();
-            this.cButton2 = new CustomControl.ControlCustom.CButton();
+            this.btn_DN = new CustomControl.ControlCustom.CButton();
+            this.btn_Thoat = new CustomControl.ControlCustom.CButton();
             ((System.ComponentModel.ISupportInitialize)(this.cButtonClose1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,23 +108,23 @@ namespace PTPM_QLMiCay.GUI
             this.cLable1.TabIndex = 4;
             this.cLable1.Text = "Tên Đăng Nhập";
             // 
-            // cTextBox1
+            // txt_TenDN
             // 
-            this.cTextBox1.BackColor = System.Drawing.Color.White;
-            this.cTextBox1.BorderColorFocused = System.Drawing.Color.Orange;
-            this.cTextBox1.BorderColorIdle = System.Drawing.Color.Orange;
-            this.cTextBox1.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.cTextBox1.BorderThickness = 1;
-            this.cTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cTextBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cTextBox1.isPassword = false;
-            this.cTextBox1.Location = new System.Drawing.Point(521, 136);
-            this.cTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.cTextBox1.Name = "cTextBox1";
-            this.cTextBox1.Size = new System.Drawing.Size(370, 29);
-            this.cTextBox1.TabIndex = 0;
-            this.cTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_TenDN.BackColor = System.Drawing.Color.White;
+            this.txt_TenDN.BorderColorFocused = System.Drawing.Color.Orange;
+            this.txt_TenDN.BorderColorIdle = System.Drawing.Color.Orange;
+            this.txt_TenDN.BorderColorMouseHover = System.Drawing.Color.Orange;
+            this.txt_TenDN.BorderThickness = 1;
+            this.txt_TenDN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_TenDN.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txt_TenDN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_TenDN.isPassword = false;
+            this.txt_TenDN.Location = new System.Drawing.Point(521, 136);
+            this.txt_TenDN.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_TenDN.Name = "txt_TenDN";
+            this.txt_TenDN.Size = new System.Drawing.Size(370, 29);
+            this.txt_TenDN.TabIndex = 1;
+            this.txt_TenDN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // cLable2
             // 
@@ -137,23 +137,23 @@ namespace PTPM_QLMiCay.GUI
             this.cLable2.TabIndex = 5;
             this.cLable2.Text = "Mật Khẩu";
             // 
-            // cTextBox2
+            // txt_MK
             // 
-            this.cTextBox2.BackColor = System.Drawing.Color.White;
-            this.cTextBox2.BorderColorFocused = System.Drawing.Color.Orange;
-            this.cTextBox2.BorderColorIdle = System.Drawing.Color.Orange;
-            this.cTextBox2.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.cTextBox2.BorderThickness = 1;
-            this.cTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cTextBox2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cTextBox2.isPassword = true;
-            this.cTextBox2.Location = new System.Drawing.Point(521, 218);
-            this.cTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.cTextBox2.Name = "cTextBox2";
-            this.cTextBox2.Size = new System.Drawing.Size(370, 29);
-            this.cTextBox2.TabIndex = 0;
-            this.cTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_MK.BackColor = System.Drawing.Color.White;
+            this.txt_MK.BorderColorFocused = System.Drawing.Color.Orange;
+            this.txt_MK.BorderColorIdle = System.Drawing.Color.Orange;
+            this.txt_MK.BorderColorMouseHover = System.Drawing.Color.Orange;
+            this.txt_MK.BorderThickness = 1;
+            this.txt_MK.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_MK.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txt_MK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_MK.isPassword = true;
+            this.txt_MK.Location = new System.Drawing.Point(521, 218);
+            this.txt_MK.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_MK.Name = "txt_MK";
+            this.txt_MK.Size = new System.Drawing.Size(370, 29);
+            this.txt_MK.TabIndex = 2;
+            this.txt_MK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuSeparator2
             // 
@@ -167,67 +167,69 @@ namespace PTPM_QLMiCay.GUI
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
             // 
-            // cButton1
+            // btn_DN
             // 
-            this.cButton1.ActiveBorderThickness = 1;
-            this.cButton1.ActiveCornerRadius = 20;
-            this.cButton1.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton1.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton1.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton1.BackColor = System.Drawing.Color.White;
-            this.cButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton1.BackgroundImage")));
-            this.cButton1.ButtonText = "Đăng Nhập";
-            this.cButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton1.ForeColor = System.Drawing.Color.Orange;
-            this.cButton1.IdleBorderThickness = 1;
-            this.cButton1.IdleCornerRadius = 20;
-            this.cButton1.IdleFillColor = System.Drawing.Color.White;
-            this.cButton1.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton1.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton1.Location = new System.Drawing.Point(521, 309);
-            this.cButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton1.Name = "cButton1";
-            this.cButton1.Size = new System.Drawing.Size(370, 41);
-            this.cButton1.TabIndex = 22;
-            this.cButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_DN.ActiveBorderThickness = 1;
+            this.btn_DN.ActiveCornerRadius = 20;
+            this.btn_DN.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btn_DN.ActiveForecolor = System.Drawing.Color.White;
+            this.btn_DN.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btn_DN.BackColor = System.Drawing.Color.White;
+            this.btn_DN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_DN.BackgroundImage")));
+            this.btn_DN.ButtonText = "Đăng Nhập";
+            this.btn_DN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DN.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_DN.ForeColor = System.Drawing.Color.Orange;
+            this.btn_DN.IdleBorderThickness = 1;
+            this.btn_DN.IdleCornerRadius = 20;
+            this.btn_DN.IdleFillColor = System.Drawing.Color.White;
+            this.btn_DN.IdleForecolor = System.Drawing.Color.Orange;
+            this.btn_DN.IdleLineColor = System.Drawing.Color.Orange;
+            this.btn_DN.Location = new System.Drawing.Point(521, 309);
+            this.btn_DN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_DN.Name = "btn_DN";
+            this.btn_DN.Size = new System.Drawing.Size(370, 41);
+            this.btn_DN.TabIndex = 22;
+            this.btn_DN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_DN.Click += new System.EventHandler(this.btn_DN_Click);
             // 
-            // cButton2
+            // btn_Thoat
             // 
-            this.cButton2.ActiveBorderThickness = 1;
-            this.cButton2.ActiveCornerRadius = 20;
-            this.cButton2.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton2.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton2.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton2.BackColor = System.Drawing.Color.White;
-            this.cButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton2.BackgroundImage")));
-            this.cButton2.ButtonText = "Thoát";
-            this.cButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton2.ForeColor = System.Drawing.Color.Orange;
-            this.cButton2.IdleBorderThickness = 1;
-            this.cButton2.IdleCornerRadius = 20;
-            this.cButton2.IdleFillColor = System.Drawing.Color.White;
-            this.cButton2.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton2.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton2.Location = new System.Drawing.Point(521, 360);
-            this.cButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton2.Name = "cButton2";
-            this.cButton2.Size = new System.Drawing.Size(370, 41);
-            this.cButton2.TabIndex = 22;
-            this.cButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Thoat.ActiveBorderThickness = 1;
+            this.btn_Thoat.ActiveCornerRadius = 20;
+            this.btn_Thoat.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btn_Thoat.ActiveForecolor = System.Drawing.Color.White;
+            this.btn_Thoat.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btn_Thoat.BackColor = System.Drawing.Color.White;
+            this.btn_Thoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.BackgroundImage")));
+            this.btn_Thoat.ButtonText = "Thoát";
+            this.btn_Thoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Thoat.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_Thoat.ForeColor = System.Drawing.Color.Orange;
+            this.btn_Thoat.IdleBorderThickness = 1;
+            this.btn_Thoat.IdleCornerRadius = 20;
+            this.btn_Thoat.IdleFillColor = System.Drawing.Color.White;
+            this.btn_Thoat.IdleForecolor = System.Drawing.Color.Orange;
+            this.btn_Thoat.IdleLineColor = System.Drawing.Color.Orange;
+            this.btn_Thoat.Location = new System.Drawing.Point(521, 360);
+            this.btn_Thoat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(370, 41);
+            this.btn_Thoat.TabIndex = 22;
+            this.btn_Thoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
             // fDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 483);
-            this.Controls.Add(this.cButton2);
-            this.Controls.Add(this.cButton1);
+            this.Controls.Add(this.btn_Thoat);
+            this.Controls.Add(this.btn_DN);
             this.Controls.Add(this.bunifuSeparator2);
-            this.Controls.Add(this.cTextBox2);
+            this.Controls.Add(this.txt_MK);
             this.Controls.Add(this.cLable2);
-            this.Controls.Add(this.cTextBox1);
+            this.Controls.Add(this.txt_TenDN);
             this.Controls.Add(this.cLable1);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuGradientPanel1);
@@ -235,6 +237,7 @@ namespace PTPM_QLMiCay.GUI
             this.Controls.Add(this.cButtonClose1);
             this.Name = "fDangNhap";
             this.Text = "fDangNhap";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fDangNhap_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.cButtonClose1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -248,11 +251,11 @@ namespace PTPM_QLMiCay.GUI
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private CustomControl.ControlCustom.CLable cLable1;
-        private CustomControl.ControlCustom.CTextBox cTextBox1;
+        private CustomControl.ControlCustom.CTextBox txt_TenDN;
         private CustomControl.ControlCustom.CLable cLable2;
-        private CustomControl.ControlCustom.CTextBox cTextBox2;
+        private CustomControl.ControlCustom.CTextBox txt_MK;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
-        private CustomControl.ControlCustom.CButton cButton1;
-        private CustomControl.ControlCustom.CButton cButton2;
+        private CustomControl.ControlCustom.CButton btn_DN;
+        private CustomControl.ControlCustom.CButton btn_Thoat;
     }
 }

@@ -168,6 +168,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\BLL_DAL\BLL_DAL.csproj">
+      <Project>{1871ed90-8964-4213-83ce-c5c28831dabe}</Project>
+      <Name>BLL_DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomControl\CustomControl.csproj">
       <Project>{694652d6-5cbd-4201-b81f-5525f5a15691}</Project>
       <Name>CustomControl</Name>

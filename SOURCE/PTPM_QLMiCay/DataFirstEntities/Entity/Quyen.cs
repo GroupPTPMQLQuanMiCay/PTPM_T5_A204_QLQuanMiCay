@@ -13,8 +13,7 @@ namespace DataFirstEntities.Entity
     {
         [Key]
         public string Quyen_Id { get; set; }
-        public string DienGiai { get; set;}
 
-
+        public string DienGiai { get; set; }
     }
 }

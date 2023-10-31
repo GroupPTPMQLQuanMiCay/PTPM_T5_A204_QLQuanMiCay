@@ -136,7 +136,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="cButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_DN.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAXIAAAApCAYAAAAoGqKJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI5SURBVHhe7d0/a9NRFMfhjh0dHR07Ojo6Ojp27Mtwc/Rl
@@ -152,7 +152,7 @@
         WKc2SQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="cButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_Thoat.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAXIAAAApCAYAAAAoGqKJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI5SURBVHhe7d0/a9NRFMfhjh0dHR07Ojo6Ojp27Mtwc/Rl

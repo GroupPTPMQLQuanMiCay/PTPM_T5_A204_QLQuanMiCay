@@ -79,6 +79,8 @@
     <Compile Include="Entity\NguyenLieu.cs" />
     <Compile Include="Entity\NhaCungCap.cs" />
     <Compile Include="Entity\NhanVien.cs" />
+    <Compile Include="Entity\NhomQuyen.cs" />
+    <Compile Include="Entity\NhomQuyen_NguoiDung.cs" />
     <Compile Include="Entity\NLTuongDong.cs" />
     <Compile Include="Entity\OrDer.cs" />
     <Compile Include="Entity\PhieuDat.cs" />
@@ -109,6 +111,10 @@
     <Compile Include="Migrations\202310251123312_them_tieu_de_cho_tin_tuc.designer.cs">
       <DependentUpon>202310251123312_them_tieu_de_cho_tin_tuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310311518550_Add_AllQuyen.cs" />
+    <Compile Include="Migrations\202310311518550_Add_AllQuyen.designer.cs">
+      <DependentUpon>202310311518550_Add_AllQuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310251123312_them_tieu_de_cho_tin_tuc.resx">
       <DependentUpon>202310251123312_them_tieu_de_cho_tin_tuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310311518550_Add_AllQuyen.resx">
+      <DependentUpon>202310311518550_Add_AllQuyen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

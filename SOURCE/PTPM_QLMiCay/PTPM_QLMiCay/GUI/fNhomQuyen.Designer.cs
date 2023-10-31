@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNhomQuyen));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
@@ -41,10 +42,10 @@
             this.cTextBox1 = new CustomControl.ControlCustom.CTextBox();
             this.cLable1 = new CustomControl.ControlCustom.CLable();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
-            this.cButton1 = new CustomControl.ControlCustom.CButton();
-            this.cButton2 = new CustomControl.ControlCustom.CButton();
-            this.cButton3 = new CustomControl.ControlCustom.CButton();
             this.cButton4 = new CustomControl.ControlCustom.CButton();
+            this.cButton3 = new CustomControl.ControlCustom.CButton();
+            this.cButton2 = new CustomControl.ControlCustom.CButton();
+            this.cButton1 = new CustomControl.ControlCustom.CButton();
             this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
             this.cDataGirdView1 = new CustomControl.ControlCustom.CDataGirdView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -213,55 +214,30 @@
             this.cGroupBox2.TabStop = false;
             this.cGroupBox2.Text = "Chức năng";
             // 
-            // cButton1
+            // cButton4
             // 
-            this.cButton1.ActiveBorderThickness = 1;
-            this.cButton1.ActiveCornerRadius = 20;
-            this.cButton1.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton1.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton1.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton1.BackColor = System.Drawing.Color.White;
-            this.cButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton1.BackgroundImage")));
-            this.cButton1.ButtonText = "Thêm";
-            this.cButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton1.ForeColor = System.Drawing.Color.Orange;
-            this.cButton1.IdleBorderThickness = 1;
-            this.cButton1.IdleCornerRadius = 20;
-            this.cButton1.IdleFillColor = System.Drawing.Color.White;
-            this.cButton1.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton1.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton1.Location = new System.Drawing.Point(11, 41);
-            this.cButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton1.Name = "cButton1";
-            this.cButton1.Size = new System.Drawing.Size(163, 41);
-            this.cButton1.TabIndex = 22;
-            this.cButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cButton2
-            // 
-            this.cButton2.ActiveBorderThickness = 1;
-            this.cButton2.ActiveCornerRadius = 20;
-            this.cButton2.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton2.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton2.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton2.BackColor = System.Drawing.Color.White;
-            this.cButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton2.BackgroundImage")));
-            this.cButton2.ButtonText = "Xóa";
-            this.cButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton2.ForeColor = System.Drawing.Color.Orange;
-            this.cButton2.IdleBorderThickness = 1;
-            this.cButton2.IdleCornerRadius = 20;
-            this.cButton2.IdleFillColor = System.Drawing.Color.White;
-            this.cButton2.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton2.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton2.Location = new System.Drawing.Point(254, 41);
-            this.cButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton2.Name = "cButton2";
-            this.cButton2.Size = new System.Drawing.Size(163, 41);
-            this.cButton2.TabIndex = 23;
-            this.cButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cButton4.ActiveBorderThickness = 1;
+            this.cButton4.ActiveCornerRadius = 20;
+            this.cButton4.ActiveFillColor = System.Drawing.Color.Orange;
+            this.cButton4.ActiveForecolor = System.Drawing.Color.White;
+            this.cButton4.ActiveLineColor = System.Drawing.Color.Orange;
+            this.cButton4.BackColor = System.Drawing.Color.White;
+            this.cButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton4.BackgroundImage")));
+            this.cButton4.ButtonText = "Gán quyền";
+            this.cButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cButton4.ForeColor = System.Drawing.Color.Orange;
+            this.cButton4.IdleBorderThickness = 1;
+            this.cButton4.IdleCornerRadius = 20;
+            this.cButton4.IdleFillColor = System.Drawing.Color.White;
+            this.cButton4.IdleForecolor = System.Drawing.Color.Orange;
+            this.cButton4.IdleLineColor = System.Drawing.Color.Orange;
+            this.cButton4.Location = new System.Drawing.Point(254, 117);
+            this.cButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cButton4.Name = "cButton4";
+            this.cButton4.Size = new System.Drawing.Size(163, 41);
+            this.cButton4.TabIndex = 25;
+            this.cButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cButton3
             // 
@@ -288,30 +264,55 @@
             this.cButton3.TabIndex = 24;
             this.cButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cButton4
+            // cButton2
             // 
-            this.cButton4.ActiveBorderThickness = 1;
-            this.cButton4.ActiveCornerRadius = 20;
-            this.cButton4.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton4.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton4.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton4.BackColor = System.Drawing.Color.White;
-            this.cButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton4.BackgroundImage")));
-            this.cButton4.ButtonText = "Gán quyền";
-            this.cButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton4.ForeColor = System.Drawing.Color.Orange;
-            this.cButton4.IdleBorderThickness = 1;
-            this.cButton4.IdleCornerRadius = 20;
-            this.cButton4.IdleFillColor = System.Drawing.Color.White;
-            this.cButton4.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton4.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton4.Location = new System.Drawing.Point(254, 117);
-            this.cButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton4.Name = "cButton4";
-            this.cButton4.Size = new System.Drawing.Size(163, 41);
-            this.cButton4.TabIndex = 25;
-            this.cButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cButton2.ActiveBorderThickness = 1;
+            this.cButton2.ActiveCornerRadius = 20;
+            this.cButton2.ActiveFillColor = System.Drawing.Color.Orange;
+            this.cButton2.ActiveForecolor = System.Drawing.Color.White;
+            this.cButton2.ActiveLineColor = System.Drawing.Color.Orange;
+            this.cButton2.BackColor = System.Drawing.Color.White;
+            this.cButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton2.BackgroundImage")));
+            this.cButton2.ButtonText = "Xóa";
+            this.cButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cButton2.ForeColor = System.Drawing.Color.Orange;
+            this.cButton2.IdleBorderThickness = 1;
+            this.cButton2.IdleCornerRadius = 20;
+            this.cButton2.IdleFillColor = System.Drawing.Color.White;
+            this.cButton2.IdleForecolor = System.Drawing.Color.Orange;
+            this.cButton2.IdleLineColor = System.Drawing.Color.Orange;
+            this.cButton2.Location = new System.Drawing.Point(254, 41);
+            this.cButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cButton2.Name = "cButton2";
+            this.cButton2.Size = new System.Drawing.Size(163, 41);
+            this.cButton2.TabIndex = 23;
+            this.cButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cButton1
+            // 
+            this.cButton1.ActiveBorderThickness = 1;
+            this.cButton1.ActiveCornerRadius = 20;
+            this.cButton1.ActiveFillColor = System.Drawing.Color.Orange;
+            this.cButton1.ActiveForecolor = System.Drawing.Color.White;
+            this.cButton1.ActiveLineColor = System.Drawing.Color.Orange;
+            this.cButton1.BackColor = System.Drawing.Color.White;
+            this.cButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton1.BackgroundImage")));
+            this.cButton1.ButtonText = "Thêm";
+            this.cButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cButton1.ForeColor = System.Drawing.Color.Orange;
+            this.cButton1.IdleBorderThickness = 1;
+            this.cButton1.IdleCornerRadius = 20;
+            this.cButton1.IdleFillColor = System.Drawing.Color.White;
+            this.cButton1.IdleForecolor = System.Drawing.Color.Orange;
+            this.cButton1.IdleLineColor = System.Drawing.Color.Orange;
+            this.cButton1.Location = new System.Drawing.Point(11, 41);
+            this.cButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cButton1.Name = "cButton1";
+            this.cButton1.Size = new System.Drawing.Size(163, 41);
+            this.cButton1.TabIndex = 22;
+            this.cButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cGroupBox3
             // 
@@ -329,10 +330,10 @@
             // cDataGirdView1
             // 
             this.cDataGirdView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
-            this.cDataGirdView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            this.cDataGirdView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.cDataGirdView1.BackgroundColor = System.Drawing.Color.White;
             this.cDataGirdView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cDataGirdView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -352,6 +353,8 @@
             // 
             // Column1
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "Bảng";
             this.Column1.Name = "Column1";
             // 
