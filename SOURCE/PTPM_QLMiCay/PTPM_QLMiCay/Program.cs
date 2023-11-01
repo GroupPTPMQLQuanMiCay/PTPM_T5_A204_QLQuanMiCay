@@ -12,6 +12,7 @@ namespace PTPM_QLMiCay
     {
         public static fDangNhap formDangNhap = null;
         public static fTrangChu formTrangChu = null;
+        public static fNhomQuyen formNhomQuyen = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -21,7 +22,7 @@ namespace PTPM_QLMiCay
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             formDangNhap = new fDangNhap();
-            Application.Run(formDangNhap);
+            Application.Run(new fNhomQuyen());
         }
     }
 }

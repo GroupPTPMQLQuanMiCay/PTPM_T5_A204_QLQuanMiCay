@@ -19,6 +19,14 @@
       <Association Name="NhanVien_TinTuc" Member="NhanVien" ThisKey="NV_Id" OtherKey="NV_Id" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CapQuyenNhom" Member="CapQuyenNhoms">
+    <Type Name="CapQuyenNhom">
+      <Column Name="NQ_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quyen_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="NhomQuyen_CapQuyenNhom" Member="NhomQuyen" ThisKey="NQ_Id" OtherKey="NQ_Id" Type="NhomQuyen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Quyen_CapQuyenNhom" Member="Quyen" ThisKey="Quyen_Id" OtherKey="Quyen_Id" Type="Quyen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.ChiTietNhap" Member="ChiTietNhaps">
     <Type Name="ChiTietNhap">
       <Column Name="NL_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -115,8 +123,9 @@
     <Type Name="NguoiDung">
       <Column Name="NG_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NG_DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NG_PhongBan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NG_PhongBan" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="NG_MatKhau" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="NguoiDung_NhomQuyen_NguoiDung" Member="NhomQuyen_NguoiDungs" ThisKey="NG_Id" OtherKey="NG_Id" Type="NhomQuyen_NguoiDung" />
     </Type>
   </Table>
   <Table Name="dbo.NguyenLieu" Member="NguyenLieus">
@@ -160,6 +169,23 @@
       <Association Name="NhanVien_HoaDonNhap" Member="HoaDonNhaps" ThisKey="NV_Id" OtherKey="NV_Id" Type="HoaDonNhap" />
       <Association Name="NhanVien_QuanLyBep" Member="QuanLyBeps" ThisKey="NV_Id" OtherKey="NV_Id" Type="QuanLyBep" />
       <Association Name="QuanAn_NhanVien" Member="QuanAn" ThisKey="QA_DiaChiId" OtherKey="QA_DiaChi" Type="QuanAn" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhomQuyen" Member="NhomQuyens">
+    <Type Name="NhomQuyen">
+      <Column Name="NQ_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NQ_Ten" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NQ_HienThi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NhomQuyen_CapQuyenNhom" Member="CapQuyenNhoms" ThisKey="NQ_Id" OtherKey="NQ_Id" Type="CapQuyenNhom" />
+      <Association Name="NhomQuyen_NhomQuyen_NguoiDung" Member="NhomQuyen_NguoiDungs" ThisKey="NQ_Id" OtherKey="NQ_Id" Type="NhomQuyen_NguoiDung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhomQuyen_NguoiDung" Member="NhomQuyen_NguoiDungs">
+    <Type Name="NhomQuyen_NguoiDung">
+      <Column Name="NG_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NQ_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="NguoiDung_NhomQuyen_NguoiDung" Member="NguoiDung" ThisKey="NG_Id" OtherKey="NG_Id" Type="NguoiDung" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="NhomQuyen_NhomQuyen_NguoiDung" Member="NhomQuyen" ThisKey="NQ_Id" OtherKey="NQ_Id" Type="NhomQuyen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.NL_TuongDong" Member="NL_TuongDongs">
@@ -212,6 +238,13 @@
       <Column Name="QLB_Ngay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="NguyenLieu_QuanLyBep" Member="NguyenLieu" ThisKey="NL_Id" OtherKey="NL_Id" Type="NguyenLieu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NhanVien_QuanLyBep" Member="NhanVien" ThisKey="NV_Id" OtherKey="NV_Id" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Quyen" Member="Quyens">
+    <Type Name="Quyen">
+      <Column Name="Quyen_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DienGiai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Quyen_CapQuyenNhom" Member="CapQuyenNhoms" ThisKey="Quyen_Id" OtherKey="Quyen_Id" Type="CapQuyenNhom" />
     </Type>
   </Table>
   <Table Name="dbo.TaiKhoan" Member="TaiKhoans">

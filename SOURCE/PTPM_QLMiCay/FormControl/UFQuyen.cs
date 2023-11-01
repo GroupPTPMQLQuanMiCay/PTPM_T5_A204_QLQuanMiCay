@@ -16,5 +16,11 @@ namespace FormControl
         {
             InitializeComponent();
         }
+
+        private void btn_PhanQuyen_Click(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }
