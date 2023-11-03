@@ -10,7 +10,7 @@ namespace FormControl
     public partial class UFNguyenLieu : UserControl
     {
 
-        private bool isAdd;
+        //private bool isAdd;
         public bool IsAdd;
 
         public UFNguyenLieu(string connectionString)

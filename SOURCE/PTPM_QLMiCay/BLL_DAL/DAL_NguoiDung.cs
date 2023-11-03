@@ -14,9 +14,9 @@ namespace BLL_DAL
         {
         }
 
-        public object load()
-        {
-            return qmc.NguoiDungs.Select(t => t).ToList();
-        }
+        //public object load()
+        //{
+        //    return qmc.NguoiDungs.Select(t => t).ToList();
+        //}
     }
 }

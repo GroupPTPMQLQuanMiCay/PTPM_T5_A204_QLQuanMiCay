@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PTPM_QLMiCay.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="HoangConnection" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True</Value>
+    <Setting Name="Connection" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=NEWSEAA\SQLEXPRESS;Initial Catalog=QLMiCay;User ID=sa;Password=123</Value>
     </Setting>
   </Settings>
 </SettingsFile>

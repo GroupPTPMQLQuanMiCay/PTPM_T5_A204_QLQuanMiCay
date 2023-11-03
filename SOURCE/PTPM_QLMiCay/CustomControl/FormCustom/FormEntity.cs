@@ -18,7 +18,7 @@ namespace CustomControl.FormCustom
         { 
             this.BackColor = Color.White;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
             this.MouseDown += FormEntity_MouseDown;
             this.MouseMove += FormEntity_MouseMove;
             

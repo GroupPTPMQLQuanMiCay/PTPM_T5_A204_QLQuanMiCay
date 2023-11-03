@@ -1,19 +1,18 @@
-﻿using CustomControl.FormCustom;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTPM_QLMiCay.GUI
+namespace FormControl
 {
-    public partial class fDatNguyenLieu : FormEntity
+    public partial class UFNhomQuyen : UserControl
     {
-        public fDatNguyenLieu()
+        public UFNhomQuyen()
         {
             InitializeComponent();
         }

@@ -1,6 +1,4 @@
-﻿using CustomControl.FormCustom;
-using FormControl;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,125 +7,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CustomControl.FormCustom;
+using FormControl;
 
 namespace PTPM_QLMiCay.GUI
 {
     public partial class fTrangChu : FormEntity
     {
+        UFTrangChu ufTrangChu = new UFTrangChu();
+        //UFNguyenLieu ufNguyenLieu = new UFNguyenLieu();
+        UFNhanVIen ufNhanVien = new UFNhanVIen();
+        UFNhaCungCap ufNhaCungCap = new UFNhaCungCap();
+        UFDanhMuc ufDanhMuc = new UFDanhMuc();
+        UFQuyen ufQuyen = new UFQuyen();
         public fTrangChu()
         {
             InitializeComponent();
         }
 
-        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        public void OpenChildFormCT(UserControl childForm) 
         {
-
+            panel_Body.Controls.Clear();
+            panel_Body.Controls.Add(childForm);
+            panel_Body.Dock = DockStyle.Fill;
         }
-
-        private void ufNguyenLieu1_Load(object sender, EventArgs e)
+        private void btnTrangChu_Click(object sender, EventArgs e)
         {
-
+            OpenChildFormCT(ufTrangChu);
         }
 
         private void fTrangChu_Load(object sender, EventArgs e)
         {
-            ufTrangChu1.Show();
-            //ufNguyenLieu1.Hide();
-            ufNhaCungCap1.Hide();
-            ufDanhMuc1.Hide();
-            ufNhanVIen1.Hide();
-            ufQuyen1.Hide();
+            OpenChildFormCT(ufTrangChu);
         }
 
-        private void cButtonFlat1_Click(object sender, EventArgs e)
+        private void btnNguyenLieu_Click(object sender, EventArgs e)
         {
-            //Hide other user control
-            //ufNguyenLieu1.Hide();
-            
-            ufNhaCungCap1.Hide();
-            ufDanhMuc1.Hide();
-            ufNhanVIen1.Hide();
-            ufQuyen1.Hide();
-            //Show current usercontrol
-            ufTrangChu1.Show();
-            ufTrangChu1.BringToFront();
+            //OpenChildFormCT(ufNguyenLieu);
         }
 
-        private void cButtonFlat2_Click(object sender, EventArgs e)
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
-            //Hide other user control
-            ufTrangChu1.Hide();
-            ufNhaCungCap1.Hide();
-            ufDanhMuc1.Hide();
-            ufNhanVIen1.Hide();
-            ufQuyen1.Hide();
-            //Show current usercontrol
-            //ufNguyenLieu1.Show();
-            //ufNguyenLieu1.BringToFront();
+            OpenChildFormCT(ufNhaCungCap);
         }
 
-        private void cButtonFlat3_Click(object sender, EventArgs e)
+        private void btnDanhMuc_Click(object sender, EventArgs e)
         {
-            //Hide other user control
-            ufTrangChu1.Hide();
-            ufDanhMuc1.Hide();
-            //ufNguyenLieu1.Hide();
-            ufNhanVIen1.Hide();
-            ufQuyen1.Hide();
-            //Show current usercontrol
-            ufNhaCungCap1.Show();
-            ufNhaCungCap1.BringToFront();
-            
+            OpenChildFormCT(ufDanhMuc);
         }
 
-        private void cButtonFlat4_Click(object sender, EventArgs e)
+        private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            //Hide other user control
-            ufTrangChu1.Hide();
-            ufNhaCungCap1.Hide();
-            //ufNguyenLieu1.Hide();
-            ufNhanVIen1.Hide();
-            ufQuyen1.Hide();
-            //Show current usercontrol
-            ufDanhMuc1.Show();
-            ufDanhMuc1.BringToFront();
+            OpenChildFormCT(ufNhanVien);
         }
 
-        private void cButtonFlat5_Click(object sender, EventArgs e)
+        private void btnQuyen_Click(object sender, EventArgs e)
         {
-            //Hide other user control
-            ufTrangChu1.Hide();
-            ufNhaCungCap1.Hide();
-            //ufNguyenLieu1.Hide();
-            ufDanhMuc1.Hide();
-            ufQuyen1.Hide();
-            //Show current usercontrol
-            ufNhanVIen1.Show();
-            ufNhanVIen1.BringToFront();
-        }
-
-        private void cButtonFlat8_Click(object sender, EventArgs e)
-        {
-            //Hide other user control
-            ufTrangChu1.Hide();
-            ufNhaCungCap1.Hide();
-            //ufNguyenLieu1.Hide();
-            ufDanhMuc1.Hide();
-            ufNhanVIen1.Hide();
-            //Show current usercontrol
-            ufQuyen1.Show();
-            ufQuyen1.BringToFront();
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void fTrangChu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Program.formDangNhap = new fDangNhap();
-            Program.formDangNhap.Show();
+            OpenChildFormCT(ufQuyen);
         }
     }
 }

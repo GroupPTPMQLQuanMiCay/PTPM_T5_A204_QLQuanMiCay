@@ -79,6 +79,24 @@
     <Compile Include="UFDanhMuc.Designer.cs">
       <DependentUpon>UFDanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="UFDatNguyenLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFDatNguyenLieu.Designer.cs">
+      <DependentUpon>UFDatNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFHoaDonNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFHoaDonNhap.Designer.cs">
+      <DependentUpon>UFHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFLichSuGia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFLichSuGia.Designer.cs">
+      <DependentUpon>UFLichSuGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="UFNguyenLieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +114,18 @@
     </Compile>
     <Compile Include="UFNhanVIen.Designer.cs">
       <DependentUpon>UFNhanVIen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFNhapNguyenLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFNhapNguyenLieu.Designer.cs">
+      <DependentUpon>UFNhapNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFNhomQuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFNhomQuyen.Designer.cs">
+      <DependentUpon>UFNhomQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="UFQuyen.cs">
       <SubType>UserControl</SubType>
@@ -116,6 +146,15 @@
     <EmbeddedResource Include="UFDanhMuc.resx">
       <DependentUpon>UFDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UFDatNguyenLieu.resx">
+      <DependentUpon>UFDatNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFHoaDonNhap.resx">
+      <DependentUpon>UFHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFLichSuGia.resx">
+      <DependentUpon>UFLichSuGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UFNguyenLieu.resx">
       <DependentUpon>UFNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UFNhanVIen.resx">
       <DependentUpon>UFNhanVIen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFNhapNguyenLieu.resx">
+      <DependentUpon>UFNhapNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFNhomQuyen.resx">
+      <DependentUpon>UFNhomQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UFQuyen.resx">
       <DependentUpon>UFQuyen.cs</DependentUpon>
