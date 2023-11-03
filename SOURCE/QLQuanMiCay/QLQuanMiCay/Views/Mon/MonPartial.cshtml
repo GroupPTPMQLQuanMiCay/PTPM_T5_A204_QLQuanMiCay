@@ -14,7 +14,7 @@
                     <div class="col-sm-12 col-md-5 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
                         <div class="">@mon.M_Ten</div>
                         <img src="~/images/@mon.M_IMG" style="margin-bottom: 5px"/>
-                        <button class="btn btn-danger" style="margin-bottom: 5px">Đặt món</button>
+                        <button class="btn btn-danger" style="margin-bottom: 5px" onclick="addToCart('@mon.M_Ten', '@mon.M_Gia', '@mon.M_IMG')">Đặt món</button>
                     </div>
                     count++;
                 }
@@ -23,7 +23,7 @@
                     <div class="col-sm-12 col-md-5 col-md-offset-1 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
                         <div class="">@mon.M_Ten</div>
                         <img src="~/images/@mon.M_IMG" style="margin-bottom: 5px"/>
-                        <button class="btn btn-danger" style="margin-bottom: 5px">Đặt món</button>
+                        <button class="btn btn-danger" style="margin-bottom: 5px" onclick="addToCart('@mon.M_Ten', '@mon.M_Gia', '@mon.M_IMG')">Đặt món</button>
                     </div>
                     count = 0;
                 }
@@ -31,6 +31,61 @@
             }
         }
     </div>
+
+    <script>
+        function addToCart(ten, gia, hinh) {
+            let cart = []
+            if(localStorage.getItem('cart')){
+                cart = JSON.parse(localStorage.getItem('cart'))
+            }
+
+            for(let i = 0 ; i < cart.length ; i++){
+                if(cart[i].ten == ten){
+                    let qty = cart[i].Qty
+                    qty++
+                    cart[i].Qty = qty
+                    localStorage.setItem('cart', JSON.stringify(cart))
+                    updateQuantity()
+                    loadCart()
+                    return
+                }
+            }
+
+            var cartItem = {ten: ten, gia: gia, Qty: 1, hinh: hinh}
+            cart.push(cartItem)
+            localStorage.setItem('cart', JSON.stringify(cart))
+            updateQuantity()
+            loadCart()
+        }
+
+        function updateQuantity(){
+            let cart = []
+            if(localStorage.getItem('cart')){
+                cart = JSON.parse(localStorage.getItem('cart'))
+            }
+            document.getElementById('productQuantity').innerHTML = cart.length
+        }
+
+        function loadCart() {
+            let cart = []
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'))
+            }
+            for (let i = 0 ; i < cart.length ; i++) {
+                var table = document.getElementById('cart-item')
+                var row = table.insertRow();
+                var cell1 = row.insertCell();
+                var cell2 = row.insertCell();
+                var cell3 = row.insertCell();
+                var cell4 = row.insertCell();
+
+                cell1.innerHTML = cart[i].ten;
+                cell2.innerHTML = cart[i].gia;
+                cell3.innerHTML = cart[i].Qty;
+                cell4.innerHTML = cart[i].hinh;
+            }
+        }
+    </script>
 </div>
 
 @Html.PagedListPager(Model, i => Url.Action("Index", "ThucDon", new { index = i }))
