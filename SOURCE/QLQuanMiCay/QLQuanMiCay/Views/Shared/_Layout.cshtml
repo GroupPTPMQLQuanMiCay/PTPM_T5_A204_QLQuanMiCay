@@ -139,7 +139,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="hienThiBanDau()">
     <div class="wrap-content" style="min-height: 640px;">
         <div class="navbar navbar-inverse" style="background-color: #be1e2d; min-width: 740px">
             <div style="display: flex; flex-direction:row; justify-content: space-between; position: relative">
@@ -175,9 +175,9 @@
                         </a>
                     </form>
 
-                    <a href="#" class="mx-3 text-danger position-relative" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px;">
+                    <a href="/GioHang/Index" class="mx-3 text-danger position-relative" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px;">
                         <img src="~/images/shopping-bag.png" />
-                        <span class="position-absolute quantity" style="font-size: 12px; color: #000; position: absolute; margin-top: -5px;">0</span>
+                        <span class="position-absolute quantity" style="font-size: 12px; color: #000; position: absolute; margin-top: -5px;" id="productQuantity"></span>
                     </a>
 
                     <a onclick="hienThiModal()" class="mx-3 text-danger position-relative menu-mobile" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px; cursor: pointer">
@@ -229,6 +229,35 @@
 
         function hienThiModal() {
             alert('Nhấn nút hiển thị modal');
+        }
+
+        function hienThiBanDau() {
+            let cart = []
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'))
+            }
+            document.getElementById('productQuantity').innerHTML = cart.length
+            loadCart()
+        }
+
+        function loadCart() {
+            let cart = []
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'))
+            }
+            for (let i = 0 ; i < cart.length ; i++) {
+                var table = document.getElementById('cart-item')
+                var row = table.insertRow();
+                var cell1 = row.insertCell();
+                var cell2 = row.insertCell();
+                var cell3 = row.insertCell();
+                var cell4 = row.insertCell();
+
+                cell2.innerHTML = cart[i].ten;
+                cell3.innerHTML = cart[i].gia;
+                cell4.innerHTML = cart[i].Qty;
+                cell1.innerHTML = "<img src=\"/images/" + cart[i].hinh + "\" width=\"200px\" height=\"200px\"/>"
+            }
         }
     </script>
 </body>
