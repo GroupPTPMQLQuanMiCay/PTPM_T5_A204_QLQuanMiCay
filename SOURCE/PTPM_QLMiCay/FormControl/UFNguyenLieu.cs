@@ -9,15 +9,13 @@ namespace FormControl
 {
     public partial class UFNguyenLieu : UserControl
     {
-
         //private bool isAdd;
         public bool IsAdd;
 
-        public UFNguyenLieu(string connectionString)
+        public UFNguyenLieu()
         {
             InitializeComponent();
         }
-
         private void cGroupBox4_Enter(object sender, EventArgs e)
         {
 

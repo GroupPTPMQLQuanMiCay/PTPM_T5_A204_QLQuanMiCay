@@ -20,6 +20,12 @@ namespace DataFirstEntities.Entity
 
         [Key]
         [Column(Order = 2)]
+        public string MH_Id { get; set; }
+        [ForeignKey("MH_Id")]
+        public virtual ManHinh ManHinh { get; set; }
+
+        [Key]
+        [Column(Order = 3)]
         public string Quyen_Id { get; set; }
         [ForeignKey("Quyen_Id")]
         public virtual Quyen Quyen { get; set; }

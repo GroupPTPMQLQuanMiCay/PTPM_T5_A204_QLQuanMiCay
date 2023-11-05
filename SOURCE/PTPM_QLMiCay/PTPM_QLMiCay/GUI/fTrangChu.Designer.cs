@@ -136,6 +136,7 @@
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Textcolor = System.Drawing.Color.Black;
             this.btnThoat.TextFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnDoanhThu
             // 
@@ -432,6 +433,7 @@
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Name = "fTrangChu";
             this.Text = "fTrangChu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fTrangChu_FormClosed);
             this.Load += new System.EventHandler(this.fTrangChu_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

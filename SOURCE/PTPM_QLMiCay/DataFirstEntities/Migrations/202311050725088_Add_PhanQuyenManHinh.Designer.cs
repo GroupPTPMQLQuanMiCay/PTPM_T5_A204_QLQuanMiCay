@@ -7,13 +7,13 @@ namespace DataFirstEntities.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Add_AllQuyen : IMigrationMetadata
+    public sealed partial class Add_PhanQuyenManHinh : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Add_AllQuyen));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Add_PhanQuyenManHinh));
         
         string IMigrationMetadata.Id
         {
-            get { return "202310311518550_Add_AllQuyen"; }
+            get { return "202311050725088_Add_PhanQuyenManHinh"; }
         }
         
         string IMigrationMetadata.Source

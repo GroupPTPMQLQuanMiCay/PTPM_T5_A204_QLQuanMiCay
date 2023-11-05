@@ -29,20 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFNhomQuyen));
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_Quyen = new CustomControl.ControlCustom.CDataGirdView();
-            this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
             this.btn_GanQuyen = new CustomControl.ControlCustom.CButton();
             this.btn_SuaNQ = new CustomControl.ControlCustom.CButton();
@@ -59,92 +50,52 @@
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuyenColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quyen)).BeginInit();
             this.cGroupBox3.SuspendLayout();
             this.cGroupBox2.SuspendLayout();
             this.cGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Column5
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.NullValue = false;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column5.HeaderText = "Sửa";
-            this.Column5.Name = "Column5";
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.NullValue = false;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column3.HeaderText = "Thêm";
-            this.Column3.Name = "Column3";
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.NullValue = false;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column2.HeaderText = "Xem";
-            this.Column2.Name = "Column2";
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column1.HeaderText = "Bảng";
-            this.Column1.Name = "Column1";
-            // 
             // dgv_Quyen
             // 
             this.dgv_Quyen.AllowUserToAddRows = false;
             this.dgv_Quyen.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Orange;
-            this.dgv_Quyen.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            this.dgv_Quyen.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Quyen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Quyen.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Quyen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Quyen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Quyen.DefaultCellStyle = dataGridViewCellStyle7;
+            this.QuyenColumn});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Quyen.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Quyen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Quyen.GridColor = System.Drawing.Color.White;
             this.dgv_Quyen.Location = new System.Drawing.Point(3, 25);
             this.dgv_Quyen.Name = "dgv_Quyen";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Quyen.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Quyen.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Quyen.RowHeadersVisible = false;
             this.dgv_Quyen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Quyen.Size = new System.Drawing.Size(499, 343);
+            this.dgv_Quyen.Size = new System.Drawing.Size(417, 343);
             this.dgv_Quyen.TabIndex = 0;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.NullValue = false;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column4.HeaderText = "Xóa";
-            this.Column4.Name = "Column4";
             // 
             // cGroupBox3
             // 
@@ -154,7 +105,7 @@
             this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox3.Location = new System.Drawing.Point(461, 77);
             this.cGroupBox3.Name = "cGroupBox3";
-            this.cGroupBox3.Size = new System.Drawing.Size(505, 371);
+            this.cGroupBox3.Size = new System.Drawing.Size(423, 371);
             this.cGroupBox3.TabIndex = 13;
             this.cGroupBox3.TabStop = false;
             this.cGroupBox3.Text = "Danh sách";
@@ -183,6 +134,7 @@
             this.btn_GanQuyen.Size = new System.Drawing.Size(163, 41);
             this.btn_GanQuyen.TabIndex = 25;
             this.btn_GanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_GanQuyen.Click += new System.EventHandler(this.btn_GanQuyen_Click);
             // 
             // btn_SuaNQ
             // 
@@ -208,6 +160,7 @@
             this.btn_SuaNQ.Size = new System.Drawing.Size(163, 41);
             this.btn_SuaNQ.TabIndex = 24;
             this.btn_SuaNQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_SuaNQ.Click += new System.EventHandler(this.btn_SuaNQ_Click);
             // 
             // btn_XoaNQ
             // 
@@ -233,6 +186,7 @@
             this.btn_XoaNQ.Size = new System.Drawing.Size(163, 41);
             this.btn_XoaNQ.TabIndex = 23;
             this.btn_XoaNQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_XoaNQ.Click += new System.EventHandler(this.btn_XoaNQ_Click);
             // 
             // btn_ThemNQ
             // 
@@ -258,6 +212,7 @@
             this.btn_ThemNQ.Size = new System.Drawing.Size(163, 41);
             this.btn_ThemNQ.TabIndex = 22;
             this.btn_ThemNQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_ThemNQ.Click += new System.EventHandler(this.btn_ThemNQ_Click);
             // 
             // cGroupBox2
             // 
@@ -314,6 +269,7 @@
             this.cbb_NQ.Size = new System.Drawing.Size(203, 29);
             this.cbb_NQ.TabIndex = 7;
             this.cbb_NQ.UseSelectable = true;
+            this.cbb_NQ.SelectedIndexChanged += new System.EventHandler(this.cbb_NQ_SelectedIndexChanged);
             // 
             // txt_TenNQ
             // 
@@ -417,6 +373,22 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
+            // Column1
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.HeaderText = "Màn Hình";
+            this.Column1.Name = "Column1";
+            // 
+            // QuyenColumn
+            // 
+            this.QuyenColumn.HeaderText = "Quyền";
+            this.QuyenColumn.Items.AddRange(new object[] {
+            "Không Có Quyền",
+            "Người Xem",
+            "Người Chỉnh Sửa"});
+            this.QuyenColumn.Name = "QuyenColumn";
+            // 
             // UFNhomQuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,7 +400,7 @@
             this.Controls.Add(this.cLableTitle1);
             this.Controls.Add(this.bunifuSeparator1);
             this.Name = "UFNhomQuyen";
-            this.Size = new System.Drawing.Size(980, 482);
+            this.Size = new System.Drawing.Size(890, 482);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Quyen)).EndInit();
             this.cGroupBox3.ResumeLayout(false);
             this.cGroupBox2.ResumeLayout(false);
@@ -441,12 +413,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private CustomControl.ControlCustom.CDataGirdView dgv_Quyen;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
         private CustomControl.ControlCustom.CGroupBox cGroupBox3;
         private CustomControl.ControlCustom.CButton btn_GanQuyen;
         private CustomControl.ControlCustom.CButton btn_SuaNQ;
@@ -463,5 +430,7 @@
         private CustomControl.ControlCustom.CGroupBox cGroupBox1;
         private CustomControl.ControlCustom.CLableTitle cLableTitle1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn QuyenColumn;
     }
 }

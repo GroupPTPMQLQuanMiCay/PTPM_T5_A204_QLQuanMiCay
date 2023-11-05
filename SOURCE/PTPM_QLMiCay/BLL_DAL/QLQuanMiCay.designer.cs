@@ -60,6 +60,9 @@ namespace BLL_DAL
     partial void InsertLoaiTinTuc(LoaiTinTuc instance);
     partial void UpdateLoaiTinTuc(LoaiTinTuc instance);
     partial void DeleteLoaiTinTuc(LoaiTinTuc instance);
+    partial void InsertManHinh(ManHinh instance);
+    partial void UpdateManHinh(ManHinh instance);
+    partial void DeleteManHinh(ManHinh instance);
     partial void InsertMon(Mon instance);
     partial void UpdateMon(Mon instance);
     partial void DeleteMon(Mon instance);
@@ -114,7 +117,7 @@ namespace BLL_DAL
     #endregion
 		
 		public QLQuanMiCayDataContext() : 
-				base(global::BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString, mappingSource)
+				base(global::BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -220,6 +223,14 @@ namespace BLL_DAL
 			get
 			{
 				return this.GetTable<LoaiTinTuc>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ManHinh> ManHinhs
+		{
+			get
+			{
+				return this.GetTable<ManHinh>();
 			}
 		}
 		
@@ -746,7 +757,11 @@ namespace BLL_DAL
 		
 		private string _NQ_Id;
 		
+		private string _MH_Id;
+		
 		private string _Quyen_Id;
+		
+		private EntityRef<ManHinh> _ManHinh;
 		
 		private EntityRef<NhomQuyen> _NhomQuyen;
 		
@@ -758,12 +773,15 @@ namespace BLL_DAL
     partial void OnCreated();
     partial void OnNQ_IdChanging(string value);
     partial void OnNQ_IdChanged();
+    partial void OnMH_IdChanging(string value);
+    partial void OnMH_IdChanged();
     partial void OnQuyen_IdChanging(string value);
     partial void OnQuyen_IdChanged();
     #endregion
 		
 		public CapQuyenNhom()
 		{
+			this._ManHinh = default(EntityRef<ManHinh>);
 			this._NhomQuyen = default(EntityRef<NhomQuyen>);
 			this._Quyen = default(EntityRef<Quyen>);
 			OnCreated();
@@ -793,6 +811,30 @@ namespace BLL_DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MH_Id", DbType="NVarChar(128) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MH_Id
+		{
+			get
+			{
+				return this._MH_Id;
+			}
+			set
+			{
+				if ((this._MH_Id != value))
+				{
+					if (this._ManHinh.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMH_IdChanging(value);
+					this.SendPropertyChanging();
+					this._MH_Id = value;
+					this.SendPropertyChanged("MH_Id");
+					this.OnMH_IdChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quyen_Id", DbType="NVarChar(128) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string Quyen_Id
 		{
@@ -813,6 +855,40 @@ namespace BLL_DAL
 					this._Quyen_Id = value;
 					this.SendPropertyChanged("Quyen_Id");
 					this.OnQuyen_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ManHinh_CapQuyenNhom", Storage="_ManHinh", ThisKey="MH_Id", OtherKey="MH_Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public ManHinh ManHinh
+		{
+			get
+			{
+				return this._ManHinh.Entity;
+			}
+			set
+			{
+				ManHinh previousValue = this._ManHinh.Entity;
+				if (((previousValue != value) 
+							|| (this._ManHinh.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ManHinh.Entity = null;
+						previousValue.CapQuyenNhoms.Remove(this);
+					}
+					this._ManHinh.Entity = value;
+					if ((value != null))
+					{
+						value.CapQuyenNhoms.Add(this);
+						this._MH_Id = value.MH_Id;
+					}
+					else
+					{
+						this._MH_Id = default(string);
+					}
+					this.SendPropertyChanged("ManHinh");
 				}
 			}
 		}
@@ -2404,6 +2480,120 @@ namespace BLL_DAL
 		{
 			this.SendPropertyChanging();
 			entity.LoaiTinTuc = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ManHinh")]
+	public partial class ManHinh : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MH_Id;
+		
+		private string _MH_HienThi;
+		
+		private EntitySet<CapQuyenNhom> _CapQuyenNhoms;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMH_IdChanging(string value);
+    partial void OnMH_IdChanged();
+    partial void OnMH_HienThiChanging(string value);
+    partial void OnMH_HienThiChanged();
+    #endregion
+		
+		public ManHinh()
+		{
+			this._CapQuyenNhoms = new EntitySet<CapQuyenNhom>(new Action<CapQuyenNhom>(this.attach_CapQuyenNhoms), new Action<CapQuyenNhom>(this.detach_CapQuyenNhoms));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MH_Id", DbType="NVarChar(128) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MH_Id
+		{
+			get
+			{
+				return this._MH_Id;
+			}
+			set
+			{
+				if ((this._MH_Id != value))
+				{
+					this.OnMH_IdChanging(value);
+					this.SendPropertyChanging();
+					this._MH_Id = value;
+					this.SendPropertyChanged("MH_Id");
+					this.OnMH_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MH_HienThi", DbType="NVarChar(MAX)")]
+		public string MH_HienThi
+		{
+			get
+			{
+				return this._MH_HienThi;
+			}
+			set
+			{
+				if ((this._MH_HienThi != value))
+				{
+					this.OnMH_HienThiChanging(value);
+					this.SendPropertyChanging();
+					this._MH_HienThi = value;
+					this.SendPropertyChanged("MH_HienThi");
+					this.OnMH_HienThiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ManHinh_CapQuyenNhom", Storage="_CapQuyenNhoms", ThisKey="MH_Id", OtherKey="MH_Id")]
+		public EntitySet<CapQuyenNhom> CapQuyenNhoms
+		{
+			get
+			{
+				return this._CapQuyenNhoms;
+			}
+			set
+			{
+				this._CapQuyenNhoms.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CapQuyenNhoms(CapQuyenNhom entity)
+		{
+			this.SendPropertyChanging();
+			entity.ManHinh = this;
+		}
+		
+		private void detach_CapQuyenNhoms(CapQuyenNhom entity)
+		{
+			this.SendPropertyChanging();
+			entity.ManHinh = null;
 		}
 	}
 	

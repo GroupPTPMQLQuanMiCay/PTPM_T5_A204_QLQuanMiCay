@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLQuanMiCay" Class="QLQuanMiCayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-KCB97U3\HONGTHAM;Initial Catalog=QLQuanMiCay;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-KCB97U3\HONGTHAM;Initial Catalog=QLQuanMiCay;Persist Security Info=True;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Ban" Member="Bans">
     <Type Name="Ban">
       <Column Name="B_SoBan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -22,7 +22,9 @@
   <Table Name="dbo.CapQuyenNhom" Member="CapQuyenNhoms">
     <Type Name="CapQuyenNhom">
       <Column Name="NQ_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MH_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Quyen_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="ManHinh_CapQuyenNhom" Member="ManHinh" ThisKey="MH_Id" OtherKey="MH_Id" Type="ManHinh" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NhomQuyen_CapQuyenNhom" Member="NhomQuyen" ThisKey="NQ_Id" OtherKey="NQ_Id" Type="NhomQuyen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Quyen_CapQuyenNhom" Member="Quyen" ThisKey="Quyen_Id" OtherKey="Quyen_Id" Type="Quyen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -96,6 +98,13 @@
       <Column Name="LoaiTin_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenLoaiTin" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="LoaiTinTuc_TinTuc" Member="TinTucs" ThisKey="LoaiTin_Id" OtherKey="LoaiTin_Id" Type="TinTuc" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ManHinh" Member="ManHinhs">
+    <Type Name="ManHinh">
+      <Column Name="MH_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MH_HienThi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="ManHinh_CapQuyenNhom" Member="CapQuyenNhoms" ThisKey="MH_Id" OtherKey="MH_Id" Type="CapQuyenNhom" />
     </Type>
   </Table>
   <Table Name="dbo.Mon" Member="Mons">

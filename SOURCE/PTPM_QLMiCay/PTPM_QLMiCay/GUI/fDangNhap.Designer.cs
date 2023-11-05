@@ -31,7 +31,6 @@ namespace PTPM_QLMiCay.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDangNhap));
-            this.cButtonClose1 = new CustomControl.ControlCustom.CButtonClose();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
@@ -42,22 +41,7 @@ namespace PTPM_QLMiCay.GUI
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.btn_DN = new CustomControl.ControlCustom.CButton();
             this.btn_Thoat = new CustomControl.ControlCustom.CButton();
-            ((System.ComponentModel.ISupportInitialize)(this.cButtonClose1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cButtonClose1
-            // 
-            this.cButtonClose1.BackColor = System.Drawing.Color.White;
-            this.cButtonClose1.Image = ((System.Drawing.Image)(resources.GetObject("cButtonClose1.Image")));
-            this.cButtonClose1.ImageActive = null;
-            this.cButtonClose1.Location = new System.Drawing.Point(916, 2);
-            this.cButtonClose1.Name = "cButtonClose1";
-            this.cButtonClose1.Size = new System.Drawing.Size(20, 20);
-            this.cButtonClose1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.cButtonClose1.TabIndex = 0;
-            this.cButtonClose1.TabStop = false;
-            this.cButtonClose1.Zoom = 10;
-            this.cButtonClose1.Click += new System.EventHandler(this.cButtonClose1_Click);
             // 
             // cLableTitle1
             // 
@@ -189,7 +173,7 @@ namespace PTPM_QLMiCay.GUI
             this.btn_DN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_DN.Name = "btn_DN";
             this.btn_DN.Size = new System.Drawing.Size(370, 41);
-            this.btn_DN.TabIndex = 22;
+            this.btn_DN.TabIndex = 3;
             this.btn_DN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_DN.Click += new System.EventHandler(this.btn_DN_Click);
             // 
@@ -215,7 +199,7 @@ namespace PTPM_QLMiCay.GUI
             this.btn_Thoat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(370, 41);
-            this.btn_Thoat.TabIndex = 22;
+            this.btn_Thoat.TabIndex = 4;
             this.btn_Thoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
@@ -234,11 +218,8 @@ namespace PTPM_QLMiCay.GUI
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.cLableTitle1);
-            this.Controls.Add(this.cButtonClose1);
             this.Name = "fDangNhap";
             this.Text = "fDangNhap";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fDangNhap_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.cButtonClose1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,7 +227,6 @@ namespace PTPM_QLMiCay.GUI
 
         #endregion
 
-        private CustomControl.ControlCustom.CButtonClose cButtonClose1;
         private CustomControl.ControlCustom.CLableTitle cLableTitle1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;

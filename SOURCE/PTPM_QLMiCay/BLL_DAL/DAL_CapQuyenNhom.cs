@@ -10,7 +10,7 @@ namespace BLL_DAL
     public class DAL_CapQuyenNhom
     {
         QLQuanMiCayDataContext qmc = new QLQuanMiCayDataContext();
-
+        DAL_Quyen dal_quyen = new DAL_Quyen();
         public DAL_CapQuyenNhom()
         {
 
@@ -18,72 +18,70 @@ namespace BLL_DAL
 
         public DataGridView load(DataGridView dgv, string NQID)
         {
-            var tableNames = qmc.ExecuteQuery<string>
-                ("select name from sys.tables where name != 'sysdiagrams' and name != '__MigrationHistory'")
-                .ToList();
+            var manHinhs = qmc.ManHinhs.Select(t => t.MH_HienThi).ToList();
 
-            foreach (var tableName in tableNames)
+            for (int i = 0; i < manHinhs.Count; i++)
             {
-                string name = string.Empty;
-                bool select, insert, delete, update;
-                select = insert = delete = update = false;
+                string manHinh = manHinhs[i];
 
-                List<string> quyen = qmc.CapQuyenNhoms.Where(
-                    t => t.NQ_Id.Equals(NQID) && t.Quyen.DienGiai.Contains(tableName))
+                string quyen = qmc.CapQuyenNhoms
+                    .Where(t => t.NQ_Id.Equals(NQID) && t.ManHinh.MH_HienThi.Equals(manHinh))
                     .Select(t => t.Quyen.DienGiai)
-                    .ToList();
-                foreach(string s in quyen)
-                {
-                    if (s.Contains("select"))
-                        select = true;
-                    if (s.Contains("insert"))
-                        insert = true;
-                    if (s.Contains("delete"))
-                        delete = true;
-                    if (s.Contains("update"))
-                        update = true;
-                }
-                var r = new object[] { tableName, select, insert, delete, update };
-                dgv.Rows.Add(r);
+                    .FirstOrDefault();
+
+                if (quyen == null)
+                    quyen = "Không Có Quyền";
+
+                dgv.Rows.Add(new object[] { manHinh, quyen });
             }
+
             return dgv;
         }
 
-        public bool checkExist(string NQID, string quyenID)
+        
+        public bool checkExist(string NQID, string MHID, string quyenID)
         {
             CapQuyenNhom cqn = qmc.CapQuyenNhoms.Where(
-                t => t.NQ_Id.Equals(NQID) && t.Quyen_Id.Equals(quyenID))
+                t => t.NQ_Id.Equals(NQID) && t.MH_Id.Equals(MHID) && t.Quyen_Id.Equals(quyenID))
                 .FirstOrDefault();
             if (cqn != null)
                 return true;
             return false;
         }
-        public bool addCapQuyenNhom(string NQID, List<string> quyenIDs)
+        public bool checkDelete (string quyenID)
+        {
+            if (quyenID.Equals("1"))
+                return true;
+            return false;
+        }
+
+        public CapQuyenNhom getItemDelete(List<CapQuyenNhom> list, CapQuyenNhom check)
+        {
+            foreach (CapQuyenNhom item in list)
+            {
+                if (item.NQ_Id.Equals(check.NQ_Id) && item.MH_Id.Equals(check.MH_Id) && !item.Quyen_Id.Equals(check.Quyen_Id))
+                    return item;
+            }
+            return null;
+        }
+
+        public bool addCapQuyenNhom(List<CapQuyenNhom> listNew)
         {
             try
             {
-                List<string> deletes = qmc.CapQuyenNhoms.Where(
-                    t => t.NQ_Id.Equals(NQID))
-                    .Select(t => t.Quyen_Id)
-                    .ToList();
-                foreach(string delete in deletes)
+                List<CapQuyenNhom> list = layQuyenManHinh(listNew[0].NQ_Id);
+                foreach (CapQuyenNhom item in listNew)
                 {
-                    if (!quyenIDs.Contains(delete))
-                        deleteCapQuyenNhom(NQID, delete);
+                    if (checkDelete(item.Quyen_Id))
+                    {
+                        CapQuyenNhom delete = getItemDelete(list, item);
+                        if (delete != null)
+                            deleteCapQuyenNhom(delete.NQ_Id, delete.MH_Id, delete.Quyen_Id);
+                    }
+                    else if (!checkExist(item.NQ_Id, item.MH_Id, item.Quyen_Id))
+                        addCapQuyenNhom(item.NQ_Id, item.MH_Id, item.Quyen_Id);
                 }
-            }
-            catch
-            {
-                return false;
-            }
 
-            try
-            {
-                foreach(string quyenID in quyenIDs)
-                {
-                    if (!checkExist(NQID, quyenID))
-                        addCapQuyenNhom(NQID, quyenID);
-                }
                 return true;
             }
             catch
@@ -92,12 +90,13 @@ namespace BLL_DAL
             }
         }
 
-        public bool addCapQuyenNhom(string NQID, string quyenID)
+        public bool addCapQuyenNhom(string NQID, string MHID, string quyenID)
         {
             try
             {
                 qmc.CapQuyenNhoms.InsertOnSubmit(new CapQuyenNhom(){
                     NQ_Id = NQID,
+                    MH_Id = MHID,
                     Quyen_Id = quyenID
                 });
                 qmc.SubmitChanges();
@@ -109,12 +108,12 @@ namespace BLL_DAL
             }
         }
 
-        public bool deleteCapQuyenNhom(string NQID, string quyenID)
+        public bool deleteCapQuyenNhom(string NQID, string MHID, string quyenID)
         {
             try
             {
                 CapQuyenNhom cqn = qmc.CapQuyenNhoms.Where(
-                t => t.NQ_Id.Equals(NQID) && t.Quyen_Id.Equals(quyenID))
+                t => t.NQ_Id.Equals(NQID) && t.MH_Id.Equals(MHID) && t.Quyen_Id.Equals(quyenID))
                 .FirstOrDefault();
                 qmc.CapQuyenNhoms.DeleteOnSubmit(cqn);
                 qmc.SubmitChanges();
@@ -124,6 +123,41 @@ namespace BLL_DAL
             {
                 return false;
             }
+        }
+        public List<CapQuyenNhom> layQuyenManHinh(string NQID)
+        {
+            return qmc.CapQuyenNhoms.Where(t => t.NQ_Id.Equals(NQID)).Select(t => t).ToList();
+        }
+
+        public List<CapQuyenNhom> laySeletedQuyenManHinh(string NQID, DataGridView dgv)
+        {
+            List<CapQuyenNhom> list = new List<CapQuyenNhom>();
+            foreach (DataGridViewRow r in dgv.Rows)
+            {
+                string manHinh = r.Cells[0].Value.ToString();
+                string quyen = r.Cells[1].Value.ToString();
+
+                CapQuyenNhom cpn = new CapQuyenNhom();
+                cpn.NQ_Id = NQID;
+                cpn.MH_Id = qmc.ManHinhs.Where(t => t.MH_HienThi.Equals(manHinh)).Select(t => t.MH_Id).FirstOrDefault();
+                cpn.Quyen_Id = qmc.Quyens.Where(t => t.DienGiai.Equals(quyen)).Select(t => t.Quyen_Id).FirstOrDefault();
+
+                list.Add(cpn);
+            }
+            return list;
+        }
+
+        public int getQuyenID(string NQID, string MHID)
+        {
+            string ID = qmc.CapQuyenNhoms.Where(
+                t => t.NQ_Id.Equals(NQID) && t.MH_Id.Equals(MHID))
+                .Select(t => t.Quyen_Id)
+                .FirstOrDefault();
+
+            int id = 0;
+            if (ID != null)
+                id = int.Parse(ID);
+            return id;
         }
     }
 }

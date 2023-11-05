@@ -39,18 +39,12 @@ namespace PTPM_QLMiCay.GUI
             }
             else
             {
-                //Chua phan quyen
-                if (Program.formTrangChu == null || Program.formTrangChu.IsDisposed)
-                    Program.formTrangChu = new fTrangChu();
+                TaiKhoan tk = dal_TK.loadTaiKhoan(tenTK, mkTK);
+                Program.formTrangChu = new fTrangChu(tk.TK_NguoiDung);
                 Program.formDangNhap.Visible = false;
-                Program.formTrangChu.Show();
+                Program.formTrangChu.ShowDialog();
             }
             
-        }
-
-        private void fDangNhap_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Program.formDangNhap.Show();
         }
 
         private void btn_Thoat_Click(object sender, EventArgs e)
@@ -58,6 +52,5 @@ namespace PTPM_QLMiCay.GUI
             this.Close();
         }
 
-        
     }
 }

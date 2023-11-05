@@ -48,7 +48,7 @@
             this.cTextBox4 = new CustomControl.ControlCustom.CTextBox();
             this.cLable5 = new CustomControl.ControlCustom.CLable();
             this.cTextBox3 = new CustomControl.ControlCustom.CTextBox();
-            this.cCombobox1 = new CustomControl.ControlCustom.CCombobox();
+            this.cbb_NCC = new CustomControl.ControlCustom.CCombobox();
             this.cLable3 = new CustomControl.ControlCustom.CLable();
             this.cTextBox2 = new CustomControl.ControlCustom.CTextBox();
             this.cLable2 = new CustomControl.ControlCustom.CLable();
@@ -342,15 +342,15 @@
             this.cTextBox3.TabIndex = 3;
             this.cTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // cCombobox1
+            // cbb_NCC
             // 
-            this.cCombobox1.FormattingEnabled = true;
-            this.cCombobox1.ItemHeight = 23;
-            this.cCombobox1.Location = new System.Drawing.Point(242, 68);
-            this.cCombobox1.Name = "cCombobox1";
-            this.cCombobox1.Size = new System.Drawing.Size(203, 29);
-            this.cCombobox1.TabIndex = 7;
-            this.cCombobox1.UseSelectable = true;
+            this.cbb_NCC.FormattingEnabled = true;
+            this.cbb_NCC.ItemHeight = 23;
+            this.cbb_NCC.Location = new System.Drawing.Point(242, 68);
+            this.cbb_NCC.Name = "cbb_NCC";
+            this.cbb_NCC.Size = new System.Drawing.Size(203, 29);
+            this.cbb_NCC.TabIndex = 7;
+            this.cbb_NCC.UseSelectable = true;
             // 
             // cLable3
             // 
@@ -417,7 +417,7 @@
             this.cGroupBox1.Controls.Add(this.cTextBox4);
             this.cGroupBox1.Controls.Add(this.cLable5);
             this.cGroupBox1.Controls.Add(this.cTextBox3);
-            this.cGroupBox1.Controls.Add(this.cCombobox1);
+            this.cGroupBox1.Controls.Add(this.cbb_NCC);
             this.cGroupBox1.Controls.Add(this.cLable3);
             this.cGroupBox1.Controls.Add(this.cTextBox2);
             this.cGroupBox1.Controls.Add(this.cLable2);
@@ -504,7 +504,7 @@
         private CustomControl.ControlCustom.CTextBox cTextBox4;
         private CustomControl.ControlCustom.CLable cLable5;
         private CustomControl.ControlCustom.CTextBox cTextBox3;
-        private CustomControl.ControlCustom.CCombobox cCombobox1;
+        private CustomControl.ControlCustom.CCombobox cbb_NCC;
         private CustomControl.ControlCustom.CLable cLable3;
         private CustomControl.ControlCustom.CTextBox cTextBox2;
         private CustomControl.ControlCustom.CLable cLable2;

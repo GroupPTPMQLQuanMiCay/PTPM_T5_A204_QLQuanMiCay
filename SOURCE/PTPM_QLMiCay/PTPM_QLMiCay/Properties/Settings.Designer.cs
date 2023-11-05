@@ -25,7 +25,8 @@ namespace PTPM_QLMiCay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NEWSEAA\\SQLEXPRESS;Initial Catalog=QLMiCay;User ID=sa;Password=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-KCB97U3\\HONGTHAM;Initial Catalog=QLQuanMiCay;User ID=sa;Passw" +
+            "ord=123")]
         public string Connection {
             get {
                 return ((string)(this["Connection"]));

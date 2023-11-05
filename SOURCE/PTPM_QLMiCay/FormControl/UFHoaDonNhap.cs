@@ -12,9 +12,12 @@ namespace FormControl
 {
     public partial class UFHoaDonNhap : UserControl
     {
+
         public UFHoaDonNhap()
         {
             InitializeComponent();
         }
+
+
     }
 }

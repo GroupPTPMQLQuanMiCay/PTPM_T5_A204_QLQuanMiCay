@@ -42,10 +42,10 @@
             this.cLable1 = new CustomControl.ControlCustom.CLable();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
             this.dgv_NQ = new CustomControl.ControlCustom.CDataGirdView();
-            this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
-            this.btn_PhanQuyen = new CustomControl.ControlCustom.CButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
+            this.btn_PhanQuyen = new CustomControl.ControlCustom.CButton();
             this.cGroupBox1.SuspendLayout();
             this.cGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NQ)).BeginInit();
@@ -70,7 +70,7 @@
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(10, 42);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(787, 35);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(845, 35);
             this.bunifuSeparator1.TabIndex = 6;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -93,12 +93,13 @@
             this.btn_NQ.IdleFillColor = System.Drawing.Color.White;
             this.btn_NQ.IdleForecolor = System.Drawing.Color.Orange;
             this.btn_NQ.IdleLineColor = System.Drawing.Color.Orange;
-            this.btn_NQ.Location = new System.Drawing.Point(83, 30);
+            this.btn_NQ.Location = new System.Drawing.Point(132, 30);
             this.btn_NQ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_NQ.Name = "btn_NQ";
             this.btn_NQ.Size = new System.Drawing.Size(163, 41);
             this.btn_NQ.TabIndex = 22;
             this.btn_NQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_NQ.Click += new System.EventHandler(this.btn_NQ_Click);
             // 
             // cbb_ChucVu
             // 
@@ -121,7 +122,7 @@
             this.cGroupBox1.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox1.Location = new System.Drawing.Point(10, 68);
             this.cGroupBox1.Name = "cGroupBox1";
-            this.cGroupBox1.Size = new System.Drawing.Size(787, 84);
+            this.cGroupBox1.Size = new System.Drawing.Size(845, 84);
             this.cGroupBox1.TabIndex = 24;
             this.cGroupBox1.TabStop = false;
             this.cGroupBox1.Text = "Chi tiết";
@@ -145,7 +146,7 @@
             this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox2.Location = new System.Drawing.Point(10, 167);
             this.cGroupBox2.Name = "cGroupBox2";
-            this.cGroupBox2.Size = new System.Drawing.Size(565, 312);
+            this.cGroupBox2.Size = new System.Drawing.Size(641, 348);
             this.cGroupBox2.TabIndex = 25;
             this.cGroupBox2.TabStop = false;
             this.cGroupBox2.Text = "Danh sách";
@@ -186,49 +187,8 @@
             this.dgv_NQ.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_NQ.RowHeadersVisible = false;
             this.dgv_NQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_NQ.Size = new System.Drawing.Size(559, 284);
+            this.dgv_NQ.Size = new System.Drawing.Size(635, 320);
             this.dgv_NQ.TabIndex = 0;
-            // 
-            // cGroupBox3
-            // 
-            this.cGroupBox3.BackColor = System.Drawing.Color.White;
-            this.cGroupBox3.Controls.Add(this.btn_PhanQuyen);
-            this.cGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
-            this.cGroupBox3.Location = new System.Drawing.Point(599, 167);
-            this.cGroupBox3.Name = "cGroupBox3";
-            this.cGroupBox3.Padding = new System.Windows.Forms.Padding(15);
-            this.cGroupBox3.Size = new System.Drawing.Size(198, 309);
-            this.cGroupBox3.TabIndex = 26;
-            this.cGroupBox3.TabStop = false;
-            this.cGroupBox3.Text = "chức năng";
-            // 
-            // btn_PhanQuyen
-            // 
-            this.btn_PhanQuyen.ActiveBorderThickness = 1;
-            this.btn_PhanQuyen.ActiveCornerRadius = 20;
-            this.btn_PhanQuyen.ActiveFillColor = System.Drawing.Color.Orange;
-            this.btn_PhanQuyen.ActiveForecolor = System.Drawing.Color.White;
-            this.btn_PhanQuyen.ActiveLineColor = System.Drawing.Color.Orange;
-            this.btn_PhanQuyen.BackColor = System.Drawing.Color.White;
-            this.btn_PhanQuyen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_PhanQuyen.BackgroundImage")));
-            this.btn_PhanQuyen.ButtonText = "Phân quyền";
-            this.btn_PhanQuyen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_PhanQuyen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_PhanQuyen.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btn_PhanQuyen.ForeColor = System.Drawing.Color.Orange;
-            this.btn_PhanQuyen.IdleBorderThickness = 1;
-            this.btn_PhanQuyen.IdleCornerRadius = 20;
-            this.btn_PhanQuyen.IdleFillColor = System.Drawing.Color.White;
-            this.btn_PhanQuyen.IdleForecolor = System.Drawing.Color.Orange;
-            this.btn_PhanQuyen.IdleLineColor = System.Drawing.Color.Orange;
-            this.btn_PhanQuyen.Location = new System.Drawing.Point(15, 37);
-            this.btn_PhanQuyen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_PhanQuyen.Name = "btn_PhanQuyen";
-            this.btn_PhanQuyen.Size = new System.Drawing.Size(168, 41);
-            this.btn_PhanQuyen.TabIndex = 22;
-            this.btn_PhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_PhanQuyen.Click += new System.EventHandler(this.btn_PhanQuyen_Click);
             // 
             // Column1
             // 
@@ -245,6 +205,46 @@
             this.Column2.HeaderText = "Cho phép";
             this.Column2.Name = "Column2";
             // 
+            // cGroupBox3
+            // 
+            this.cGroupBox3.BackColor = System.Drawing.Color.White;
+            this.cGroupBox3.Controls.Add(this.btn_PhanQuyen);
+            this.cGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
+            this.cGroupBox3.Location = new System.Drawing.Point(657, 167);
+            this.cGroupBox3.Name = "cGroupBox3";
+            this.cGroupBox3.Padding = new System.Windows.Forms.Padding(15);
+            this.cGroupBox3.Size = new System.Drawing.Size(198, 345);
+            this.cGroupBox3.TabIndex = 26;
+            this.cGroupBox3.TabStop = false;
+            this.cGroupBox3.Text = "chức năng";
+            // 
+            // btn_PhanQuyen
+            // 
+            this.btn_PhanQuyen.ActiveBorderThickness = 1;
+            this.btn_PhanQuyen.ActiveCornerRadius = 20;
+            this.btn_PhanQuyen.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.ActiveForecolor = System.Drawing.Color.White;
+            this.btn_PhanQuyen.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.BackColor = System.Drawing.Color.White;
+            this.btn_PhanQuyen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_PhanQuyen.BackgroundImage")));
+            this.btn_PhanQuyen.ButtonText = "Phân quyền";
+            this.btn_PhanQuyen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_PhanQuyen.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_PhanQuyen.ForeColor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.IdleBorderThickness = 1;
+            this.btn_PhanQuyen.IdleCornerRadius = 20;
+            this.btn_PhanQuyen.IdleFillColor = System.Drawing.Color.White;
+            this.btn_PhanQuyen.IdleForecolor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.IdleLineColor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.Location = new System.Drawing.Point(36, 42);
+            this.btn_PhanQuyen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 15);
+            this.btn_PhanQuyen.Name = "btn_PhanQuyen";
+            this.btn_PhanQuyen.Size = new System.Drawing.Size(132, 62);
+            this.btn_PhanQuyen.TabIndex = 22;
+            this.btn_PhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_PhanQuyen.Click += new System.EventHandler(this.btn_PhanQuyen_Click);
+            // 
             // UFQuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,7 +256,7 @@
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.cLableTitle1);
             this.Name = "UFQuyen";
-            this.Size = new System.Drawing.Size(800, 495);
+            this.Size = new System.Drawing.Size(858, 518);
             this.cGroupBox1.ResumeLayout(false);
             this.cGroupBox1.PerformLayout();
             this.cGroupBox2.ResumeLayout(false);
