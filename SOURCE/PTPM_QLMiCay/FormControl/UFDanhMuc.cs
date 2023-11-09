@@ -16,7 +16,7 @@ namespace FormControl
         {
             InitializeComponent();
         }
-
+        
         private void cTextBox1_OnValueChanged(object sender, EventArgs e)
         {
 

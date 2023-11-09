@@ -38,6 +38,10 @@ namespace DataFirstEntities.Data
         public DbSet<MonCoNguyenLieu> MonCoNguyenLieus { get; set; }
         public DbSet<LoaiTinTuc> LoaiTinTucs { get; set; }
         public DbSet<TinTuc> TinTucs { get; set; }
-
+        public DbSet<Quyen> Quyens { get; set; }
+        public DbSet<CapQuyenNhom> CapQuyenNhoms { get; set; }
+        public DbSet<NhomQuyen> NhomQuyens { get; set; }
+        public DbSet<NhomQuyen_NguoiDung> NhomQuyen_NguoiDungs { get; set; }
+        public DbSet<ManHinh> ManHinhs { get; set; }
     }
 }

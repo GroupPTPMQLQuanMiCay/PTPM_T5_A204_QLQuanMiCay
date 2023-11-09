@@ -1,11 +1,17 @@
 ﻿using PTPM_QLMiCay.GUI;
 using System;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+
 
 namespace PTPM_QLMiCay
 {
-    internal static class Program
+    static class Program
     {
+        public static fDangNhap formDangNhap = null;
+        public static fTrangChu formTrangChu = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -14,7 +20,9 @@ namespace PTPM_QLMiCay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fTrangChu());
+            formDangNhap = new fDangNhap();
+            Application.Run(formDangNhap);
+            
         }
     }
 }

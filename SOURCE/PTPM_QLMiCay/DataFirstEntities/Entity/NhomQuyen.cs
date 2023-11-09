@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace DataFirstEntities.Entity
 {
-    [Table("NguoiDung")]
-    public class NguoiDung 
+    [Table("NhomQuyen")]
+    public class NhomQuyen
     {
         [Key]
-        public string NG_Id { get; set; }
+        public string NQ_Id { get; set; }
+
+        public string NQ_Ten { get; set; }
         [MaxLength(50)]
-        public string NG_DiaChi { get; set;}
-        [MaxLength(150)]
-        public string NG_PhongBan { get; set; }
-        [MaxLength(20)]
-        public string NG_MatKhau { get; set; }
+
+        public string NQ_HienThi { get; set; }
     }
 }

@@ -1,13 +1,13 @@
-﻿namespace PTPM_QLMiCay.GUI
+﻿namespace FormControl
 {
-    partial class fHoaDonNhap
+    partial class UFHoaDonNhap
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,59 +20,36 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHoaDonNhap));
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFHoaDonNhap));
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
-            this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
-            this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
+            this.cCombobox1 = new CustomControl.ControlCustom.CCombobox();
+            this.cLable1 = new CustomControl.ControlCustom.CLable();
             this.cLable4 = new CustomControl.ControlCustom.CLable();
             this.cTextBox4 = new CustomControl.ControlCustom.CTextBox();
-            this.cLable1 = new CustomControl.ControlCustom.CLable();
-            this.cCombobox1 = new CustomControl.ControlCustom.CCombobox();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
+            this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
             this.cDataGirdView1 = new CustomControl.ControlCustom.CDataGirdView();
+            this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
             this.cDataGirdView2 = new CustomControl.ControlCustom.CDataGirdView();
             this.cButtonClose1 = new CustomControl.ControlCustom.CButtonClose();
             this.cGroupBox1.SuspendLayout();
             this.cGroupBox2.SuspendLayout();
-            this.cGroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).BeginInit();
+            this.cGroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cButtonClose1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(10, 42);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(758, 35);
-            this.bunifuSeparator1.TabIndex = 5;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // cLableTitle1
-            // 
-            this.cLableTitle1.AutoSize = true;
-            this.cLableTitle1.Font = new System.Drawing.Font("Segoe UI", 21F);
-            this.cLableTitle1.ForeColor = System.Drawing.Color.Orange;
-            this.cLableTitle1.Location = new System.Drawing.Point(3, 0);
-            this.cLableTitle1.Name = "cLableTitle1";
-            this.cLableTitle1.Size = new System.Drawing.Size(203, 38);
-            this.cLableTitle1.TabIndex = 4;
-            this.cLableTitle1.Text = "Hóa Đơn Nhập";
             // 
             // cGroupBox1
             // 
@@ -83,38 +60,33 @@
             this.cGroupBox1.Controls.Add(this.cTextBox4);
             this.cGroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox1.ForeColor = System.Drawing.Color.Orange;
-            this.cGroupBox1.Location = new System.Drawing.Point(10, 72);
+            this.cGroupBox1.Location = new System.Drawing.Point(12, 76);
             this.cGroupBox1.Name = "cGroupBox1";
             this.cGroupBox1.Size = new System.Drawing.Size(758, 85);
-            this.cGroupBox1.TabIndex = 6;
+            this.cGroupBox1.TabIndex = 12;
             this.cGroupBox1.TabStop = false;
             this.cGroupBox1.Text = "Thông tin";
             // 
-            // cGroupBox2
+            // cCombobox1
             // 
-            this.cGroupBox2.BackColor = System.Drawing.Color.White;
-            this.cGroupBox2.Controls.Add(this.cDataGirdView1);
-            this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
-            this.cGroupBox2.Location = new System.Drawing.Point(10, 163);
-            this.cGroupBox2.Name = "cGroupBox2";
-            this.cGroupBox2.Size = new System.Drawing.Size(758, 191);
-            this.cGroupBox2.TabIndex = 7;
-            this.cGroupBox2.TabStop = false;
-            this.cGroupBox2.Text = "Hóa đơn";
+            this.cCombobox1.FormattingEnabled = true;
+            this.cCombobox1.ItemHeight = 23;
+            this.cCombobox1.Location = new System.Drawing.Point(486, 49);
+            this.cCombobox1.Name = "cCombobox1";
+            this.cCombobox1.Size = new System.Drawing.Size(203, 29);
+            this.cCombobox1.TabIndex = 11;
+            this.cCombobox1.UseSelectable = true;
             // 
-            // cGroupBox3
+            // cLable1
             // 
-            this.cGroupBox3.BackColor = System.Drawing.Color.White;
-            this.cGroupBox3.Controls.Add(this.cDataGirdView2);
-            this.cGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
-            this.cGroupBox3.Location = new System.Drawing.Point(10, 360);
-            this.cGroupBox3.Name = "cGroupBox3";
-            this.cGroupBox3.Size = new System.Drawing.Size(758, 168);
-            this.cGroupBox3.TabIndex = 8;
-            this.cGroupBox3.TabStop = false;
-            this.cGroupBox3.Text = "Hóa đơn nhập";
+            this.cLable1.AutoSize = true;
+            this.cLable1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cLable1.ForeColor = System.Drawing.Color.Orange;
+            this.cLable1.Location = new System.Drawing.Point(482, 24);
+            this.cLable1.Name = "cLable1";
+            this.cLable1.Size = new System.Drawing.Size(105, 21);
+            this.cLable1.TabIndex = 10;
+            this.cLable1.Text = "Nhà cung cấp";
             // 
             // cLable4
             // 
@@ -145,26 +117,41 @@
             this.cTextBox4.TabIndex = 7;
             this.cTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // cLable1
+            // bunifuSeparator1
             // 
-            this.cLable1.AutoSize = true;
-            this.cLable1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cLable1.ForeColor = System.Drawing.Color.Orange;
-            this.cLable1.Location = new System.Drawing.Point(482, 24);
-            this.cLable1.Name = "cLable1";
-            this.cLable1.Size = new System.Drawing.Size(105, 21);
-            this.cLable1.TabIndex = 10;
-            this.cLable1.Text = "Nhà cung cấp";
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(12, 46);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(758, 35);
+            this.bunifuSeparator1.TabIndex = 11;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
             // 
-            // cCombobox1
+            // cLableTitle1
             // 
-            this.cCombobox1.FormattingEnabled = true;
-            this.cCombobox1.ItemHeight = 23;
-            this.cCombobox1.Location = new System.Drawing.Point(486, 49);
-            this.cCombobox1.Name = "cCombobox1";
-            this.cCombobox1.Size = new System.Drawing.Size(203, 29);
-            this.cCombobox1.TabIndex = 11;
-            this.cCombobox1.UseSelectable = true;
+            this.cLableTitle1.AutoSize = true;
+            this.cLableTitle1.Font = new System.Drawing.Font("Segoe UI", 21F);
+            this.cLableTitle1.ForeColor = System.Drawing.Color.Orange;
+            this.cLableTitle1.Location = new System.Drawing.Point(5, 4);
+            this.cLableTitle1.Name = "cLableTitle1";
+            this.cLableTitle1.Size = new System.Drawing.Size(203, 38);
+            this.cLableTitle1.TabIndex = 10;
+            this.cLableTitle1.Text = "Hóa Đơn Nhập";
+            // 
+            // cGroupBox2
+            // 
+            this.cGroupBox2.BackColor = System.Drawing.Color.White;
+            this.cGroupBox2.Controls.Add(this.cDataGirdView1);
+            this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
+            this.cGroupBox2.Location = new System.Drawing.Point(12, 167);
+            this.cGroupBox2.Name = "cGroupBox2";
+            this.cGroupBox2.Size = new System.Drawing.Size(758, 191);
+            this.cGroupBox2.TabIndex = 13;
+            this.cGroupBox2.TabStop = false;
+            this.cGroupBox2.Text = "Hóa đơn";
             // 
             // cDataGirdView1
             // 
@@ -183,6 +170,19 @@
             this.cDataGirdView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cDataGirdView1.Size = new System.Drawing.Size(752, 163);
             this.cDataGirdView1.TabIndex = 0;
+            // 
+            // cGroupBox3
+            // 
+            this.cGroupBox3.BackColor = System.Drawing.Color.White;
+            this.cGroupBox3.Controls.Add(this.cDataGirdView2);
+            this.cGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
+            this.cGroupBox3.Location = new System.Drawing.Point(12, 364);
+            this.cGroupBox3.Name = "cGroupBox3";
+            this.cGroupBox3.Size = new System.Drawing.Size(758, 168);
+            this.cGroupBox3.TabIndex = 14;
+            this.cGroupBox3.TabStop = false;
+            this.cGroupBox3.Text = "Hóa đơn nhập";
             // 
             // cDataGirdView2
             // 
@@ -207,31 +207,31 @@
             this.cButtonClose1.BackColor = System.Drawing.Color.White;
             this.cButtonClose1.Image = ((System.Drawing.Image)(resources.GetObject("cButtonClose1.Image")));
             this.cButtonClose1.ImageActive = null;
-            this.cButtonClose1.Location = new System.Drawing.Point(745, 0);
+            this.cButtonClose1.Location = new System.Drawing.Point(747, 4);
             this.cButtonClose1.Name = "cButtonClose1";
             this.cButtonClose1.Size = new System.Drawing.Size(33, 36);
-            this.cButtonClose1.TabIndex = 9;
+            this.cButtonClose1.TabIndex = 15;
             this.cButtonClose1.TabStop = false;
             this.cButtonClose1.Zoom = 10;
             // 
-            // fHoaDonNhap
+            // UFHoaDonNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 553);
-            this.Controls.Add(this.cButtonClose1);
-            this.Controls.Add(this.cGroupBox3);
-            this.Controls.Add(this.cGroupBox2);
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.cGroupBox1);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.cLableTitle1);
-            this.Name = "fHoaDonNhap";
-            this.Text = "fHoaDonNhap";
+            this.Controls.Add(this.cGroupBox2);
+            this.Controls.Add(this.cGroupBox3);
+            this.Controls.Add(this.cButtonClose1);
+            this.Name = "UFHoaDonNhap";
+            this.Size = new System.Drawing.Size(782, 558);
             this.cGroupBox1.ResumeLayout(false);
             this.cGroupBox1.PerformLayout();
             this.cGroupBox2.ResumeLayout(false);
-            this.cGroupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).EndInit();
+            this.cGroupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cButtonClose1)).EndInit();
             this.ResumeLayout(false);
@@ -241,16 +241,16 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private CustomControl.ControlCustom.CLableTitle cLableTitle1;
         private CustomControl.ControlCustom.CGroupBox cGroupBox1;
-        private CustomControl.ControlCustom.CGroupBox cGroupBox2;
-        private CustomControl.ControlCustom.CGroupBox cGroupBox3;
         private CustomControl.ControlCustom.CCombobox cCombobox1;
         private CustomControl.ControlCustom.CLable cLable1;
         private CustomControl.ControlCustom.CLable cLable4;
         private CustomControl.ControlCustom.CTextBox cTextBox4;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private CustomControl.ControlCustom.CLableTitle cLableTitle1;
+        private CustomControl.ControlCustom.CGroupBox cGroupBox2;
         private CustomControl.ControlCustom.CDataGirdView cDataGirdView1;
+        private CustomControl.ControlCustom.CGroupBox cGroupBox3;
         private CustomControl.ControlCustom.CDataGirdView cDataGirdView2;
         private CustomControl.ControlCustom.CButtonClose cButtonClose1;
     }

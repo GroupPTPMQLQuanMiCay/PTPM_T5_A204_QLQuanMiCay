@@ -30,21 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFQuyen));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.cButton1 = new CustomControl.ControlCustom.CButton();
-            this.cCombobox1 = new CustomControl.ControlCustom.CCombobox();
+            this.btn_NQ = new CustomControl.ControlCustom.CButton();
+            this.cbb_ChucVu = new CustomControl.ControlCustom.CCombobox();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
             this.cLable1 = new CustomControl.ControlCustom.CLable();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
-            this.cDataGirdView1 = new CustomControl.ControlCustom.CDataGirdView();
+            this.dgv_NQ = new CustomControl.ControlCustom.CDataGirdView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
-            this.cButton2 = new CustomControl.ControlCustom.CButton();
+            this.btn_PhanQuyen = new CustomControl.ControlCustom.CButton();
             this.cGroupBox1.SuspendLayout();
             this.cGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NQ)).BeginInit();
             this.cGroupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,64 +66,66 @@
             // bunifuSeparator1
             // 
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.DimGray;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(10, 42);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(787, 35);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(845, 35);
             this.bunifuSeparator1.TabIndex = 6;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // cButton1
+            // btn_NQ
             // 
-            this.cButton1.ActiveBorderThickness = 1;
-            this.cButton1.ActiveCornerRadius = 20;
-            this.cButton1.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton1.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton1.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton1.BackColor = System.Drawing.Color.White;
-            this.cButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton1.BackgroundImage")));
-            this.cButton1.ButtonText = "Nhóm quyền";
-            this.cButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton1.ForeColor = System.Drawing.Color.Orange;
-            this.cButton1.IdleBorderThickness = 1;
-            this.cButton1.IdleCornerRadius = 20;
-            this.cButton1.IdleFillColor = System.Drawing.Color.White;
-            this.cButton1.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton1.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton1.Location = new System.Drawing.Point(85, 35);
-            this.cButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton1.Name = "cButton1";
-            this.cButton1.Size = new System.Drawing.Size(163, 41);
-            this.cButton1.TabIndex = 22;
-            this.cButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_NQ.ActiveBorderThickness = 1;
+            this.btn_NQ.ActiveCornerRadius = 20;
+            this.btn_NQ.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btn_NQ.ActiveForecolor = System.Drawing.Color.White;
+            this.btn_NQ.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btn_NQ.BackColor = System.Drawing.Color.White;
+            this.btn_NQ.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_NQ.BackgroundImage")));
+            this.btn_NQ.ButtonText = "Nhóm quyền";
+            this.btn_NQ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_NQ.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_NQ.ForeColor = System.Drawing.Color.Orange;
+            this.btn_NQ.IdleBorderThickness = 1;
+            this.btn_NQ.IdleCornerRadius = 20;
+            this.btn_NQ.IdleFillColor = System.Drawing.Color.White;
+            this.btn_NQ.IdleForecolor = System.Drawing.Color.Orange;
+            this.btn_NQ.IdleLineColor = System.Drawing.Color.Orange;
+            this.btn_NQ.Location = new System.Drawing.Point(132, 30);
+            this.btn_NQ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_NQ.Name = "btn_NQ";
+            this.btn_NQ.Size = new System.Drawing.Size(163, 41);
+            this.btn_NQ.TabIndex = 22;
+            this.btn_NQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_NQ.Click += new System.EventHandler(this.btn_NQ_Click);
             // 
-            // cCombobox1
+            // cbb_ChucVu
             // 
-            this.cCombobox1.FormattingEnabled = true;
-            this.cCombobox1.ItemHeight = 23;
-            this.cCombobox1.Location = new System.Drawing.Point(496, 42);
-            this.cCombobox1.Name = "cCombobox1";
-            this.cCombobox1.Size = new System.Drawing.Size(203, 29);
-            this.cCombobox1.TabIndex = 23;
-            this.cCombobox1.UseSelectable = true;
+            this.cbb_ChucVu.FormattingEnabled = true;
+            this.cbb_ChucVu.ItemHeight = 23;
+            this.cbb_ChucVu.Location = new System.Drawing.Point(496, 42);
+            this.cbb_ChucVu.Name = "cbb_ChucVu";
+            this.cbb_ChucVu.Size = new System.Drawing.Size(203, 29);
+            this.cbb_ChucVu.TabIndex = 23;
+            this.cbb_ChucVu.UseSelectable = true;
+            this.cbb_ChucVu.SelectedIndexChanged += new System.EventHandler(this.cbb_ChucVu_SelectedIndexChanged);
             // 
             // cGroupBox1
             // 
             this.cGroupBox1.BackColor = System.Drawing.Color.White;
             this.cGroupBox1.Controls.Add(this.cLable1);
-            this.cGroupBox1.Controls.Add(this.cButton1);
-            this.cGroupBox1.Controls.Add(this.cCombobox1);
+            this.cGroupBox1.Controls.Add(this.btn_NQ);
+            this.cGroupBox1.Controls.Add(this.cbb_ChucVu);
             this.cGroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox1.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox1.Location = new System.Drawing.Point(10, 68);
             this.cGroupBox1.Name = "cGroupBox1";
-            this.cGroupBox1.Size = new System.Drawing.Size(787, 84);
+            this.cGroupBox1.Size = new System.Drawing.Size(845, 84);
             this.cGroupBox1.TabIndex = 24;
             this.cGroupBox1.TabStop = false;
-            this.cGroupBox1.Text = "cGroupBox1";
+            this.cGroupBox1.Text = "Chi tiết";
             // 
             // cLable1
             // 
@@ -135,85 +141,109 @@
             // cGroupBox2
             // 
             this.cGroupBox2.BackColor = System.Drawing.Color.White;
-            this.cGroupBox2.Controls.Add(this.cDataGirdView1);
+            this.cGroupBox2.Controls.Add(this.dgv_NQ);
             this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox2.Location = new System.Drawing.Point(10, 167);
             this.cGroupBox2.Name = "cGroupBox2";
-            this.cGroupBox2.Size = new System.Drawing.Size(787, 192);
+            this.cGroupBox2.Size = new System.Drawing.Size(641, 348);
             this.cGroupBox2.TabIndex = 25;
             this.cGroupBox2.TabStop = false;
             this.cGroupBox2.Text = "Danh sách";
             // 
-            // cDataGirdView1
+            // dgv_NQ
             // 
-            this.cDataGirdView1.AllowUserToResizeRows = false;
+            this.dgv_NQ.AllowUserToAddRows = false;
+            this.dgv_NQ.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
-            this.cDataGirdView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.cDataGirdView1.BackgroundColor = System.Drawing.Color.White;
-            this.cDataGirdView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cDataGirdView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_NQ.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_NQ.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_NQ.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_NQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_NQ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.cDataGirdView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cDataGirdView1.GridColor = System.Drawing.Color.White;
-            this.cDataGirdView1.Location = new System.Drawing.Point(3, 25);
-            this.cDataGirdView1.Name = "cDataGirdView1";
-            this.cDataGirdView1.RowHeadersVisible = false;
-            this.cDataGirdView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cDataGirdView1.Size = new System.Drawing.Size(781, 164);
-            this.cDataGirdView1.TabIndex = 0;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_NQ.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_NQ.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_NQ.GridColor = System.Drawing.Color.White;
+            this.dgv_NQ.Location = new System.Drawing.Point(3, 25);
+            this.dgv_NQ.Name = "dgv_NQ";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_NQ.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_NQ.RowHeadersVisible = false;
+            this.dgv_NQ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_NQ.Size = new System.Drawing.Size(635, 320);
+            this.dgv_NQ.TabIndex = 0;
             // 
             // Column1
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "Nhóm quyền";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 500;
             // 
             // Column2
             // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.NullValue = false;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.HeaderText = "Cho phép";
             this.Column2.Name = "Column2";
             // 
             // cGroupBox3
             // 
             this.cGroupBox3.BackColor = System.Drawing.Color.White;
-            this.cGroupBox3.Controls.Add(this.cButton2);
+            this.cGroupBox3.Controls.Add(this.btn_PhanQuyen);
             this.cGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
-            this.cGroupBox3.Location = new System.Drawing.Point(13, 366);
+            this.cGroupBox3.Location = new System.Drawing.Point(657, 167);
             this.cGroupBox3.Name = "cGroupBox3";
-            this.cGroupBox3.Size = new System.Drawing.Size(781, 100);
+            this.cGroupBox3.Padding = new System.Windows.Forms.Padding(15);
+            this.cGroupBox3.Size = new System.Drawing.Size(198, 345);
             this.cGroupBox3.TabIndex = 26;
             this.cGroupBox3.TabStop = false;
             this.cGroupBox3.Text = "chức năng";
             // 
-            // cButton2
+            // btn_PhanQuyen
             // 
-            this.cButton2.ActiveBorderThickness = 1;
-            this.cButton2.ActiveCornerRadius = 20;
-            this.cButton2.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton2.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton2.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton2.BackColor = System.Drawing.Color.White;
-            this.cButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton2.BackgroundImage")));
-            this.cButton2.ButtonText = "Phân quyền";
-            this.cButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton2.ForeColor = System.Drawing.Color.Orange;
-            this.cButton2.IdleBorderThickness = 1;
-            this.cButton2.IdleCornerRadius = 20;
-            this.cButton2.IdleFillColor = System.Drawing.Color.White;
-            this.cButton2.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton2.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton2.Location = new System.Drawing.Point(307, 45);
-            this.cButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton2.Name = "cButton2";
-            this.cButton2.Size = new System.Drawing.Size(163, 41);
-            this.cButton2.TabIndex = 22;
-            this.cButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_PhanQuyen.ActiveBorderThickness = 1;
+            this.btn_PhanQuyen.ActiveCornerRadius = 20;
+            this.btn_PhanQuyen.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.ActiveForecolor = System.Drawing.Color.White;
+            this.btn_PhanQuyen.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.BackColor = System.Drawing.Color.White;
+            this.btn_PhanQuyen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_PhanQuyen.BackgroundImage")));
+            this.btn_PhanQuyen.ButtonText = "Phân quyền";
+            this.btn_PhanQuyen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_PhanQuyen.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btn_PhanQuyen.ForeColor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.IdleBorderThickness = 1;
+            this.btn_PhanQuyen.IdleCornerRadius = 20;
+            this.btn_PhanQuyen.IdleFillColor = System.Drawing.Color.White;
+            this.btn_PhanQuyen.IdleForecolor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.IdleLineColor = System.Drawing.Color.Orange;
+            this.btn_PhanQuyen.Location = new System.Drawing.Point(36, 42);
+            this.btn_PhanQuyen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 15);
+            this.btn_PhanQuyen.Name = "btn_PhanQuyen";
+            this.btn_PhanQuyen.Size = new System.Drawing.Size(132, 62);
+            this.btn_PhanQuyen.TabIndex = 22;
+            this.btn_PhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_PhanQuyen.Click += new System.EventHandler(this.btn_PhanQuyen_Click);
             // 
             // UFQuyen
             // 
@@ -226,11 +256,11 @@
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.cLableTitle1);
             this.Name = "UFQuyen";
-            this.Size = new System.Drawing.Size(800, 495);
+            this.Size = new System.Drawing.Size(858, 518);
             this.cGroupBox1.ResumeLayout(false);
             this.cGroupBox1.PerformLayout();
             this.cGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NQ)).EndInit();
             this.cGroupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,15 +271,15 @@
 
         private CustomControl.ControlCustom.CLableTitle cLableTitle1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private CustomControl.ControlCustom.CButton cButton1;
-        private CustomControl.ControlCustom.CCombobox cCombobox1;
+        private CustomControl.ControlCustom.CButton btn_NQ;
+        private CustomControl.ControlCustom.CCombobox cbb_ChucVu;
         private CustomControl.ControlCustom.CGroupBox cGroupBox1;
         private CustomControl.ControlCustom.CLable cLable1;
         private CustomControl.ControlCustom.CGroupBox cGroupBox2;
-        private CustomControl.ControlCustom.CDataGirdView cDataGirdView1;
+        private CustomControl.ControlCustom.CDataGirdView dgv_NQ;
+        private CustomControl.ControlCustom.CGroupBox cGroupBox3;
+        private CustomControl.ControlCustom.CButton btn_PhanQuyen;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
-        private CustomControl.ControlCustom.CGroupBox cGroupBox3;
-        private CustomControl.ControlCustom.CButton cButton2;
     }
 }

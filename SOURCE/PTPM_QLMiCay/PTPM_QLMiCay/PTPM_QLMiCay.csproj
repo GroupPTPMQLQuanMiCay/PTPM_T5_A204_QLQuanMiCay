@@ -74,36 +74,6 @@
     <Compile Include="GUI\fDangNhap.Designer.cs">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\fDatNguyenLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\fDatNguyenLieu.Designer.cs">
-      <DependentUpon>fDatNguyenLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\fHoaDonNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\fHoaDonNhap.Designer.cs">
-      <DependentUpon>fHoaDonNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\fLichSuGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\fLichSuGia.Designer.cs">
-      <DependentUpon>fLichSuGia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\fNhapNguyenLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\fNhapNguyenLieu.Designer.cs">
-      <DependentUpon>fNhapNguyenLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\fNhomQuyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\fNhomQuyen.Designer.cs">
-      <DependentUpon>fNhomQuyen.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\fTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,21 +90,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\fDatNguyenLieu.resx">
-      <DependentUpon>fDatNguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\fHoaDonNhap.resx">
-      <DependentUpon>fHoaDonNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\fLichSuGia.resx">
-      <DependentUpon>fLichSuGia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\fNhapNguyenLieu.resx">
-      <DependentUpon>fNhapNguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\fNhomQuyen.resx">
-      <DependentUpon>fNhomQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fTest.resx">
       <DependentUpon>fTest.cs</DependentUpon>
@@ -168,6 +123,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\BLL_DAL\BLL_DAL.csproj">
+      <Project>{1871ed90-8964-4213-83ce-c5c28831dabe}</Project>
+      <Name>BLL_DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomControl\CustomControl.csproj">
       <Project>{694652d6-5cbd-4201-b81f-5525f5a15691}</Project>
       <Name>CustomControl</Name>

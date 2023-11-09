@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace DataFirstEntities.Entity
 {
-    [Table("Quyen")]
-    public class Quyen
+    [Table("ManHinh")]
+    public class ManHinh
     {
         [Key]
-        public string Quyen_Id { get; set; }
+        public string MH_Id { get; set; }
 
-        public string DienGiai { get; set; }
+        public string MH_HienThi { get; set; }
     }
 }
