@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <style>
+        .show {
+            display: block !important;
+        }
+    </style>
     <style media="screen and (min-width: 740px) and (max-width: 1024px)" >
         .wrap-content {
             min-height: 640px;
@@ -22,15 +27,15 @@
         }
 
         .form-search-pc {
+            display: none !important;
+        }
+
+        .modal-mobile-style {
             display: block !important;
         }
 
-        .menu-mobile {
-            display: none !important;
-        }
-
-        .modal-mobile {
-            display: none !important;
+        .cart-place {
+            right: 48px;
         }
     </style>
     <style media="screen and (min-width: 1024px)" >
@@ -62,11 +67,15 @@
             display: block !important;
         }
 
-        .menu-mobile {
+        .modal-mobile-style {
             display: none !important;
         }
 
-        .modal-mobile {
+        .cart-place {
+            right: -4px;
+        }
+
+        .menu-mobile {
             display: none !important;
         }
     </style>
@@ -100,8 +109,8 @@
             display: none !important;
         }
 
-        .modal-mobile {
-            display: block !important;
+        .modal-mobile-style {
+            display: none !important;
             position: fixed;
             z-index: 1001;
             background-color: #BE1E2D;
@@ -137,6 +146,14 @@
             border-top-left-radius: 15px;
             border-top-right-radius: 0px;
         }
+
+        .cart-place {
+            right: 48px;
+        }
+
+        .show {
+            display: block !important;
+        }
     </style>
 </head>
 <body onload="hienThiBanDau()">
@@ -167,27 +184,29 @@
                     </ul>
                 </div>
 
-                <div style="display: flex">
-                    <form class="p-2 mr-5 form-search-mobile" style="display: flex; flex-direction: row; padding-left: 5px; padding-right: 15px; margin-top: 7px; ">
-                        <input id="searchText" class="form-control mr-sm-2 search-text-mobile" type="search" placeholder="Tìm kiếm" style="display: inline-block; width: 400px; border-bottom-left-radius: 15px; border-top-left-radius: 15px;">
-                        <a class="btn" onclick="searchWithText()" style="background-color: #ffecc9; border-bottom-left-radius: 0px; border-bottom-right-radius: 15px; border-top-left-radius: 0px; border-top-right-radius: 15px; display: block; height: 34px;">
+                <div style="display: flex; position: relative">
+                    <form class="p-2 mr-5 form-search-pc" style="display: flex; flex-direction: row; padding-left: 5px; padding-right: 15px; margin-top: 7px; position: fixed; top: 0; right: 48px;">
+                        <input id="searchText" class="form-control mr-sm-2 search-text-pc" type="search" placeholder="Tìm kiếm" style="display: inline-block; width: 400px; border-bottom-left-radius: 15px; border-top-left-radius: 15px;">
+                        <a class="btn" onclick="searchWithText()" style="background-color: #ffecc9; border-bottom-left-radius: 0px; border-bottom-right-radius: 15px; border-top-left-radius: 0px; border-top-right-radius: 15px; display: inline-block; height: 34px; margin-left: -8px;">
                             <img src="~/images/search.png" />
                         </a>
                     </form>
 
-                    <a href="/GioHang/Index" class="mx-3 text-danger position-relative" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px;">
-                        <img src="~/images/shopping-bag.png" />
-                        <span class="position-absolute quantity" style="font-size: 12px; color: #000; position: absolute; margin-top: -5px;" id="productQuantity"></span>
-                    </a>
+                    <div class="cart-place" style="position: fixed; top: 0;">
+                        <a href="/GioHang/Index" class="mx-3 text-danger position-relative" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px;">
+                            <img src="~/images/shopping-bag.png" />
+                            <span class="position-absolute quantity" style="font-size: 12px; color: #000; position: absolute; margin-top: -5px;" id="productQuantity"></span>
+                        </a>
+                    </div>
 
-                    <a onclick="hienThiModal()" class="mx-3 text-danger position-relative menu-mobile" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px; cursor: pointer">
+                    <a onclick="hienThiModal()" class="mx-3 text-danger position-relative menu-mobile" role="button" aria-expanded="false" style="display: block; margin-top: 8px; padding-right: 25px; cursor: pointer; position: fixed; top: 0; right: 0px;">
                         <img src="~/images/menu.png" />
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="modal-mobile" style="max-width: 600px">
+        <div id="modal-mobile" class="modal-mobile-style" style="max-width: 600px; background-color: #be1e2d;">
             <form class="p-2 mr-5 form-search-mobile" style="display: flex; flex-direction: row; padding-top: 30px; padding-bottom: 20px; padding-left: 5px; padding-right: 5px">
                 <input id="searchText" class="form-control mr-sm-2 search-text-mobile" type="search" placeholder="Tìm kiếm" style="display: inline-block; width: 400px">
                 <a class="btn" onclick="searchWithText()" style="background-color: #ffecc9; border-bottom-left-radius: 0px; border-bottom-right-radius: 15px; border-top-left-radius: 0px; border-top-right-radius: 15px; ">
@@ -228,7 +247,7 @@
         }
 
         function hienThiModal() {
-            alert('Nhấn nút hiển thị modal');
+            document.getElementById('modal-mobile').classList.add('show')
         }
 
         function hienThiBanDau() {

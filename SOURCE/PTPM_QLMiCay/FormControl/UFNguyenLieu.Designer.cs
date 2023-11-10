@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFNguyenLieu));
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.cGroupBox4 = new CustomControl.ControlCustom.CGroupBox();
             this.drvNguyenLieu = new CustomControl.ControlCustom.CDataGirdView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
             this.txtTimTenNL = new CustomControl.ControlCustom.CTextBox();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
             this.btnLuu = new CustomControl.ControlCustom.CButton();
+            this.btnSua = new CustomControl.ControlCustom.CButton();
+            this.btnXoa = new CustomControl.ControlCustom.CButton();
             this.btnThem = new CustomControl.ControlCustom.CButton();
             this.cButton4 = new CustomControl.ControlCustom.CButton();
             this.cButton3 = new CustomControl.ControlCustom.CButton();
@@ -68,7 +74,7 @@
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(10, 40);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(929, 35);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(1076, 35);
             this.bunifuSeparator1.TabIndex = 5;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -92,7 +98,7 @@
             this.cGroupBox4.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox4.Location = new System.Drawing.Point(476, 164);
             this.cGroupBox4.Name = "cGroupBox4";
-            this.cGroupBox4.Size = new System.Drawing.Size(463, 414);
+            this.cGroupBox4.Size = new System.Drawing.Size(610, 414);
             this.cGroupBox4.TabIndex = 3;
             this.cGroupBox4.TabStop = false;
             this.cGroupBox4.Text = "Danh sách nguyên liệu";
@@ -101,21 +107,54 @@
             // drvNguyenLieu
             // 
             this.drvNguyenLieu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
-            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.drvNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.drvNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.drvNguyenLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.drvNguyenLieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.drvNguyenLieu.GridColor = System.Drawing.Color.White;
             this.drvNguyenLieu.Location = new System.Drawing.Point(3, 25);
             this.drvNguyenLieu.Name = "drvNguyenLieu";
             this.drvNguyenLieu.RowHeadersVisible = false;
             this.drvNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.drvNguyenLieu.Size = new System.Drawing.Size(457, 386);
+            this.drvNguyenLieu.Size = new System.Drawing.Size(604, 386);
             this.drvNguyenLieu.TabIndex = 0;
             this.drvNguyenLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drvNguyenLieu_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "NL_Id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "NL_Ten";
+            this.Column2.HeaderText = "Tên nguyên liệu";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "NL_DonViTinh";
+            this.Column3.HeaderText = "Đơn vị tính";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "NL_SoLuong";
+            this.Column4.HeaderText = "Số lượng";
+            this.Column4.Name = "Column4";
             // 
             // cGroupBox3
             // 
@@ -125,7 +164,7 @@
             this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox3.Location = new System.Drawing.Point(476, 80);
             this.cGroupBox3.Name = "cGroupBox3";
-            this.cGroupBox3.Size = new System.Drawing.Size(463, 83);
+            this.cGroupBox3.Size = new System.Drawing.Size(379, 69);
             this.cGroupBox3.TabIndex = 2;
             this.cGroupBox3.TabStop = false;
             this.cGroupBox3.Text = "Tìm kiếm nguyên liệu";
@@ -153,6 +192,8 @@
             // 
             this.cGroupBox2.BackColor = System.Drawing.Color.White;
             this.cGroupBox2.Controls.Add(this.btnLuu);
+            this.cGroupBox2.Controls.Add(this.btnSua);
+            this.cGroupBox2.Controls.Add(this.btnXoa);
             this.cGroupBox2.Controls.Add(this.btnThem);
             this.cGroupBox2.Controls.Add(this.cButton4);
             this.cGroupBox2.Controls.Add(this.cButton3);
@@ -185,13 +226,65 @@
             this.btnLuu.IdleFillColor = System.Drawing.Color.White;
             this.btnLuu.IdleForecolor = System.Drawing.Color.Orange;
             this.btnLuu.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnLuu.Location = new System.Drawing.Point(242, 168);
+            this.btnLuu.Location = new System.Drawing.Point(134, 217);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(163, 41);
             this.btnLuu.TabIndex = 24;
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.ActiveBorderThickness = 1;
+            this.btnSua.ActiveCornerRadius = 20;
+            this.btnSua.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnSua.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSua.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnSua.BackColor = System.Drawing.Color.White;
+            this.btnSua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSua.BackgroundImage")));
+            this.btnSua.ButtonText = "Sửa";
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSua.ForeColor = System.Drawing.Color.Orange;
+            this.btnSua.IdleBorderThickness = 1;
+            this.btnSua.IdleCornerRadius = 20;
+            this.btnSua.IdleFillColor = System.Drawing.Color.White;
+            this.btnSua.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnSua.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnSua.Location = new System.Drawing.Point(318, 166);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(87, 41);
+            this.btnSua.TabIndex = 23;
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.ActiveBorderThickness = 1;
+            this.btnXoa.ActiveCornerRadius = 20;
+            this.btnXoa.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnXoa.ActiveForecolor = System.Drawing.Color.White;
+            this.btnXoa.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnXoa.BackColor = System.Drawing.Color.White;
+            this.btnXoa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.BackgroundImage")));
+            this.btnXoa.ButtonText = "Xóa";
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnXoa.ForeColor = System.Drawing.Color.Orange;
+            this.btnXoa.IdleBorderThickness = 1;
+            this.btnXoa.IdleCornerRadius = 20;
+            this.btnXoa.IdleFillColor = System.Drawing.Color.White;
+            this.btnXoa.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnXoa.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnXoa.Location = new System.Drawing.Point(166, 166);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(87, 41);
+            this.btnXoa.TabIndex = 23;
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -214,7 +307,7 @@
             this.btnThem.Location = new System.Drawing.Point(10, 168);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(163, 41);
+            this.btnThem.Size = new System.Drawing.Size(87, 41);
             this.btnThem.TabIndex = 23;
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -433,9 +526,9 @@
             this.cLable4.ForeColor = System.Drawing.Color.Orange;
             this.cLable4.Location = new System.Drawing.Point(238, 93);
             this.cLable4.Name = "cLable4";
-            this.cLable4.Size = new System.Drawing.Size(68, 21);
+            this.cLable4.Size = new System.Drawing.Size(76, 21);
             this.cLable4.TabIndex = 3;
-            this.cLable4.Text = "Đơn giá:";
+            this.cLable4.Text = "Số lượng:";
             // 
             // cLable3
             // 
@@ -482,7 +575,7 @@
             this.Controls.Add(this.cGroupBox2);
             this.Controls.Add(this.cGroupBox1);
             this.Name = "UFNguyenLieu";
-            this.Size = new System.Drawing.Size(956, 605);
+            this.Size = new System.Drawing.Size(1107, 605);
             this.Load += new System.EventHandler(this.UFNguyenLieu_Load);
             this.cGroupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.drvNguyenLieu)).EndInit();
@@ -521,5 +614,11 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private CustomControl.ControlCustom.CNumericTextbox txtDonGia;
         private System.Windows.Forms.ComboBox cboDonViTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private CustomControl.ControlCustom.CButton btnSua;
+        private CustomControl.ControlCustom.CButton btnXoa;
     }
 }

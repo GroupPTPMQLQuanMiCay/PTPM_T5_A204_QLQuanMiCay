@@ -1,22 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLQuanMiCay" Class="QLQuanMiCayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-KCB97U3\HONGTHAM;Initial Catalog=QLQuanMiCay;Persist Security Info=True;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Ban" Member="Bans">
     <Type Name="Ban">
       <Column Name="B_SoBan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="B_ViTri" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="Ban_HoaDon" Member="HoaDons" ThisKey="B_SoBan" OtherKey="B_SoBan" Type="HoaDon" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TinTuc" Member="TinTucs">
-    <Type Name="TinTuc">
-      <Column Name="TinTuc_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NgayDang" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NV_Id" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
-      <Column Name="LoaiTin_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TieuDe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="LoaiTinTuc_TinTuc" Member="LoaiTinTuc" ThisKey="LoaiTin_Id" OtherKey="LoaiTin_Id" Type="LoaiTinTuc" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="NhanVien_TinTuc" Member="NhanVien" ThisKey="NV_Id" OtherKey="NV_Id" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CapQuyenNhom" Member="CapQuyenNhoms">
@@ -144,6 +132,11 @@
       <Column Name="NL_DonViTinh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="NL_SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NCC_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createdBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="NguyenLieu_ChiTietNhap" Member="ChiTietNhaps" ThisKey="NL_Id" OtherKey="NL_Id" Type="ChiTietNhap" />
       <Association Name="NguyenLieu_CTPhieuDat" Member="CTPhieuDats" ThisKey="NL_Id" OtherKey="NL_Id" Type="CTPhieuDat" />
       <Association Name="NguyenLieu_GiaNguyenLieu" Member="GiaNguyenLieus" ThisKey="NL_Id" OtherKey="NL_Id" Type="GiaNguyenLieu" />
@@ -172,11 +165,11 @@
       <Column Name="NV_SDT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="NV_TinhTrang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="QA_DiaChiId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="NhanVien_TinTuc" Member="TinTucs" ThisKey="NV_Id" OtherKey="NV_Id" Type="TinTuc" />
       <Association Name="NhanVien_GiaNguyenLieu" Member="GiaNguyenLieus" ThisKey="NV_Id" OtherKey="NV_Id" Type="GiaNguyenLieu" />
       <Association Name="NhanVien_HoaDon" Member="HoaDons" ThisKey="NV_Id" OtherKey="NV_Id" Type="HoaDon" />
       <Association Name="NhanVien_HoaDonNhap" Member="HoaDonNhaps" ThisKey="NV_Id" OtherKey="NV_Id" Type="HoaDonNhap" />
       <Association Name="NhanVien_QuanLyBep" Member="QuanLyBeps" ThisKey="NV_Id" OtherKey="NV_Id" Type="QuanLyBep" />
+      <Association Name="NhanVien_TinTuc" Member="TinTucs" ThisKey="NV_Id" OtherKey="NV_Id" Type="TinTuc" />
       <Association Name="QuanAn_NhanVien" Member="QuanAn" ThisKey="QA_DiaChiId" OtherKey="QA_DiaChi" Type="QuanAn" IsForeignKey="true" />
     </Type>
   </Table>
@@ -275,6 +268,18 @@
     <Type Name="TinhTrangThucHien">
       <Column Name="Ma_TT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Ma_DienGiai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinTuc" Member="TinTucs">
+    <Type Name="TinTuc">
+      <Column Name="TinTuc_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NgayDang" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NV_Id" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LoaiTin_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TieuDe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="LoaiTinTuc_TinTuc" Member="LoaiTinTuc" ThisKey="LoaiTin_Id" OtherKey="LoaiTin_Id" Type="LoaiTinTuc" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="NhanVien_TinTuc" Member="NhanVien" ThisKey="NV_Id" OtherKey="NV_Id" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
