@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BLL_DAL;
 using CustomControl.FormCustom;
 using FormControl;
-using BLL_DAL;
+using System;
+using System.Windows.Forms;
 
 namespace PTPM_QLMiCay.GUI
 {
@@ -18,13 +11,12 @@ namespace PTPM_QLMiCay.GUI
         private string nguoiDung;
 
         UFTrangChu ufTrangChu = new UFTrangChu();
-        //UFNguyenLieu ufNguyenLieu = new UFNguyenLieu();
+        UFNguyenLieu ufNguyenLieu = new UFNguyenLieu();
         UFNhanVIen ufNhanVien = new UFNhanVIen();
         UFNhaCungCap ufNhaCungCap = new UFNhaCungCap();
         UFDanhMuc ufDanhMuc = new UFDanhMuc();
         UFQuyen ufQuyen = new UFQuyen();
         UFNhomQuyen ufNhomQuyen = new UFNhomQuyen();
-
         DAL_PhanQuyen dal_PhanQuyen = new DAL_PhanQuyen();
 
         public fTrangChu()
@@ -55,30 +47,30 @@ namespace PTPM_QLMiCay.GUI
 
         private void btnNguyenLieu_Click(object sender, EventArgs e)
         {
-            //ufNguyenLieu = new UFNguyenLieu();
+            ufNguyenLieu = new UFNguyenLieu(nguoiDung);
 
             if(nguoiDung!="sa")
             {
-                //int id = dal_PhanQuyen.getQuyenID(nguoiDung, "MH_NL");
+                int id = dal_PhanQuyen.getQuyenID(nguoiDung, "MH_NL");
 
-            //    if (id == 0 || id == 1)
-            //    {
-            //        MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
-            //        ufNguyenLieu = null;
-            //    }
-            //    else if (id == 2)
-            //    {
-            //        MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
+                if (id == 0 || id == 1)
+                {
+                    MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
+                    ufNguyenLieu = null;
+                }
+                else if (id == 2)
+                {
+                    MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
 
-            //        ufNguyenLieu.Enabled = false;
-            //    }
-            //    else
-            //        ufNguyenLieu.Enabled = true;
-            //}
+                    ufNguyenLieu.Enabled = false;
+                }
+                else
+                    ufNguyenLieu.Enabled = true;
+            }
 
-            //if (ufNguyenLieu != null)
-            //{
-            //    OpenChildFormCT(ufNguyenLieu);
+            if (ufNguyenLieu != null)
+            {
+                OpenChildFormCT(ufNguyenLieu);
             }
         }
 
@@ -208,6 +200,5 @@ namespace PTPM_QLMiCay.GUI
         {
             Program.formDangNhap.Show();
         }
-
     }
 }

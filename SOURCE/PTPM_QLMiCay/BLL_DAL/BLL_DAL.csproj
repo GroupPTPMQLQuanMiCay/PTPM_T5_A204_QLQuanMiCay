@@ -44,6 +44,8 @@
     <Compile Include="DAL_CapQuyenNhom.cs" />
     <Compile Include="DAL_ManHinh.cs" />
     <Compile Include="DAL_NguoiDung.cs" />
+    <Compile Include="DAL_NguyenLieu.cs" />
+    <Compile Include="DAL_NhaCungCap.cs" />
     <Compile Include="DAL_NhomQuyen.cs" />
     <Compile Include="DAL_NhomQuyen_NguoiDung.cs" />
     <Compile Include="DAL_PhanQuyen.cs" />

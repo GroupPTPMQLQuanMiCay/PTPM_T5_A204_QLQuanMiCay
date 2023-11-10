@@ -116,6 +116,14 @@
     <Compile Include="Migrations\202311050725088_Add_PhanQuyenManHinh.designer.cs">
       <DependentUpon>202311050725088_Add_PhanQuyenManHinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311101406492_them-thong-tin-khi-cap-nhat-nguyen-lieu.cs" />
+    <Compile Include="Migrations\202311101406492_them-thong-tin-khi-cap-nhat-nguyen-lieu.designer.cs">
+      <DependentUpon>202311101406492_them-thong-tin-khi-cap-nhat-nguyen-lieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311101417304_them-thuoc-tinh-isDeleted-cho-nguyen-lieu.cs" />
+    <Compile Include="Migrations\202311101417304_them-thuoc-tinh-isDeleted-cho-nguyen-lieu.designer.cs">
+      <DependentUpon>202311101417304_them-thuoc-tinh-isDeleted-cho-nguyen-lieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -141,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311050725088_Add_PhanQuyenManHinh.resx">
       <DependentUpon>202311050725088_Add_PhanQuyenManHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311101406492_them-thong-tin-khi-cap-nhat-nguyen-lieu.resx">
+      <DependentUpon>202311101406492_them-thong-tin-khi-cap-nhat-nguyen-lieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311101417304_them-thuoc-tinh-isDeleted-cho-nguyen-lieu.resx">
+      <DependentUpon>202311101417304_them-thuoc-tinh-isDeleted-cho-nguyen-lieu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -433,6 +433,7 @@
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Name = "fTrangChu";
             this.Text = "fTrangChu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fTrangChu_FormClosed);
             this.Load += new System.EventHandler(this.fTrangChu_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
