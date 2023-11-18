@@ -303,8 +303,16 @@
         </div>
         <div id="successDialog" class="dialog">
             <div class="dialog-content">
-                <p>Món đã được thêm vô giỏ hàng!</p>
+                <p>Món đã được thêm vô giỏ hàng !!!</p>
                 <button id="closeSuccessDialog" class="btn btn-danger">OK</button>
+            </div>
+        </div>
+
+        <div id="deleteDialog" class="dialog">
+            <div class="dialog-content">
+                <p>Xác nhận xóa món !!!</p>
+                <button id="okDeleteDialog" class="btn btn-danger">OK</button>
+                <button id="closeDeleteDialog" class="btn btn-link">Cancel</button>
             </div>
         </div>
     </div>
@@ -326,8 +334,19 @@
         if (localStorage.getItem('cart')) {
             cart = JSON.parse(localStorage.getItem('cart'))
         }
-        document.getElementById('productQuantity').innerHTML = cart.length
+        updateQuantity();
         loadCart()
+    }
+    function updateQuantity() {
+        let cart = []
+        if (localStorage.getItem('cart')) {
+            cart = JSON.parse(localStorage.getItem('cart'))
+        }
+        let sl = 0;
+        for (let i = 0; i < cart.length; i++) {
+            sl += cart[i].Qty;
+        }
+        document.getElementById('productQuantity').innerHTML = sl
     }
 
     function loadCart() {
@@ -346,7 +365,6 @@
 
             cell2.innerHTML = cart[i].ten;
             cell3.innerHTML = cart[i].gia;
-            //cell4.innerHTML = "<input type=\"number\"min=\"1\" id=\"" + cart[i].ten + "\" value=\"" + cart[i].Qty + "\" style=\"width:40px; border:none\"/>";
             cell1.innerHTML = "<img src=\"/images/" + cart[i].hinh + "\" width=\"100px\" height=\"100px\"/>";
 
             cell2.style.paddingTop = "45px";
@@ -380,8 +398,19 @@
             deleteButton.style.backgroundColor = "white";
 
             deleteButton.onclick = function () {
-                removeItemFromCart(cart[i].ten);
+                var deleteDialog = document.getElementById('deleteDialog');
+                deleteDialog.classList.add('active');
+
+                document.getElementById('closeDeleteDialog').addEventListener('click', function () {
+                    deleteDialog.classList.remove('active');
+                });
+
+                document.getElementById('okDeleteDialog').addEventListener('click', function () {
+                    removeItemFromCart(cart[i].ten);
+                });
             };
+
+            
             cell5.appendChild(deleteButton);
         }
     }
@@ -400,17 +429,12 @@
             if (cart[i].ten === ten) {
 
                 cart[i].Qty = qty;
-
-                localStorage.setItem('cart', JSON.stringify(cart));
-
-                updateQuantity();
-                loadCart();
             }
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
         updateQuantity();
-        loadCart()
+        location.reload();
     }
 
     function removeItemFromCart(ten) {
@@ -425,16 +449,12 @@
                 let qty = cart[i].Qty;
 
                 cart.splice(i, 1);
-
-                localStorage.setItem('cart', JSON.stringify(cart));
-                updateQuantity();
-                loadCart();
             }
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
         updateQuantity();
-        loadCart()
+        location.reload();
     }
     </script>
 </body>
