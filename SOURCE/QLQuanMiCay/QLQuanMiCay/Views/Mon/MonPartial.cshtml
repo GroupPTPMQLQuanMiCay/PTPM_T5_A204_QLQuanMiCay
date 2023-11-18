@@ -11,17 +11,17 @@
             {
                 if (count == 0)
                 {
-                    <div class="col-sm-12 col-md-5 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
-                        <div class="">@mon.M_Ten</div>
-                        <img src="~/images/@mon.M_IMG" style="margin-bottom: 5px"/>
+                    <div class="col-sm-12 col-md-3 col-md-offset-1 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
+                        <div style="margin:10px auto">@mon.M_Ten</div>
+                        <img src="~/images/@mon.M_IMG" style="margin-bottom: 5px" />
                         <button class="btn btn-danger" style="margin-bottom: 5px" onclick="addToCart('@mon.M_Ten', '@mon.M_Gia', '@mon.M_IMG')">Đặt món</button>
                     </div>
                     count++;
                 }
                 else
                 {
-                    <div class="col-sm-12 col-md-5 col-md-offset-1 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
-                        <div class="">@mon.M_Ten</div>
+                    <div class="col-sm-12 col-md-3 col-md-offset-1 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
+                        <div style="margin:10px auto">@mon.M_Ten</div>
                         <img src="~/images/@mon.M_IMG" style="margin-bottom: 5px"/>
                         <button class="btn btn-danger" style="margin-bottom: 5px" onclick="addToCart('@mon.M_Ten', '@mon.M_Gia', '@mon.M_IMG')">Đặt món</button>
                     </div>
@@ -30,15 +30,23 @@
                 
             }
         }
+
     </div>
 
     <script>
         function addToCart(ten, gia, hinh) {
+            var successDialog = document.getElementById('successDialog');
+            successDialog.classList.add('active');
+
+            document.getElementById('closeSuccessDialog').addEventListener('click', function () {
+                successDialog.classList.remove('active');
+            });
+
             let cart = []
             if(localStorage.getItem('cart')){
                 cart = JSON.parse(localStorage.getItem('cart'))
             }
-
+            
             for(let i = 0 ; i < cart.length ; i++){
                 if(cart[i].ten == ten){
                     let qty = cart[i].Qty
@@ -50,12 +58,13 @@
                     return
                 }
             }
-
+            
             var cartItem = {ten: ten, gia: gia, Qty: 1, hinh: hinh}
             cart.push(cartItem)
             localStorage.setItem('cart', JSON.stringify(cart))
             updateQuantity()
             loadCart()
+
         }
 
         function updateQuantity(){
@@ -84,6 +93,7 @@
                 cell3.innerHTML = cart[i].Qty;
                 cell4.innerHTML = cart[i].hinh;
             }
+
         }
     </script>
 </div>
