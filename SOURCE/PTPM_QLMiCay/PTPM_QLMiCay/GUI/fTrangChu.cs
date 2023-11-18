@@ -8,7 +8,7 @@ namespace PTPM_QLMiCay.GUI
 {
     public partial class fTrangChu : FormEntity
     {
-        private string nguoiDung;
+        private TaiKhoan taiKhoan;
 
         UFTrangChu ufTrangChu = new UFTrangChu();
         UFNguyenLieu ufNguyenLieu = new UFNguyenLieu();
@@ -24,10 +24,11 @@ namespace PTPM_QLMiCay.GUI
             InitializeComponent();
         }
 
-        public fTrangChu(string nguoiDung)
+        public fTrangChu(TaiKhoan taiKhoan)
         {
             InitializeComponent();
-            this.nguoiDung = nguoiDung;
+            this.taiKhoan = taiKhoan;
+            lblNhanVien.Text = this.taiKhoan.NhanVien.NV_Ten;
         }
         public void OpenChildFormCT(UserControl childForm) 
         {
@@ -47,11 +48,11 @@ namespace PTPM_QLMiCay.GUI
 
         private void btnNguyenLieu_Click(object sender, EventArgs e)
         {
-            ufNguyenLieu = new UFNguyenLieu(nguoiDung);
+            ufNguyenLieu = new UFNguyenLieu(taiKhoan);
 
-            if(nguoiDung!="sa")
+            if(taiKhoan.TK_NguoiDung!="sa")
             {
-                int id = dal_PhanQuyen.getQuyenID(nguoiDung, "MH_NL");
+                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_NL");
 
                 if (id == 0 || id == 1)
                 {
@@ -77,9 +78,9 @@ namespace PTPM_QLMiCay.GUI
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
             ufNhaCungCap = new UFNhaCungCap();
-            if (nguoiDung != "sa")
+            if (taiKhoan.TK_NguoiDung != "sa")
             {
-                int id = dal_PhanQuyen.getQuyenID(nguoiDung, "MH_NCC");
+                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_NCC");
 
                 if (id == 0 || id == 1)
                 {
@@ -105,9 +106,9 @@ namespace PTPM_QLMiCay.GUI
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
             ufDanhMuc = new UFDanhMuc();
-            if (nguoiDung != "sa")
+            if (taiKhoan.TK_NguoiDung != "sa")
             {
-                int id = dal_PhanQuyen.getQuyenID(nguoiDung, "MH_DM");
+                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_DM");
 
                 if (id == 0 || id == 1)
                 {
@@ -133,9 +134,9 @@ namespace PTPM_QLMiCay.GUI
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ufNhanVien = new UFNhanVIen();
-            if (nguoiDung != "sa")
+            if (taiKhoan.TK_NguoiDung != "sa")
             {
-                int id = dal_PhanQuyen.getQuyenID(nguoiDung, "MH_NV");
+                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_NV");
 
                 if (id == 0 || id == 1)
                 {
@@ -161,9 +162,9 @@ namespace PTPM_QLMiCay.GUI
         private void btnQuyen_Click(object sender, EventArgs e)
         {
             ufQuyen = new UFQuyen();
-            if (nguoiDung != "sa")
+            if (taiKhoan.TK_NguoiDung != "sa")
             {
-                int id = dal_PhanQuyen.getQuyenID(nguoiDung, "MH_Q");
+                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_Q");
 
                 if (id == 0 || id == 1)
                 {

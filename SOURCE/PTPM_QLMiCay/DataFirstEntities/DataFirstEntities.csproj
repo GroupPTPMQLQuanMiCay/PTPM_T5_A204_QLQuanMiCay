@@ -124,6 +124,10 @@
     <Compile Include="Migrations\202311101417304_them-thuoc-tinh-isDeleted-cho-nguyen-lieu.designer.cs">
       <DependentUpon>202311101417304_them-thuoc-tinh-isDeleted-cho-nguyen-lieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311180445011_update-table-tai-khoan.cs" />
+    <Compile Include="Migrations\202311180445011_update-table-tai-khoan.designer.cs">
+      <DependentUpon>202311180445011_update-table-tai-khoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311101417304_them-thuoc-tinh-isDeleted-cho-nguyen-lieu.resx">
       <DependentUpon>202311101417304_them-thuoc-tinh-isDeleted-cho-nguyen-lieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311180445011_update-table-tai-khoan.resx">
+      <DependentUpon>202311180445011_update-table-tai-khoan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -41,6 +41,8 @@
             this.btnNguyenLieu = new CustomControl.ControlCustom.CButtonFlat();
             this.btnTrangChu = new CustomControl.ControlCustom.CButtonFlat();
             this.panel_Body = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblNhanVien = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +50,8 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.lblNhanVien);
+            this.bunifuGradientPanel1.Controls.Add(this.label1);
             this.bunifuGradientPanel1.Controls.Add(this.btnHoaDon);
             this.bunifuGradientPanel1.Controls.Add(this.btnThoat);
             this.bunifuGradientPanel1.Controls.Add(this.btnDoanhThu);
@@ -424,6 +428,24 @@
             this.panel_Body.Size = new System.Drawing.Size(916, 600);
             this.panel_Body.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(65, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Xin chào";
+            // 
+            // lblNhanVien
+            // 
+            this.lblNhanVien.AutoSize = true;
+            this.lblNhanVien.Location = new System.Drawing.Point(70, 75);
+            this.lblNhanVien.Name = "lblNhanVien";
+            this.lblNhanVien.Size = new System.Drawing.Size(35, 13);
+            this.lblNhanVien.TabIndex = 11;
+            this.lblNhanVien.Text = "label2";
+            // 
             // fTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,6 +459,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fTrangChu_FormClosed);
             this.Load += new System.EventHandler(this.fTrangChu_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
+            this.bunifuGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -455,5 +478,7 @@
         private CustomControl.ControlCustom.CButtonFlat btnNguyenLieu;
         private CustomControl.ControlCustom.CButtonFlat btnTrangChu;
         private System.Windows.Forms.Panel panel_Body;
+        private System.Windows.Forms.Label lblNhanVien;
+        private System.Windows.Forms.Label label1;
     }
 }
