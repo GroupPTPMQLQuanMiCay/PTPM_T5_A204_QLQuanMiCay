@@ -4,27 +4,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <div onclick="showMonByDM(-1)" style="margin-top:15px">
-        DANH MỤC MÓN
-    </div>
-
     <div class="row">
 
-        <div class="col-sm-3">
-            <ul class="list-group list-group-flush text-left">
-                @{
-                    foreach (var dmuc in Model)
-                    {
-                        <li class="list-group-item">
-                            <a onclick="showMonByDM('@dmuc.DM_Id')">@dmuc.DM_Ten</a>
-                        </li>
-                    }
-                }
-            </ul>
+        <div class="catalog col-sm-3" style="padding-top:20px">
+            <div class="mar mbl-20 mbt-30">
+                <div class="v-row-box">
+                    <div class="vcol cl-12 ct-12 cp-12">
+                        <div class="page-cata">
+                            <div class="cata-title none-eff">
+                                <div>
+                                    <h3 class="font fl-18 pad pdl-10 tcap" onclick="showMonByDM(-1)">Danh mục món</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cata-list ct-sdis mar mbt-20" style="display: block;">
+                    <ul>
+                        @{
+                            foreach (var dmuc in Model)
+                            {
+                                <li>
+                                    <a class="pad pdl-10 font fl-16 tcap" onclick="showMonByDM('@dmuc.DM_Id')">@dmuc.DM_Ten</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
         </div>
 
-
-        <div class="col-sm-9" id="monPartialZone">
+        <div class="col-sm-9" style="padding-top:50px" id="monPartialZone">
             @Html.Action("MonPartial", "Mon", new { Id = -1, index = ViewBag.Index })
         </div>
         <script>

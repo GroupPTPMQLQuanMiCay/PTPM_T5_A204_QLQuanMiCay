@@ -3,11 +3,32 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    body{
+        background-color:white;
+    }
+    table{
+        border-collapse: collapse;
+        width:1000px;
+        margin:0 auto;
+    }
+    table thead tr th{
+        background-color:white;
+        border:none;
+    }
 
+    table tr td{
+        background-color:white;
+        border:none;
+        border-top:groove 1px gray;
+    }
+}
+
+</style>
 <h2>Giỏ hàng</h2>
-<table id="cart-item" class="table">
+<table id="cart-item" >
     <thead>
-        <tr class="h4">
+        <tr class="h4" >
             <th width="15%"></th>
             <th width="30%">Sản phẩm</th>
             <th width="20%">Giá</th>

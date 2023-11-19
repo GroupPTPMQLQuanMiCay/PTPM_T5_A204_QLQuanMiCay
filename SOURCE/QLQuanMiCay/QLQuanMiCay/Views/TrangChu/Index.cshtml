@@ -1,9 +1,205 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<body class="pc mobile" style="padding-top: 40px;">
+    <article>
+        <div class="">
+            <img src="~/images/trang-chu.jpg" />
+        </div>
+        <section class="section05">
+            <div class="container section-heading pad ptl-50 pbl-50 pbt-20">
+                <div class="v-row-box">
+                    <div class="vcol cl-7 ct-12 cta-content">
+                        <div class="pad pdl-10 pll-40 plt-10">
+                            <div class="mbl-30 mbp-0">
+                                <div class="section1">
+                                    <div class="pad ptl-10 pbl-10">
+                                        <h2 class="font fl-40 ft-30 n title-font">Ẩm Thực Hàn Quốc Gimji</h2>
+                                    </div>
+                                </div>
+                                <h6 class="font tjust pad prl-25 prt-0 fl-18 fx-16 fb-15 n mar mtl-10 mbl-10">
+                                    Nhắc đến xứ sở kim chi không thể không nhắc đến một
+                                    nền ẩm thực phong phú, đa dạng, tinh tế.
+                                    Món ăn Hàn Quốc dễ gây nghiện bởi không chỉ đẹp mắt
+                                    mà hương vị cũng thật sự quyến rũ thực khách.
+                                    <br><br>
+                                    Bằng niềm đam mê ẩm thực đậm tính văn hóa,
+                                    Gimji tự hào mang đến cho thực khách một trải nghiệm
+                                    chuẩn Hàn với những món ngon đặc trưng xứ kim chi.
+                                    Thực đơn với nhiều món đa dạng, độc đáo được nghiên
+                                    cứu, chắt lọc bởi công thức sốt bí truyền từ bếp trưởng
+                                    Hàn Quốc với hơn 30 năm kinh nghiệm, sẽ làm hài lòng
+                                    mọi thực khách khi đến với Gimji.
+                                    <br><br>
+                                    Thực khách không chỉ thưởng thức trọn vẹn hương vị
+                                    ẩm thực Hàn, mà còn nhận được sự phục vụ tận tình,
+                                    chu đáo đầy tâm huyết từ Gimji.
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vcol cl-5 ct-12">
+                        <div class="pad pdl-10">
+                            <img src="~/images/trang-chu-2.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section03 page-title background-img" style="background-image:url(../../images/trang-chu-bg.jpg)">
+            <div>
+                <div class="container about">
+                    <div>
+                        <div class="title font tcenter">
+                            <div class="mbl-30 mbp-0">
+                                <div class="section1">
+                                    <div class="pad ptl-20 pbl-10">
+                                        <h2 class="font fl-50 ft-30 n title-font">Món Ăn Phong Phú Đa Dạng</h2>
+                                    </div>
+                                </div>
+                                <h6 class="font fl-20 ft-16 mar mtl-10 mbl-10">
+                                    Toekbokki - Kimbab - Cơm Trộn - Bokkum - Salad - Thịt Nướng - Gà Sốt - Canh - Lẩu - Miến/Mì - Mì Cay - Phô mai kéo sợi
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="sec-2">
+                <div class="container">
+                    <div class="mar mtl-50 mtt-30">
+                        <div>
+                            <div class="title-bar pad pdl-7">
+                                <div class="v-row-box">
+                                    <div class="vcol cl-5 cp-12">
+                                        <div class="titleb1">
+                                            <div class="v-distable">
+                                                <div>
+                                                    <h2 class="font fl-24 fx-20 tup n title-font">Món bán chạy</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vcol cl-7 vp-hide font tright">
+                                        <div class="titleb2">
+                                            <div class="v-distable">
+                                                <div>
+                                                    <div>
+                                                        <ul>
+                                                            <li class="font fl-15 fb-14 pad pdl-5 prl-10 pll-10"><a href="@Url.Action("Index","ThucDon")"><span>Xem tất cả</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title-content">
+                                <div class="v-row-box">
+                                    <div class="vcol cl-12">
+                                        <div class="prod-list ">
+                                            <div class="v-row-box owl-carousel owl-loaded">
+                                                <div class="owl-stage-outer">
+                                                    @{
+                                                        for (int i = 0; i < 5; i++)
+                                                        {
+                                                            <div class="owl-item" style="width: 240px;">
+                                                                <div class="p-part mar mal-5">
+                                                                    <div class="prod-part">
+                                                                        <div class="vrow">
+                                                                            <div class="vcol cl-12 p-img">
+                                                                                <div class="backgound-link">
+                                                                                    <div class="v-box pad ptl-90p">
+                                                                                        <div class="box-info-img fixpad eff-img-zoom">
+                                                                                            <div style="background-image:url(../../images/mi-lau-thai-ca-hoi.jpg)"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="p-img-icon">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="vcol cl-12">
+                                                                                <div class="v-row-box pad pdl-5 ptl-10 pbl-0 p-info">
+                                                                                    <div class="vcol cl-12 p-title">
+                                                                                        <h2 class="font n fl-16 ft-15 tcenter">Mì lẩu thái cá hồi</h2>
+                                                                                    </div>
+                                                                                    <div class="vcol cl-12 pad ptl-5 pbl-5 p-more">
+                                                                                        <div class="font tcenter">
+                                                                                            <h3 class="font fl-15 ft-14 pad pbl-10">71000 đ</h3>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pad pdl-10 font tcenter">
+                                                                                <div class="order_button order_has_class cart_fb_order pad pdl-5 prl-15 pll-15 font tcenter ">
+                                                                                    <div class="v-distable">
+                                                                                        <div>
+                                                                                            <div class="order_noncheck">
+                                                                                                <span class="font fl-12 tup">Đặt món</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-<h3>Đây là trang chủ</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section>
+            <div class="sec-2">
+                <div class="container">
+                    <div class="mar mtl-50 mtt-30 mbl-80">
+                        <div>
+                            <div class="title-bar pad pdl-7">
+                                <div class="v-row-box">
+                                    <div class="vcol cl-5 cp-12">
+                                        <div class="titleb1">
+                                            <div class="v-distable">
+                                                <div>
+                                                    <h2 class="font fl-24 fx-20 tup n title-font">Tin mới</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vcol cl-7 vp-hide font tright">
+                                        <div class="titleb2">
+                                            <div class="v-distable">
+                                                <div>
+                                                    <div>
+                                                        <ul>
+                                                            <li class="font fl-15 fb-14 pad pdl-5 prl-10 pll-10"><a href="@Url.Action("Index","TinTuc")"><span>Xem tất cả</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+</body>
