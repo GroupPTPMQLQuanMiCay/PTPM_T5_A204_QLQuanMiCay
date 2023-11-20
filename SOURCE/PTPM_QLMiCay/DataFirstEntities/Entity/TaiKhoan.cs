@@ -19,7 +19,11 @@ namespace DataFirstEntities.Entity
         public string TK_MatKhau { get; set;}
 
         public string TK_NhanVien { get; set; }
+        [ForeignKey("TK_NhanVien")]
+        public virtual NhanVien NhanVien { get; set; }
 
-        public string TK_NguoiDung { get; set; } 
+        public string TK_NguoiDung { get; set; }
+        [ForeignKey("TK_NguoiDung")]
+        public virtual NguoiDung NguoiDung { get; set; }
     }
 }

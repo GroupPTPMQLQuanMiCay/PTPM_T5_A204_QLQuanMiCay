@@ -189,6 +189,10 @@ namespace FormControl
             loadTextBox(cbb_NQ.SelectedValue.ToString());
         }
 
+        private void UFNhomQuyen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -35,7 +35,7 @@ namespace PTPM_QLMiCay.GUI
             else
             {
                 TaiKhoan tk = dal_TK.loadTaiKhoan(tenTK, mkTK);
-                Program.formTrangChu = new fTrangChu(tk.TK_NguoiDung);
+                Program.formTrangChu = new fTrangChu(tk);
                 Program.formDangNhap.Visible = false;
                 Program.formTrangChu.ShowDialog();
             }

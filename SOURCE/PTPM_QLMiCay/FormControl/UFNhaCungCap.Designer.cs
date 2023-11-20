@@ -29,29 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFNhaCungCap));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
-            this.cTextBox3 = new CustomControl.ControlCustom.CTextBox();
-            this.cTextBox2 = new CustomControl.ControlCustom.CTextBox();
-            this.cTextBox1 = new CustomControl.ControlCustom.CTextBox();
+            this.txtNhaCungCap = new CustomControl.ControlCustom.CTextBox();
+            this.txtSDT = new CustomControl.ControlCustom.CTextBox();
+            this.txtDiaChi = new CustomControl.ControlCustom.CTextBox();
+            this.txtID = new CustomControl.ControlCustom.CTextBox();
             this.cLable5 = new CustomControl.ControlCustom.CLable();
             this.cLable4 = new CustomControl.ControlCustom.CLable();
             this.cLable2 = new CustomControl.ControlCustom.CLable();
             this.cLable1 = new CustomControl.ControlCustom.CLable();
-            this.cButton4 = new CustomControl.ControlCustom.CButton();
+            this.btnXoa = new CustomControl.ControlCustom.CButton();
             this.cGroupBox4 = new CustomControl.ControlCustom.CGroupBox();
-            this.cDataGirdView1 = new CustomControl.ControlCustom.CDataGirdView();
-            this.cButton5 = new CustomControl.ControlCustom.CButton();
+            this.drvNhaCungCap = new CustomControl.ControlCustom.CDataGirdView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThem = new CustomControl.ControlCustom.CButton();
             this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
-            this.cTextBox9 = new CustomControl.ControlCustom.CTextBox();
+            this.txtSearch = new CustomControl.ControlCustom.CTextBox();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
-            this.cButton6 = new CustomControl.ControlCustom.CButton();
-            this.cTextBox4 = new CustomControl.ControlCustom.CTextBox();
+            this.btnLuu = new CustomControl.ControlCustom.CButton();
+            this.btnSua = new CustomControl.ControlCustom.CButton();
             this.cGroupBox1.SuspendLayout();
             this.cGroupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drvNhaCungCap)).BeginInit();
             this.cGroupBox3.SuspendLayout();
             this.cGroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +68,7 @@
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(10, 41);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(936, 35);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(1102, 35);
             this.bunifuSeparator1.TabIndex = 11;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -82,10 +87,10 @@
             // cGroupBox1
             // 
             this.cGroupBox1.BackColor = System.Drawing.Color.White;
-            this.cGroupBox1.Controls.Add(this.cTextBox4);
-            this.cGroupBox1.Controls.Add(this.cTextBox3);
-            this.cGroupBox1.Controls.Add(this.cTextBox2);
-            this.cGroupBox1.Controls.Add(this.cTextBox1);
+            this.cGroupBox1.Controls.Add(this.txtNhaCungCap);
+            this.cGroupBox1.Controls.Add(this.txtSDT);
+            this.cGroupBox1.Controls.Add(this.txtDiaChi);
+            this.cGroupBox1.Controls.Add(this.txtID);
             this.cGroupBox1.Controls.Add(this.cLable5);
             this.cGroupBox1.Controls.Add(this.cLable4);
             this.cGroupBox1.Controls.Add(this.cLable2);
@@ -99,59 +104,77 @@
             this.cGroupBox1.TabStop = false;
             this.cGroupBox1.Text = "Thông Tin Nhà Cung Cấp";
             // 
-            // cTextBox3
+            // txtNhaCungCap
             // 
-            this.cTextBox3.BackColor = System.Drawing.Color.White;
-            this.cTextBox3.BorderColorFocused = System.Drawing.Color.Orange;
-            this.cTextBox3.BorderColorIdle = System.Drawing.Color.Orange;
-            this.cTextBox3.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.cTextBox3.BorderThickness = 1;
-            this.cTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cTextBox3.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cTextBox3.isPassword = false;
-            this.cTextBox3.Location = new System.Drawing.Point(242, 126);
-            this.cTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.cTextBox3.Name = "cTextBox3";
-            this.cTextBox3.Size = new System.Drawing.Size(203, 29);
-            this.cTextBox3.TabIndex = 8;
-            this.cTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNhaCungCap.BackColor = System.Drawing.Color.White;
+            this.txtNhaCungCap.BorderColorFocused = System.Drawing.Color.Orange;
+            this.txtNhaCungCap.BorderColorIdle = System.Drawing.Color.Orange;
+            this.txtNhaCungCap.BorderColorMouseHover = System.Drawing.Color.Orange;
+            this.txtNhaCungCap.BorderThickness = 1;
+            this.txtNhaCungCap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNhaCungCap.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtNhaCungCap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNhaCungCap.isPassword = false;
+            this.txtNhaCungCap.Location = new System.Drawing.Point(7, 126);
+            this.txtNhaCungCap.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNhaCungCap.Name = "txtNhaCungCap";
+            this.txtNhaCungCap.Size = new System.Drawing.Size(203, 29);
+            this.txtNhaCungCap.TabIndex = 11;
+            this.txtNhaCungCap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // cTextBox2
+            // txtSDT
             // 
-            this.cTextBox2.BackColor = System.Drawing.Color.White;
-            this.cTextBox2.BorderColorFocused = System.Drawing.Color.Orange;
-            this.cTextBox2.BorderColorIdle = System.Drawing.Color.Orange;
-            this.cTextBox2.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.cTextBox2.BorderThickness = 1;
-            this.cTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cTextBox2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cTextBox2.isPassword = false;
-            this.cTextBox2.Location = new System.Drawing.Point(242, 54);
-            this.cTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.cTextBox2.Name = "cTextBox2";
-            this.cTextBox2.Size = new System.Drawing.Size(203, 29);
-            this.cTextBox2.TabIndex = 7;
-            this.cTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSDT.BackColor = System.Drawing.Color.White;
+            this.txtSDT.BorderColorFocused = System.Drawing.Color.Orange;
+            this.txtSDT.BorderColorIdle = System.Drawing.Color.Orange;
+            this.txtSDT.BorderColorMouseHover = System.Drawing.Color.Orange;
+            this.txtSDT.BorderThickness = 1;
+            this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSDT.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSDT.isPassword = false;
+            this.txtSDT.Location = new System.Drawing.Point(242, 126);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(203, 29);
+            this.txtSDT.TabIndex = 8;
+            this.txtSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // cTextBox1
+            // txtDiaChi
             // 
-            this.cTextBox1.BackColor = System.Drawing.Color.White;
-            this.cTextBox1.BorderColorFocused = System.Drawing.Color.Orange;
-            this.cTextBox1.BorderColorIdle = System.Drawing.Color.Orange;
-            this.cTextBox1.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.cTextBox1.BorderThickness = 1;
-            this.cTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cTextBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cTextBox1.isPassword = false;
-            this.cTextBox1.Location = new System.Drawing.Point(7, 54);
-            this.cTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.cTextBox1.Name = "cTextBox1";
-            this.cTextBox1.Size = new System.Drawing.Size(203, 29);
-            this.cTextBox1.TabIndex = 0;
-            this.cTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtDiaChi.BackColor = System.Drawing.Color.White;
+            this.txtDiaChi.BorderColorFocused = System.Drawing.Color.Orange;
+            this.txtDiaChi.BorderColorIdle = System.Drawing.Color.Orange;
+            this.txtDiaChi.BorderColorMouseHover = System.Drawing.Color.Orange;
+            this.txtDiaChi.BorderThickness = 1;
+            this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiaChi.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDiaChi.isPassword = false;
+            this.txtDiaChi.Location = new System.Drawing.Point(242, 54);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(203, 29);
+            this.txtDiaChi.TabIndex = 7;
+            this.txtDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtID
+            // 
+            this.txtID.BackColor = System.Drawing.Color.White;
+            this.txtID.BorderColorFocused = System.Drawing.Color.Orange;
+            this.txtID.BorderColorIdle = System.Drawing.Color.Orange;
+            this.txtID.BorderColorMouseHover = System.Drawing.Color.Orange;
+            this.txtID.BorderThickness = 1;
+            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtID.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtID.isPassword = false;
+            this.txtID.Location = new System.Drawing.Point(7, 54);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(203, 29);
+            this.txtID.TabIndex = 0;
+            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // cLable5
             // 
@@ -197,91 +220,127 @@
             this.cLable1.TabIndex = 0;
             this.cLable1.Text = "Nhà cung cấp:";
             // 
-            // cButton4
+            // btnXoa
             // 
-            this.cButton4.ActiveBorderThickness = 1;
-            this.cButton4.ActiveCornerRadius = 20;
-            this.cButton4.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton4.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton4.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton4.BackColor = System.Drawing.Color.White;
-            this.cButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton4.BackgroundImage")));
-            this.cButton4.ButtonText = "Xóa";
-            this.cButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton4.ForeColor = System.Drawing.Color.Orange;
-            this.cButton4.IdleBorderThickness = 1;
-            this.cButton4.IdleCornerRadius = 20;
-            this.cButton4.IdleFillColor = System.Drawing.Color.White;
-            this.cButton4.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton4.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton4.Location = new System.Drawing.Point(250, 45);
-            this.cButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton4.Name = "cButton4";
-            this.cButton4.Size = new System.Drawing.Size(163, 41);
-            this.cButton4.TabIndex = 22;
-            this.cButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnXoa.ActiveBorderThickness = 1;
+            this.btnXoa.ActiveCornerRadius = 20;
+            this.btnXoa.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnXoa.ActiveForecolor = System.Drawing.Color.White;
+            this.btnXoa.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnXoa.BackColor = System.Drawing.Color.White;
+            this.btnXoa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.BackgroundImage")));
+            this.btnXoa.ButtonText = "Xóa";
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnXoa.ForeColor = System.Drawing.Color.Orange;
+            this.btnXoa.IdleBorderThickness = 1;
+            this.btnXoa.IdleCornerRadius = 20;
+            this.btnXoa.IdleFillColor = System.Drawing.Color.White;
+            this.btnXoa.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnXoa.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnXoa.Location = new System.Drawing.Point(178, 45);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(100, 41);
+            this.btnXoa.TabIndex = 22;
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // cGroupBox4
             // 
             this.cGroupBox4.BackColor = System.Drawing.Color.White;
-            this.cGroupBox4.Controls.Add(this.cDataGirdView1);
+            this.cGroupBox4.Controls.Add(this.drvNhaCungCap);
             this.cGroupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox4.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox4.Location = new System.Drawing.Point(486, 82);
             this.cGroupBox4.Name = "cGroupBox4";
-            this.cGroupBox4.Size = new System.Drawing.Size(463, 445);
+            this.cGroupBox4.Size = new System.Drawing.Size(626, 445);
             this.cGroupBox4.TabIndex = 9;
             this.cGroupBox4.TabStop = false;
             this.cGroupBox4.Text = "Danh sách nhà cung cấp";
             // 
-            // cDataGirdView1
+            // drvNhaCungCap
             // 
-            this.cDataGirdView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
-            this.cDataGirdView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.cDataGirdView1.BackgroundColor = System.Drawing.Color.White;
-            this.cDataGirdView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cDataGirdView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cDataGirdView1.GridColor = System.Drawing.Color.White;
-            this.cDataGirdView1.Location = new System.Drawing.Point(3, 25);
-            this.cDataGirdView1.Name = "cDataGirdView1";
-            this.cDataGirdView1.RowHeadersVisible = false;
-            this.cDataGirdView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cDataGirdView1.Size = new System.Drawing.Size(457, 417);
-            this.cDataGirdView1.TabIndex = 0;
+            this.drvNhaCungCap.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNhaCungCap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.drvNhaCungCap.BackgroundColor = System.Drawing.Color.White;
+            this.drvNhaCungCap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.drvNhaCungCap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.drvNhaCungCap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drvNhaCungCap.GridColor = System.Drawing.Color.White;
+            this.drvNhaCungCap.Location = new System.Drawing.Point(3, 25);
+            this.drvNhaCungCap.Name = "drvNhaCungCap";
+            this.drvNhaCungCap.RowHeadersVisible = false;
+            this.drvNhaCungCap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.drvNhaCungCap.Size = new System.Drawing.Size(620, 417);
+            this.drvNhaCungCap.TabIndex = 0;
+            this.drvNhaCungCap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drvNhaCungCap_CellClick);
             // 
-            // cButton5
+            // Column1
             // 
-            this.cButton5.ActiveBorderThickness = 1;
-            this.cButton5.ActiveCornerRadius = 20;
-            this.cButton5.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton5.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton5.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton5.BackColor = System.Drawing.Color.White;
-            this.cButton5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton5.BackgroundImage")));
-            this.cButton5.ButtonText = "Thêm";
-            this.cButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton5.ForeColor = System.Drawing.Color.Orange;
-            this.cButton5.IdleBorderThickness = 1;
-            this.cButton5.IdleCornerRadius = 20;
-            this.cButton5.IdleFillColor = System.Drawing.Color.White;
-            this.cButton5.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton5.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton5.Location = new System.Drawing.Point(7, 45);
-            this.cButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton5.Name = "cButton5";
-            this.cButton5.Size = new System.Drawing.Size(163, 41);
-            this.cButton5.TabIndex = 23;
-            this.cButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "NCC_ID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "NCC_TEN";
+            this.Column2.HeaderText = "Tên";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "NCC_SDT";
+            this.Column3.HeaderText = "Số điện thoại";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "NCC_DIACHI";
+            this.Column4.HeaderText = "Địa chỉ";
+            this.Column4.Name = "Column4";
+            // 
+            // btnThem
+            // 
+            this.btnThem.ActiveBorderThickness = 1;
+            this.btnThem.ActiveCornerRadius = 20;
+            this.btnThem.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnThem.ActiveForecolor = System.Drawing.Color.White;
+            this.btnThem.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnThem.BackColor = System.Drawing.Color.White;
+            this.btnThem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThem.BackgroundImage")));
+            this.btnThem.ButtonText = "Thêm";
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnThem.ForeColor = System.Drawing.Color.Orange;
+            this.btnThem.IdleBorderThickness = 1;
+            this.btnThem.IdleCornerRadius = 20;
+            this.btnThem.IdleFillColor = System.Drawing.Color.White;
+            this.btnThem.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnThem.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnThem.Location = new System.Drawing.Point(7, 45);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(107, 41);
+            this.btnThem.TabIndex = 23;
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // cGroupBox3
             // 
             this.cGroupBox3.BackColor = System.Drawing.Color.White;
-            this.cGroupBox3.Controls.Add(this.cTextBox9);
+            this.cGroupBox3.Controls.Add(this.txtSearch);
             this.cGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox3.Location = new System.Drawing.Point(17, 82);
@@ -291,30 +350,32 @@
             this.cGroupBox3.TabStop = false;
             this.cGroupBox3.Text = "Tìm kiếm nhà cung cấp";
             // 
-            // cTextBox9
+            // txtSearch
             // 
-            this.cTextBox9.BackColor = System.Drawing.Color.White;
-            this.cTextBox9.BorderColorFocused = System.Drawing.Color.Orange;
-            this.cTextBox9.BorderColorIdle = System.Drawing.Color.Orange;
-            this.cTextBox9.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.cTextBox9.BorderThickness = 1;
-            this.cTextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cTextBox9.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cTextBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cTextBox9.isPassword = false;
-            this.cTextBox9.Location = new System.Drawing.Point(7, 29);
-            this.cTextBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.cTextBox9.Name = "cTextBox9";
-            this.cTextBox9.Size = new System.Drawing.Size(360, 29);
-            this.cTextBox9.TabIndex = 11;
-            this.cTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.BorderColorFocused = System.Drawing.Color.Orange;
+            this.txtSearch.BorderColorIdle = System.Drawing.Color.Orange;
+            this.txtSearch.BorderColorMouseHover = System.Drawing.Color.Orange;
+            this.txtSearch.BorderThickness = 1;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearch.isPassword = false;
+            this.txtSearch.Location = new System.Drawing.Point(7, 29);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(360, 29);
+            this.txtSearch.TabIndex = 11;
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearch.OnValueChanged += new System.EventHandler(this.txtSearch_OnValueChanged);
             // 
             // cGroupBox2
             // 
             this.cGroupBox2.BackColor = System.Drawing.Color.White;
-            this.cGroupBox2.Controls.Add(this.cButton6);
-            this.cGroupBox2.Controls.Add(this.cButton5);
-            this.cGroupBox2.Controls.Add(this.cButton4);
+            this.cGroupBox2.Controls.Add(this.btnLuu);
+            this.cGroupBox2.Controls.Add(this.btnSua);
+            this.cGroupBox2.Controls.Add(this.btnThem);
+            this.cGroupBox2.Controls.Add(this.btnXoa);
             this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox2.Location = new System.Drawing.Point(17, 371);
@@ -324,48 +385,57 @@
             this.cGroupBox2.TabStop = false;
             this.cGroupBox2.Text = "Chức năng";
             // 
-            // cButton6
+            // btnLuu
             // 
-            this.cButton6.ActiveBorderThickness = 1;
-            this.cButton6.ActiveCornerRadius = 20;
-            this.cButton6.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton6.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton6.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton6.BackColor = System.Drawing.Color.White;
-            this.cButton6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton6.BackgroundImage")));
-            this.cButton6.ButtonText = "Sửa";
-            this.cButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton6.ForeColor = System.Drawing.Color.Orange;
-            this.cButton6.IdleBorderThickness = 1;
-            this.cButton6.IdleCornerRadius = 20;
-            this.cButton6.IdleFillColor = System.Drawing.Color.White;
-            this.cButton6.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton6.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton6.Location = new System.Drawing.Point(7, 96);
-            this.cButton6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton6.Name = "cButton6";
-            this.cButton6.Size = new System.Drawing.Size(163, 41);
-            this.cButton6.TabIndex = 24;
-            this.cButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLuu.ActiveBorderThickness = 1;
+            this.btnLuu.ActiveCornerRadius = 20;
+            this.btnLuu.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnLuu.ActiveForecolor = System.Drawing.Color.White;
+            this.btnLuu.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnLuu.BackColor = System.Drawing.Color.White;
+            this.btnLuu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLuu.BackgroundImage")));
+            this.btnLuu.ButtonText = "Lưu";
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLuu.ForeColor = System.Drawing.Color.Orange;
+            this.btnLuu.IdleBorderThickness = 1;
+            this.btnLuu.IdleCornerRadius = 20;
+            this.btnLuu.IdleFillColor = System.Drawing.Color.White;
+            this.btnLuu.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnLuu.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnLuu.Location = new System.Drawing.Point(178, 96);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(100, 41);
+            this.btnLuu.TabIndex = 25;
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // cTextBox4
+            // btnSua
             // 
-            this.cTextBox4.BackColor = System.Drawing.Color.White;
-            this.cTextBox4.BorderColorFocused = System.Drawing.Color.Orange;
-            this.cTextBox4.BorderColorIdle = System.Drawing.Color.Orange;
-            this.cTextBox4.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.cTextBox4.BorderThickness = 1;
-            this.cTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cTextBox4.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cTextBox4.isPassword = false;
-            this.cTextBox4.Location = new System.Drawing.Point(7, 126);
-            this.cTextBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.cTextBox4.Name = "cTextBox4";
-            this.cTextBox4.Size = new System.Drawing.Size(203, 29);
-            this.cTextBox4.TabIndex = 11;
-            this.cTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSua.ActiveBorderThickness = 1;
+            this.btnSua.ActiveCornerRadius = 20;
+            this.btnSua.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnSua.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSua.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnSua.BackColor = System.Drawing.Color.White;
+            this.btnSua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSua.BackgroundImage")));
+            this.btnSua.ButtonText = "Sửa";
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSua.ForeColor = System.Drawing.Color.Orange;
+            this.btnSua.IdleBorderThickness = 1;
+            this.btnSua.IdleCornerRadius = 20;
+            this.btnSua.IdleFillColor = System.Drawing.Color.White;
+            this.btnSua.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnSua.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnSua.Location = new System.Drawing.Point(339, 45);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(106, 41);
+            this.btnSua.TabIndex = 24;
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // UFNhaCungCap
             // 
@@ -379,11 +449,12 @@
             this.Controls.Add(this.cGroupBox3);
             this.Controls.Add(this.cGroupBox2);
             this.Name = "UFNhaCungCap";
-            this.Size = new System.Drawing.Size(962, 540);
+            this.Size = new System.Drawing.Size(1125, 540);
+            this.Load += new System.EventHandler(this.UFNhaCungCap_Load);
             this.cGroupBox1.ResumeLayout(false);
             this.cGroupBox1.PerformLayout();
             this.cGroupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drvNhaCungCap)).EndInit();
             this.cGroupBox3.ResumeLayout(false);
             this.cGroupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -396,21 +467,26 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private CustomControl.ControlCustom.CLableTitle cLableTitle1;
         private CustomControl.ControlCustom.CGroupBox cGroupBox1;
-        private CustomControl.ControlCustom.CTextBox cTextBox3;
-        private CustomControl.ControlCustom.CTextBox cTextBox2;
-        private CustomControl.ControlCustom.CTextBox cTextBox1;
+        private CustomControl.ControlCustom.CTextBox txtSDT;
+        private CustomControl.ControlCustom.CTextBox txtDiaChi;
+        private CustomControl.ControlCustom.CTextBox txtID;
         private CustomControl.ControlCustom.CLable cLable5;
         private CustomControl.ControlCustom.CLable cLable4;
         private CustomControl.ControlCustom.CLable cLable2;
         private CustomControl.ControlCustom.CLable cLable1;
-        private CustomControl.ControlCustom.CButton cButton4;
+        private CustomControl.ControlCustom.CButton btnXoa;
         private CustomControl.ControlCustom.CGroupBox cGroupBox4;
-        private CustomControl.ControlCustom.CDataGirdView cDataGirdView1;
-        private CustomControl.ControlCustom.CButton cButton5;
+        private CustomControl.ControlCustom.CDataGirdView drvNhaCungCap;
+        private CustomControl.ControlCustom.CButton btnThem;
         private CustomControl.ControlCustom.CGroupBox cGroupBox3;
-        private CustomControl.ControlCustom.CTextBox cTextBox9;
+        private CustomControl.ControlCustom.CTextBox txtSearch;
         private CustomControl.ControlCustom.CGroupBox cGroupBox2;
-        private CustomControl.ControlCustom.CButton cButton6;
-        private CustomControl.ControlCustom.CTextBox cTextBox4;
+        private CustomControl.ControlCustom.CButton btnSua;
+        private CustomControl.ControlCustom.CTextBox txtNhaCungCap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private CustomControl.ControlCustom.CButton btnLuu;
     }
 }

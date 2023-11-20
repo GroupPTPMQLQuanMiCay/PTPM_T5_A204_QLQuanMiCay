@@ -12,17 +12,17 @@ namespace FormControl
         private bool IsAdd;
         DAL_NhaCungCap nhaCungCap = new DAL_NhaCungCap();
         DAL_NguyenLieu nguyenLieu = new DAL_NguyenLieu();
-        private string nguoiDung;
+        private TaiKhoan taiKhoan;
 
         public UFNguyenLieu()
         {
             InitializeComponent();
         }
 
-        public UFNguyenLieu(string nguoidung)
+        public UFNguyenLieu(TaiKhoan taiKhoan)
         {
             InitializeComponent();
-            nguoiDung = nguoidung;
+            this.taiKhoan = taiKhoan;
         }
 
         private void cGroupBox4_Enter(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace FormControl
 
         private void UFNguyenLieu_Load(object sender, EventArgs e)
         {
-            List<NhaCungCap> listNhaCungCap = nhaCungCap.getAllSupplier();
+            List<NhaCungCap> listNhaCungCap = nhaCungCap.getAllSupplier() as List<NhaCungCap>;
             NhaCungCap supAll = new NhaCungCap();
             supAll.NCC_Id = 0;
             supAll.NCC_Ten = "Tất cả";
@@ -122,7 +122,7 @@ namespace FormControl
                 {
                     try
                     {
-                        if (nguyenLieu.insert(txtTenNL.Text, cboDonViTinh.Text, txtDonGia.Text, cboNhaCungCap.SelectedValue.ToString(), nguoiDung))
+                        if (nguyenLieu.insert(txtTenNL.Text, cboDonViTinh.Text, txtDonGia.Text, cboNhaCungCap.SelectedValue.ToString(), taiKhoan.TK_NhanVien))
                         {
                             MessageBox.Show("Thêm nguyên liệu thành công");
                             loadIncredientTable();
@@ -143,7 +143,7 @@ namespace FormControl
                 {
                     try
                     {
-                        if (nguyenLieu.update(txtId.Text ,txtTenNL.Text, cboDonViTinh.Text, txtDonGia.Text, cboNhaCungCap.SelectedValue.ToString(), nguoiDung))
+                        if (nguyenLieu.update(txtId.Text ,txtTenNL.Text, cboDonViTinh.Text, txtDonGia.Text, cboNhaCungCap.SelectedValue.ToString(), taiKhoan.TK_NhanVien))
                         {
                             MessageBox.Show("Cập nhật nguyên liệu thành công");
                             loadIncredientTable();
@@ -212,7 +212,7 @@ namespace FormControl
             } else
             {
                 try { 
-                    if(nguyenLieu.delete(nl_id, nguoiDung))
+                    if(nguyenLieu.delete(nl_id, taiKhoan.TK_NhanVien))
                     {
                         MessageBox.Show("Xóa nguyên liệu thành công");
                         loadIncredientTable();

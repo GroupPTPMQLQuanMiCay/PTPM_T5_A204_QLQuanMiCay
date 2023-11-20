@@ -19,9 +19,29 @@ namespace FormControl.Message
             MessageBox.Show(string.Format("Thêm mới {0} thành công", obj));
         }
 
+        public static void showUpdateSuccessfully(string obj)
+        {
+            MessageBox.Show(string.Format("Cập nhật {0} thành công", obj));
+        }
+
+        public static void showDeleteSuccessfully(string obj)
+        {
+            MessageBox.Show(string.Format("Xóa {0} thành công", obj));
+        }
+
         public static void showCreateFailed(string obj)
         {
             MessageBox.Show(string.Format("Thêm mới {0} không thành công", obj));
+        }
+
+        public static void showUpdateFailed(string obj)
+        {
+            MessageBox.Show(string.Format("Cập nhật {0} không thành công", obj));
+        }
+
+        public static void showDeleteFailed(string obj)
+        {
+            MessageBox.Show(string.Format("Xóa {0} không thành công", obj));
         }
 
         public static void showFailedDBExecution(string job, string table)

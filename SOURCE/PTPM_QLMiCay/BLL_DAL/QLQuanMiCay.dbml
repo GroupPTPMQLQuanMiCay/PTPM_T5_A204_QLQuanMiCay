@@ -123,6 +123,7 @@
       <Column Name="NG_PhongBan" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="NG_MatKhau" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="NguoiDung_NhomQuyen_NguoiDung" Member="NhomQuyen_NguoiDungs" ThisKey="NG_Id" OtherKey="NG_Id" Type="NhomQuyen_NguoiDung" />
+      <Association Name="NguoiDung_TaiKhoan" Member="TaiKhoans" ThisKey="NG_Id" OtherKey="TK_NguoiDung" Type="TaiKhoan" />
     </Type>
   </Table>
   <Table Name="dbo.NguyenLieu" Member="NguyenLieus">
@@ -146,15 +147,6 @@
       <Association Name="NhaCungCap_NguyenLieu" Member="NhaCungCap" ThisKey="NCC_Id" OtherKey="NCC_Id" Type="NhaCungCap" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">
-    <Type Name="NhaCungCap">
-      <Column Name="NCC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NCC_Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NCC_SDT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NCC_DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="NhaCungCap_NguyenLieu" Member="NguyenLieus" ThisKey="NCC_Id" OtherKey="NCC_Id" Type="NguyenLieu" />
-    </Type>
-  </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
     <Type Name="NhanVien">
       <Column Name="NV_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -169,6 +161,7 @@
       <Association Name="NhanVien_HoaDon" Member="HoaDons" ThisKey="NV_Id" OtherKey="NV_Id" Type="HoaDon" />
       <Association Name="NhanVien_HoaDonNhap" Member="HoaDonNhaps" ThisKey="NV_Id" OtherKey="NV_Id" Type="HoaDonNhap" />
       <Association Name="NhanVien_QuanLyBep" Member="QuanLyBeps" ThisKey="NV_Id" OtherKey="NV_Id" Type="QuanLyBep" />
+      <Association Name="NhanVien_TaiKhoan" Member="TaiKhoans" ThisKey="NV_Id" OtherKey="TK_NhanVien" Type="TaiKhoan" />
       <Association Name="NhanVien_TinTuc" Member="TinTucs" ThisKey="NV_Id" OtherKey="NV_Id" Type="TinTuc" />
       <Association Name="QuanAn_NhanVien" Member="QuanAn" ThisKey="QA_DiaChiId" OtherKey="QA_DiaChi" Type="QuanAn" IsForeignKey="true" />
     </Type>
@@ -254,8 +247,10 @@
       <Column Name="TK_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TK_Ten" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="TK_MatKhau" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TK_NhanVien" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TK_NguoiDung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TK_NhanVien" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TK_NguoiDung" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="NguoiDung_TaiKhoan" Member="NguoiDung" ThisKey="TK_NguoiDung" OtherKey="NG_Id" Type="NguoiDung" IsForeignKey="true" />
+      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="TK_NhanVien" OtherKey="NV_Id" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TinhTrangMon" Member="TinhTrangMons">
@@ -280,6 +275,20 @@
       <Column Name="TieuDe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="LoaiTinTuc_TinTuc" Member="LoaiTinTuc" ThisKey="LoaiTin_Id" OtherKey="LoaiTin_Id" Type="LoaiTinTuc" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NhanVien_TinTuc" Member="NhanVien" ThisKey="NV_Id" OtherKey="NV_Id" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">
+    <Type Name="NhaCungCap">
+      <Column Name="NCC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NCC_Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NCC_SDT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NCC_DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="NhaCungCap_NguyenLieu" Member="NguyenLieus" ThisKey="NCC_Id" OtherKey="NCC_Id" Type="NguyenLieu" />
     </Type>
   </Table>
 </Database>

@@ -72,9 +72,6 @@ namespace BLL_DAL
     partial void InsertNguyenLieu(NguyenLieu instance);
     partial void UpdateNguyenLieu(NguyenLieu instance);
     partial void DeleteNguyenLieu(NguyenLieu instance);
-    partial void InsertNhaCungCap(NhaCungCap instance);
-    partial void UpdateNhaCungCap(NhaCungCap instance);
-    partial void DeleteNhaCungCap(NhaCungCap instance);
     partial void InsertNhanVien(NhanVien instance);
     partial void UpdateNhanVien(NhanVien instance);
     partial void DeleteNhanVien(NhanVien instance);
@@ -114,6 +111,9 @@ namespace BLL_DAL
     partial void InsertTinTuc(TinTuc instance);
     partial void UpdateTinTuc(TinTuc instance);
     partial void DeleteTinTuc(TinTuc instance);
+    partial void InsertNhaCungCap(NhaCungCap instance);
+    partial void UpdateNhaCungCap(NhaCungCap instance);
+    partial void DeleteNhaCungCap(NhaCungCap instance);
     #endregion
 		
 		public QLQuanMiCayDataContext() : 
@@ -258,14 +258,6 @@ namespace BLL_DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<NhaCungCap> NhaCungCaps
-		{
-			get
-			{
-				return this.GetTable<NhaCungCap>();
-			}
-		}
-		
 		public System.Data.Linq.Table<NhanVien> NhanViens
 		{
 			get
@@ -367,6 +359,14 @@ namespace BLL_DAL
 			get
 			{
 				return this.GetTable<TinTuc>();
+			}
+		}
+		
+		public System.Data.Linq.Table<NhaCungCap> NhaCungCaps
+		{
+			get
+			{
+				return this.GetTable<NhaCungCap>();
 			}
 		}
 	}
@@ -2796,6 +2796,8 @@ namespace BLL_DAL
 		
 		private EntitySet<NhomQuyen_NguoiDung> _NhomQuyen_NguoiDungs;
 		
+		private EntitySet<TaiKhoan> _TaiKhoans;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2813,6 +2815,7 @@ namespace BLL_DAL
 		public NguoiDung()
 		{
 			this._NhomQuyen_NguoiDungs = new EntitySet<NhomQuyen_NguoiDung>(new Action<NhomQuyen_NguoiDung>(this.attach_NhomQuyen_NguoiDungs), new Action<NhomQuyen_NguoiDung>(this.detach_NhomQuyen_NguoiDungs));
+			this._TaiKhoans = new EntitySet<TaiKhoan>(new Action<TaiKhoan>(this.attach_TaiKhoans), new Action<TaiKhoan>(this.detach_TaiKhoans));
 			OnCreated();
 		}
 		
@@ -2909,6 +2912,19 @@ namespace BLL_DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NguoiDung_TaiKhoan", Storage="_TaiKhoans", ThisKey="NG_Id", OtherKey="TK_NguoiDung")]
+		public EntitySet<TaiKhoan> TaiKhoans
+		{
+			get
+			{
+				return this._TaiKhoans;
+			}
+			set
+			{
+				this._TaiKhoans.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2936,6 +2952,18 @@ namespace BLL_DAL
 		}
 		
 		private void detach_NhomQuyen_NguoiDungs(NhomQuyen_NguoiDung entity)
+		{
+			this.SendPropertyChanging();
+			entity.NguoiDung = null;
+		}
+		
+		private void attach_TaiKhoans(TaiKhoan entity)
+		{
+			this.SendPropertyChanging();
+			entity.NguoiDung = this;
+		}
+		
+		private void detach_TaiKhoans(TaiKhoan entity)
 		{
 			this.SendPropertyChanging();
 			entity.NguoiDung = null;
@@ -3429,168 +3457,6 @@ namespace BLL_DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhaCungCap")]
-	public partial class NhaCungCap : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _NCC_Id;
-		
-		private string _NCC_Ten;
-		
-		private string _NCC_SDT;
-		
-		private string _NCC_DiaChi;
-		
-		private EntitySet<NguyenLieu> _NguyenLieus;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnNCC_IdChanging(int value);
-    partial void OnNCC_IdChanged();
-    partial void OnNCC_TenChanging(string value);
-    partial void OnNCC_TenChanged();
-    partial void OnNCC_SDTChanging(string value);
-    partial void OnNCC_SDTChanged();
-    partial void OnNCC_DiaChiChanging(string value);
-    partial void OnNCC_DiaChiChanged();
-    #endregion
-		
-		public NhaCungCap()
-		{
-			this._NguyenLieus = new EntitySet<NguyenLieu>(new Action<NguyenLieu>(this.attach_NguyenLieus), new Action<NguyenLieu>(this.detach_NguyenLieus));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCC_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int NCC_Id
-		{
-			get
-			{
-				return this._NCC_Id;
-			}
-			set
-			{
-				if ((this._NCC_Id != value))
-				{
-					this.OnNCC_IdChanging(value);
-					this.SendPropertyChanging();
-					this._NCC_Id = value;
-					this.SendPropertyChanged("NCC_Id");
-					this.OnNCC_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCC_Ten", DbType="NVarChar(50)")]
-		public string NCC_Ten
-		{
-			get
-			{
-				return this._NCC_Ten;
-			}
-			set
-			{
-				if ((this._NCC_Ten != value))
-				{
-					this.OnNCC_TenChanging(value);
-					this.SendPropertyChanging();
-					this._NCC_Ten = value;
-					this.SendPropertyChanged("NCC_Ten");
-					this.OnNCC_TenChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCC_SDT", DbType="NVarChar(MAX)")]
-		public string NCC_SDT
-		{
-			get
-			{
-				return this._NCC_SDT;
-			}
-			set
-			{
-				if ((this._NCC_SDT != value))
-				{
-					this.OnNCC_SDTChanging(value);
-					this.SendPropertyChanging();
-					this._NCC_SDT = value;
-					this.SendPropertyChanged("NCC_SDT");
-					this.OnNCC_SDTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCC_DiaChi", DbType="NVarChar(50)")]
-		public string NCC_DiaChi
-		{
-			get
-			{
-				return this._NCC_DiaChi;
-			}
-			set
-			{
-				if ((this._NCC_DiaChi != value))
-				{
-					this.OnNCC_DiaChiChanging(value);
-					this.SendPropertyChanging();
-					this._NCC_DiaChi = value;
-					this.SendPropertyChanged("NCC_DiaChi");
-					this.OnNCC_DiaChiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhaCungCap_NguyenLieu", Storage="_NguyenLieus", ThisKey="NCC_Id", OtherKey="NCC_Id")]
-		public EntitySet<NguyenLieu> NguyenLieus
-		{
-			get
-			{
-				return this._NguyenLieus;
-			}
-			set
-			{
-				this._NguyenLieus.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_NguyenLieus(NguyenLieu entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhaCungCap = this;
-		}
-		
-		private void detach_NguyenLieus(NguyenLieu entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhaCungCap = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhanVien")]
 	public partial class NhanVien : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3620,6 +3486,8 @@ namespace BLL_DAL
 		private EntitySet<HoaDonNhap> _HoaDonNhaps;
 		
 		private EntitySet<QuanLyBep> _QuanLyBeps;
+		
+		private EntitySet<TaiKhoan> _TaiKhoans;
 		
 		private EntitySet<TinTuc> _TinTucs;
 		
@@ -3653,6 +3521,7 @@ namespace BLL_DAL
 			this._HoaDons = new EntitySet<HoaDon>(new Action<HoaDon>(this.attach_HoaDons), new Action<HoaDon>(this.detach_HoaDons));
 			this._HoaDonNhaps = new EntitySet<HoaDonNhap>(new Action<HoaDonNhap>(this.attach_HoaDonNhaps), new Action<HoaDonNhap>(this.detach_HoaDonNhaps));
 			this._QuanLyBeps = new EntitySet<QuanLyBep>(new Action<QuanLyBep>(this.attach_QuanLyBeps), new Action<QuanLyBep>(this.detach_QuanLyBeps));
+			this._TaiKhoans = new EntitySet<TaiKhoan>(new Action<TaiKhoan>(this.attach_TaiKhoans), new Action<TaiKhoan>(this.detach_TaiKhoans));
 			this._TinTucs = new EntitySet<TinTuc>(new Action<TinTuc>(this.attach_TinTucs), new Action<TinTuc>(this.detach_TinTucs));
 			this._QuanAn = default(EntityRef<QuanAn>);
 			OnCreated();
@@ -3874,6 +3743,19 @@ namespace BLL_DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_TaiKhoan", Storage="_TaiKhoans", ThisKey="NV_Id", OtherKey="TK_NhanVien")]
+		public EntitySet<TaiKhoan> TaiKhoans
+		{
+			get
+			{
+				return this._TaiKhoans;
+			}
+			set
+			{
+				this._TaiKhoans.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_TinTuc", Storage="_TinTucs", ThisKey="NV_Id", OtherKey="NV_Id")]
 		public EntitySet<TinTuc> TinTucs
 		{
@@ -3984,6 +3866,18 @@ namespace BLL_DAL
 		}
 		
 		private void detach_QuanLyBeps(QuanLyBep entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhanVien = null;
+		}
+		
+		private void attach_TaiKhoans(TaiKhoan entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhanVien = this;
+		}
+		
+		private void detach_TaiKhoans(TaiKhoan entity)
 		{
 			this.SendPropertyChanging();
 			entity.NhanVien = null;
@@ -5525,6 +5419,10 @@ namespace BLL_DAL
 		
 		private string _TK_NguoiDung;
 		
+		private EntityRef<NguoiDung> _NguoiDung;
+		
+		private EntityRef<NhanVien> _NhanVien;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -5543,6 +5441,8 @@ namespace BLL_DAL
 		
 		public TaiKhoan()
 		{
+			this._NguoiDung = default(EntityRef<NguoiDung>);
+			this._NhanVien = default(EntityRef<NhanVien>);
 			OnCreated();
 		}
 		
@@ -5606,7 +5506,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TK_NhanVien", DbType="NVarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TK_NhanVien", DbType="NVarChar(128)")]
 		public string TK_NhanVien
 		{
 			get
@@ -5617,6 +5517,10 @@ namespace BLL_DAL
 			{
 				if ((this._TK_NhanVien != value))
 				{
+					if (this._NhanVien.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnTK_NhanVienChanging(value);
 					this.SendPropertyChanging();
 					this._TK_NhanVien = value;
@@ -5626,7 +5530,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TK_NguoiDung", DbType="NVarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TK_NguoiDung", DbType="NVarChar(128)")]
 		public string TK_NguoiDung
 		{
 			get
@@ -5637,11 +5541,83 @@ namespace BLL_DAL
 			{
 				if ((this._TK_NguoiDung != value))
 				{
+					if (this._NguoiDung.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnTK_NguoiDungChanging(value);
 					this.SendPropertyChanging();
 					this._TK_NguoiDung = value;
 					this.SendPropertyChanged("TK_NguoiDung");
 					this.OnTK_NguoiDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NguoiDung_TaiKhoan", Storage="_NguoiDung", ThisKey="TK_NguoiDung", OtherKey="NG_Id", IsForeignKey=true)]
+		public NguoiDung NguoiDung
+		{
+			get
+			{
+				return this._NguoiDung.Entity;
+			}
+			set
+			{
+				NguoiDung previousValue = this._NguoiDung.Entity;
+				if (((previousValue != value) 
+							|| (this._NguoiDung.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NguoiDung.Entity = null;
+						previousValue.TaiKhoans.Remove(this);
+					}
+					this._NguoiDung.Entity = value;
+					if ((value != null))
+					{
+						value.TaiKhoans.Add(this);
+						this._TK_NguoiDung = value.NG_Id;
+					}
+					else
+					{
+						this._TK_NguoiDung = default(string);
+					}
+					this.SendPropertyChanged("NguoiDung");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_TaiKhoan", Storage="_NhanVien", ThisKey="TK_NhanVien", OtherKey="NV_Id", IsForeignKey=true)]
+		public NhanVien NhanVien
+		{
+			get
+			{
+				return this._NhanVien.Entity;
+			}
+			set
+			{
+				NhanVien previousValue = this._NhanVien.Entity;
+				if (((previousValue != value) 
+							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NhanVien.Entity = null;
+						previousValue.TaiKhoans.Remove(this);
+					}
+					this._NhanVien.Entity = value;
+					if ((value != null))
+					{
+						value.TaiKhoans.Add(this);
+						this._TK_NhanVien = value.NV_Id;
+					}
+					else
+					{
+						this._TK_NhanVien = default(string);
+					}
+					this.SendPropertyChanged("NhanVien");
 				}
 			}
 		}
@@ -6100,6 +6076,288 @@ namespace BLL_DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhaCungCap")]
+	public partial class NhaCungCap : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _NCC_Id;
+		
+		private string _NCC_Ten;
+		
+		private string _NCC_SDT;
+		
+		private string _NCC_DiaChi;
+		
+		private string _createdBy;
+		
+		private System.DateTime _createdAt;
+		
+		private string _updatedBy;
+		
+		private System.DateTime _updatedAt;
+		
+		private bool _isDeleted;
+		
+		private EntitySet<NguyenLieu> _NguyenLieus;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnNCC_IdChanging(int value);
+    partial void OnNCC_IdChanged();
+    partial void OnNCC_TenChanging(string value);
+    partial void OnNCC_TenChanged();
+    partial void OnNCC_SDTChanging(string value);
+    partial void OnNCC_SDTChanged();
+    partial void OnNCC_DiaChiChanging(string value);
+    partial void OnNCC_DiaChiChanged();
+    partial void OncreatedByChanging(string value);
+    partial void OncreatedByChanged();
+    partial void OncreatedAtChanging(System.DateTime value);
+    partial void OncreatedAtChanged();
+    partial void OnupdatedByChanging(string value);
+    partial void OnupdatedByChanged();
+    partial void OnupdatedAtChanging(System.DateTime value);
+    partial void OnupdatedAtChanged();
+    partial void OnisDeletedChanging(bool value);
+    partial void OnisDeletedChanged();
+    #endregion
+		
+		public NhaCungCap()
+		{
+			this._NguyenLieus = new EntitySet<NguyenLieu>(new Action<NguyenLieu>(this.attach_NguyenLieus), new Action<NguyenLieu>(this.detach_NguyenLieus));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCC_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int NCC_Id
+		{
+			get
+			{
+				return this._NCC_Id;
+			}
+			set
+			{
+				if ((this._NCC_Id != value))
+				{
+					this.OnNCC_IdChanging(value);
+					this.SendPropertyChanging();
+					this._NCC_Id = value;
+					this.SendPropertyChanged("NCC_Id");
+					this.OnNCC_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCC_Ten", DbType="NVarChar(50)")]
+		public string NCC_Ten
+		{
+			get
+			{
+				return this._NCC_Ten;
+			}
+			set
+			{
+				if ((this._NCC_Ten != value))
+				{
+					this.OnNCC_TenChanging(value);
+					this.SendPropertyChanging();
+					this._NCC_Ten = value;
+					this.SendPropertyChanged("NCC_Ten");
+					this.OnNCC_TenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCC_SDT", DbType="NVarChar(MAX)")]
+		public string NCC_SDT
+		{
+			get
+			{
+				return this._NCC_SDT;
+			}
+			set
+			{
+				if ((this._NCC_SDT != value))
+				{
+					this.OnNCC_SDTChanging(value);
+					this.SendPropertyChanging();
+					this._NCC_SDT = value;
+					this.SendPropertyChanged("NCC_SDT");
+					this.OnNCC_SDTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCC_DiaChi", DbType="NVarChar(50)")]
+		public string NCC_DiaChi
+		{
+			get
+			{
+				return this._NCC_DiaChi;
+			}
+			set
+			{
+				if ((this._NCC_DiaChi != value))
+				{
+					this.OnNCC_DiaChiChanging(value);
+					this.SendPropertyChanging();
+					this._NCC_DiaChi = value;
+					this.SendPropertyChanged("NCC_DiaChi");
+					this.OnNCC_DiaChiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createdBy", DbType="NVarChar(MAX)")]
+		public string createdBy
+		{
+			get
+			{
+				return this._createdBy;
+			}
+			set
+			{
+				if ((this._createdBy != value))
+				{
+					this.OncreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._createdBy = value;
+					this.SendPropertyChanged("createdBy");
+					this.OncreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createdAt", DbType="DateTime NOT NULL")]
+		public System.DateTime createdAt
+		{
+			get
+			{
+				return this._createdAt;
+			}
+			set
+			{
+				if ((this._createdAt != value))
+				{
+					this.OncreatedAtChanging(value);
+					this.SendPropertyChanging();
+					this._createdAt = value;
+					this.SendPropertyChanged("createdAt");
+					this.OncreatedAtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updatedBy", DbType="NVarChar(MAX)")]
+		public string updatedBy
+		{
+			get
+			{
+				return this._updatedBy;
+			}
+			set
+			{
+				if ((this._updatedBy != value))
+				{
+					this.OnupdatedByChanging(value);
+					this.SendPropertyChanging();
+					this._updatedBy = value;
+					this.SendPropertyChanged("updatedBy");
+					this.OnupdatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updatedAt", DbType="DateTime NOT NULL")]
+		public System.DateTime updatedAt
+		{
+			get
+			{
+				return this._updatedAt;
+			}
+			set
+			{
+				if ((this._updatedAt != value))
+				{
+					this.OnupdatedAtChanging(value);
+					this.SendPropertyChanging();
+					this._updatedAt = value;
+					this.SendPropertyChanged("updatedAt");
+					this.OnupdatedAtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isDeleted", DbType="Bit NOT NULL")]
+		public bool isDeleted
+		{
+			get
+			{
+				return this._isDeleted;
+			}
+			set
+			{
+				if ((this._isDeleted != value))
+				{
+					this.OnisDeletedChanging(value);
+					this.SendPropertyChanging();
+					this._isDeleted = value;
+					this.SendPropertyChanged("isDeleted");
+					this.OnisDeletedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhaCungCap_NguyenLieu", Storage="_NguyenLieus", ThisKey="NCC_Id", OtherKey="NCC_Id")]
+		public EntitySet<NguyenLieu> NguyenLieus
+		{
+			get
+			{
+				return this._NguyenLieus;
+			}
+			set
+			{
+				this._NguyenLieus.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_NguyenLieus(NguyenLieu entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhaCungCap = this;
+		}
+		
+		private void detach_NguyenLieus(NguyenLieu entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhaCungCap = null;
 		}
 	}
 }

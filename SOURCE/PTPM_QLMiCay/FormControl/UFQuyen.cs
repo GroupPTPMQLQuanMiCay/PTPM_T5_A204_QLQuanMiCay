@@ -31,7 +31,8 @@ namespace FormControl
             cbb_ChucVu.ValueMember = "NG_Id";
             cbb_ChucVu.SelectedIndex = 0;
 
-            loadDGV(cbb_ChucVu.SelectedValue.ToString());
+            loadDGV(((NguoiDung)cbb_ChucVu.Items[0]).NG_Id.ToString());
+            Console.WriteLine(((NguoiDung)cbb_ChucVu.Items[0]).NG_Id);
         }
 
         public void loadDGV(string NGID)
