@@ -77,7 +77,7 @@ namespace PTPM_QLMiCay.GUI
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
-            ufNhaCungCap = new UFNhaCungCap();
+            ufNhaCungCap = new UFNhaCungCap(taiKhoan);
             if (taiKhoan.TK_NguoiDung != "sa")
             {
                 int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_NCC");

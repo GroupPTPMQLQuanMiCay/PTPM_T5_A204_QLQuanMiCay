@@ -37,7 +37,7 @@ namespace FormControl
 
         private void UFNguyenLieu_Load(object sender, EventArgs e)
         {
-            List<NhaCungCap> listNhaCungCap = nhaCungCap.getAllSupplier();
+            List<NhaCungCap> listNhaCungCap = nhaCungCap.getAllSupplier() as List<NhaCungCap>;
             NhaCungCap supAll = new NhaCungCap();
             supAll.NCC_Id = 0;
             supAll.NCC_Ten = "Tất cả";

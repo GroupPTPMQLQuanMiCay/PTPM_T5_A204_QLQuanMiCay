@@ -18,6 +18,10 @@ namespace DataFirstEntities.Entity
         public string NCC_SDT { get; set; }
         [MaxLength(50)]
         public string NCC_DiaChi { get; set; }
-
+        public string createdBy { get; set; }
+        public DateTime createdAt { get; set; }
+        public string updatedBy { get; set; }
+        public DateTime updatedAt { get; set; }
+        public bool isDeleted { get; set; }
     }
 }

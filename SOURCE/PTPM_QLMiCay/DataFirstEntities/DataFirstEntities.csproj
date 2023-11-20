@@ -128,6 +128,10 @@
     <Compile Include="Migrations\202311180445011_update-table-tai-khoan.designer.cs">
       <DependentUpon>202311180445011_update-table-tai-khoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311200619245_them-thong-tin-bang-nha-cung-cap.cs" />
+    <Compile Include="Migrations\202311200619245_them-thong-tin-bang-nha-cung-cap.designer.cs">
+      <DependentUpon>202311200619245_them-thong-tin-bang-nha-cung-cap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311180445011_update-table-tai-khoan.resx">
       <DependentUpon>202311180445011_update-table-tai-khoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311200619245_them-thong-tin-bang-nha-cung-cap.resx">
+      <DependentUpon>202311200619245_them-thong-tin-bang-nha-cung-cap.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

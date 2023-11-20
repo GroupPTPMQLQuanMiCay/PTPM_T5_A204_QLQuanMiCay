@@ -147,15 +147,6 @@
       <Association Name="NhaCungCap_NguyenLieu" Member="NhaCungCap" ThisKey="NCC_Id" OtherKey="NCC_Id" Type="NhaCungCap" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">
-    <Type Name="NhaCungCap">
-      <Column Name="NCC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NCC_Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NCC_SDT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NCC_DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="NhaCungCap_NguyenLieu" Member="NguyenLieus" ThisKey="NCC_Id" OtherKey="NCC_Id" Type="NguyenLieu" />
-    </Type>
-  </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
     <Type Name="NhanVien">
       <Column Name="NV_Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -284,6 +275,20 @@
       <Column Name="TieuDe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="LoaiTinTuc_TinTuc" Member="LoaiTinTuc" ThisKey="LoaiTin_Id" OtherKey="LoaiTin_Id" Type="LoaiTinTuc" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NhanVien_TinTuc" Member="NhanVien" ThisKey="NV_Id" OtherKey="NV_Id" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">
+    <Type Name="NhaCungCap">
+      <Column Name="NCC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NCC_Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NCC_SDT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NCC_DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="NhaCungCap_NguyenLieu" Member="NguyenLieus" ThisKey="NCC_Id" OtherKey="NCC_Id" Type="NguyenLieu" />
     </Type>
   </Table>
 </Database>
