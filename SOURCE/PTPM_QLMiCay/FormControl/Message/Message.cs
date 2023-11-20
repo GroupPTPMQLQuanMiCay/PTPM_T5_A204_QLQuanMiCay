@@ -14,6 +14,11 @@ namespace FormControl.Message
             MessageBox.Show("Vui lòng cung cấp thông tin " + about + " để " + when);
         }
 
+        public static void showInvalidParameterMessage(string about)
+        {
+            MessageBox.Show("Dữ liệu " + about + " không hợp lệ");
+        }
+
         public static void showCreateSuccessfully(string obj)
         {
             MessageBox.Show(string.Format("Thêm mới {0} thành công", obj));

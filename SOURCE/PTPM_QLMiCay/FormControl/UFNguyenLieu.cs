@@ -1,5 +1,6 @@
 ﻿
 using BLL_DAL;
+using FormControl.Forms;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -37,7 +38,8 @@ namespace FormControl
 
         private void UFNguyenLieu_Load(object sender, EventArgs e)
         {
-            List<NhaCungCap> listNhaCungCap = nhaCungCap.getAllSupplier() as List<NhaCungCap>;
+            List<NhaCungCap> listNhaCungCap = new List<NhaCungCap>();
+            listNhaCungCap = nhaCungCap.getAllSupplierFull();
             NhaCungCap supAll = new NhaCungCap();
             supAll.NCC_Id = 0;
             supAll.NCC_Ten = "Tất cả";
@@ -229,6 +231,12 @@ namespace FormControl
         {
             IsAdd = false;
             btnLuu.Enabled = true;
+        }
+
+        private void btnDatNL_Click(object sender, EventArgs e)
+        {
+            frmDatNguyenLieu frm = new frmDatNguyenLieu(taiKhoan);
+            frm.Show();
         }
     }
 }

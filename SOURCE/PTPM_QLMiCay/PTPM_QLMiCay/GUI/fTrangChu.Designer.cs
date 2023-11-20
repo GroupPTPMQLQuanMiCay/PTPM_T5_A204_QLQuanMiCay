@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTrangChu));
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.lblNhanVien = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnHoaDon = new CustomControl.ControlCustom.CButtonFlat();
             this.btnThoat = new CustomControl.ControlCustom.CButtonFlat();
             this.btnDoanhThu = new CustomControl.ControlCustom.CButtonFlat();
@@ -38,11 +40,9 @@
             this.btnNhanVien = new CustomControl.ControlCustom.CButtonFlat();
             this.btnDanhMuc = new CustomControl.ControlCustom.CButtonFlat();
             this.btnNhaCungCap = new CustomControl.ControlCustom.CButtonFlat();
-            this.btnNguyenLieu = new CustomControl.ControlCustom.CButtonFlat();
             this.btnTrangChu = new CustomControl.ControlCustom.CButtonFlat();
             this.panel_Body = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblNhanVien = new System.Windows.Forms.Label();
+            this.btnNguyenLieu = new CustomControl.ControlCustom.CButtonFlat();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,7 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnNguyenLieu);
             this.bunifuGradientPanel1.Controls.Add(this.lblNhanVien);
             this.bunifuGradientPanel1.Controls.Add(this.label1);
             this.bunifuGradientPanel1.Controls.Add(this.btnHoaDon);
@@ -60,7 +61,6 @@
             this.bunifuGradientPanel1.Controls.Add(this.btnNhanVien);
             this.bunifuGradientPanel1.Controls.Add(this.btnDanhMuc);
             this.bunifuGradientPanel1.Controls.Add(this.btnNhaCungCap);
-            this.bunifuGradientPanel1.Controls.Add(this.btnNguyenLieu);
             this.bunifuGradientPanel1.Controls.Add(this.btnTrangChu);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -72,6 +72,24 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(200, 600);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // lblNhanVien
+            // 
+            this.lblNhanVien.AutoSize = true;
+            this.lblNhanVien.Location = new System.Drawing.Point(70, 75);
+            this.lblNhanVien.Name = "lblNhanVien";
+            this.lblNhanVien.Size = new System.Drawing.Size(35, 13);
+            this.lblNhanVien.TabIndex = 11;
+            this.lblNhanVien.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(65, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Xin chào";
             // 
             // btnHoaDon
             // 
@@ -350,41 +368,6 @@
             this.btnNhaCungCap.TextFont = new System.Drawing.Font("Segoe UI", 10F);
             this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
-            // btnNguyenLieu
-            // 
-            this.btnNguyenLieu.Activecolor = System.Drawing.Color.Orange;
-            this.btnNguyenLieu.BackColor = System.Drawing.Color.Orange;
-            this.btnNguyenLieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNguyenLieu.BorderRadius = 0;
-            this.btnNguyenLieu.ButtonText = "Nguyên Liệu";
-            this.btnNguyenLieu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNguyenLieu.DisabledColor = System.Drawing.Color.Gray;
-            this.btnNguyenLieu.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnNguyenLieu.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnNguyenLieu.Iconimage")));
-            this.btnNguyenLieu.Iconimage_right = null;
-            this.btnNguyenLieu.Iconimage_right_Selected = null;
-            this.btnNguyenLieu.Iconimage_Selected = null;
-            this.btnNguyenLieu.IconMarginLeft = 0;
-            this.btnNguyenLieu.IconMarginRight = 0;
-            this.btnNguyenLieu.IconRightVisible = true;
-            this.btnNguyenLieu.IconRightZoom = 0D;
-            this.btnNguyenLieu.IconVisible = true;
-            this.btnNguyenLieu.IconZoom = 90D;
-            this.btnNguyenLieu.IsTab = false;
-            this.btnNguyenLieu.Location = new System.Drawing.Point(0, 99);
-            this.btnNguyenLieu.Name = "btnNguyenLieu";
-            this.btnNguyenLieu.Normalcolor = System.Drawing.Color.Orange;
-            this.btnNguyenLieu.OnHovercolor = System.Drawing.Color.OrangeRed;
-            this.btnNguyenLieu.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnNguyenLieu.selected = false;
-            this.btnNguyenLieu.Size = new System.Drawing.Size(200, 48);
-            this.btnNguyenLieu.TabIndex = 1;
-            this.btnNguyenLieu.Text = "Nguyên Liệu";
-            this.btnNguyenLieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNguyenLieu.Textcolor = System.Drawing.Color.Black;
-            this.btnNguyenLieu.TextFont = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnNguyenLieu.Click += new System.EventHandler(this.btnNguyenLieu_Click);
-            // 
             // btnTrangChu
             // 
             this.btnTrangChu.Activecolor = System.Drawing.Color.Orange;
@@ -428,23 +411,40 @@
             this.panel_Body.Size = new System.Drawing.Size(916, 600);
             this.panel_Body.TabIndex = 1;
             // 
-            // label1
+            // btnNguyenLieu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Xin chào";
-            // 
-            // lblNhanVien
-            // 
-            this.lblNhanVien.AutoSize = true;
-            this.lblNhanVien.Location = new System.Drawing.Point(70, 75);
-            this.lblNhanVien.Name = "lblNhanVien";
-            this.lblNhanVien.Size = new System.Drawing.Size(35, 13);
-            this.lblNhanVien.TabIndex = 11;
-            this.lblNhanVien.Text = "label2";
+            this.btnNguyenLieu.Activecolor = System.Drawing.Color.Orange;
+            this.btnNguyenLieu.BackColor = System.Drawing.Color.Orange;
+            this.btnNguyenLieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNguyenLieu.BorderRadius = 0;
+            this.btnNguyenLieu.ButtonText = "Nguyên Liệu";
+            this.btnNguyenLieu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNguyenLieu.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNguyenLieu.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNguyenLieu.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnNguyenLieu.Iconimage")));
+            this.btnNguyenLieu.Iconimage_right = null;
+            this.btnNguyenLieu.Iconimage_right_Selected = null;
+            this.btnNguyenLieu.Iconimage_Selected = null;
+            this.btnNguyenLieu.IconMarginLeft = 0;
+            this.btnNguyenLieu.IconMarginRight = 0;
+            this.btnNguyenLieu.IconRightVisible = true;
+            this.btnNguyenLieu.IconRightZoom = 0D;
+            this.btnNguyenLieu.IconVisible = true;
+            this.btnNguyenLieu.IconZoom = 90D;
+            this.btnNguyenLieu.IsTab = false;
+            this.btnNguyenLieu.Location = new System.Drawing.Point(0, 99);
+            this.btnNguyenLieu.Name = "btnNguyenLieu";
+            this.btnNguyenLieu.Normalcolor = System.Drawing.Color.Orange;
+            this.btnNguyenLieu.OnHovercolor = System.Drawing.Color.OrangeRed;
+            this.btnNguyenLieu.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnNguyenLieu.selected = false;
+            this.btnNguyenLieu.Size = new System.Drawing.Size(200, 48);
+            this.btnNguyenLieu.TabIndex = 1;
+            this.btnNguyenLieu.Text = "Nguyên Liệu";
+            this.btnNguyenLieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNguyenLieu.Textcolor = System.Drawing.Color.Black;
+            this.btnNguyenLieu.TextFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnNguyenLieu.Click += new System.EventHandler(this.btnNguyenLieu_Click);
             // 
             // fTrangChu
             // 
@@ -475,10 +475,10 @@
         private CustomControl.ControlCustom.CButtonFlat btnNhanVien;
         private CustomControl.ControlCustom.CButtonFlat btnDanhMuc;
         private CustomControl.ControlCustom.CButtonFlat btnNhaCungCap;
-        private CustomControl.ControlCustom.CButtonFlat btnNguyenLieu;
         private CustomControl.ControlCustom.CButtonFlat btnTrangChu;
         private System.Windows.Forms.Panel panel_Body;
         private System.Windows.Forms.Label lblNhanVien;
         private System.Windows.Forms.Label label1;
+        private CustomControl.ControlCustom.CButtonFlat btnNguyenLieu;
     }
 }

@@ -16,6 +16,11 @@ namespace BLL_DAL
                             .ToList();
         }
 
+        public NguyenLieu getIncredientById(int Id)
+        {
+            return _context.NguyenLieus.Where(nl => nl.NL_Id == Id).FirstOrDefault();
+        }
+
         public object getIncredientBySupplier(int Id)
         {
             return _context.NguyenLieus.Where(nl => nl.isDeleted == false).Where(i => i.NCC_Id == Id)

@@ -48,7 +48,7 @@
             this.cButton4 = new CustomControl.ControlCustom.CButton();
             this.cButton3 = new CustomControl.ControlCustom.CButton();
             this.cButton2 = new CustomControl.ControlCustom.CButton();
-            this.cButton1 = new CustomControl.ControlCustom.CButton();
+            this.btnDatNL = new CustomControl.ControlCustom.CButton();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
             this.cboDonViTinh = new System.Windows.Forms.ComboBox();
             this.txtDonGia = new CustomControl.ControlCustom.CNumericTextbox();
@@ -198,7 +198,7 @@
             this.cGroupBox2.Controls.Add(this.cButton4);
             this.cGroupBox2.Controls.Add(this.cButton3);
             this.cGroupBox2.Controls.Add(this.cButton2);
-            this.cGroupBox2.Controls.Add(this.cButton1);
+            this.cGroupBox2.Controls.Add(this.btnDatNL);
             this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox2.Location = new System.Drawing.Point(3, 312);
@@ -387,30 +387,31 @@
             this.cButton2.TabIndex = 22;
             this.cButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cButton1
+            // btnDatNL
             // 
-            this.cButton1.ActiveBorderThickness = 1;
-            this.cButton1.ActiveCornerRadius = 20;
-            this.cButton1.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton1.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton1.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton1.BackColor = System.Drawing.Color.White;
-            this.cButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton1.BackgroundImage")));
-            this.cButton1.ButtonText = "Đặt nguyên liệu";
-            this.cButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton1.ForeColor = System.Drawing.Color.Orange;
-            this.cButton1.IdleBorderThickness = 1;
-            this.cButton1.IdleCornerRadius = 20;
-            this.cButton1.IdleFillColor = System.Drawing.Color.White;
-            this.cButton1.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton1.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton1.Location = new System.Drawing.Point(10, 40);
-            this.cButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton1.Name = "cButton1";
-            this.cButton1.Size = new System.Drawing.Size(163, 41);
-            this.cButton1.TabIndex = 22;
-            this.cButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDatNL.ActiveBorderThickness = 1;
+            this.btnDatNL.ActiveCornerRadius = 20;
+            this.btnDatNL.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnDatNL.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDatNL.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnDatNL.BackColor = System.Drawing.Color.White;
+            this.btnDatNL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDatNL.BackgroundImage")));
+            this.btnDatNL.ButtonText = "Đặt nguyên liệu";
+            this.btnDatNL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDatNL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDatNL.ForeColor = System.Drawing.Color.Orange;
+            this.btnDatNL.IdleBorderThickness = 1;
+            this.btnDatNL.IdleCornerRadius = 20;
+            this.btnDatNL.IdleFillColor = System.Drawing.Color.White;
+            this.btnDatNL.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnDatNL.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnDatNL.Location = new System.Drawing.Point(10, 40);
+            this.btnDatNL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDatNL.Name = "btnDatNL";
+            this.btnDatNL.Size = new System.Drawing.Size(163, 41);
+            this.btnDatNL.TabIndex = 22;
+            this.btnDatNL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDatNL.Click += new System.EventHandler(this.btnDatNL_Click);
             // 
             // cGroupBox1
             // 
@@ -602,7 +603,7 @@
         private CustomControl.ControlCustom.CTextBox txtTenNL;
         private CustomControl.ControlCustom.CButton cButton3;
         private CustomControl.ControlCustom.CButton cButton2;
-        private CustomControl.ControlCustom.CButton cButton1;
+        private CustomControl.ControlCustom.CButton btnDatNL;
         private CustomControl.ControlCustom.CButton btnLuu;
         private CustomControl.ControlCustom.CButton btnThem;
         private CustomControl.ControlCustom.CButton cButton4;

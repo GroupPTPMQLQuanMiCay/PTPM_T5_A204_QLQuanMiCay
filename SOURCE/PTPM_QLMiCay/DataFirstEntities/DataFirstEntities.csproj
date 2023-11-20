@@ -132,6 +132,10 @@
     <Compile Include="Migrations\202311200619245_them-thong-tin-bang-nha-cung-cap.designer.cs">
       <DependentUpon>202311200619245_them-thong-tin-bang-nha-cung-cap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311201520433_update-table-chi-tiet-phieu-date.cs" />
+    <Compile Include="Migrations\202311201520433_update-table-chi-tiet-phieu-date.designer.cs">
+      <DependentUpon>202311201520433_update-table-chi-tiet-phieu-date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -169,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311200619245_them-thong-tin-bang-nha-cung-cap.resx">
       <DependentUpon>202311200619245_them-thong-tin-bang-nha-cung-cap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311201520433_update-table-chi-tiet-phieu-date.resx">
+      <DependentUpon>202311201520433_update-table-chi-tiet-phieu-date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
