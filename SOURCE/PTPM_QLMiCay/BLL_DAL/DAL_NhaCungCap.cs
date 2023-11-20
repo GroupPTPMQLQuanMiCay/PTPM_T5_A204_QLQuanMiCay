@@ -13,6 +13,12 @@ namespace BLL_DAL
 
         public DAL_NhaCungCap() { }
 
+        public List<NhaCungCap> getAllSupplierFull()
+        {
+            return _context.NhaCungCaps.Where(ncc => ncc.isDeleted == false)
+                                       .ToList();
+        }
+
         public object getAllSupplier()
         {
             return _context.NhaCungCaps.Where(ncc => ncc.isDeleted == false)

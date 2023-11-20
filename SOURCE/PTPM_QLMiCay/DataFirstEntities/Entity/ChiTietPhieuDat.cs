@@ -25,5 +25,6 @@ namespace DataFirstEntities.Entity
 
         public int soluong { get; set; }
         public int DaGiao { get; set; }
+        public double NL_Gia { get; set; }
     }
 }
