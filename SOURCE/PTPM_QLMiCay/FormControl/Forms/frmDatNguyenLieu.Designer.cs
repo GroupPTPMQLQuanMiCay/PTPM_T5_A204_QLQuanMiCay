@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatNguyenLieu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cGroupBox5 = new CustomControl.ControlCustom.CGroupBox();
+            this.btnLamMoi = new CustomControl.ControlCustom.CButton();
+            this.btnDatNL = new CustomControl.ControlCustom.CButton();
             this.txtThanhTien = new CustomControl.ControlCustom.CTextBox();
             this.cLable6 = new CustomControl.ControlCustom.CLable();
             this.btnLapPD = new CustomControl.ControlCustom.CButton();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
+            this.cboMaPD = new CustomControl.ControlCustom.CCombobox();
             this.txtSL = new CustomControl.ControlCustom.CNumericTextbox();
             this.dateNgayNhap = new Bunifu.Framework.UI.BunifuDatepicker();
             this.cLable4 = new CustomControl.ControlCustom.CLable();
@@ -45,11 +48,17 @@
             this.cLable3 = new CustomControl.ControlCustom.CLable();
             this.txtNhanVien = new CustomControl.ControlCustom.CTextBox();
             this.cLable2 = new CustomControl.ControlCustom.CLable();
-            this.cTextBox1 = new CustomControl.ControlCustom.CTextBox();
             this.cLable1 = new CustomControl.ControlCustom.CLable();
             this.cGroupBox4 = new CustomControl.ControlCustom.CGroupBox();
             this.drvNLDat = new CustomControl.ControlCustom.CDataGirdView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
+            this.btnXoa = new CustomControl.ControlCustom.CButton();
             this.btnThemVaoPD = new CustomControl.ControlCustom.CButton();
             this.btnUpdate = new CustomControl.ControlCustom.CButton();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
@@ -60,13 +69,6 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cButtonClose1 = new CustomControl.ControlCustom.CButtonClose();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDatNL = new CustomControl.ControlCustom.CButton();
             this.cGroupBox5.SuspendLayout();
             this.cGroupBox1.SuspendLayout();
             this.cGroupBox4.SuspendLayout();
@@ -80,6 +82,7 @@
             // cGroupBox5
             // 
             this.cGroupBox5.BackColor = System.Drawing.Color.White;
+            this.cGroupBox5.Controls.Add(this.btnLamMoi);
             this.cGroupBox5.Controls.Add(this.btnDatNL);
             this.cGroupBox5.Controls.Add(this.txtThanhTien);
             this.cGroupBox5.Controls.Add(this.cLable6);
@@ -92,6 +95,58 @@
             this.cGroupBox5.TabIndex = 22;
             this.cGroupBox5.TabStop = false;
             this.cGroupBox5.Text = "chức năng";
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.ActiveBorderThickness = 1;
+            this.btnLamMoi.ActiveCornerRadius = 20;
+            this.btnLamMoi.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnLamMoi.ActiveForecolor = System.Drawing.Color.White;
+            this.btnLamMoi.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnLamMoi.BackColor = System.Drawing.Color.White;
+            this.btnLamMoi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.BackgroundImage")));
+            this.btnLamMoi.ButtonText = "Làm mới";
+            this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLamMoi.ForeColor = System.Drawing.Color.Orange;
+            this.btnLamMoi.IdleBorderThickness = 1;
+            this.btnLamMoi.IdleCornerRadius = 20;
+            this.btnLamMoi.IdleFillColor = System.Drawing.Color.White;
+            this.btnLamMoi.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnLamMoi.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnLamMoi.Location = new System.Drawing.Point(386, 30);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(163, 41);
+            this.btnLamMoi.TabIndex = 25;
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // btnDatNL
+            // 
+            this.btnDatNL.ActiveBorderThickness = 1;
+            this.btnDatNL.ActiveCornerRadius = 20;
+            this.btnDatNL.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnDatNL.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDatNL.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnDatNL.BackColor = System.Drawing.Color.White;
+            this.btnDatNL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDatNL.BackgroundImage")));
+            this.btnDatNL.ButtonText = "Đặt nguyên liệu";
+            this.btnDatNL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDatNL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDatNL.ForeColor = System.Drawing.Color.Orange;
+            this.btnDatNL.IdleBorderThickness = 1;
+            this.btnDatNL.IdleCornerRadius = 20;
+            this.btnDatNL.IdleFillColor = System.Drawing.Color.White;
+            this.btnDatNL.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnDatNL.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnDatNL.Location = new System.Drawing.Point(196, 30);
+            this.btnDatNL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDatNL.Name = "btnDatNL";
+            this.btnDatNL.Size = new System.Drawing.Size(163, 41);
+            this.btnDatNL.TabIndex = 24;
+            this.btnDatNL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDatNL.Click += new System.EventHandler(this.btnDatNL_Click);
             // 
             // txtThanhTien
             // 
@@ -162,6 +217,7 @@
             // cGroupBox1
             // 
             this.cGroupBox1.BackColor = System.Drawing.Color.White;
+            this.cGroupBox1.Controls.Add(this.cboMaPD);
             this.cGroupBox1.Controls.Add(this.txtSL);
             this.cGroupBox1.Controls.Add(this.dateNgayNhap);
             this.cGroupBox1.Controls.Add(this.cLable4);
@@ -170,7 +226,6 @@
             this.cGroupBox1.Controls.Add(this.cLable3);
             this.cGroupBox1.Controls.Add(this.txtNhanVien);
             this.cGroupBox1.Controls.Add(this.cLable2);
-            this.cGroupBox1.Controls.Add(this.cTextBox1);
             this.cGroupBox1.Controls.Add(this.cLable1);
             this.cGroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox1.ForeColor = System.Drawing.Color.Orange;
@@ -180,6 +235,17 @@
             this.cGroupBox1.TabIndex = 17;
             this.cGroupBox1.TabStop = false;
             this.cGroupBox1.Text = "Thông tin đặt hàng";
+            // 
+            // cboMaPD
+            // 
+            this.cboMaPD.FormattingEnabled = true;
+            this.cboMaPD.ItemHeight = 23;
+            this.cboMaPD.Location = new System.Drawing.Point(11, 68);
+            this.cboMaPD.Name = "cboMaPD";
+            this.cboMaPD.Size = new System.Drawing.Size(203, 29);
+            this.cboMaPD.TabIndex = 11;
+            this.cboMaPD.UseSelectable = true;
+            this.cboMaPD.SelectedIndexChanged += new System.EventHandler(this.cboMaPD_SelectedIndexChanged);
             // 
             // txtSL
             // 
@@ -287,24 +353,6 @@
             this.cLable2.TabIndex = 2;
             this.cLable2.Text = "Nhân viên:";
             // 
-            // cTextBox1
-            // 
-            this.cTextBox1.BackColor = System.Drawing.Color.White;
-            this.cTextBox1.BorderColorFocused = System.Drawing.Color.Orange;
-            this.cTextBox1.BorderColorIdle = System.Drawing.Color.Orange;
-            this.cTextBox1.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.cTextBox1.BorderThickness = 1;
-            this.cTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cTextBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cTextBox1.isPassword = false;
-            this.cTextBox1.Location = new System.Drawing.Point(11, 68);
-            this.cTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.cTextBox1.Name = "cTextBox1";
-            this.cTextBox1.Size = new System.Drawing.Size(203, 29);
-            this.cTextBox1.TabIndex = 0;
-            this.cTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // cLable1
             // 
             this.cLable1.AutoSize = true;
@@ -322,9 +370,9 @@
             this.cGroupBox4.Controls.Add(this.drvNLDat);
             this.cGroupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox4.ForeColor = System.Drawing.Color.Orange;
-            this.cGroupBox4.Location = new System.Drawing.Point(27, 355);
+            this.cGroupBox4.Location = new System.Drawing.Point(27, 407);
             this.cGroupBox4.Name = "cGroupBox4";
-            this.cGroupBox4.Size = new System.Drawing.Size(1283, 247);
+            this.cGroupBox4.Size = new System.Drawing.Size(1283, 195);
             this.cGroupBox4.TabIndex = 21;
             this.cGroupBox4.TabStop = false;
             this.cGroupBox4.Text = "Thông tin";
@@ -332,10 +380,10 @@
             // drvNLDat
             // 
             this.drvNLDat.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Orange;
-            this.drvNLDat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNLDat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.drvNLDat.BackgroundColor = System.Drawing.Color.White;
             this.drvNLDat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvNLDat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -351,23 +399,86 @@
             this.drvNLDat.Name = "drvNLDat";
             this.drvNLDat.RowHeadersVisible = false;
             this.drvNLDat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.drvNLDat.Size = new System.Drawing.Size(1277, 219);
+            this.drvNLDat.Size = new System.Drawing.Size(1277, 167);
             this.drvNLDat.TabIndex = 0;
             this.drvNLDat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drvNLDat_CellClick);
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "NL_ID";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.HeaderText = "Tên nguyên liệu";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.HeaderText = "Đơn vị tính";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.HeaderText = "Số lượng";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column9.HeaderText = "Đơn giá";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.HeaderText = "Giá";
+            this.Column10.Name = "Column10";
             // 
             // cGroupBox3
             // 
             this.cGroupBox3.BackColor = System.Drawing.Color.White;
+            this.cGroupBox3.Controls.Add(this.btnXoa);
             this.cGroupBox3.Controls.Add(this.btnThemVaoPD);
             this.cGroupBox3.Controls.Add(this.btnUpdate);
             this.cGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox3.Location = new System.Drawing.Point(27, 277);
             this.cGroupBox3.Name = "cGroupBox3";
-            this.cGroupBox3.Size = new System.Drawing.Size(461, 72);
+            this.cGroupBox3.Size = new System.Drawing.Size(461, 124);
             this.cGroupBox3.TabIndex = 15;
             this.cGroupBox3.TabStop = false;
             this.cGroupBox3.Text = "Chức năng";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.ActiveBorderThickness = 1;
+            this.btnXoa.ActiveCornerRadius = 20;
+            this.btnXoa.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnXoa.ActiveForecolor = System.Drawing.Color.White;
+            this.btnXoa.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnXoa.BackColor = System.Drawing.Color.White;
+            this.btnXoa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.BackgroundImage")));
+            this.btnXoa.ButtonText = "Xóa phiếu đặt";
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnXoa.ForeColor = System.Drawing.Color.Orange;
+            this.btnXoa.IdleBorderThickness = 1;
+            this.btnXoa.IdleCornerRadius = 20;
+            this.btnXoa.IdleFillColor = System.Drawing.Color.White;
+            this.btnXoa.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnXoa.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnXoa.Location = new System.Drawing.Point(142, 75);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(163, 41);
+            this.btnXoa.TabIndex = 24;
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThemVaoPD
             // 
@@ -429,7 +540,7 @@
             this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox2.Location = new System.Drawing.Point(505, 19);
             this.cGroupBox2.Name = "cGroupBox2";
-            this.cGroupBox2.Size = new System.Drawing.Size(805, 330);
+            this.cGroupBox2.Size = new System.Drawing.Size(805, 382);
             this.cGroupBox2.TabIndex = 20;
             this.cGroupBox2.TabStop = false;
             this.cGroupBox2.Text = "Thông tin nguyên liệu";
@@ -437,10 +548,10 @@
             // drvNguyenLieu
             // 
             this.drvNguyenLieu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Orange;
-            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.drvNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.drvNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvNguyenLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -455,7 +566,7 @@
             this.drvNguyenLieu.Name = "drvNguyenLieu";
             this.drvNguyenLieu.RowHeadersVisible = false;
             this.drvNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.drvNguyenLieu.Size = new System.Drawing.Size(799, 302);
+            this.drvNguyenLieu.Size = new System.Drawing.Size(799, 354);
             this.drvNguyenLieu.TabIndex = 0;
             // 
             // Column1
@@ -504,67 +615,6 @@
             this.cButtonClose1.TabStop = false;
             this.cButtonClose1.Zoom = 10;
             // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "NL_ID";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column6.HeaderText = "Tên nguyên liệu";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.HeaderText = "Đơn vị tính";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.HeaderText = "Số lượng";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column9.HeaderText = "Đơn giá";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.HeaderText = "Giá";
-            this.Column10.Name = "Column10";
-            // 
-            // btnDatNL
-            // 
-            this.btnDatNL.ActiveBorderThickness = 1;
-            this.btnDatNL.ActiveCornerRadius = 20;
-            this.btnDatNL.ActiveFillColor = System.Drawing.Color.Orange;
-            this.btnDatNL.ActiveForecolor = System.Drawing.Color.White;
-            this.btnDatNL.ActiveLineColor = System.Drawing.Color.Orange;
-            this.btnDatNL.BackColor = System.Drawing.Color.White;
-            this.btnDatNL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDatNL.BackgroundImage")));
-            this.btnDatNL.ButtonText = "Đặt nguyên liệu";
-            this.btnDatNL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDatNL.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnDatNL.ForeColor = System.Drawing.Color.Orange;
-            this.btnDatNL.IdleBorderThickness = 1;
-            this.btnDatNL.IdleCornerRadius = 20;
-            this.btnDatNL.IdleFillColor = System.Drawing.Color.White;
-            this.btnDatNL.IdleForecolor = System.Drawing.Color.Orange;
-            this.btnDatNL.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnDatNL.Location = new System.Drawing.Point(196, 30);
-            this.btnDatNL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnDatNL.Name = "btnDatNL";
-            this.btnDatNL.Size = new System.Drawing.Size(163, 41);
-            this.btnDatNL.TabIndex = 24;
-            this.btnDatNL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmDatNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,7 +661,6 @@
         private CustomControl.ControlCustom.CLable cLable3;
         private CustomControl.ControlCustom.CTextBox txtNhanVien;
         private CustomControl.ControlCustom.CLable cLable2;
-        private CustomControl.ControlCustom.CTextBox cTextBox1;
         private CustomControl.ControlCustom.CLable cLable1;
         private CustomControl.ControlCustom.CGroupBox cGroupBox4;
         private CustomControl.ControlCustom.CDataGirdView drvNLDat;
@@ -635,5 +684,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private CustomControl.ControlCustom.CButton btnDatNL;
+        private CustomControl.ControlCustom.CCombobox cboMaPD;
+        private CustomControl.ControlCustom.CButton btnLamMoi;
+        private CustomControl.ControlCustom.CButton btnXoa;
     }
 }

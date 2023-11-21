@@ -1,4 +1,7 @@
-﻿namespace BLL_DAL
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace BLL_DAL
 {
     public class DAL_CTPhieuDat
     {
@@ -20,7 +23,63 @@
                 _context.CTPhieuDats.InsertOnSubmit(ctpd);
                 _context.SubmitChanges();
                 return SUCCESS;
-            } catch
+            }
+            catch
+            {
+                return ERROR_ON_EXECUTION;
+            }
+        }
+
+        public List<CTPhieuDat> getIncredientOrderDetail(int orderId)
+        {
+            return _context.CTPhieuDats.Where(ct => ct.PD_Id == orderId).ToList();
+        }
+
+        public int update(int pdatId, int nlId, int soLuong, double gia)
+        {
+            CTPhieuDat ctpd = _context.CTPhieuDats.Where(x => x.PD_Id == pdatId && x.NL_Id == nlId)
+                                                  .FirstOrDefault();
+
+            try
+            {
+                if (ctpd != null)
+                {
+                    ctpd.soluong = soLuong;
+                    ctpd.NL_Gia = gia;
+                    _context.CTPhieuDats.InsertOnSubmit(ctpd);
+                    _context.SubmitChanges();
+                    return SUCCESS;
+                }
+                else
+                {
+                    return INVALID_PARAMETER;
+                }
+            }
+            catch
+            {
+                return ERROR_ON_EXECUTION;
+            }
+        }
+
+        public int delete(int pdatId, int nlId)
+        {
+            CTPhieuDat ctpd = _context.CTPhieuDats.Where(x => x.PD_Id == pdatId && x.NL_Id == nlId)
+                                                  .FirstOrDefault();
+
+            try
+            {
+                if (ctpd != null)
+                {
+                    _context.CTPhieuDats.DeleteOnSubmit(ctpd);
+                    _context.SubmitChanges();
+                    return SUCCESS;
+                }
+                else
+                {
+                    return INVALID_PARAMETER;
+                }
+            }
+            catch
             {
                 return ERROR_ON_EXECUTION;
             }
