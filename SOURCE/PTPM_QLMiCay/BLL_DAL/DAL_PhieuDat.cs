@@ -14,6 +14,16 @@ namespace BLL_DAL
         private static int SUCCESS = 1;
         public DAL_PhieuDat() { }
 
+        public List<PhieuDat> getIncredientOrders()
+        {
+            return _context.PhieuDats.Where(x => x.isDeleted == false).Select(x => x).ToList();
+        }
+
+        public PhieuDat getIncredientOrder(int orderId)
+        {
+            return _context.PhieuDats.Where(p => p.PD_Id == orderId && p.isDeleted == false).FirstOrDefault();
+        }
+
         public int insert(string creater, DateTime ngaydat)
         {
             PhieuDat pd = new PhieuDat();
@@ -29,7 +39,8 @@ namespace BLL_DAL
                 _context.PhieuDats.InsertOnSubmit(pd);
                 _context.SubmitChanges();
                 return SUCCESS;
-            } catch
+            }
+            catch
             {
                 return ERROR_ON_EXECUTION;
             }
@@ -37,7 +48,63 @@ namespace BLL_DAL
 
         public PhieuDat getLatestIncredientOrder()
         {
-            return _context.PhieuDats.OrderByDescending(x => x.PD_Id).FirstOrDefault();
+            return _context.PhieuDats.Where(x => x.isDeleted == false)
+                                     .OrderByDescending(x => x.PD_Id)
+                                     .FirstOrDefault();
+        }
+
+        public int update(int pdId, string creater, DateTime ngaydat)
+        {
+            PhieuDat pd = _context.PhieuDats.Where(x => x.PD_Id == pdId && x.isDeleted == false)
+                                            .FirstOrDefault();
+            if (pd != null)
+            {
+                pd.updatedAt = DateTime.Now;
+                pd.updatedBy = creater;
+                pd.PD_Date = ngaydat;
+                _context.SubmitChanges();
+                return SUCCESS;
+            }
+            else
+            {
+                return INVALID_PARAMETER;
+            }
+        }
+
+        public int delete(int pdId, string creater)
+        {
+            PhieuDat pd = _context.PhieuDats.Where(x => x.PD_Id == pdId && x.isDeleted == false).FirstOrDefault();
+            if (pd != null)
+            {
+                pd.updatedAt = DateTime.Now;
+                pd.updatedBy = creater;
+                pd.isDeleted = true;
+                _context.SubmitChanges();
+                return SUCCESS;
+            }
+            else
+            {
+                return INVALID_PARAMETER;
+            }
+        }
+
+        public int sendToSupplier(int pdId, string sender)
+        {
+            PhieuDat pd = _context.PhieuDats.Where(x => x.PD_Id == pdId && x.isDeleted == false)
+                                            .FirstOrDefault();
+            if (pd != null)
+            {
+                pd.updatedAt = DateTime.Now;
+                pd.updatedBy = sender;
+                pd.sentSupplierBy = sender;
+                pd.isSentSupplier = true;
+                _context.SubmitChanges();
+                return SUCCESS;
+            }
+            else
+            {
+                return INVALID_PARAMETER;
+            }
         }
     }
 }

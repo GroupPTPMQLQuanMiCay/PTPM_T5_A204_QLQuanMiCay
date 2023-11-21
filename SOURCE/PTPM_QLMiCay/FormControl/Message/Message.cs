@@ -24,6 +24,12 @@ namespace FormControl.Message
             MessageBox.Show(string.Format("Thêm mới {0} thành công", obj));
         }
 
+        public static void showUpdateFailedAfterSend(string obj, string reason)
+        {
+            MessageBox.Show(string.Format("Cập nhật {0} không thành công do {1}", obj, reason));
+        }
+
+        
         public static void showUpdateSuccessfully(string obj)
         {
             MessageBox.Show(string.Format("Cập nhật {0} thành công", obj));
