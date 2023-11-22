@@ -44,5 +44,26 @@ namespace BLL_DAL.Properties {
                 return ((string)(this["QLQuanMiCayConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True")]
+        public string QLQuanMiCayConnectionString2 {
+            get {
+                return ((string)(this["QLQuanMiCayConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NEWSEAA\\SQLEXPRESS;Initial Catalog=QLQuanMiCay;Integrated Security=Tr" +
+            "ue")]
+        public string QLQuanMiCayConnectionString3 {
+            get {
+                return ((string)(this["QLQuanMiCayConnectionString3"]));
+            }
+        }
     }
 }

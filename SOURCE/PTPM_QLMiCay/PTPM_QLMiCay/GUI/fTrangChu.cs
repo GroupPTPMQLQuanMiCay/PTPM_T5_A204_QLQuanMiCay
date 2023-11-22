@@ -16,6 +16,7 @@ namespace PTPM_QLMiCay.GUI
         UFNhaCungCap ufNhaCungCap = new UFNhaCungCap();
         UFDanhMuc ufDanhMuc = new UFDanhMuc();
         UFQuyen ufQuyen = new UFQuyen();
+        UFBan ufBan = new UFBan();
         UFNhomQuyen ufNhomQuyen = new UFNhomQuyen();
         DAL_PhanQuyen dal_PhanQuyen = new DAL_PhanQuyen();
 
@@ -200,6 +201,11 @@ namespace PTPM_QLMiCay.GUI
         private void fTrangChu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Program.formDangNhap.Show();
+        }
+
+        private void btnBan_Click(object sender, EventArgs e)
+        {
+            OpenChildFormCT(ufBan);
         }
     }
 }

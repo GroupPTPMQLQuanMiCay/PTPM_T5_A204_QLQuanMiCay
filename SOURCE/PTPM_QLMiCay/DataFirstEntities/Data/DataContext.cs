@@ -11,7 +11,7 @@ namespace DataFirstEntities.Data
     public class DataContext : DbContext
     {
         public DataContext()
-            : base(@"Data Source=DESKTOP-KCB97U3\HONGTHAM;Initial Catalog=QLQuanMiCay;User ID=sa;Password=123")
+            : base(@"Data Source=NEWSEAA\SQLEXPRESS;Initial Catalog=QLQuanMiCay;User ID=sa;Password=123")
         {
         
         }

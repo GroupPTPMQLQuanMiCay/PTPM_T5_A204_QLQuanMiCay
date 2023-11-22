@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_Ban.cs" />
     <Compile Include="DAL_CapQuyenNhom.cs" />
     <Compile Include="DAL_ChiTietNhap.cs" />
     <Compile Include="DAL_CTPhieuDat.cs" />
