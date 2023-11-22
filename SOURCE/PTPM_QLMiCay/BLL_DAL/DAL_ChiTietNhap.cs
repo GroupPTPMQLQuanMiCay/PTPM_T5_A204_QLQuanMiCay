@@ -23,5 +23,10 @@ namespace BLL_DAL
             _context.ChiTietNhaps.InsertOnSubmit(ct);
             _context.SubmitChanges();
         }
+
+        public List<ChiTietNhap> getIncredientDetail(int orderId)
+        {
+            return _context.ChiTietNhaps.Where(x => x.HDN_Id == orderId).ToList();
+        }
     }
 }

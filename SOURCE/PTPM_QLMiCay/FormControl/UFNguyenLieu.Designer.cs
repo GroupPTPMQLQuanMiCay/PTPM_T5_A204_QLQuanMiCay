@@ -46,7 +46,7 @@
             this.btnXoa = new CustomControl.ControlCustom.CButton();
             this.btnThem = new CustomControl.ControlCustom.CButton();
             this.cButton4 = new CustomControl.ControlCustom.CButton();
-            this.cButton3 = new CustomControl.ControlCustom.CButton();
+            this.btnHoaDon = new CustomControl.ControlCustom.CButton();
             this.btnNhapNL = new CustomControl.ControlCustom.CButton();
             this.btnDatNL = new CustomControl.ControlCustom.CButton();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
@@ -196,7 +196,7 @@
             this.cGroupBox2.Controls.Add(this.btnXoa);
             this.cGroupBox2.Controls.Add(this.btnThem);
             this.cGroupBox2.Controls.Add(this.cButton4);
-            this.cGroupBox2.Controls.Add(this.cButton3);
+            this.cGroupBox2.Controls.Add(this.btnHoaDon);
             this.cGroupBox2.Controls.Add(this.btnNhapNL);
             this.cGroupBox2.Controls.Add(this.btnDatNL);
             this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -337,30 +337,31 @@
             this.cButton4.TabIndex = 22;
             this.cButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cButton3
+            // btnHoaDon
             // 
-            this.cButton3.ActiveBorderThickness = 1;
-            this.cButton3.ActiveCornerRadius = 20;
-            this.cButton3.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton3.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton3.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton3.BackColor = System.Drawing.Color.White;
-            this.cButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton3.BackgroundImage")));
-            this.cButton3.ButtonText = "Hóa đơn nhập";
-            this.cButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton3.ForeColor = System.Drawing.Color.Orange;
-            this.cButton3.IdleBorderThickness = 1;
-            this.cButton3.IdleCornerRadius = 20;
-            this.cButton3.IdleFillColor = System.Drawing.Color.White;
-            this.cButton3.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton3.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton3.Location = new System.Drawing.Point(10, 104);
-            this.cButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton3.Name = "cButton3";
-            this.cButton3.Size = new System.Drawing.Size(163, 41);
-            this.cButton3.TabIndex = 22;
-            this.cButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnHoaDon.ActiveBorderThickness = 1;
+            this.btnHoaDon.ActiveCornerRadius = 20;
+            this.btnHoaDon.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnHoaDon.ActiveForecolor = System.Drawing.Color.White;
+            this.btnHoaDon.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnHoaDon.BackColor = System.Drawing.Color.White;
+            this.btnHoaDon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHoaDon.BackgroundImage")));
+            this.btnHoaDon.ButtonText = "Hóa đơn nhập";
+            this.btnHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnHoaDon.ForeColor = System.Drawing.Color.Orange;
+            this.btnHoaDon.IdleBorderThickness = 1;
+            this.btnHoaDon.IdleCornerRadius = 20;
+            this.btnHoaDon.IdleFillColor = System.Drawing.Color.White;
+            this.btnHoaDon.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnHoaDon.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnHoaDon.Location = new System.Drawing.Point(10, 104);
+            this.btnHoaDon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(163, 41);
+            this.btnHoaDon.TabIndex = 22;
+            this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnNhapNL
             // 
@@ -602,7 +603,7 @@
         private CustomControl.ControlCustom.CLable cLable2;
         private CustomControl.ControlCustom.CLable cLable1;
         private CustomControl.ControlCustom.CTextBox txtTenNL;
-        private CustomControl.ControlCustom.CButton cButton3;
+        private CustomControl.ControlCustom.CButton btnHoaDon;
         private CustomControl.ControlCustom.CButton btnNhapNL;
         private CustomControl.ControlCustom.CButton btnDatNL;
         private CustomControl.ControlCustom.CButton btnLuu;
