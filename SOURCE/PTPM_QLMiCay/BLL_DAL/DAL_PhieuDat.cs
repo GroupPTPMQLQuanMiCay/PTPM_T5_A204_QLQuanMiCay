@@ -24,6 +24,13 @@ namespace BLL_DAL
             return _context.PhieuDats.Where(p => p.PD_Id == orderId && p.isDeleted == false).FirstOrDefault();
         }
 
+        public List<PhieuDat> getIncredientOrdersHadSent()
+        {
+            return _context.PhieuDats.Where(x => x.isDeleted == false && x.isSentSupplier == true)
+                                     .Select(x => x)
+                                     .ToList();
+        }
+
         public int insert(string creater, DateTime ngaydat)
         {
             PhieuDat pd = new PhieuDat();

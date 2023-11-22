@@ -238,5 +238,11 @@ namespace FormControl
             frmDatNguyenLieu frm = new frmDatNguyenLieu(taiKhoan);
             frm.Show();
         }
+
+        private void btnNhapNL_Click(object sender, EventArgs e)
+        {
+            frmNhapNguyenLieu frm = new frmNhapNguyenLieu(taiKhoan);
+            frm.Show();
+        }
     }
 }

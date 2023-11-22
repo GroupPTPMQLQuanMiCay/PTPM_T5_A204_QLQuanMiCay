@@ -61,6 +61,30 @@ namespace BLL_DAL
             }
         }
 
+        public int updateDeliveredQuantity(int pdatId, int nlId, int soLuong)
+        {
+            CTPhieuDat ctpd = _context.CTPhieuDats.Where(x => x.PD_Id == pdatId && x.NL_Id == nlId)
+                                                  .FirstOrDefault();
+
+            try
+            {
+                if (ctpd != null)
+                {
+                    ctpd.DaGiao = ctpd.DaGiao + soLuong;
+                    _context.SubmitChanges();
+                    return SUCCESS;
+                }
+                else
+                {
+                    return INVALID_PARAMETER;
+                }
+            }
+            catch
+            {
+                return ERROR_ON_EXECUTION;
+            }
+        }
+
         public int delete(int pdatId, int nlId)
         {
             CTPhieuDat ctpd = _context.CTPhieuDats.Where(x => x.PD_Id == pdatId && x.NL_Id == nlId)
@@ -83,6 +107,12 @@ namespace BLL_DAL
             {
                 return ERROR_ON_EXECUTION;
             }
+        }
+
+        public CTPhieuDat detail(int pdatId, int nlId)
+        {
+            return _context.CTPhieuDats.Where(x => x.PD_Id == pdatId && x.NL_Id == nlId)
+                                                  .FirstOrDefault();
         }
     }
 }

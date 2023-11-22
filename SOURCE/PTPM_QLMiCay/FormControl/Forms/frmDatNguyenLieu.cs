@@ -74,8 +74,8 @@ namespace FormControl.Forms
                 NguyenLieu nl = nlDal.getIncredientById(listCTPD[i].NL_Id);
                 drvNLDat.Rows[index].Cells[0].Value = listCTPD[i].NL_Id;
                 drvNLDat.Rows[index].Cells[1].Value = nl.NL_Ten;
+                drvNLDat.Rows[index].Cells[2].Value = listCTPD[i].soluong;
                 drvNLDat.Rows[index].Cells[2].Value = nl.NL_DonViTinh;
-                drvNLDat.Rows[index].Cells[3].Value = listCTPD[i].soluong;
                 drvNLDat.Rows[index].Cells[4].Value = listCTPD[i].NL_Gia;
                 drvNLDat.Rows[index].Cells[5].Value = listCTPD[i].soluong * listCTPD[i].NL_Gia;
                 sum += listCTPD[i].soluong * listCTPD[i].NL_Gia;
