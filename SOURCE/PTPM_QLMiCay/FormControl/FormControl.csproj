@@ -74,6 +74,12 @@
     <Compile Include="Forms\frmDatNguyenLieu.Designer.cs">
       <DependentUpon>frmDatNguyenLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmHoaDonNhap.Designer.cs">
+      <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmNhapNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\frmDatNguyenLieu.resx">
       <DependentUpon>frmDatNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmHoaDonNhap.resx">
+      <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNhapNguyenLieu.resx">
       <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
