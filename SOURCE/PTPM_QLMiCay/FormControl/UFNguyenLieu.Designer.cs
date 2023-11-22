@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFNguyenLieu));
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
@@ -47,7 +47,7 @@
             this.btnThem = new CustomControl.ControlCustom.CButton();
             this.cButton4 = new CustomControl.ControlCustom.CButton();
             this.cButton3 = new CustomControl.ControlCustom.CButton();
-            this.cButton2 = new CustomControl.ControlCustom.CButton();
+            this.btnNhapNL = new CustomControl.ControlCustom.CButton();
             this.btnDatNL = new CustomControl.ControlCustom.CButton();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
             this.cboDonViTinh = new System.Windows.Forms.ComboBox();
@@ -107,10 +107,10 @@
             // drvNguyenLieu
             // 
             this.drvNguyenLieu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
-            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.drvNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.drvNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvNguyenLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -197,7 +197,7 @@
             this.cGroupBox2.Controls.Add(this.btnThem);
             this.cGroupBox2.Controls.Add(this.cButton4);
             this.cGroupBox2.Controls.Add(this.cButton3);
-            this.cGroupBox2.Controls.Add(this.cButton2);
+            this.cGroupBox2.Controls.Add(this.btnNhapNL);
             this.cGroupBox2.Controls.Add(this.btnDatNL);
             this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
@@ -362,30 +362,31 @@
             this.cButton3.TabIndex = 22;
             this.cButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cButton2
+            // btnNhapNL
             // 
-            this.cButton2.ActiveBorderThickness = 1;
-            this.cButton2.ActiveCornerRadius = 20;
-            this.cButton2.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton2.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton2.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton2.BackColor = System.Drawing.Color.White;
-            this.cButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton2.BackgroundImage")));
-            this.cButton2.ButtonText = "Nhập nguyên liệu";
-            this.cButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton2.ForeColor = System.Drawing.Color.Orange;
-            this.cButton2.IdleBorderThickness = 1;
-            this.cButton2.IdleCornerRadius = 20;
-            this.cButton2.IdleFillColor = System.Drawing.Color.White;
-            this.cButton2.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton2.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton2.Location = new System.Drawing.Point(242, 40);
-            this.cButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton2.Name = "cButton2";
-            this.cButton2.Size = new System.Drawing.Size(163, 41);
-            this.cButton2.TabIndex = 22;
-            this.cButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNhapNL.ActiveBorderThickness = 1;
+            this.btnNhapNL.ActiveCornerRadius = 20;
+            this.btnNhapNL.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnNhapNL.ActiveForecolor = System.Drawing.Color.White;
+            this.btnNhapNL.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnNhapNL.BackColor = System.Drawing.Color.White;
+            this.btnNhapNL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNhapNL.BackgroundImage")));
+            this.btnNhapNL.ButtonText = "Nhập nguyên liệu";
+            this.btnNhapNL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNhapNL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnNhapNL.ForeColor = System.Drawing.Color.Orange;
+            this.btnNhapNL.IdleBorderThickness = 1;
+            this.btnNhapNL.IdleCornerRadius = 20;
+            this.btnNhapNL.IdleFillColor = System.Drawing.Color.White;
+            this.btnNhapNL.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnNhapNL.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnNhapNL.Location = new System.Drawing.Point(242, 40);
+            this.btnNhapNL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNhapNL.Name = "btnNhapNL";
+            this.btnNhapNL.Size = new System.Drawing.Size(163, 41);
+            this.btnNhapNL.TabIndex = 22;
+            this.btnNhapNL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNhapNL.Click += new System.EventHandler(this.btnNhapNL_Click);
             // 
             // btnDatNL
             // 
@@ -602,7 +603,7 @@
         private CustomControl.ControlCustom.CLable cLable1;
         private CustomControl.ControlCustom.CTextBox txtTenNL;
         private CustomControl.ControlCustom.CButton cButton3;
-        private CustomControl.ControlCustom.CButton cButton2;
+        private CustomControl.ControlCustom.CButton btnNhapNL;
         private CustomControl.ControlCustom.CButton btnDatNL;
         private CustomControl.ControlCustom.CButton btnLuu;
         private CustomControl.ControlCustom.CButton btnThem;
