@@ -30,5 +30,18 @@ namespace BLL_DAL.XuLy
             var mons = _context.Mons.Where(m => m.M_Ten.Contains(text)).Select(m => m).ToList();
             return mons;
         }
+
+        public List<Mon> getMonByListTenMon(List<string> text)
+        {
+            List<Mon> list = new List<Mon>();
+            foreach (string item in text)
+            {
+                Mon mon = _context.Mons.Where(m => m.M_Ten.Equals(item)).Select(m => m).FirstOrDefault();
+                if (mon != null)
+                    list.Add(mon);
+            }
+
+            return list;
+        }
     }
 }

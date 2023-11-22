@@ -103,7 +103,7 @@
             text-align: center;
         }
 
-        
+
         .dialog.active,
         .overlay.active {
             display: flex;
@@ -235,7 +235,6 @@
             font-weight: 300;
         }
     </style>
-
 </head>
 <body onload="hienThiBanDau()">
     <div class="wrap-content" style="min-height: 640px;">
@@ -305,7 +304,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="cart-place" style="position: fixed; top: 0;">
-                                                        <a href="/GioHang/Index" class="mx-3 text-danger position-relative" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px;">
+
+                                                        <a id="gioHangLink" class="mx-3 text-danger position-relative" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px;">
+                                                            
                                                             <img src="~/images/shopping-bag.png" />
                                                             <span class="position-absolute quantity" style="font-size: 12px; color: #000; position: absolute; margin-top: -5px;" id="productQuantity"></span>
                                                         </a>
@@ -323,11 +324,11 @@
                     </div>
                 </div>
             </header>
-            <div class="container body-content">
+            <div class="container body-content pad pdl-10">
                 @RenderBody()
             </div>
             <div id="successDialog" class="dialog">
-                <div class="dialog-content" >
+                <div class="dialog-content">
                     <p class="font n fl-16 ft-15 tcenter pad pdl-10">Món đã được thêm vô giỏ hàng !!!</p>
                     <button id="closeSuccessDialog" class="btn btn-danger">OK</button>
                 </div>
@@ -338,7 +339,7 @@
                     <p class="font n fl-16 ft-15 tcenter pad pdl-20">Xác nhận xóa món !!!</p>
                     <button id="okDeleteDialog" class="btn btn-danger">OK</button>
                     <button id="closeDeleteDialog" class="btn btn-link">Cancel</button>
-                    
+
                 </div>
             </div>
         </div>
@@ -346,21 +347,22 @@
     <div class="footer-copy">
         <div class="container">
             <div class="ft-content">
-                    <div class="table-w-auto">
-                        <div class="footer_img"><a href="@Url.Action("Index","TrangChu")"><img src="https://gimji.vn/webs_image/uploads/website/LogoGimji2_-1-.png"></a></div>
-                    </div>
-                    <div>
-                        <div class="pad pll-10 prl-10 ptl-20 pbl-20">
-                            <div class="v-distable vb-show">
-                                <div><p class="font fl-14"> Ẩm thực Hàn Quốc Gimji</p></div>
-                                <div class="font tright"></div>
-                            </div>
+                <div class="table-w-auto">
+                    <div class="footer_img"><a href="@Url.Action("Index","TrangChu")"><img src="https://gimji.vn/webs_image/uploads/website/LogoGimji2_-1-.png"></a></div>
+                </div>
+                <div>
+                    <div class="pad pll-10 prl-10 ptl-20 pbl-20">
+                        <div class="v-distable vb-show">
+                            <div><p class="font fl-14"> Ẩm thực Hàn Quốc Gimji</p></div>
+                            <div class="font tright"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
+
         function searchWithText() {
             var searchText = document.getElementById('searchText').value
             var url = '@Url.Action("Index", "TimKiem", new { text = "abc" })'
@@ -378,8 +380,9 @@
                 cart = JSON.parse(localStorage.getItem('cart'))
             }
             updateQuantity();
-            loadCart()
+            loadCart();
         }
+
         function updateQuantity() {
             let cart = []
             if (localStorage.getItem('cart')) {
@@ -397,33 +400,55 @@
             if (localStorage.getItem('cart')) {
                 cart = JSON.parse(localStorage.getItem('cart'))
             }
+            let sumAll = 0;
+            var titleStatus = document.getElementById('titleStatus');
+            if (cart.length == 0) {
+                var table = document.getElementById('cart-item')
+                table.style.display = "none";
+                titleStatus.textContent = "Chưa chọn món";
+            }
+            else {
+                var table = document.getElementById('cart-item')
+                if (table != null)
+                {
+                    table.style.display = "block";
+                    titleStatus.textContent = "MÓN ĐÃ CHỌN";
+                }
+            }
             for (let i = 0 ; i < cart.length ; i++) {
                 var table = document.getElementById('cart-item')
+                if (table == null)
+                    break;
                 var row = table.insertRow();
                 var cell1 = row.insertCell();
                 var cell2 = row.insertCell();
                 var cell3 = row.insertCell();
                 var cell4 = row.insertCell();
                 var cell5 = row.insertCell();
+                var cell6 = row.insertCell();
 
                 cell2.innerHTML = "<p class=\"font n fl-16 ft-15\">" + cart[i].ten + "</p>";
                 cell3.innerHTML = "<p class=\"font n fl-16 ft-15\">" + cart[i].gia + "đ</p>";
                 cell1.innerHTML = "<img src=\"/images/" + cart[i].hinh + "\" width=\"100px\" height=\"100px\"/>";
 
-                cell2.style.paddingTop = "45px";
-                cell3.style.paddingTop = "45px";
-                cell4.style.paddingTop = "45px";
-                cell5.style.paddingTop = "40px";
+                cell2.style.paddingTop = "50px";
+                cell3.style.paddingTop = "50px";
+                cell4.style.paddingTop = "50px";
+                cell5.style.paddingTop = "50px";
+                cell6.style.paddingTop = "45px";
 
+                cell3.style.textAlign = "center";
                 cell4.style.textAlign = "center";
                 cell5.style.textAlign = "center";
+                cell6.style.textAlign = "center";
 
                 let ten = cart[i].hinh.substring(0, cart[i].hinh.length - 4);
 
                 var quantityInput = document.createElement("input");
-                quantityInput.classList.add("font", "n", "fl-16","ft-15");
+                quantityInput.classList.add("font", "n", "fl-16", "ft-15");
                 quantityInput.setAttribute('id', ten);
                 quantityInput.type = "number";
+                quantityInput.style.background = "#ecdcc7";
                 quantityInput.min = "1";
                 quantityInput.value = cart[i].Qty;
                 quantityInput.style.width = "40px";
@@ -436,8 +461,12 @@
 
                 cell4.appendChild(quantityInput);
 
+                var sum = cart[i].gia * cart[i].Qty;
+                cell5.innerHTML = "<p class=\"font n fl-16 ft-15\">" + sum + "đ</p>";
+
+                sumAll += sum;
                 var deleteButton = document.createElement("button");
-                deleteButton.innerHTML = "<img src=\"/images/delete.png\" width=\"40px\" height=\"40px\"/>";
+                deleteButton.innerHTML = "<img src=\"/images/delete1.png\" width=\"40px\" height=\"40px\"/>";
                 deleteButton.style.border = "none";
                 deleteButton.style.backgroundColor = "white";
 
@@ -454,9 +483,26 @@
                     });
                 };
 
-
-                cell5.appendChild(deleteButton);
+                cell6.appendChild(deleteButton);
             }
+
+            var table = document.getElementById('cart-sum')
+            if(table!=null)
+            {
+                var row = table.insertRow();
+                var cell1 = row.insertCell();
+                var cell2 = row.insertCell();
+
+                cell1.innerHTML = "<p class=\"font n fl-16 ft-15\">Tổng</p>";
+                cell2.innerHTML = "<p class=\"font n fl-16 ft-15\">" + sumAll + "đ</p>";
+            }
+
+            let cartTenMon = [cart.length];
+            for (let i = 0; i < cart.length; i++) {
+                cartTenMon[i] = cart[i].ten;
+            }
+            var gioHangLink = document.getElementById("gioHangLink");
+            gioHangLink.href = "/GioHang/Index?tenMonOrderJson=" + encodeURIComponent(JSON.stringify(cartTenMon));
         }
 
         function updateItemFromCart(ten, tenQty) {

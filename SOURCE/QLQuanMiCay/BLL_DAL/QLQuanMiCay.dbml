@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLQuanMiCay" Class="QLQuanMiCayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-I0PUIIP\HONGTHAM;Initial Catalog=QLQuanMiCay;Persist Security Info=True;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Mon" Member="Mons">
     <Type Name="Mon">
       <Column Name="M_Ten" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="DM_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="M_Gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="M_IMG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Mon_OrDer" Member="OrDers" ThisKey="M_Ten" OtherKey="M_Ten" Type="OrDer" />
       <Association Name="DanhMuc_Mon" Member="DanhMuc" ThisKey="DM_Id" OtherKey="DM_Id" Type="DanhMuc" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
@@ -33,6 +34,29 @@
       <Column Name="LoaiTin_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TieuDe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="LoaiTinTuc_TinTuc" Member="LoaiTinTuc" ThisKey="LoaiTin_Id" OtherKey="LoaiTin_Id" Type="LoaiTinTuc" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon" Member="HoaDons">
+    <Type Name="HoaDon">
+      <Column Name="HD_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NV_Id" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="B_SoBan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HD_ThanhTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HD_NgayXuat" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HD_TrangThai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HoaDon_OrDer" Member="OrDers" ThisKey="HD_Id" OtherKey="HD_Id" Type="OrDer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[OrDer]" Member="OrDers">
+    <Type Name="OrDer">
+      <Column Name="M_Ten" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HD_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="O_SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="O_Gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="O_GhiChu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="O_ThoiGian" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="HoaDon_OrDer" Member="HoaDon" ThisKey="HD_Id" OtherKey="HD_Id" Type="HoaDon" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Mon_OrDer" Member="Mon" ThisKey="M_Ten" OtherKey="M_Ten" Type="Mon" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

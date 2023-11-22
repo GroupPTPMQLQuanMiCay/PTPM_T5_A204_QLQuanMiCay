@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<BLL_DAL.Mon>
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -16,7 +18,7 @@
                             <div class="mbl-30 mbp-0">
                                 <div class="section1">
                                     <div class="pad ptl-10 pbl-10">
-                                        <h2 class="font fl-40 ft-30 n title-font">Ẩm Thực Hàn Quốc Gimji</h2>
+                                        <h2 class="font fl-40 ft-30 n">Ẩm Thực Hàn Quốc Gimji</h2>
                                     </div>
                                 </div>
                                 <h6 class="font tjust pad prl-25 prt-0 fl-18 fx-16 fb-15 n mar mtl-10 mbl-10">
@@ -56,7 +58,7 @@
                             <div class="mbl-30 mbp-0">
                                 <div class="section1">
                                     <div class="pad ptl-20 pbl-10">
-                                        <h2 class="font fl-50 ft-30 n title-font">Món Ăn Phong Phú Đa Dạng</h2>
+                                        <h2 class="font fl-50 ft-30 n">Món Ăn Phong Phú Đa Dạng</h2>
                                     </div>
                                 </div>
                                 <h6 class="font fl-20 ft-16 mar mtl-10 mbl-10">
@@ -79,7 +81,7 @@
                                         <div class="titleb1">
                                             <div class="v-distable">
                                                 <div>
-                                                    <h2 class="font fl-24 fx-20 tup n title-font">Món bán chạy</h2>
+                                                    <h2 class="font fl-24 fx-20 tup n">Món bán chạy</h2>
                                                 </div>
                                             </div>
                                         </div>
@@ -106,7 +108,7 @@
                                             <div class="v-row-box owl-carousel owl-loaded">
                                                 <div class="owl-stage-outer">
                                                     @{
-                                                        for (int i = 0; i < 5; i++)
+                                                        foreach (var mon in Model)
                                                         {
                                                             <div class="owl-item" style="width: 240px;">
                                                                 <div class="p-part mar mal-5">
@@ -116,7 +118,7 @@
                                                                                 <div class="backgound-link">
                                                                                     <div class="v-box pad ptl-90p">
                                                                                         <div class="box-info-img fixpad eff-img-zoom">
-                                                                                            <div style="background-image:url(../../images/mi-lau-thai-ca-hoi.jpg)"></div>
+                                                                                            <div style="background-image:url(../../images/@mon.M_IMG)"></div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -126,11 +128,11 @@
                                                                             <div class="vcol cl-12">
                                                                                 <div class="v-row-box pad pdl-5 ptl-10 pbl-0 p-info">
                                                                                     <div class="vcol cl-12 p-title">
-                                                                                        <h2 class="font n fl-16 ft-15 tcenter">Mì lẩu thái cá hồi</h2>
+                                                                                        <h2 class="font n fl-16 ft-15 tcenter">@mon.M_Ten</h2>
                                                                                     </div>
                                                                                     <div class="vcol cl-12 pad ptl-5 pbl-5 p-more">
                                                                                         <div class="font tcenter">
-                                                                                            <h3 class="font fl-15 ft-14 pad pbl-10">71000 đ</h3>
+                                                                                            <h3 class="font fl-15 ft-14 pad pbl-10">@mon.M_Gia đ</h3>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -176,7 +178,7 @@
                                         <div class="titleb1">
                                             <div class="v-distable">
                                                 <div>
-                                                    <h2 class="font fl-24 fx-20 tup n title-font">Tin mới</h2>
+                                                    <h2 class="font fl-24 fx-20 tup n">Tin mới</h2>
                                                 </div>
                                             </div>
                                         </div>
