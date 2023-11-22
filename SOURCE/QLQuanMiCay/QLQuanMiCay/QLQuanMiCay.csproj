@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\css.css" />
     <Content Include="images\7up.jpg" />
     <Content Include="images\bap-them.jpg" />
     <Content Include="images\ca-vien-chien.jpg" />
@@ -116,6 +117,7 @@
     <Content Include="images\coca.jpg" />
     <Content Include="images\dau-hu-ky-them.jpg" />
     <Content Include="images\dau-hu-them.jpg" />
+    <Content Include="images\delete1.png" />
     <Content Include="images\dui-ga-chien.jpg" />
     <Content Include="images\ga-cuon-rong-bien.jpg" />
     <Content Include="images\ga-vien-han-quoc.jpg" />
@@ -193,6 +195,9 @@
     <Content Include="images\tokbukki-lac-pho-mai.jpg" />
     <Content Include="images\tokbukki-lat-pho-mai.jpg" />
     <Content Include="images\tokbukki.jpg" />
+    <Content Include="images\trang-chu-2.jpg" />
+    <Content Include="images\trang-chu-bg.jpg" />
+    <Content Include="images\trang-chu.jpg" />
     <Content Include="images\xuc-xich-them.jpg" />
     <Content Include="packages.config" />
     <Content Include="Views\Mon\MonPartial.cshtml" />

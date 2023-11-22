@@ -4,43 +4,77 @@
 
 
 <div class="container">
-    <div class="row gx-3">
-        @{
-            int count = 0;
-            foreach (var mon in Model)
-            {
-                if (count == 0)
-                {
-                    <div class="col-sm-12 col-md-5 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
-                        <div class="">@mon.M_Ten</div>
-                        <img src="~/images/@mon.M_IMG" style="margin-bottom: 5px"/>
-                        <button class="btn btn-danger" style="margin-bottom: 5px" onclick="addToCart('@mon.M_Ten', '@mon.M_Gia', '@mon.M_IMG')">Đặt món</button>
-                    </div>
-                    count++;
+    <div class="prod-list">
+        <div class="v-row-box owl-carousel owl-loaded">
+            <div class="owl-stage-outer pad pll-30">
+                @{
+
+                    foreach (var mon in Model)
+                    {
+                        <div class="owl-item pad pll-30 pbl-30" style="width: 280px;">
+                            <div class="p-part mar mal-5">
+                                <div class="prod-part">
+                                    <div class="vrow">
+                                        <div class="vcol cl-12 p-img">
+                                            <div class="backgound-link">
+                                                <div class="v-box pad ptl-90p">
+                                                    <div class="box-info-img fixpad eff-img-zoom">
+                                                        <div style="background-image:url(../../images/@mon.M_IMG)"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-img-icon">
+                                            </div>
+                                        </div>
+                                        <div class="vcol cl-12">
+                                            <div class="v-row-box pad pdl-5 ptl-10 pbl-0 p-info">
+                                                <div class="vcol cl-12 p-title">
+                                                    <h2 class="font n fl-16 ft-15 tcenter">@mon.M_Ten</h2>
+                                                </div>
+                                                <div class="vcol cl-12 pad ptl-5 pbl-5 p-more">
+                                                    <div class="font tcenter">
+                                                        <h3 class="font fl-15 ft-14 pad pbl-10">@mon.M_Gia đ</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pad pdl-10 font tcenter">
+                                            <div class="order_button order_has_class cart_fb_order pad pdl-5 prl-15 pll-15 font tcenter ">
+                                                <div class="v-distable">
+                                                    <div>
+                                                        <div class="order_noncheck">
+                                                            <span class="font fl-12 tup" onclick="addToCart('@mon.M_Ten', '@mon.M_Gia', '@mon.M_IMG')">Đặt món</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
                 }
-                else
-                {
-                    <div class="col-sm-12 col-md-5 col-md-offset-1 mon-item" style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 30px; border: 1px solid #ff0000; border-radius: 15px;">
-                        <div class="">@mon.M_Ten</div>
-                        <img src="~/images/@mon.M_IMG" style="margin-bottom: 5px"/>
-                        <button class="btn btn-danger" style="margin-bottom: 5px" onclick="addToCart('@mon.M_Ten', '@mon.M_Gia', '@mon.M_IMG')">Đặt món</button>
-                    </div>
-                    count = 0;
-                }
-                
-            }
-        }
+            </div>
+        </div>
     </div>
 
     <script>
         function addToCart(ten, gia, hinh) {
+            var successDialog = document.getElementById('successDialog');
+            successDialog.classList.add('active');
+
+            document.getElementById('closeSuccessDialog').addEventListener('click', function () {
+                successDialog.classList.remove('active');
+            });
+
             let cart = []
-            if(localStorage.getItem('cart')){
+            if (localStorage.getItem('cart')) {
                 cart = JSON.parse(localStorage.getItem('cart'))
             }
 
-            for(let i = 0 ; i < cart.length ; i++){
-                if(cart[i].ten == ten){
+            for (let i = 0 ; i < cart.length ; i++) {
+                if (cart[i].ten == ten) {
                     let qty = cart[i].Qty
                     qty++
                     cart[i].Qty = qty
@@ -51,41 +85,24 @@
                 }
             }
 
-            var cartItem = {ten: ten, gia: gia, Qty: 1, hinh: hinh}
+            var cartItem = { ten: ten, gia: gia, Qty: 1, hinh: hinh }
             cart.push(cartItem)
             localStorage.setItem('cart', JSON.stringify(cart))
             updateQuantity()
             loadCart()
         }
 
-        function updateQuantity(){
-            let cart = []
-            if(localStorage.getItem('cart')){
-                cart = JSON.parse(localStorage.getItem('cart'))
-            }
-            document.getElementById('productQuantity').innerHTML = cart.length
-        }
-
-        function loadCart() {
+        function updateQuantity() {
             let cart = []
             if (localStorage.getItem('cart')) {
                 cart = JSON.parse(localStorage.getItem('cart'))
             }
-            for (let i = 0 ; i < cart.length ; i++) {
-                var table = document.getElementById('cart-item')
-                var row = table.insertRow();
-                var cell1 = row.insertCell();
-                var cell2 = row.insertCell();
-                var cell3 = row.insertCell();
-                var cell4 = row.insertCell();
-
-                cell1.innerHTML = cart[i].ten;
-                cell2.innerHTML = cart[i].gia;
-                cell3.innerHTML = cart[i].Qty;
-                cell4.innerHTML = cart[i].hinh;
+            let sl = 0;
+            for (let i = 0; i < cart.length; i++) {
+                sl += cart[i].Qty;
             }
+            document.getElementById('productQuantity').innerHTML = sl
         }
     </script>
 </div>
-
 @Html.PagedListPager(Model, i => Url.Action("Index", "ThucDon", new { index = i }))

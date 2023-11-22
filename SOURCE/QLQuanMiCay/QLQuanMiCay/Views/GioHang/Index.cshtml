@@ -1,18 +1,157 @@
-﻿
+﻿@model IEnumerable<BLL_DAL.Mon>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    body {
+        background-color: #ecdcc7;
+    }
 
-<h2>Giỏ hàng</h2>
-<table id="cart-item">
-    <thead>
-        <tr>
-            <th width="40%"></th>
-            <th width="30%">Sản phẩm</th>
-            <th width="20%">Giá</th>
-            <th width="10%">Qty</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+    table {
+        border-collapse: collapse;
+        width: auto;
+    }
+
+        table thead tr th {
+            background-color: #ecdcc7;
+            text-align: center;
+            border: none;
+            color: #BE1E2D;
+        }
+
+        table tr td {
+            padding: 20px 0;
+            background-color: #ecdcc7;
+            border: none;
+            border-top: groove 1px gray;
+        }
+</style>
+<div style="clear:both;">
+    <div class="container">
+        <div class="mar mtl-20 mtt-30">
+            <div class="title-bar pad pdl-7">
+                <div class="v-row-box">
+                    <div class="vcol cl-5 cp-12">
+                            <div class="v-distable">
+                                <h2 class="font fl-24 fx-20 tup n" id="titleStatus" style="color: #BE1E2D;">Món Đã Chọn</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-9 mar mtl-20">
+    <table id="cart-item">
+        <thead>
+            <tr class="font fl-16">
+                <th width="15%">Sản phẩm</th>
+                <th width="25%"></th>
+                <th width="15%">Giá</th>
+                <th width="20%">Số Lượng</th>
+                <th width="20%">Tổng</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<div class="col-sm-3 mar mtl-50">
+    <table id="cart-sum" style="border:groove 1px gray; border-radius:25px; padding:10px;">
+        <thead>
+            <tr>
+                <th class="font fl-18 tup" width="100%" id="testViewText">giá tham khảo </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<div style="clear:both;">
+    <div class="container">
+        <div class="mar mtl-50 mtt-30">
+            <div class="title-bar pad pdl-7">
+                <div class="v-row-box">
+                    <div class="vcol cl-5 cp-12">
+                            <div class="v-distable">
+                                <h2 class="font fl-24 fx-20 tup n w-color">Món Ăn Cùng</h2>
+                            </div>
+                    </div>
+                    <div class="vcol cl-7 vp-hide font tright">
+                        <div class="titleb2">
+                            <ul>
+                                <li class="font fl-15 fb-14 pad pdl-5 prl-10 pll-10"><a href="@Url.Action("Index","ThucDon")"><span>Xem tất cả</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="title-content">
+                <div class="v-row-box">
+                    <div class="vcol cl-12">
+                        <div class="prod-list ">
+                            <div class="v-row-box owl-carousel owl-loaded">
+                                <div class="owl-stage-outer">
+                                    @{
+                                        foreach (var mon in Model)
+                                        {
+                                            <div class="owl-item" style="width: 240px;">
+                                                <div class="p-part mar mal-5">
+                                                    <div class="prod-part">
+                                                        <div class="vrow">
+                                                            <div class="vcol cl-12 p-img">
+                                                                <div class="backgound-link">
+                                                                    <div class="v-box pad ptl-90p">
+                                                                        <div class="box-info-img fixpad eff-img-zoom">
+                                                                            <div style="background-image:url(../../images/@mon.M_IMG)"></div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="p-img-icon">
+                                                                </div>
+                                                            </div>
+                                                            <div class="vcol cl-12">
+                                                                <div class="v-row-box pad pdl-5 ptl-10 pbl-0 p-info">
+                                                                    <div class="vcol cl-12 p-title">
+                                                                        <h2 class="font n fl-16 ft-15 tcenter">@mon.M_Ten</h2>
+                                                                    </div>
+                                                                    <div class="vcol cl-12 pad ptl-5 pbl-5 p-more">
+                                                                        <div class="font tcenter">
+                                                                            <h3 class="font fl-15 ft-14 pad pbl-10">@mon.M_Gia đ</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pad pdl-10 font tcenter">
+                                                                <div class="order_button order_has_class cart_fb_order pad pdl-5 prl-15 pll-15 font tcenter ">
+                                                                    <div class="v-distable">
+                                                                        <div>
+                                                                            <div class="order_noncheck">
+                                                                                <span class="font fl-12 tup">Đặt món</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

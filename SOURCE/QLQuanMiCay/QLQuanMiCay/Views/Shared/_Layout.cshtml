@@ -6,17 +6,18 @@
     <title>QUÁN MÌ CAY</title>
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/css.css" />
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <style>
         .show {
             display: block !important;
         }
     </style>
-    <style media="screen and (min-width: 740px) and (max-width: 1024px)" >
+    <style media="screen and (min-width: 740px) and (max-width: 1024px)">
         .wrap-content {
             min-height: 640px;
-        } 
-        
+        }
+
         .logo-wrapper {
             float: left;
             background-color: #ecdcc7;
@@ -38,7 +39,7 @@
             right: 48px;
         }
     </style>
-    <style media="screen and (min-width: 1024px)" >
+    <style media="screen and (min-width: 1024px)">
         .logo-wrapper {
             float: left;
             background-color: #ecdcc7;
@@ -58,10 +59,10 @@
             align-self: auto;
         }
 
-        .mon-item img {
-            width: 220px;
-            height: 280px;
-        }
+            .mon-item img {
+                width: 150px;
+                height: 180px;
+            }
 
         .form-search-pc {
             display: block !important;
@@ -77,6 +78,40 @@
 
         .menu-mobile {
             display: none !important;
+        }
+
+        .overlay {
+            display: none;
+            width: 200%;
+            height: 200%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .dialog {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .dialog-content {
+            text-align: center;
+        }
+
+
+        .dialog.active,
+        .overlay.active {
+            display: flex;
+            border: solid 1px gray;
+            top: 60px;
+            left: 40%;
+            position: fixed;
+            z-index: 1;
         }
     </style>
 
@@ -100,10 +135,10 @@
             align-self: auto;
         }
 
-        .mon-item img {
-            width: 220px;
-            height: 280px;
-        }
+            .mon-item img {
+                width: 150px;
+                height: 180px;
+            }
 
         .form-search-pc {
             display: none !important;
@@ -128,17 +163,17 @@
         .nav-link-modal-mobile {
             padding-left: 20px;
         }
-        
-        .nav-link-modal-mobile a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-        }
 
-        .nav-link-modal-mobile:hover {
-            background-color: rgba(255, 255, 255, .3);
-        }
+            .nav-link-modal-mobile a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+            }
+
+            .nav-link-modal-mobile:hover {
+                background-color: rgba(255, 255, 255, .3);
+            }
 
         .search-text-mobile {
             border-bottom-left-radius: 15px;
@@ -154,91 +189,180 @@
         .show {
             display: block !important;
         }
+
+        .overlay {
+            display: none;
+            width: 200%;
+            height: 200%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .dialog {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .dialog-content {
+            text-align: center;
+        }
+
+        .dialog.active,
+        .overlay.active {
+            display: flex;
+            border: solid 1px gray;
+            top: 60px;
+            left: 40%;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .page-title {
+            background-attachment: inherit;
+        }
+
+        .section03 > div {
+            padding: 18rem 0;
+        }
+
+        .section03 h6 {
+            font-weight: 300;
+        }
     </style>
 </head>
 <body onload="hienThiBanDau()">
     <div class="wrap-content" style="min-height: 640px;">
-        <div class="navbar navbar-inverse" style="background-color: #be1e2d; min-width: 740px">
-            <div style="display: flex; flex-direction:row; justify-content: space-between; position: relative">
+        <div class="web-main-content">
+            <header class="pad ptl-55">
                 <div>
-                    <div class="logo-wrapper" style="position:absolute">
-                        <img class="navbar-brand" src="https://gimji.vn/webs_image/uploads/website/LogoGimji2_-1-.png" width="100px" />
-                    </div>
+                    <div class="header-bar act">
+                        <div class="h-bottom">
+                            <div class="container">
+                                <div class="v-row-box header-bar-bottom">
+                                    <div class="vcol cl-12 ct-6 bar-menu inherit">
+                                        <div class="v-distable">
+                                            <div class="table-w-auto">
+                                                <div class="pop-logo header-logo font tcenter">
+                                                    <a><img class="navbar-brand" src="https://gimji.vn/webs_image/uploads/website/LogoGimji2_-1-.png" width="100px" /><span class="logo-text"></span></a>
+                                                </div>
+                                            </div>
+                                            <div class="pad pll-10">
+                                                <div class="header-menu">
+                                                    <div class="v-distable v-row-box">
+                                                        <div class="vcol cl-12">
+                                                            <div class="header-menu-cont pad prx-0 plx-0">
+                                                                <div>
+                                                                    <ul>
+                                                                        <li class="">
+                                                                            <a href="@Url.Action("Index","TrangChu")" data-url="trang-chu">Trang chủ</a>
+                                                                        </li>
+                                                                        <li class="">
+                                                                            <a href="@Url.Action("Index","ThucDon")" data-url="thuc-don">Thực đơn</a>
+                                                                        </li>
+                                                                        <li class="">
+                                                                            <a href="@Url.Action("Index","TinTuc")" data-url="tin-tuc">Tin tức</a>
+                                                                        </li>
+                                                                        <li class="">
+                                                                            <a href="@Url.Action("Index","TuyenDung")" data-url="tuyen-dung">Tuyển dụng</a>
+                                                                        </li>
+                                                                        <li class="">
+                                                                            <a href="@Url.Action("Index","LienHe")" data-url="lien-he">Liên hệ</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="v-row-box">
+                                                    <div class="vcol cl-8 pos-search">
+                                                        <div>
+                                                            <div class="pos-search-in vt-hide">
+                                                                <div class="v-distable">
+                                                                    <div>
+                                                                        <div class="find-input">
+                                                                            <div>
+                                                                                <div id="form_search">
+                                                                                    <div class="v-distable">
+                                                                                        <div class="fsearch-input"><div><input id="searchText" type="search" placeholder="Tìm kiếm" class="font fl-16 key-word"></div></div>
+                                                                                        <div class="fsearch-but table-w-auto"><div><button class="search_submit" onclick="searchWithText()"><img src="~/images/search.png" /></button></div></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart-place" style="position: fixed; top: 0;">
 
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-menu-pc" style="margin-left: 125px;">
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Index","TrangChu")">Trang chủ</a>
-                        </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link" href="@Url.Action("Index","ThucDon")">Thực đơn</a>
-                        </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link" href="@Url.Action("Index","TinTuc")">Tin tức</a>
-                        </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link" href="@Url.Action("Index","TuyenDung")">Tuyển dụng</a>
-                        </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link" href="@Url.Action("Index","LienHe")">Liên hệ</a>
-                        </li>
-                    </ul>
+                                                        <a id="gioHangLink" class="mx-3 text-danger position-relative" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px;">
+                                                            
+                                                            <img src="~/images/shopping-bag.png" />
+                                                            <span class="position-absolute quantity" style="font-size: 12px; color: #000; position: absolute; margin-top: -5px;" id="productQuantity"></span>
+                                                        </a>
+                                                    </div>
+                                                    <a onclick="hienThiModal()" class="mx-3 text-danger position-relative menu-mobile" role="button" aria-expanded="false" style="display: block; margin-top: 8px; padding-right: 25px; cursor: pointer; position: fixed; top: 0; right: 0px;">
+                                                        <img src="~/images/menu.png" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </header>
+            <div class="container body-content pad pdl-10">
+                @RenderBody()
+            </div>
+            <div id="successDialog" class="dialog">
+                <div class="dialog-content">
+                    <p class="font n fl-16 ft-15 tcenter pad pdl-10">Món đã được thêm vô giỏ hàng !!!</p>
+                    <button id="closeSuccessDialog" class="btn btn-danger">OK</button>
+                </div>
+            </div>
 
-                <div style="display: flex; position: relative">
-                    <form class="p-2 mr-5 form-search-pc" style="display: flex; flex-direction: row; padding-left: 5px; padding-right: 15px; margin-top: 7px; position: fixed; top: 0; right: 48px;">
-                        <input id="searchText" class="form-control mr-sm-2 search-text-pc" type="search" placeholder="Tìm kiếm" style="display: inline-block; width: 400px; border-bottom-left-radius: 15px; border-top-left-radius: 15px;">
-                        <a class="btn" onclick="searchWithText()" style="background-color: #ffecc9; border-bottom-left-radius: 0px; border-bottom-right-radius: 15px; border-top-left-radius: 0px; border-top-right-radius: 15px; display: inline-block; height: 34px; margin-left: -8px;">
-                            <img src="~/images/search.png" />
-                        </a>
-                    </form>
+            <div id="deleteDialog" class="dialog">
+                <div class="dialog-content">
+                    <p class="font n fl-16 ft-15 tcenter pad pdl-20">Xác nhận xóa món !!!</p>
+                    <button id="okDeleteDialog" class="btn btn-danger">OK</button>
+                    <button id="closeDeleteDialog" class="btn btn-link">Cancel</button>
 
-                    <div class="cart-place" style="position: fixed; top: 0;">
-                        <a href="/GioHang/Index" class="mx-3 text-danger position-relative" role="button" aria-expanded="false" style="display: block; margin-top: 8px; position: relative; padding-right: 25px;">
-                            <img src="~/images/shopping-bag.png" />
-                            <span class="position-absolute quantity" style="font-size: 12px; color: #000; position: absolute; margin-top: -5px;" id="productQuantity"></span>
-                        </a>
-                    </div>
-
-                    <a onclick="hienThiModal()" class="mx-3 text-danger position-relative menu-mobile" role="button" aria-expanded="false" style="display: block; margin-top: 8px; padding-right: 25px; cursor: pointer; position: fixed; top: 0; right: 0px;">
-                        <img src="~/images/menu.png" />
-                    </a>
                 </div>
             </div>
         </div>
-
-        <div id="modal-mobile" class="modal-mobile-style" style="max-width: 600px; background-color: #be1e2d;">
-            <form class="p-2 mr-5 form-search-mobile" style="display: flex; flex-direction: row; padding-top: 30px; padding-bottom: 20px; padding-left: 5px; padding-right: 5px">
-                <input id="searchText" class="form-control mr-sm-2 search-text-mobile" type="search" placeholder="Tìm kiếm" style="display: inline-block; width: 400px">
-                <a class="btn" onclick="searchWithText()" style="background-color: #ffecc9; border-bottom-left-radius: 0px; border-bottom-right-radius: 15px; border-top-left-radius: 0px; border-top-right-radius: 15px; ">
-                    <img src="~/images/search.png" />
-                </a>
-            </form>
-
-            <ul style="padding-left: 0 imprtant!; margin-left: -40px;">
-                <li class="nav-link-modal-mobile">
-                    <a class="nav-link" href="@Url.Action("Index","TrangChu")">TRANG CHỦ</a>
-                </li>
-                <li class="nav-link-modal-mobile">
-                    <a class="nav-link" href="@Url.Action("Index","ThucDon")">THỰC ĐƠN</a>
-                </li>
-                <li class="nav-link-modal-mobile">
-                    <a class="nav-link" href="@Url.Action("Index","TinTuc")">TIN TỨC</a>
-                </li>
-                <li class="nav-link-modal-mobile">
-                    <a class="nav-link" href="@Url.Action("Index","TuyenDung")">TUYỂN DỤNG</a>
-                </li>
-                <li class="nav-link-modal-mobile">
-                    <a class="nav-link" href="@Url.Action("Index","LienHe")">LIÊN HỆ</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="container body-content">
-            @RenderBody()
+    </div>
+    <div class="footer-copy">
+        <div class="container">
+            <div class="ft-content">
+                <div class="table-w-auto">
+                    <div class="footer_img"><a href="@Url.Action("Index","TrangChu")"><img src="https://gimji.vn/webs_image/uploads/website/LogoGimji2_-1-.png"></a></div>
+                </div>
+                <div>
+                    <div class="pad pll-10 prl-10 ptl-20 pbl-20">
+                        <div class="v-distable vb-show">
+                            <div><p class="font fl-14"> Ẩm thực Hàn Quốc Gimji</p></div>
+                            <div class="font tright"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
     <script>
+
         function searchWithText() {
             var searchText = document.getElementById('searchText').value
             var url = '@Url.Action("Index", "TimKiem", new { text = "abc" })'
@@ -255,8 +379,20 @@
             if (localStorage.getItem('cart')) {
                 cart = JSON.parse(localStorage.getItem('cart'))
             }
-            document.getElementById('productQuantity').innerHTML = cart.length
-            loadCart()
+            updateQuantity();
+            loadCart();
+        }
+
+        function updateQuantity() {
+            let cart = []
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'))
+            }
+            let sl = 0;
+            for (let i = 0; i < cart.length; i++) {
+                sl += cart[i].Qty;
+            }
+            document.getElementById('productQuantity').innerHTML = sl
         }
 
         function loadCart() {
@@ -264,20 +400,153 @@
             if (localStorage.getItem('cart')) {
                 cart = JSON.parse(localStorage.getItem('cart'))
             }
+            let sumAll = 0;
+            var titleStatus = document.getElementById('titleStatus');
+            if (cart.length == 0) {
+                var table = document.getElementById('cart-item')
+                table.style.display = "none";
+                titleStatus.textContent = "Chưa chọn món";
+            }
+            else {
+                var table = document.getElementById('cart-item')
+                if (table != null)
+                {
+                    table.style.display = "block";
+                    titleStatus.textContent = "MÓN ĐÃ CHỌN";
+                }
+            }
             for (let i = 0 ; i < cart.length ; i++) {
                 var table = document.getElementById('cart-item')
+                if (table == null)
+                    break;
                 var row = table.insertRow();
                 var cell1 = row.insertCell();
                 var cell2 = row.insertCell();
                 var cell3 = row.insertCell();
                 var cell4 = row.insertCell();
+                var cell5 = row.insertCell();
+                var cell6 = row.insertCell();
 
-                cell2.innerHTML = cart[i].ten;
-                cell3.innerHTML = cart[i].gia;
-                cell4.innerHTML = cart[i].Qty;
-                cell1.innerHTML = "<img src=\"/images/" + cart[i].hinh + "\" width=\"200px\" height=\"200px\"/>"
+                cell2.innerHTML = "<p class=\"font n fl-16 ft-15\">" + cart[i].ten + "</p>";
+                cell3.innerHTML = "<p class=\"font n fl-16 ft-15\">" + cart[i].gia + "đ</p>";
+                cell1.innerHTML = "<img src=\"/images/" + cart[i].hinh + "\" width=\"100px\" height=\"100px\"/>";
+
+                cell2.style.paddingTop = "50px";
+                cell3.style.paddingTop = "50px";
+                cell4.style.paddingTop = "50px";
+                cell5.style.paddingTop = "50px";
+                cell6.style.paddingTop = "45px";
+
+                cell3.style.textAlign = "center";
+                cell4.style.textAlign = "center";
+                cell5.style.textAlign = "center";
+                cell6.style.textAlign = "center";
+
+                let ten = cart[i].hinh.substring(0, cart[i].hinh.length - 4);
+
+                var quantityInput = document.createElement("input");
+                quantityInput.classList.add("font", "n", "fl-16", "ft-15");
+                quantityInput.setAttribute('id', ten);
+                quantityInput.type = "number";
+                quantityInput.style.background = "#ecdcc7";
+                quantityInput.min = "1";
+                quantityInput.value = cart[i].Qty;
+                quantityInput.style.width = "40px";
+                quantityInput.style.border = "none";
+
+
+                quantityInput.addEventListener("input", function () {
+                    updateItemFromCart(cart[i].ten, ten);
+                });
+
+                cell4.appendChild(quantityInput);
+
+                var sum = cart[i].gia * cart[i].Qty;
+                cell5.innerHTML = "<p class=\"font n fl-16 ft-15\">" + sum + "đ</p>";
+
+                sumAll += sum;
+                var deleteButton = document.createElement("button");
+                deleteButton.innerHTML = "<img src=\"/images/delete1.png\" width=\"40px\" height=\"40px\"/>";
+                deleteButton.style.border = "none";
+                deleteButton.style.backgroundColor = "white";
+
+                deleteButton.onclick = function () {
+                    var deleteDialog = document.getElementById('deleteDialog');
+                    deleteDialog.classList.add('active');
+
+                    document.getElementById('closeDeleteDialog').addEventListener('click', function () {
+                        deleteDialog.classList.remove('active');
+                    });
+
+                    document.getElementById('okDeleteDialog').addEventListener('click', function () {
+                        removeItemFromCart(cart[i].ten);
+                    });
+                };
+
+                cell6.appendChild(deleteButton);
             }
+
+            var table = document.getElementById('cart-sum')
+            if(table!=null)
+            {
+                var row = table.insertRow();
+                var cell1 = row.insertCell();
+                var cell2 = row.insertCell();
+
+                cell1.innerHTML = "<p class=\"font n fl-16 ft-15\">Tổng</p>";
+                cell2.innerHTML = "<p class=\"font n fl-16 ft-15\">" + sumAll + "đ</p>";
+            }
+
+            let cartTenMon = [cart.length];
+            for (let i = 0; i < cart.length; i++) {
+                cartTenMon[i] = cart[i].ten;
+            }
+            var gioHangLink = document.getElementById("gioHangLink");
+            gioHangLink.href = "/GioHang/Index?tenMonOrderJson=" + encodeURIComponent(JSON.stringify(cartTenMon));
+        }
+
+        function updateItemFromCart(ten, tenQty) {
+            let cart = [];
+
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
+            }
+
+            var inputQty = document.getElementById(tenQty);
+            let qty = inputQty.valueAsNumber;
+
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].ten === ten) {
+
+                    cart[i].Qty = qty;
+                }
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateQuantity();
+            location.reload();
+        }
+
+        function removeItemFromCart(ten) {
+            let cart = [];
+
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
+            }
+
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].ten === ten) {
+                    let qty = cart[i].Qty;
+
+                    cart.splice(i, 1);
+                }
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateQuantity();
+            location.reload();
         }
     </script>
 </body>
+
 </html>
