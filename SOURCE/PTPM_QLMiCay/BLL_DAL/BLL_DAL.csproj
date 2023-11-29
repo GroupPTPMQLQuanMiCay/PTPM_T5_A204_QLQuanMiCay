@@ -73,6 +73,7 @@
     <Compile Include="DAL_NhomQuyen_NguoiDung.cs" />
     <Compile Include="DAL_PhanQuyen.cs" />
     <Compile Include="DAL_PhieuDat.cs" />
+    <Compile Include="DAL_QLNguoiDung.cs" />
     <Compile Include="DAL_Quyen.cs" />
     <Compile Include="DAL_TaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

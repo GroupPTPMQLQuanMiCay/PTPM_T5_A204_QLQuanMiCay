@@ -117,7 +117,7 @@ namespace BLL_DAL
     #endregion
 		
 		public QLQuanMiCayDataContext() : 
-				base(global::BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString2, mappingSource)
+				base(global::BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

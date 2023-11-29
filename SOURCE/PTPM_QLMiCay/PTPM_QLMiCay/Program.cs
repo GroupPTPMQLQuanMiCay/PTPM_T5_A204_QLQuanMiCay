@@ -12,6 +12,8 @@ namespace PTPM_QLMiCay
     {
         public static fDangNhap formDangNhap = null;
         public static fTrangChu formTrangChu = null;
+        public static fCauHinh formCauHinh = null;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

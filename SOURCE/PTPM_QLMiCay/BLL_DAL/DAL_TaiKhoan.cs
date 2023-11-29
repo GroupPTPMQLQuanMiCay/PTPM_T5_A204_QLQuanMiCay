@@ -18,9 +18,18 @@ namespace BLL_DAL
 
         public int checkTaiKhoan(string TK_TEN, string TK_MATKHAU)
         {
-            TaiKhoan tk = qmc.TaiKhoans.Where(
+            TaiKhoan tk = null;
+            try
+            {
+                tk = qmc.TaiKhoans.Where(
                 t => t.TK_Ten.Equals(TK_TEN))
                 .FirstOrDefault();
+            }
+            catch
+            {
+                return -3;
+            }
+            
             if (tk == null)
                 return -1;
             if (!tk.TK_MatKhau.Equals(TK_MATKHAU))
