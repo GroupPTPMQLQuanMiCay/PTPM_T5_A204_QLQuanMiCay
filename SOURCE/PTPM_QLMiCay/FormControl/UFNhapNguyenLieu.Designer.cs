@@ -125,6 +125,7 @@
             this.btnThem.Size = new System.Drawing.Size(163, 41);
             this.btnThem.TabIndex = 25;
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // cLable6
             // 
