@@ -60,5 +60,10 @@ namespace FormControl.Message
             MessageBox.Show(string.Format(string.Format("Lỗi không thể {0} trên " +
                 "                                       bảng {1}", job, table)));
         }
+
+        public static void showNotApproveToExport(string obj)
+        {
+            MessageBox.Show(string.Format("{0} chưa được duyệt nên không thể xuất export", obj));
+        }
     }
 }

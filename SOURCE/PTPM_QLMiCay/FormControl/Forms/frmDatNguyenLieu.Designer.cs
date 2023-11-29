@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatNguyenLieu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cGroupBox5 = new CustomControl.ControlCustom.CGroupBox();
             this.btnLamMoi = new CustomControl.ControlCustom.CButton();
             this.btnDatNL = new CustomControl.ControlCustom.CButton();
@@ -69,6 +69,7 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cButtonClose1 = new CustomControl.ControlCustom.CButtonClose();
+            this.btnLapReport = new CustomControl.ControlCustom.CButton();
             this.cGroupBox5.SuspendLayout();
             this.cGroupBox1.SuspendLayout();
             this.cGroupBox4.SuspendLayout();
@@ -82,6 +83,7 @@
             // cGroupBox5
             // 
             this.cGroupBox5.BackColor = System.Drawing.Color.White;
+            this.cGroupBox5.Controls.Add(this.btnLapReport);
             this.cGroupBox5.Controls.Add(this.btnLamMoi);
             this.cGroupBox5.Controls.Add(this.btnDatNL);
             this.cGroupBox5.Controls.Add(this.txtThanhTien);
@@ -114,7 +116,7 @@
             this.btnLamMoi.IdleFillColor = System.Drawing.Color.White;
             this.btnLamMoi.IdleForecolor = System.Drawing.Color.Orange;
             this.btnLamMoi.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnLamMoi.Location = new System.Drawing.Point(386, 30);
+            this.btnLamMoi.Location = new System.Drawing.Point(589, 30);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(163, 41);
@@ -380,10 +382,10 @@
             // drvNLDat
             // 
             this.drvNLDat.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Orange;
-            this.drvNLDat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNLDat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.drvNLDat.BackgroundColor = System.Drawing.Color.White;
             this.drvNLDat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvNLDat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -548,10 +550,10 @@
             // drvNguyenLieu
             // 
             this.drvNguyenLieu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Orange;
-            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.drvNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.drvNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvNguyenLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -614,6 +616,32 @@
             this.cButtonClose1.TabIndex = 16;
             this.cButtonClose1.TabStop = false;
             this.cButtonClose1.Zoom = 10;
+            // 
+            // btnLapReport
+            // 
+            this.btnLapReport.ActiveBorderThickness = 1;
+            this.btnLapReport.ActiveCornerRadius = 20;
+            this.btnLapReport.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnLapReport.ActiveForecolor = System.Drawing.Color.White;
+            this.btnLapReport.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnLapReport.BackColor = System.Drawing.Color.White;
+            this.btnLapReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLapReport.BackgroundImage")));
+            this.btnLapReport.ButtonText = "Excel";
+            this.btnLapReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLapReport.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLapReport.ForeColor = System.Drawing.Color.Orange;
+            this.btnLapReport.IdleBorderThickness = 1;
+            this.btnLapReport.IdleCornerRadius = 20;
+            this.btnLapReport.IdleFillColor = System.Drawing.Color.White;
+            this.btnLapReport.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnLapReport.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnLapReport.Location = new System.Drawing.Point(394, 29);
+            this.btnLapReport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLapReport.Name = "btnLapReport";
+            this.btnLapReport.Size = new System.Drawing.Size(163, 41);
+            this.btnLapReport.TabIndex = 26;
+            this.btnLapReport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLapReport.Click += new System.EventHandler(this.btnLapReport_Click);
             // 
             // frmDatNguyenLieu
             // 
@@ -687,5 +715,6 @@
         private CustomControl.ControlCustom.CCombobox cboMaPD;
         private CustomControl.ControlCustom.CButton btnLamMoi;
         private CustomControl.ControlCustom.CButton btnXoa;
+        private CustomControl.ControlCustom.CButton btnLapReport;
     }
 }

@@ -3,6 +3,9 @@ using CustomControl.ControlCustom;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Report;
+using Report.DTO;
+using System.Linq;
 
 namespace FormControl.Forms
 {
@@ -74,7 +77,7 @@ namespace FormControl.Forms
                 NguyenLieu nl = nlDal.getIncredientById(listCTPD[i].NL_Id);
                 drvNLDat.Rows[index].Cells[0].Value = listCTPD[i].NL_Id;
                 drvNLDat.Rows[index].Cells[1].Value = nl.NL_Ten;
-                drvNLDat.Rows[index].Cells[2].Value = listCTPD[i].soluong;
+                drvNLDat.Rows[index].Cells[3].Value = listCTPD[i].soluong;
                 drvNLDat.Rows[index].Cells[2].Value = nl.NL_DonViTinh;
                 drvNLDat.Rows[index].Cells[4].Value = listCTPD[i].NL_Gia;
                 drvNLDat.Rows[index].Cells[5].Value = listCTPD[i].soluong * listCTPD[i].NL_Gia;
@@ -437,6 +440,32 @@ namespace FormControl.Forms
         {
             loadIncredientOrderDetail();
             phieuDat = pdDal.getIncredientOrder(((PhieuDat)cboMaPD.SelectedItem).PD_Id);
+        }
+
+        private void btnLapReport_Click(object sender, EventArgs e)
+        {
+            phieuDat = pdDal.getIncredientOrder(((PhieuDat)cboMaPD.SelectedItem).PD_Id);
+            if (phieuDat.isSentSupplier)
+            {
+                listCTPD = ctDal.getIncredientOrderDetail(phieuDat.PD_Id);
+                QLQuanMiCayDataContext _context = new QLQuanMiCayDataContext();
+                string nvien = _context.NhanViens.Where(x => x.NV_Id == phieuDat.sentSupplierBy).FirstOrDefault().NV_Ten;
+                PhieuDatDTO pd = new PhieuDatDTO(phieuDat.PD_Id, phieuDat.updatedAt, nvien);
+                string ncc = listCTPD[0].NguyenLieu.NhaCungCap.NCC_Ten;
+                List<CTPhieuDatDTO> ct = new List<CTPhieuDatDTO>();
+                for(int i = 0; i < listCTPD.Count; i++)
+                {
+                    NguyenLieu nl = nlDal.getIncredientById(listCTPD[i].NL_Id);
+                    CTPhieuDatDTO dto = new CTPhieuDatDTO(nl.NL_Ten, nl.NL_DonViTinh, listCTPD[i].soluong, long.Parse(listCTPD[i].NL_Gia + ""));
+                    ct.Add(dto);
+                }
+                ExcelExport excel = new ExcelExport();
+                string filename = "phieuDat";
+                excel.ExportPhieuDat(ct, pd, ncc, ref filename, true);
+            } else
+            {
+                Message.Message.showNotApproveToExport("Phiếu đặt");
+            }
         }
     }
 }
