@@ -60,17 +60,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_Ban.cs" />
     <Compile Include="DAL_CapQuyenNhom.cs" />
     <Compile Include="DAL_ChiTietNhap.cs" />
     <Compile Include="DAL_CTPhieuDat.cs" />
+    <Compile Include="DAL_DanhMuc.cs" />
     <Compile Include="DAL_GiaNguyenLieu.cs" />
     <Compile Include="DAL_HoaDonNhap.cs" />
     <Compile Include="DAL_ManHinh.cs" />
+    <Compile Include="DAL_Mon.cs" />
     <Compile Include="DAL_NguoiDung.cs" />
     <Compile Include="DAL_NguyenLieu.cs" />
     <Compile Include="DAL_NhaCungCap.cs" />
+    <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_NhomQuyen.cs" />
     <Compile Include="DAL_NhomQuyen_NguoiDung.cs" />
+    <Compile Include="DAL_Order.cs" />
     <Compile Include="DAL_PhanQuyen.cs" />
     <Compile Include="DAL_PhieuDat.cs" />
     <Compile Include="DAL_QLNguoiDung.cs" />

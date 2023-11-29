@@ -71,6 +71,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmChinhSuaBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChinhSuaBan.Designer.cs">
+      <DependentUpon>frmChinhSuaBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmChonMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChonMon.Designer.cs">
+      <DependentUpon>frmChonMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmDatNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,10 +103,21 @@
     </Compile>
     <Compile Include="Message\Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UFBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFBan.Designer.cs">
+      <DependentUpon>UFBan.cs</DependentUpon>
     </Compile>
     <Compile Include="UFDanhMuc.cs">
       <SubType>UserControl</SubType>
@@ -166,6 +189,12 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\frmChinhSuaBan.resx">
+      <DependentUpon>frmChinhSuaBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChonMon.resx">
+      <DependentUpon>frmChonMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDatNguyenLieu.resx">
       <DependentUpon>frmDatNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +203,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNhapNguyenLieu.resx">
       <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFBan.resx">
+      <DependentUpon>UFBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UFDanhMuc.resx">
       <DependentUpon>UFDanhMuc.cs</DependentUpon>

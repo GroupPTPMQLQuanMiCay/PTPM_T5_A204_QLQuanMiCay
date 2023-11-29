@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLQuanMiCay" Class="QLQuanMiCayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NEWSEAA\SQLEXPRESS;Initial Catalog=QLQuanMiCay;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString4" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[__MigrationHistory]" Member="__MigrationHistories">
+    <Type Name="__MigrationHistory">
+      <Column Name="MigrationId" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ContextKey" Type="System.String" DbType="NVarChar(300) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ProductVersion" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.Ban" Member="Bans">
     <Type Name="Ban">
       <Column Name="B_SoBan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -25,6 +33,17 @@
       <Column Name="CTN_Gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="HoaDonNhap_ChiTietNhap" Member="HoaDonNhap" ThisKey="HDN_Id" OtherKey="HDN_Id" Type="HoaDonNhap" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NguyenLieu_ChiTietNhap" Member="NguyenLieu" ThisKey="NL_Id" OtherKey="NL_Id" Type="NguyenLieu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTPhieuDat" Member="CTPhieuDats">
+    <Type Name="CTPhieuDat">
+      <Column Name="PD_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NL_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DaGiao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NL_Gia" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="NguyenLieu_CTPhieuDat" Member="NguyenLieu" ThisKey="NL_Id" OtherKey="NL_Id" Type="NguyenLieu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PhieuDat_CTPhieuDat" Member="PhieuDat" ThisKey="PD_Id" OtherKey="PD_Id" Type="PhieuDat" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.DanhMuc" Member="DanhMucs">
@@ -129,12 +148,26 @@
       <Column Name="updatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="NguyenLieu_ChiTietNhap" Member="ChiTietNhaps" ThisKey="NL_Id" OtherKey="NL_Id" Type="ChiTietNhap" />
+      <Association Name="NguyenLieu_CTPhieuDat" Member="CTPhieuDats" ThisKey="NL_Id" OtherKey="NL_Id" Type="CTPhieuDat" />
       <Association Name="NguyenLieu_GiaNguyenLieu" Member="GiaNguyenLieus" ThisKey="NL_Id" OtherKey="NL_Id" Type="GiaNguyenLieu" />
       <Association Name="NguyenLieu_Mon_Co_NL" Member="Mon_Co_NLs" ThisKey="NL_Id" OtherKey="NL_Id" Type="Mon_Co_NL" />
       <Association Name="NguyenLieu_NL_TuongDong" Member="NL_TuongDongs" ThisKey="NL_Id" OtherKey="NL_Id" Type="NL_TuongDong" />
       <Association Name="NguyenLieu_QuanLyBep" Member="QuanLyBeps" ThisKey="NL_Id" OtherKey="NL_Id" Type="QuanLyBep" />
-      <Association Name="NguyenLieu_CTPhieuDat" Member="CTPhieuDats" ThisKey="NL_Id" OtherKey="NL_Id" Type="CTPhieuDat" />
       <Association Name="NhaCungCap_NguyenLieu" Member="NhaCungCap" ThisKey="NCC_Id" OtherKey="NCC_Id" Type="NhaCungCap" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">
+    <Type Name="NhaCungCap">
+      <Column Name="NCC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NCC_Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NCC_SDT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NCC_DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="NhaCungCap_NguyenLieu" Member="NguyenLieus" ThisKey="NCC_Id" OtherKey="NCC_Id" Type="NguyenLieu" />
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
@@ -191,8 +224,25 @@
       <Column Name="O_Gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="O_GhiChu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="O_ThoiGian" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="O_DonGia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="HoaDon_OrDer" Member="HoaDon" ThisKey="HD_Id" OtherKey="HD_Id" Type="HoaDon" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Mon_OrDer" Member="Mon" ThisKey="M_Ten" OtherKey="M_Ten" Type="Mon" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuDat" Member="PhieuDats">
+    <Type Name="PhieuDat">
+      <Column Name="PD_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PD_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PD_TrangThai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isSentSupplier" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="sentSupplierBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="PhieuDat_CTPhieuDat" Member="CTPhieuDats" ThisKey="PD_Id" OtherKey="PD_Id" Type="CTPhieuDat" />
+      <Association Name="PhieuDat_HoaDonNhap" Member="HoaDonNhaps" ThisKey="PD_Id" OtherKey="PD_Id" Type="HoaDonNhap" />
     </Type>
   </Table>
   <Table Name="dbo.QuanAn" Member="QuanAns">
@@ -256,47 +306,6 @@
       <Column Name="TieuDe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="LoaiTinTuc_TinTuc" Member="LoaiTinTuc" ThisKey="LoaiTin_Id" OtherKey="LoaiTin_Id" Type="LoaiTinTuc" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="NhanVien_TinTuc" Member="NhanVien" ThisKey="NV_Id" OtherKey="NV_Id" Type="NhanVien" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">
-    <Type Name="NhaCungCap">
-      <Column Name="NCC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NCC_Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NCC_SDT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NCC_DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="createdBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="createdAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="updatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="updatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="NhaCungCap_NguyenLieu" Member="NguyenLieus" ThisKey="NCC_Id" OtherKey="NCC_Id" Type="NguyenLieu" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PhieuDat" Member="PhieuDats">
-    <Type Name="PhieuDat">
-      <Column Name="PD_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PD_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="PD_TrangThai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="createdBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="createdAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="updatedBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="updatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="isSentSupplier" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="sentSupplierBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="PhieuDat_HoaDonNhap" Member="HoaDonNhaps" ThisKey="PD_Id" OtherKey="PD_Id" Type="HoaDonNhap" />
-      <Association Name="PhieuDat_CTPhieuDat" Member="CTPhieuDats" ThisKey="PD_Id" OtherKey="PD_Id" Type="CTPhieuDat" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CTPhieuDat" Member="CTPhieuDats">
-    <Type Name="CTPhieuDat">
-      <Column Name="PD_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="NL_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DaGiao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NL_Gia" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Association Name="NguyenLieu_CTPhieuDat" Member="NguyenLieu" ThisKey="NL_Id" OtherKey="NL_Id" Type="NguyenLieu" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="PhieuDat_CTPhieuDat" Member="PhieuDat" ThisKey="PD_Id" OtherKey="PD_Id" Type="PhieuDat" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

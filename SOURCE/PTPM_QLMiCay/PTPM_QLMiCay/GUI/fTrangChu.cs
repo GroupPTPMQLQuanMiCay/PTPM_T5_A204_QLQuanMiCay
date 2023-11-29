@@ -16,6 +16,7 @@ namespace PTPM_QLMiCay.GUI
         UFNhaCungCap ufNhaCungCap = new UFNhaCungCap();
         UFDanhMuc ufDanhMuc = new UFDanhMuc();
         UFQuyen ufQuyen = new UFQuyen();
+        UFBan ufBan = new UFBan();
         UFNhomQuyen ufNhomQuyen = new UFNhomQuyen();
         DAL_PhanQuyen dal_PhanQuyen = new DAL_PhanQuyen();
 
@@ -105,58 +106,60 @@ namespace PTPM_QLMiCay.GUI
 
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
-            ufDanhMuc = new UFDanhMuc();
-            if (taiKhoan.TK_NguoiDung != "sa")
-            {
-                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_DM");
+            //ufDanhMuc = new UFDanhMuc();
+            //if (taiKhoan.TK_NguoiDung != "sa")
+            //{
+            //    int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_DM");
 
-                if (id == 0 || id == 1)
-                {
-                    MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
-                    ufDanhMuc = null;
-                }
-                else if (id == 2)
-                {
-                    MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
+            //    if (id == 0 || id == 1)
+            //    {
+            //        MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
+            //        ufDanhMuc = null;
+            //    }
+            //    else if (id == 2)
+            //    {
+            //        MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
 
-                    ufDanhMuc.Enabled = false;
-                }
-                else
-                    ufDanhMuc.Enabled = true;
-            }
+            //        ufDanhMuc.Enabled = false;
+            //    }
+            //    else
+            //        ufDanhMuc.Enabled = true;
+            //}
 
-            if (ufDanhMuc != null)
-            {
-                OpenChildFormCT(ufDanhMuc);
-            }
+            //if (ufDanhMuc != null)
+            //{
+            //    OpenChildFormCT(ufDanhMuc);
+            //}
+            OpenChildFormCT(ufDanhMuc);
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            ufNhanVien = new UFNhanVIen();
-            if (taiKhoan.TK_NguoiDung != "sa")
-            {
-                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_NV");
+            //ufNhanVien = new UFNhanVIen();
+            //if (taiKhoan.TK_NguoiDung != "sa")
+            //{
+            //    int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_NV");
 
-                if (id == 0 || id == 1)
-                {
-                    MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
-                    ufNhanVien = null;
-                }
-                else if (id == 2)
-                {
-                    MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
+            //    if (id == 0 || id == 1)
+            //    {
+            //        MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
+            //        ufNhanVien = null;
+            //    }
+            //    else if (id == 2)
+            //    {
+            //        MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
 
-                    ufNhanVien.Enabled = false;
-                }
-                else
-                    ufNhanVien.Enabled = true;
-            }
+            //        ufNhanVien.Enabled = false;
+            //    }
+            //    else
+            //        ufNhanVien.Enabled = true;
+            //}
 
-            if (ufNhanVien != null)
-            {
-                OpenChildFormCT(ufNhanVien);
-            }
+            //if (ufNhanVien != null)
+            //{
+            //    OpenChildFormCT(ufNhanVien);
+            //}
+            OpenChildFormCT(ufNhanVien);
         }
 
         private void btnQuyen_Click(object sender, EventArgs e)
@@ -200,6 +203,11 @@ namespace PTPM_QLMiCay.GUI
         private void fTrangChu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Program.formDangNhap.Show();
+        }
+
+        private void btnBan_Click(object sender, EventArgs e)
+        {
+            OpenChildFormCT(ufBan);
         }
     }
 }

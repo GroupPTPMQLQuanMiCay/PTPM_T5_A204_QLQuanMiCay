@@ -8,5 +8,29 @@
     <Setting Name="QLQuanMiCayConnectionString1" Type="System.String" Scope="User">
       <Value Profile="(Default)">Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Persist Security Info=True;User ID=sa;Password=123</Value>
     </Setting>
+    <Setting Name="QLQuanMiCayConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="QLQuanMiCayConnectionString3" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=NEWSEAA\SQLEXPRESS;Initial Catalog=QLQuanMiCay;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=NEWSEAA\SQLEXPRESS;Initial Catalog=QLQuanMiCay;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="QLQuanMiCayConnectionString4" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=NEWSEAA\SQLEXPRESS;Initial Catalog=QLQuanMiCay;User ID=sa;Password=123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=NEWSEAA\SQLEXPRESS;Initial Catalog=QLQuanMiCay;User ID=sa;Password=123</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

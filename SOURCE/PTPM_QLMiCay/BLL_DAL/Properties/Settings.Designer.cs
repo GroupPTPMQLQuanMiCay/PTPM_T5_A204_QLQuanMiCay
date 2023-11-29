@@ -47,5 +47,37 @@ namespace BLL_DAL.Properties {
                 this["QLQuanMiCayConnectionString1"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True")]
+        public string QLQuanMiCayConnectionString2 {
+            get {
+                return ((string)(this["QLQuanMiCayConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NEWSEAA\\SQLEXPRESS;Initial Catalog=QLQuanMiCay;Integrated Security=Tr" +
+            "ue")]
+        public string QLQuanMiCayConnectionString3 {
+            get {
+                return ((string)(this["QLQuanMiCayConnectionString3"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NEWSEAA\\SQLEXPRESS;Initial Catalog=QLQuanMiCay;User ID=sa;Password=12" +
+            "3")]
+        public string QLQuanMiCayConnectionString4 {
+            get {
+                return ((string)(this["QLQuanMiCayConnectionString4"]));
+            }
+        }
     }
 }
