@@ -14690,6 +14690,104 @@ footer h2 {
 		display: inline-block;
 		border-radius: 5px;
 	}
-	.catalog .cata-list,.p-cata-bottom{
-		border-top:solid 1px #EEE;
-	}
+.catalog .cata-list,.p-cata-bottom{
+	border-top:solid 1px #EEE;
+}
+
+.news-block{
+	background: #FFF;
+	border: solid 1px #E5E5E5;
+	box-shadow: 0 0 5px #EEE;
+	height: 100%;
+}
+.news-block .news-title h2{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.news-block .news-title a{
+	color: #222;
+	transition: all .2s;
+}
+.news-block .news-title a:hover{
+	color: #BE1E2D;
+}
+.news-block .news-title span{
+	color: #AAA;
+}
+.news-block .news-info{
+	color: #666;
+}
+.news-block .box-info-img>div{
+	width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.news-block .news-desc h3{
+	font-weight: 300;
+	color: #444;
+}
+.news-block .news-desc span{
+	color: #999;
+}
+.news-block .news-desc span:hover{
+	color: #333;
+	text-decoration: underline;
+}
+.news-block .news-feature{
+	text-align: right;
+	color: #666;
+}
+.news-block .news-feature li,.news-block .news-feature li span{
+	display: inline-block;
+	border-radius: 3px;
+	transition: all .2s;
+}
+.news-block .news-feature li span:hover{
+	background: #EEE;
+	cursor: pointer;
+}
+.news-block .news-feature li span.act{
+	color: #BE1E2D;
+}
+.news-block .news-interact>div{
+	border-top: solid 1px #EEE;
+}
+.news-block .news-interact .v-distable{
+	table-layout: fixed;
+}
+.news-block .news-interact .v-distable>div{
+	text-align: center;
+}
+.news-block .news-interact span{
+	display:block;
+	color: #888;
+	cursor: pointer;
+	transition: all .2s;
+}
+.news-block .news-interact span:hover{
+	background: #F5F5F5;
+}
+.news-block .news-interact span.act{
+	color: #BE1E2D;
+}
+.news-block .news-contents{
+	border-top: solid 1px #EEE;
+	color: #555;
+}
+.news-block .news-contents .cont-tool p{
+	display:inline-block;
+	color: #999;
+	cursor: pointer;
+}
+.news-block .news-contents .cont-tool p:hover{
+	color: #555;
+}
+.news-block .news-contents .cont-tool p:hover span{
+	text-decoration: underline;
+}
+.news-block .news-comment{
+	border-top: solid 1px #EEE;
+}

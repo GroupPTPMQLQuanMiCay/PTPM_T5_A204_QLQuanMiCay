@@ -6,21 +6,35 @@
 
 <div id="partialLoaiTin">
     <div class="row">
-        <div class="col-sm-3">
-            <ul class="list-group list-group-flush text-left">
-                @{
-                    foreach (var loaiTin in Model)
-                    {
-                        <li class="list-group-item">
-                            <a onclick="showTinTucByLoaiTin('@loaiTin.LoaiTin_Id')">@loaiTin.TenLoaiTin</a>
-                        </li>
-                    }
-                }
-            </ul>
+        <div class="catalog col-sm-3" style="padding-top:20px">
+            <div class="mar mbl-20 mbt-30">
+                <div class="v-row-box">
+                    <div class="vcol cl-12 ct-12 cp-12">
+                        <div class="page-cata">
+                            <div class="cata-title none-eff">
+                                <div>
+                                    <h3 class="font fl-18 pad pdl-10 tcap" onclick="showMonByDM(-1)">Chuyên Mục</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cata-list ct-sdis mar mbt-20" style="display: block;">
+                    <ul>
+                        @{
+                            foreach (var loaiTin in Model)
+                            {
+                                <li>
+                                    <a class="pad pdl-10 font fl-16 tcap" onclick="showTinTucByLoaiTin('@loaiTin.LoaiTin_Id')">@loaiTin.TenLoaiTin</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <div class="col-sm-9" id="tinTucPartialZone">
-            @Html.Action("TinTucPartial", "TinTuc", new { Id = -1, index = ViewBag.Index})
+        <div class="col-sm-9" style="padding-top:50px" id="tinTucPartialZone">
+            @Html.Action("TinTucPartial", "TinTuc", new { Id = -1, index = ViewBag.Index })
         </div>
     </div>
 

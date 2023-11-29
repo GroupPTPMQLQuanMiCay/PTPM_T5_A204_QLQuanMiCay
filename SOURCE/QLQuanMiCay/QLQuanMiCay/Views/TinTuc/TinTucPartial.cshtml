@@ -2,17 +2,50 @@
 @using PagedList
 @using PagedList.Mvc
 
-<div id="partialTinTuc">
-    <ul class="list-group list-group-flush text-left">
-        @{
-            foreach (var tt in Model)
-            {
-                <li class="list-group-item">
-                    @tt.TieuDe
-                </li>
-            }
-        }
-    </ul>
-</div>
 
+<div id="partialTinTuc">
+    <div class="pad pbl-20">
+        <div class="container">
+            <div class="v-row">
+                <div class="vcol">
+                    <div class="mar mll-10 mrl-10 mrt-0 mlt-0">
+                        <div class="v-row-box">
+                            @{
+                                foreach (var tt in Model)
+                                {
+                                    <div class="vcol cl-4 cx-6 ct-4 cb-6 pad pll-10 plt-5 prt-5 cp-12 plp-0 prp-0 mar mbl-15">
+                                        <div class="news-block">
+                                            <div>
+                                                <div class="vrow">
+
+                                                    <div class="vcol cl-12">
+                                                        <div class="mar mbl-10 mtl-15 pad pll-10 prl-10">
+                                                            <div class="news-title"><h2 class="font n fl-18 mar mbl-5"><a>@tt.TieuDe</a></h2></div>
+                                                            <div class="news-info"><p class="font fl-13 tright">@tt.NgayDang.ToShortDateString()</p></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vcol cl-12">
+                                                        <div class="mar mbl-10">
+                                                            <div class="news-desc">
+                                                                <div class="pad pdl-10">
+                                                                    <h3 class="font n fl-15" style="font-weight: 300; color: #444;">@tt.NoiDung</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @Html.PagedListPager(Model, i => Url.Action("Index", "TinTuc", new { index = i }))
