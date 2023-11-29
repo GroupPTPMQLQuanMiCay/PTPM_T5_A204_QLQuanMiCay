@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChonMon));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
+            this.dgvOD = new CustomControl.ControlCustom.CDataGirdView();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
             this.cButton2 = new CustomControl.ControlCustom.CButton();
             this.cButton1 = new CustomControl.ControlCustom.CButton();
@@ -37,12 +39,15 @@
             this.cLable2 = new CustomControl.ControlCustom.CLable();
             this.fpnelTop = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
-            this.dgvOD = new CustomControl.ControlCustom.CDataGirdView();
+            this.STT_Mon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten_Mon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.cGroupBox1.SuspendLayout();
             this.cGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOD)).BeginInit();
+            this.cGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,6 +59,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(469, 699);
             this.panel1.TabIndex = 0;
+            // 
+            // cGroupBox2
+            // 
+            this.cGroupBox2.BackColor = System.Drawing.Color.White;
+            this.cGroupBox2.Controls.Add(this.dgvOD);
+            this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
+            this.cGroupBox2.Location = new System.Drawing.Point(12, 35);
+            this.cGroupBox2.Name = "cGroupBox2";
+            this.cGroupBox2.Size = new System.Drawing.Size(433, 262);
+            this.cGroupBox2.TabIndex = 2;
+            this.cGroupBox2.TabStop = false;
+            this.cGroupBox2.Text = "Chi tiết gọi món";
+            // 
+            // dgvOD
+            // 
+            this.dgvOD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOD.BackgroundColor = System.Drawing.Color.White;
+            this.dgvOD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT_Mon,
+            this.Ten_Mon,
+            this.DonGia,
+            this.SoLuong,
+            this.Gia});
+            this.dgvOD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOD.GridColor = System.Drawing.Color.White;
+            this.dgvOD.Location = new System.Drawing.Point(3, 25);
+            this.dgvOD.Name = "dgvOD";
+            this.dgvOD.RowHeadersVisible = false;
+            this.dgvOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOD.Size = new System.Drawing.Size(427, 234);
+            this.dgvOD.TabIndex = 0;
+            this.dgvOD.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOD_CellEndEdit);
             // 
             // cGroupBox1
             // 
@@ -167,32 +206,30 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 635);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // cGroupBox2
+            // STT_Mon
             // 
-            this.cGroupBox2.BackColor = System.Drawing.Color.White;
-            this.cGroupBox2.Controls.Add(this.dgvOD);
-            this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
-            this.cGroupBox2.Location = new System.Drawing.Point(12, 35);
-            this.cGroupBox2.Name = "cGroupBox2";
-            this.cGroupBox2.Size = new System.Drawing.Size(433, 262);
-            this.cGroupBox2.TabIndex = 2;
-            this.cGroupBox2.TabStop = false;
-            this.cGroupBox2.Text = "Chi tiết gọi món";
+            this.STT_Mon.HeaderText = "STT";
+            this.STT_Mon.Name = "STT_Mon";
             // 
-            // dgvOD
+            // Ten_Mon
             // 
-            this.dgvOD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOD.BackgroundColor = System.Drawing.Color.White;
-            this.dgvOD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOD.GridColor = System.Drawing.Color.White;
-            this.dgvOD.Location = new System.Drawing.Point(3, 25);
-            this.dgvOD.Name = "dgvOD";
-            this.dgvOD.RowHeadersVisible = false;
-            this.dgvOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOD.Size = new System.Drawing.Size(427, 234);
-            this.dgvOD.TabIndex = 0;
+            this.Ten_Mon.HeaderText = "Tên";
+            this.Ten_Mon.Name = "Ten_Mon";
+            // 
+            // DonGia
+            // 
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // Gia
+            // 
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
             // 
             // frmChonMon
             // 
@@ -205,10 +242,10 @@
             this.Name = "frmChonMon";
             this.Text = "frmChonMon";
             this.panel1.ResumeLayout(false);
-            this.cGroupBox1.ResumeLayout(false);
-            this.cGroupBox1.PerformLayout();
             this.cGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOD)).EndInit();
+            this.cGroupBox1.ResumeLayout(false);
+            this.cGroupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -225,5 +262,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private CustomControl.ControlCustom.CGroupBox cGroupBox2;
         private CustomControl.ControlCustom.CDataGirdView dgvOD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT_Mon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten_Mon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
     }
 }

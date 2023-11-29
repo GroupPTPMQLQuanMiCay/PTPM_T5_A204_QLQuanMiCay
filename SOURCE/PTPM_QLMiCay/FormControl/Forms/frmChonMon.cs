@@ -16,6 +16,7 @@ namespace FormControl.Forms
 {
     public partial class frmChonMon : FormEntity
     {
+        private Mon monCurrent = null;
         public frmChonMon()
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ namespace FormControl.Forms
                 bt.Text =  i.M_Ten + "\nGiá:" + i.M_Gia+" VNĐ";
                 bt.Font = new Font("Arial", 12, FontStyle.Bold);
                 bt.BackgroundImageLayout = ImageLayout.Stretch;
+                bt.Tag = i;
                 flowLayoutPanel1.Controls.Add(bt);
                 bt.Click += bt_Click;
             }
@@ -95,6 +97,7 @@ namespace FormControl.Forms
                 bt.BackgroundImageLayout = ImageLayout.Stretch;
                 flowLayoutPanel1.Controls.Add(bt);
                 bt.Click += bt_Click;
+
             }
         }
 
@@ -115,18 +118,65 @@ namespace FormControl.Forms
 
         public void addODer()
         {
-            DataTable monTable = new DataTable();
-            monTable.Columns.Add("Tên Món", typeof(string));
-            monTable.Columns.Add("Giá", typeof(string));
-            monTable.Columns.Add("Số Lượng", typeof(int));
-            dgvOD.DataSource = monTable;
-            Controls.Add(dgvOD);
+            //DataTable monTable = new DataTable();
+            //monTable.Columns.Add("Tên Món", typeof(string));
+            //monTable.Columns.Add("Giá", typeof(string));
+            //monTable.Columns.Add("Số Lượng", typeof(int));
+            //dgvOD.DataSource = monTable;
+            //Controls.Add(dgvOD);
         }
 
-        
+       private bool KiemTraTonTaiName(string name)
+        {
+            
+            return dgvOD.Rows.Cast<DataGridViewRow>().Any(row =>
+            {
+                if (!row.IsNewRow)
+                {
+                    string nameCuaDong = row.Cells["Ten_Mon"].Value.ToString();
+                    return string.Equals(name, nameCuaDong, StringComparison.OrdinalIgnoreCase);
+                }
+                return false;
+            });
+        }
+        private int currentOrderNumber = 1;
         void bt_Click(object sender, EventArgs e)
         {
-            addODer();
+            Button bt = sender as Button;
+            if (bt != null)
+            {
+                Mon mon = bt.Tag as Mon;
+                if (KiemTraTonTaiName(mon.M_Ten) == false)
+                {
+                    
+                    int rowIndex = dgvOD.Rows.Add();
+                    
+                    DataGridViewRow row = dgvOD.Rows[rowIndex];
+                    row.Cells["STT_Mon"].Value = currentOrderNumber;
+                    currentOrderNumber++;
+                    row.Cells["Ten_Mon"].Value = mon.M_Ten.ToString();
+                    row.Cells["DonGia"].Value = mon.M_Gia.ToString();
+                    row.Cells["SoLuong"].Value = 1;
+                    decimal donGia = Convert.ToDecimal(row.Cells["DonGia"].Value);
+                    int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value);
+                    row.Cells["Gia"].Value = donGia * soLuong;
+
+                    dgvOD.Refresh();
+                }
+ 
+            }
+
+        }
+
+        private void dgvOD_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvOD.Columns["SoLuong"].Index)
+            {
+                DataGridViewRow row = dgvOD.Rows[e.RowIndex];
+                decimal donGia = Convert.ToDecimal(row.Cells["DonGia"].Value);
+                int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value);
+                row.Cells["Gia"].Value = donGia * soLuong;
+            }
         }
     }
 }
