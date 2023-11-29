@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\fCauHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fCauHinh.Designer.cs">
+      <DependentUpon>fCauHinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\fCauHinh.resx">
+      <DependentUpon>fCauHinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </EmbeddedResource>

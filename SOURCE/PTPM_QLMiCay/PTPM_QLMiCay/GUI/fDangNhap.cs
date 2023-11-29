@@ -31,6 +31,9 @@ namespace PTPM_QLMiCay.GUI
             else if (rs == -2)
             {
                 MessageBox.Show("Sai mật khẩu", "Thông Báo");
+            } else if(rs == -3)
+            {
+                ProcessConfig(); 
             }
             else
             {
@@ -47,5 +50,19 @@ namespace PTPM_QLMiCay.GUI
             this.Close();
         }
 
+        public void ProcessConfig()
+        {
+            if (Program.formCauHinh == null || Program.formCauHinh.IsDisposed)
+            {
+                Program.formCauHinh = new fCauHinh();
+            }
+            this.Visible = false;
+            Program.formCauHinh.Show();
+        }
+
+        private void fDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

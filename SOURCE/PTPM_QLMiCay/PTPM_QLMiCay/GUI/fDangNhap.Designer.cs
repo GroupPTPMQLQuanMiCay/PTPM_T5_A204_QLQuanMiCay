@@ -220,6 +220,7 @@ namespace PTPM_QLMiCay.GUI
             this.Controls.Add(this.cLableTitle1);
             this.Name = "fDangNhap";
             this.Text = "fDangNhap";
+            this.Load += new System.EventHandler(this.fDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
