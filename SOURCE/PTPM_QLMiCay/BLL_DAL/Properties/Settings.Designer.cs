@@ -65,5 +65,16 @@ namespace BLL_DAL.Properties {
                 return ((string)(this["QLQuanMiCayConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NEWSEAA\\SQLEXPRESS;Initial Catalog=QLQuanMiCay;User ID=sa;Password=12" +
+            "3")]
+        public string QLQuanMiCayConnectionString4 {
+            get {
+                return ((string)(this["QLQuanMiCayConnectionString4"]));
+            }
+        }
     }
 }

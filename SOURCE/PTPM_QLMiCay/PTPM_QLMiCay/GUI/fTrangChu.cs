@@ -135,30 +135,31 @@ namespace PTPM_QLMiCay.GUI
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            ufNhanVien = new UFNhanVIen();
-            if (taiKhoan.TK_NguoiDung != "sa")
-            {
-                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_NV");
+            //ufNhanVien = new UFNhanVIen();
+            //if (taiKhoan.TK_NguoiDung != "sa")
+            //{
+            //    int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_NV");
 
-                if (id == 0 || id == 1)
-                {
-                    MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
-                    ufNhanVien = null;
-                }
-                else if (id == 2)
-                {
-                    MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
+            //    if (id == 0 || id == 1)
+            //    {
+            //        MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
+            //        ufNhanVien = null;
+            //    }
+            //    else if (id == 2)
+            //    {
+            //        MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
 
-                    ufNhanVien.Enabled = false;
-                }
-                else
-                    ufNhanVien.Enabled = true;
-            }
+            //        ufNhanVien.Enabled = false;
+            //    }
+            //    else
+            //        ufNhanVien.Enabled = true;
+            //}
 
-            if (ufNhanVien != null)
-            {
-                OpenChildFormCT(ufNhanVien);
-            }
+            //if (ufNhanVien != null)
+            //{
+            //    OpenChildFormCT(ufNhanVien);
+            //}
+            OpenChildFormCT(ufNhanVien);
         }
 
         private void btnQuyen_Click(object sender, EventArgs e)

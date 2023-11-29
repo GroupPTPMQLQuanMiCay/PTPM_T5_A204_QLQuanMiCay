@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLQuanMiCay" Class="QLQuanMiCayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=NEWSEAA\SQLEXPRESS;Initial Catalog=QLQuanMiCay;Integrated Security=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString3" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NEWSEAA\SQLEXPRESS;Initial Catalog=QLQuanMiCay;User ID=sa" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QLQuanMiCayConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[__MigrationHistory]" Member="__MigrationHistories">
     <Type Name="__MigrationHistory">
       <Column Name="MigrationId" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -224,6 +224,7 @@
       <Column Name="O_Gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="O_GhiChu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="O_ThoiGian" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="O_DonGia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="HoaDon_OrDer" Member="HoaDon" ThisKey="HD_Id" OtherKey="HD_Id" Type="HoaDon" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Mon_OrDer" Member="Mon" ThisKey="M_Ten" OtherKey="M_Ten" Type="Mon" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>

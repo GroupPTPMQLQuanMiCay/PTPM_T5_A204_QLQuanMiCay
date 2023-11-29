@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202311201520433_update-table-chi-tiet-phieu-date.designer.cs">
       <DependentUpon>202311201520433_update-table-chi-tiet-phieu-date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311291900240_Update-table-Order.cs" />
+    <Compile Include="Migrations\202311291900240_Update-table-Order.designer.cs">
+      <DependentUpon>202311291900240_Update-table-Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311201520433_update-table-chi-tiet-phieu-date.resx">
       <DependentUpon>202311201520433_update-table-chi-tiet-phieu-date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311291900240_Update-table-Order.resx">
+      <DependentUpon>202311291900240_Update-table-Order.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

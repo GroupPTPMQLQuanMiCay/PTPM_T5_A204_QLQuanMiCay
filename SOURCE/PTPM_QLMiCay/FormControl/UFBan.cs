@@ -46,6 +46,7 @@ namespace FormControl
                         {
                             dem++;
                             image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Icon\table_full.png");
+                            bt2.Tag = i;
                         }
                         else
                             image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Icon\table_empty.png");
@@ -59,6 +60,7 @@ namespace FormControl
                         bt2.Size = new Size(219, 178);
                         bt2.Text = "Bàn " + j;
                         bt2.Font = new Font("Arial", 12, FontStyle.Bold);
+                        bt2.Tag = i;
                         tableLayoutPanel1.Controls.Add(bt2);
                         bt2.Click += bt_Click;
 
@@ -77,6 +79,7 @@ namespace FormControl
                     bt.Size = new Size(219, 178);
                     bt.Text = "Bàn " + i;
                     bt.Font = new Font("Arial", 12, FontStyle.Bold);
+                    bt.Tag = i;
                     tableLayoutPanel1.Controls.Add(bt);
 
                 }
@@ -91,8 +94,9 @@ namespace FormControl
 
         private void bt_Click(object sender, EventArgs e)
         {
-
-            frmChonMon frm = new frmChonMon();
+            Button bt = sender as Button;
+            int soBan = (int)bt.Tag ;
+            frmChonMon frm = new frmChonMon(soBan);
             frm.Show();
         }
 
@@ -112,6 +116,7 @@ namespace FormControl
                 bt.Size = new Size(219, 178);
                 bt.Text = "Bàn " + i;
                 bt.Font = new Font("Arial", 12, FontStyle.Bold);
+               
                 tableLayoutPanel1.Controls.Add(bt);
             }
         }

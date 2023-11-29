@@ -17,13 +17,13 @@ namespace DataFirstEntities.Entity
         [ForeignKey("M_Ten")]
         public virtual Mon Mon { get; set; }
 
-
         [Key]
         [Column(Order = 2)]
         public int HD_Id { get; set; }
         [ForeignKey("HD_Id")]
         public virtual HoaDon HoaDon { get; set; }
 
+        public int O_DonGia { get; set; }
         public int O_SoLuong { get; set; }
         public int O_Gia { get; set; }  
         public string O_GhiChu { get;set; }

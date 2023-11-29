@@ -120,7 +120,7 @@ namespace BLL_DAL
     #endregion
 		
 		public QLQuanMiCayDataContext() : 
-				base(global::BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString3, mappingSource)
+				base(global::BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -4898,6 +4898,8 @@ namespace BLL_DAL
 		
 		private System.DateTime _O_ThoiGian;
 		
+		private int _O_DonGia;
+		
 		private EntityRef<HoaDon> _HoaDon;
 		
 		private EntityRef<Mon> _Mon;
@@ -4918,6 +4920,8 @@ namespace BLL_DAL
     partial void OnO_GhiChuChanged();
     partial void OnO_ThoiGianChanging(System.DateTime value);
     partial void OnO_ThoiGianChanged();
+    partial void OnO_DonGiaChanging(int value);
+    partial void OnO_DonGiaChanged();
     #endregion
 		
 		public OrDer()
@@ -5051,6 +5055,26 @@ namespace BLL_DAL
 					this._O_ThoiGian = value;
 					this.SendPropertyChanged("O_ThoiGian");
 					this.OnO_ThoiGianChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_O_DonGia", DbType="Int NOT NULL")]
+		public int O_DonGia
+		{
+			get
+			{
+				return this._O_DonGia;
+			}
+			set
+			{
+				if ((this._O_DonGia != value))
+				{
+					this.OnO_DonGiaChanging(value);
+					this.SendPropertyChanging();
+					this._O_DonGia = value;
+					this.SendPropertyChanged("O_DonGia");
+					this.OnO_DonGiaChanged();
 				}
 			}
 		}

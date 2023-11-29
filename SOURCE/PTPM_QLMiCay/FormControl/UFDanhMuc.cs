@@ -24,5 +24,15 @@ namespace FormControl
         {
             dgvDM.DataSource = dm.LoadAllDM();
         }
+
+        private void dgvDM_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                txtMaDM.Text = dgvDM.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtTenDM.Text = dgvDM.Rows[e.RowIndex].Cells[1].Value.ToString();
+               
+            }
+        }
     }
 }

@@ -12,18 +12,26 @@ using BLL_DAL;
 using CustomControl.ControlCustom;
 using Microsoft.VisualBasic;
 
+
 namespace FormControl.Forms
 {
     public partial class frmChonMon : FormEntity
     {
-        private Mon monCurrent = null;
-        public frmChonMon()
+        
+        private int tableNumber;
+        public frmChonMon(int tableNumber)
         {
             InitializeComponent();
+            this.tableNumber = tableNumber;
+            txtBan.Text = this.tableNumber.ToString();
             createBtnAllMon();
             createBtnDanhMuc();
         }
 
+        public int setTableNumber(int soBan)
+        {
+            return soBan;
+        }
         public void createBtnAllMon()
         {
             DAL_Mon mdal = new DAL_Mon();
@@ -86,7 +94,7 @@ namespace FormControl.Forms
             {
                 Button bt = new Button();
                 Image image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Images\" + i.M_IMG + "");
-                bt.BackgroundImage = image;
+                bt.Image = image;
                 bt.ImageAlign = ContentAlignment.TopCenter;
                 bt.TextAlign = ContentAlignment.BottomCenter;
                 bt.FlatStyle = FlatStyle.Flat;
@@ -97,7 +105,7 @@ namespace FormControl.Forms
                 bt.BackgroundImageLayout = ImageLayout.Stretch;
                 flowLayoutPanel1.Controls.Add(bt);
                 bt.Click += bt_Click;
-
+                
             }
         }
 
@@ -116,15 +124,15 @@ namespace FormControl.Forms
             
         }
 
-        public void addODer()
-        {
-            //DataTable monTable = new DataTable();
-            //monTable.Columns.Add("Tên Món", typeof(string));
-            //monTable.Columns.Add("Giá", typeof(string));
-            //monTable.Columns.Add("Số Lượng", typeof(int));
-            //dgvOD.DataSource = monTable;
-            //Controls.Add(dgvOD);
-        }
+        //public void addODer()
+        //{
+        //    //DataTable monTable = new DataTable();
+        //    //monTable.Columns.Add("Tên Món", typeof(string));
+        //    //monTable.Columns.Add("Giá", typeof(string));
+        //    //monTable.Columns.Add("Số Lượng", typeof(int));
+        //    //dgvOD.DataSource = monTable;
+        //    //Controls.Add(dgvOD);
+        //}
 
        private bool KiemTraTonTaiName(string name)
         {
@@ -139,6 +147,24 @@ namespace FormControl.Forms
                 return false;
             });
         }
+       private void UpdateTotalPrice()
+       {
+           decimal total = 0;
+
+           foreach (DataGridViewRow row in dgvOD.Rows)
+           {
+               if (!row.IsNewRow)
+               {
+
+                   if (row.Cells["Gia"].Value != null)
+                   {
+                       total += Convert.ToDecimal(row.Cells["Gia"].Value);
+                   }
+               }
+           }
+
+           txtThanhTien.Text = total.ToString();
+       }
         private int currentOrderNumber = 1;
         void bt_Click(object sender, EventArgs e)
         {
@@ -160,14 +186,15 @@ namespace FormControl.Forms
                     decimal donGia = Convert.ToDecimal(row.Cells["DonGia"].Value);
                     int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value);
                     row.Cells["Gia"].Value = donGia * soLuong;
-
+                    row.Tag = mon;
+                    UpdateTotalPrice();
                     dgvOD.Refresh();
                 }
  
             }
-
+            
         }
-
+      
         private void dgvOD_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dgvOD.Columns["SoLuong"].Index)
@@ -176,7 +203,28 @@ namespace FormControl.Forms
                 decimal donGia = Convert.ToDecimal(row.Cells["DonGia"].Value);
                 int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value);
                 row.Cells["Gia"].Value = donGia * soLuong;
+                UpdateTotalPrice();
             }
+        }
+
+        private void btnGoiMon_Click(object sender, EventArgs e)
+        {
+            DAL_Order dalOr = new DAL_Order();
+            DataGridViewRow row = dgvOD.CurrentRow;
+            
+            string tenMon = row.Cells["Ten_Mon"].Value.ToString();
+            int SoLuong = int.Parse(row.Cells["SoLuong"].Value.ToString());
+            int DonGia = int.Parse(row.Cells["DonGia"].Value.ToString());
+            int Gia = int.Parse(row.Cells["Gia"].Value.ToString());
+            string GhiChu = "";
+            DateTime ThoiGian = DateTime.Now;
+            dalOr.inserNewOrder(tenMon,SoLuong, DonGia, Gia, GhiChu, ThoiGian);
+            MessageBox.Show("Gọi món thành công~~");
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
