@@ -74,6 +74,12 @@
     <Compile Include="Forms\frmChinhSuaBan.Designer.cs">
       <DependentUpon>frmChinhSuaBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmChonMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChonMon.Designer.cs">
+      <DependentUpon>frmChonMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmDatNguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\frmChinhSuaBan.resx">
       <DependentUpon>frmChinhSuaBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChonMon.resx">
+      <DependentUpon>frmChonMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDatNguyenLieu.resx">
       <DependentUpon>frmDatNguyenLieu.cs</DependentUpon>

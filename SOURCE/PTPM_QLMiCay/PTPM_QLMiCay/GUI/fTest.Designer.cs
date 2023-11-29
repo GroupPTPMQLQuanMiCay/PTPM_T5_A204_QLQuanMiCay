@@ -50,6 +50,7 @@
             this.cCombobox1 = new CustomControl.ControlCustom.CCombobox();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
             this.bantest = new CustomControl.ControlCustom.CDataGirdView();
+            this.button1 = new System.Windows.Forms.Button();
             this.cGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).BeginInit();
             this.cGroupBox2.SuspendLayout();
@@ -405,11 +406,21 @@
             this.bantest.Size = new System.Drawing.Size(453, 279);
             this.bantest.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(776, 594);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 27);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // fTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 776);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cGroupBox2);
             this.Controls.Add(this.cCombobox1);
             this.Controls.Add(this.cGroupBox1);
@@ -459,5 +470,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private CustomControl.ControlCustom.CGroupBox cGroupBox2;
         private CustomControl.ControlCustom.CDataGirdView bantest;
+        private System.Windows.Forms.Button button1;
     }
 }

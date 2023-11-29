@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFDanhMuc));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cGroupBox2 = new CustomControl.ControlCustom.CGroupBox();
             this.btn_Sua = new CustomControl.ControlCustom.CButton();
             this.btn_Them = new CustomControl.ControlCustom.CButton();
@@ -40,16 +39,16 @@
             this.cLable5 = new CustomControl.ControlCustom.CLable();
             this.cLable2 = new CustomControl.ControlCustom.CLable();
             this.cGroupBox3 = new CustomControl.ControlCustom.CGroupBox();
-            this.cDataGirdView1 = new CustomControl.ControlCustom.CDataGirdView();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
             this.cGroupBox4 = new CustomControl.ControlCustom.CGroupBox();
+            this.dgvDM = new CustomControl.ControlCustom.CDataGirdView();
             this.cGroupBox2.SuspendLayout();
             this.cGroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).BeginInit();
             this.cGroupBox1.SuspendLayout();
             this.cGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDM)).BeginInit();
             this.SuspendLayout();
             // 
             // cGroupBox2
@@ -116,7 +115,6 @@
             this.btn_Them.Size = new System.Drawing.Size(163, 41);
             this.btn_Them.TabIndex = 23;
             this.btn_Them.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Them.Click += new System.EventHandler(this.cButton5_Click);
             // 
             // btn_Xoa
             // 
@@ -196,7 +194,6 @@
             this.cTextBox1.Size = new System.Drawing.Size(203, 29);
             this.cTextBox1.TabIndex = 0;
             this.cTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.cTextBox1.OnValueChanged += new System.EventHandler(this.cTextBox1_OnValueChanged);
             // 
             // cLable5
             // 
@@ -231,25 +228,7 @@
             this.cGroupBox3.Size = new System.Drawing.Size(463, 83);
             this.cGroupBox3.TabIndex = 14;
             this.cGroupBox3.TabStop = false;
-            this.cGroupBox3.Text = "Tìm kiếm nhà cung cấp";
-            // 
-            // cDataGirdView1
-            // 
-            this.cDataGirdView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
-            this.cDataGirdView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.cDataGirdView1.BackgroundColor = System.Drawing.Color.White;
-            this.cDataGirdView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cDataGirdView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cDataGirdView1.GridColor = System.Drawing.Color.White;
-            this.cDataGirdView1.Location = new System.Drawing.Point(3, 25);
-            this.cDataGirdView1.Name = "cDataGirdView1";
-            this.cDataGirdView1.RowHeadersVisible = false;
-            this.cDataGirdView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cDataGirdView1.Size = new System.Drawing.Size(457, 386);
-            this.cDataGirdView1.TabIndex = 0;
+            this.cGroupBox3.Text = "Tìm kiếm danh mục";
             // 
             // bunifuSeparator1
             // 
@@ -258,7 +237,7 @@
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(11, 44);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(944, 35);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(944, 32);
             this.bunifuSeparator1.TabIndex = 17;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -293,7 +272,7 @@
             // cGroupBox4
             // 
             this.cGroupBox4.BackColor = System.Drawing.Color.White;
-            this.cGroupBox4.Controls.Add(this.cDataGirdView1);
+            this.cGroupBox4.Controls.Add(this.dgvDM);
             this.cGroupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cGroupBox4.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox4.Location = new System.Drawing.Point(492, 93);
@@ -302,6 +281,20 @@
             this.cGroupBox4.TabIndex = 15;
             this.cGroupBox4.TabStop = false;
             this.cGroupBox4.Text = "Danh sách danh mục";
+            // 
+            // dgvDM
+            // 
+            this.dgvDM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDM.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDM.GridColor = System.Drawing.Color.White;
+            this.dgvDM.Location = new System.Drawing.Point(3, 25);
+            this.dgvDM.Name = "dgvDM";
+            this.dgvDM.RowHeadersVisible = false;
+            this.dgvDM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDM.Size = new System.Drawing.Size(457, 386);
+            this.dgvDM.TabIndex = 0;
             // 
             // UFDanhMuc
             // 
@@ -316,12 +309,13 @@
             this.Controls.Add(this.cGroupBox4);
             this.Name = "UFDanhMuc";
             this.Size = new System.Drawing.Size(980, 522);
+            this.Load += new System.EventHandler(this.UFDanhMuc_Load);
             this.cGroupBox2.ResumeLayout(false);
             this.cGroupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView1)).EndInit();
             this.cGroupBox1.ResumeLayout(false);
             this.cGroupBox1.PerformLayout();
             this.cGroupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,10 +332,10 @@
         private CustomControl.ControlCustom.CLable cLable5;
         private CustomControl.ControlCustom.CLable cLable2;
         private CustomControl.ControlCustom.CGroupBox cGroupBox3;
-        private CustomControl.ControlCustom.CDataGirdView cDataGirdView1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private CustomControl.ControlCustom.CLableTitle cLableTitle1;
         private CustomControl.ControlCustom.CGroupBox cGroupBox1;
         private CustomControl.ControlCustom.CGroupBox cGroupBox4;
+        private CustomControl.ControlCustom.CDataGirdView dgvDM;
     }
 }

@@ -250,6 +250,7 @@
             // 
             // dgvDSachBan
             // 
+            this.dgvDSachBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSachBan.BackgroundColor = System.Drawing.Color.White;
             this.dgvDSachBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSachBan.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -21,8 +21,8 @@ namespace PTPM_QLMiCay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            ftest = new fTest();
-            Application.Run(ftest);
+            formTrangChu = new fTrangChu();
+            Application.Run(formTrangChu);
             
         }
     }
