@@ -234,6 +234,7 @@
             this.btnThem.Size = new System.Drawing.Size(163, 41);
             this.btnThem.TabIndex = 22;
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // cGroupBox3
             // 

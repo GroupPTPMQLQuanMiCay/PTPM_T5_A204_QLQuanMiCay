@@ -22,6 +22,7 @@ namespace PTPM_QLMiCay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             formDangNhap = new fDangNhap();
             Application.Run(formDangNhap);
             

@@ -278,6 +278,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmChonMon";
             this.Text = "frmChonMon";
+            this.Load += new System.EventHandler(this.frmChonMon_Load);
             this.panel1.ResumeLayout(false);
             this.cGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOD)).EndInit();

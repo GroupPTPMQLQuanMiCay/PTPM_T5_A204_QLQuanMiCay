@@ -17,7 +17,8 @@ namespace FormControl.Forms
 {
     public partial class frmChonMon : FormEntity
     {
-        
+       
+        private TaiKhoan taikhoan = null;
         private int tableNumber;
         public frmChonMon(int tableNumber)
         {
@@ -26,6 +27,17 @@ namespace FormControl.Forms
             txtBan.Text = this.tableNumber.ToString();
             createBtnAllMon();
             createBtnDanhMuc();
+
+        }
+        public frmChonMon(int tableNumber, TaiKhoan tk_nv)
+        {
+            InitializeComponent();
+            taikhoan = tk_nv;
+            this.tableNumber = tableNumber;
+            txtBan.Text = this.tableNumber.ToString();
+            createBtnAllMon();
+            createBtnDanhMuc();
+
         }
 
         public int setTableNumber(int soBan)
@@ -209,22 +221,58 @@ namespace FormControl.Forms
 
         private void btnGoiMon_Click(object sender, EventArgs e)
         {
+            DAL_HoaDon dalHd = new DAL_HoaDon();    
             DAL_Order dalOr = new DAL_Order();
             DataGridViewRow row = dgvOD.CurrentRow;
-            
+            HoaDon hd = dalHd.insert(taikhoan.TK_NhanVien,tableNumber);
+
             string tenMon = row.Cells["Ten_Mon"].Value.ToString();
             int SoLuong = int.Parse(row.Cells["SoLuong"].Value.ToString());
             int DonGia = int.Parse(row.Cells["DonGia"].Value.ToString());
             int Gia = int.Parse(row.Cells["Gia"].Value.ToString());
             string GhiChu = "";
             DateTime ThoiGian = DateTime.Now;
-            dalOr.inserNewOrder(tenMon,SoLuong, DonGia, Gia, GhiChu, ThoiGian);
+            dalOr.insertOrder(tenMon,hd.HD_Id, SoLuong, ThoiGian, DonGia);
             MessageBox.Show("Gọi món thành công~~");
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmChonMon_Load(object sender, EventArgs e)
+        {
+            DAL_HoaDon dalHd = new DAL_HoaDon();
+            DAL_Order dalOr = new DAL_Order();
+            HoaDon hd = dalHd.getLatestHD(tableNumber);
+
+            if (hd == null)
+            {
+                dgvOD.Rows.Clear();
+                return;
+            }
+            if (hd.HD_TrangThai == 0)
+            {
+                
+                List<OrDer> or = dalOr.getOrderList(hd.HD_Id);
+                for(int i = 0; i < or.Count; i++)
+                {
+                    DataGridViewRow row = (DataGridViewRow)(dgvOD.Rows[0].Clone());
+                    row.Cells[0].Value = i + 1;
+                    row.Cells[1].Value = or[i].M_Ten;
+                    row.Cells[2].Value = or[i].O_DonGia;
+                    row.Cells[3].Value = or[i].O_SoLuong;
+                    row.Cells[4].Value = or[i].O_DonGia * or[i].O_SoLuong;
+                    dgvOD.Rows.Add(row);
+                }
+
+            }
+            else
+            {
+                dgvOD.Rows.Clear();
+            }
+             
         }
     }
 }

@@ -9,7 +9,7 @@ namespace BLL_DAL
 
         public object getIncredientWithPrice(int supplierId)
         {
-            return (from gia in _context.GiaNguyenLieus
+            var s = (from gia in _context.GiaNguyenLieus
                     join nl in _context.NguyenLieus on gia.NL_Id equals nl.NL_Id
                     where nl.NCC_Id == supplierId
                     select new
@@ -23,6 +23,7 @@ namespace BLL_DAL
                     }).OrderByDescending(x => x.NL_ThoiGian)
                     .Select(x => new { x.NL_Id, x.NL_Ten, x.NL_DonViTinh, x.NL_SoLuong, x.NL_Gia})
                     .ToList();
+            return s;
         }
     }
 }

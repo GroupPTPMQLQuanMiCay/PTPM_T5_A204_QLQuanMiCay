@@ -19,5 +19,9 @@ namespace FormControl.Forms
             dgvDSachBan.DataSource = banDAL.loadBanALL();
         }
 
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

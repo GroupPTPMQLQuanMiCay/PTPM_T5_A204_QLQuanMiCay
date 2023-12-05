@@ -25,12 +25,15 @@ namespace BLL_DAL.XuLy
                     soLuong = o.Sum(s => s.O_SoLuong)
                 })
                 .OrderByDescending(result => result.soLuong);
-            foreach (var item in query)
-            {
-                Mon mon = _context.Mons.Where(s=>s.M_Ten.Contains(item.tenMon)).FirstOrDefault();
-                if (mon != null)
-                    mons.Add(mon);
-            }
+            if (query != null)
+                foreach (var item in query)
+                {
+                    Mon mon = _context.Mons.Where(s => s.M_Ten.Contains(item.tenMon)).FirstOrDefault();
+                    if (mon != null)
+                        mons.Add(mon);
+                }
+            else
+                mons = _context.Mons.Select(s => s).Take(5).ToList();
 
             return mons;
         }

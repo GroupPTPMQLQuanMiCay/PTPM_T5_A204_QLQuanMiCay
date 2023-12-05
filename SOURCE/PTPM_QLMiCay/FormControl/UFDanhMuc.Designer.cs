@@ -115,6 +115,7 @@
             this.btn_Them.Size = new System.Drawing.Size(163, 41);
             this.btn_Them.TabIndex = 23;
             this.btn_Them.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btn_Xoa
             // 

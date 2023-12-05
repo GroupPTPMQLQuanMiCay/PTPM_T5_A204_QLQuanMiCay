@@ -24,7 +24,7 @@ namespace BLL_DAL
                 using (var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, registryView))
                 using (var key = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server"))
                 {
-                    var instances = (string[])key?.GetValue("InstalledInstances");
+                    var instances = (string[])key.GetValue("InstalledInstances");
                     if (instances != null)
                     {
                         foreach (var element in instances)
@@ -52,8 +52,8 @@ namespace BLL_DAL
 
         public void saveConfig(string tServer, string tUser, string tPass, string tDBName)
         {
-            BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString = BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString1 = "Data Source=" + tServer + ";Initial Catalog=" + tDBName + ";User ID="
-                    + tUser + "; pwd = " + tPass + "";
+            //BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString = BLL_DAL.Properties.Settings.Default.QLQuanMiCayConnectionString1 = "Data Source=" + tServer + ";Initial Catalog=" + tDBName + ";User ID="
+            //        + tUser + "; pwd = " + tPass + "";
             BLL_DAL.Properties.Settings.Default.Save();
         }
     }

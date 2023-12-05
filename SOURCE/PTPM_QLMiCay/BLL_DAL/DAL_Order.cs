@@ -13,12 +13,27 @@ namespace BLL_DAL
         {
 
         }
+        public void insertOrder(string tenMon, int idHD, int soLuong, DateTime thoiGian, int donGia)
+        {
+            OrDer or = new OrDer();
+            or.M_Ten = tenMon;
+            or.HD_Id = idHD;
+            or.O_SoLuong = soLuong;
+            or.O_ThoiGian  = thoiGian;
+            or.O_DonGia = donGia;
+            _context.OrDers.InsertOnSubmit( or );
+            _context.SubmitChanges();
+        }
+        public List<OrDer> getOrderList(int HD_id)
+        {
+            return _context.OrDers.Where(t=>t.HD_Id == HD_id).ToList();
+        }
         //private int GenerateUniqueHD_Id()
         //{
         //    // Lấy ID lớn nhất hiện tại trong bảng HOADON
         //    int soBan;
         //    // Kiểm tra xem có hóa đơn nào cho số bàn này chưa
-        //    var existingHoaDon = _context.HoaDons.FirstOrDefault(hd => hd.B_SoBan == soBan && hd.HD_TrangThai==0);
+        //    var existingHoaDon = _context.HoaDons.FirstOrDefault(hd => hd.B_SoBan == soBan && hd.HD_TrangThai == 0);
         //    int currentMaxId = _context.HoaDons.Max(hd => (int?)hd.HD_Id) ?? 0;
 
         //    // Sinh HD_Id mới là ID lớn nhất hiện tại + 1
@@ -30,7 +45,7 @@ namespace BLL_DAL
         //        HD_Id = newHD_Id,
         //        HD_TrangThai = 0,
         //        HD_NgayXuat = DateTime.Now
-               
+
         //    };
 
         //    _context.HoaDons.InsertOnSubmit(newHoaDon);

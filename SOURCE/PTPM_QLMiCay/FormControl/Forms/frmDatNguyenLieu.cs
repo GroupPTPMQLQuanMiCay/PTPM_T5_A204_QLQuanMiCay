@@ -39,7 +39,7 @@ namespace FormControl.Forms
         private void frmDatNguyenLieu_Load(object sender, EventArgs e)
         {
             List<NhaCungCap> listNhaCungCap = nccDal.getAllSupplierFull();
-            cbb_NCC.DataSource = listNhaCungCap;
+                cbb_NCC.DataSource = listNhaCungCap;
             cbb_NCC.DisplayMember = "NCC_Ten";
             cbb_NCC.ValueMember = "NCC_Id";
 
@@ -48,15 +48,18 @@ namespace FormControl.Forms
             cboMaPD.DataSource = listPD;
             cboMaPD.DisplayMember = "PD_Id";
             cboMaPD.ValueMember = "PD_Id";
-            cboMaPD.SelectedIndex = 0;
-            phieuDat = pdDal.getIncredientOrder(int.Parse(cboMaPD.SelectedValue.ToString()));
-            loadIncredientTable();
-            loadIncredientOrderDetail();
+
+            if(listPD.Count != 0)
+            {
+                phieuDat = pdDal.getIncredientOrder(int.Parse(cboMaPD.SelectedValue.ToString()));
+                loadIncredientTable();
+                loadIncredientOrderDetail();
+            }
         }
 
         public void loadIncredientTable()
         {
-            drvNguyenLieu.DataSource = giaDal.getIncredientWithPrice(int.Parse(cbb_NCC.SelectedValue.ToString()));
+            drvNguyenLieu.DataSource = giaDal.getIncredientWithPrice(((NhaCungCap)cbb_NCC.SelectedItem).NCC_Id);
         }
 
         public void loadIncredientOrderDetail()
@@ -67,7 +70,7 @@ namespace FormControl.Forms
             {
                 return;
             }
-            drvNguyenLieu.DataSource = giaDal.getIncredientWithPrice(int.Parse(cbb_NCC.SelectedValue.ToString()));
+            drvNguyenLieu.DataSource = giaDal.getIncredientWithPrice(((NhaCungCap)cbb_NCC.SelectedItem).NCC_Id);
 
             double sum = 0;
             drvNLDat.Rows.Clear();
@@ -98,15 +101,16 @@ namespace FormControl.Forms
         {
             try
             {
-                int nccId = int.Parse(cbb_NCC.SelectedValue.ToString());
-                if (nccId == 0)
-                {
-                    loadIncredientTable();
-                }
-                else
-                {
-                    drvNguyenLieu.DataSource = giaDal.getIncredientWithPrice(nccId);
-                }
+                int nccId = ((NhaCungCap)cbb_NCC.SelectedItem).NCC_Id;
+                loadIncredientTable();
+                //if (nccId == 0)
+                //{
+                //    loadIncredientTable();
+                //}
+                //else
+                //{
+                //    drvNguyenLieu.DataSource = giaDal.getIncredientWithPrice(nccId);
+                //}
             }
             catch
             {
@@ -453,7 +457,7 @@ namespace FormControl.Forms
                 PhieuDatDTO pd = new PhieuDatDTO(phieuDat.PD_Id, phieuDat.updatedAt, nvien);
                 string ncc = listCTPD[0].NguyenLieu.NhaCungCap.NCC_Ten;
                 List<CTPhieuDatDTO> ct = new List<CTPhieuDatDTO>();
-                for(int i = 0; i < listCTPD.Count; i++)
+                for (int i = 0; i < listCTPD.Count; i++)
                 {
                     NguyenLieu nl = nlDal.getIncredientById(listCTPD[i].NL_Id);
                     CTPhieuDatDTO dto = new CTPhieuDatDTO(nl.NL_Ten, nl.NL_DonViTinh, listCTPD[i].soluong, long.Parse(listCTPD[i].NL_Gia + ""));
@@ -462,7 +466,8 @@ namespace FormControl.Forms
                 ExcelExport excel = new ExcelExport();
                 string filename = "phieuDat";
                 excel.ExportPhieuDat(ct, pd, ncc, ref filename, true);
-            } else
+            }
+            else
             {
                 Message.Message.showNotApproveToExport("Phiếu đặt");
             }

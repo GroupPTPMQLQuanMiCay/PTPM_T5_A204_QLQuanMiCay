@@ -8,7 +8,7 @@ namespace PTPM_QLMiCay.GUI
 {
     public partial class fTrangChu : FormEntity
     {
-        private TaiKhoan taiKhoan;
+        private TaiKhoan taiKhoan { get; set; }
 
         UFTrangChu ufTrangChu = new UFTrangChu();
         UFNguyenLieu ufNguyenLieu = new UFNguyenLieu();
@@ -207,6 +207,8 @@ namespace PTPM_QLMiCay.GUI
 
         private void btnBan_Click(object sender, EventArgs e)
         {
+            ufBan = new UFBan(taiKhoan);
+
             OpenChildFormCT(ufBan);
         }
     }

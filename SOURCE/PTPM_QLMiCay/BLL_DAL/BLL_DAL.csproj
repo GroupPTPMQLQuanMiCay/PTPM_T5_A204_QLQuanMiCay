@@ -66,6 +66,7 @@
     <Compile Include="DAL_CTPhieuDat.cs" />
     <Compile Include="DAL_DanhMuc.cs" />
     <Compile Include="DAL_GiaNguyenLieu.cs" />
+    <Compile Include="DAL_HoaDon.cs" />
     <Compile Include="DAL_HoaDonNhap.cs" />
     <Compile Include="DAL_ManHinh.cs" />
     <Compile Include="DAL_Mon.cs" />

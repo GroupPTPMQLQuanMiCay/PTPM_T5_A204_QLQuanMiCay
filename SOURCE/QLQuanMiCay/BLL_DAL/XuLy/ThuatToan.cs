@@ -4,6 +4,8 @@ using Accord.MachineLearning.VectorMachines.Learning;
 using Accord.Math.Optimization.Losses;
 using Accord.Math.Random;
 using Accord.Statistics.Kernels;
+using Accord;
+using Accord.Math;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,7 @@ namespace BLL_DAL.XuLy
         private int[] PerformKMeansForOrder(List<string> tenMonOrder)
         {
             double[][] featureVector = GetData();
-            KMeans kmeans = new KMeans(k: 20);
+            KMeans kmeans = new KMeans(k: 5);
 
             var clusters = kmeans.Learn(featureVector);
 
@@ -97,7 +99,7 @@ namespace BLL_DAL.XuLy
         private Mon RandomMon(int cluster)
         {
             double[][] featureVector = GetData();
-            KMeans kmeans = new KMeans(k: 20);
+            KMeans kmeans = new KMeans(k: 5);
 
             var clusters = kmeans.Learn(featureVector);
 

@@ -20,6 +20,16 @@ namespace BLL_DAL
             l = _context.DanhMucs.Select(t => t).ToList();
             return l;
         }
+
+        public void insertDM(string tenDm)
+        {
+           
+                DanhMuc dm = new DanhMuc();
+                dm.DM_Ten = tenDm;
+                _context.DanhMucs.InsertOnSubmit(dm);
+                _context.SubmitChanges();
+               
+        }
    
     }
 }

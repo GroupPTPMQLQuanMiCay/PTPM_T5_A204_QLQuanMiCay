@@ -15,9 +15,18 @@ namespace FormControl
     public partial class UFBan : UserControl
     {
         DAL_Ban b = new DAL_Ban();
+        TaiKhoan taikhoan = null;
         public UFBan()
         {
+            
             InitializeComponent();
+            createLoadBan();
+        }
+        public UFBan(TaiKhoan tk_nv)
+        {
+            
+            InitializeComponent();
+            taikhoan = tk_nv;
             createLoadBan();
         }
 
@@ -31,6 +40,7 @@ namespace FormControl
         {
             tableLayoutPanel1.Controls.Clear();
             int dem = 0;
+            //List<int> d = b.loadBanHD();
             foreach (int i in b.loadBanHD())
             {
                 Button bt = new Button();
@@ -46,7 +56,7 @@ namespace FormControl
                         {
                             dem++;
                             image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Icon\table_full.png");
-                            bt2.Tag = i;
+                            //bt2.Tag = j;
                         }
                         else
                             image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Icon\table_empty.png");
@@ -60,7 +70,7 @@ namespace FormControl
                         bt2.Size = new Size(219, 178);
                         bt2.Text = "Bàn " + j;
                         bt2.Font = new Font("Arial", 12, FontStyle.Bold);
-                        bt2.Tag = i;
+                        bt2.Tag = j;
                         tableLayoutPanel1.Controls.Add(bt2);
                         bt2.Click += bt_Click;
 
@@ -96,7 +106,8 @@ namespace FormControl
         {
             Button bt = sender as Button;
             int soBan = (int)bt.Tag ;
-            frmChonMon frm = new frmChonMon(soBan);
+            
+            frmChonMon frm = new frmChonMon(soBan,taikhoan);
             frm.Show();
         }
 

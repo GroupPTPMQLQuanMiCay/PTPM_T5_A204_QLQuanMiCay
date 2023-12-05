@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFNguyenLieu));
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.cLableTitle1 = new CustomControl.ControlCustom.CLableTitle();
@@ -45,7 +45,6 @@
             this.btnSua = new CustomControl.ControlCustom.CButton();
             this.btnXoa = new CustomControl.ControlCustom.CButton();
             this.btnThem = new CustomControl.ControlCustom.CButton();
-            this.cButton4 = new CustomControl.ControlCustom.CButton();
             this.btnHoaDon = new CustomControl.ControlCustom.CButton();
             this.btnNhapNL = new CustomControl.ControlCustom.CButton();
             this.btnDatNL = new CustomControl.ControlCustom.CButton();
@@ -107,10 +106,10 @@
             // drvNguyenLieu
             // 
             this.drvNguyenLieu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Orange;
-            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.drvNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.drvNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvNguyenLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -195,7 +194,6 @@
             this.cGroupBox2.Controls.Add(this.btnSua);
             this.cGroupBox2.Controls.Add(this.btnXoa);
             this.cGroupBox2.Controls.Add(this.btnThem);
-            this.cGroupBox2.Controls.Add(this.cButton4);
             this.cGroupBox2.Controls.Add(this.btnHoaDon);
             this.cGroupBox2.Controls.Add(this.btnNhapNL);
             this.cGroupBox2.Controls.Add(this.btnDatNL);
@@ -312,31 +310,6 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // cButton4
-            // 
-            this.cButton4.ActiveBorderThickness = 1;
-            this.cButton4.ActiveCornerRadius = 20;
-            this.cButton4.ActiveFillColor = System.Drawing.Color.Orange;
-            this.cButton4.ActiveForecolor = System.Drawing.Color.White;
-            this.cButton4.ActiveLineColor = System.Drawing.Color.Orange;
-            this.cButton4.BackColor = System.Drawing.Color.White;
-            this.cButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cButton4.BackgroundImage")));
-            this.cButton4.ButtonText = "Lịch sử giá";
-            this.cButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cButton4.ForeColor = System.Drawing.Color.Orange;
-            this.cButton4.IdleBorderThickness = 1;
-            this.cButton4.IdleCornerRadius = 20;
-            this.cButton4.IdleFillColor = System.Drawing.Color.White;
-            this.cButton4.IdleForecolor = System.Drawing.Color.Orange;
-            this.cButton4.IdleLineColor = System.Drawing.Color.Orange;
-            this.cButton4.Location = new System.Drawing.Point(242, 104);
-            this.cButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cButton4.Name = "cButton4";
-            this.cButton4.Size = new System.Drawing.Size(163, 41);
-            this.cButton4.TabIndex = 22;
-            this.cButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnHoaDon
             // 
             this.btnHoaDon.ActiveBorderThickness = 1;
@@ -355,7 +328,7 @@
             this.btnHoaDon.IdleFillColor = System.Drawing.Color.White;
             this.btnHoaDon.IdleForecolor = System.Drawing.Color.Orange;
             this.btnHoaDon.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnHoaDon.Location = new System.Drawing.Point(10, 104);
+            this.btnHoaDon.Location = new System.Drawing.Point(124, 91);
             this.btnHoaDon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(163, 41);
@@ -608,7 +581,6 @@
         private CustomControl.ControlCustom.CButton btnDatNL;
         private CustomControl.ControlCustom.CButton btnLuu;
         private CustomControl.ControlCustom.CButton btnThem;
-        private CustomControl.ControlCustom.CButton cButton4;
         private CustomControl.ControlCustom.CGroupBox cGroupBox3;
         private CustomControl.ControlCustom.CGroupBox cGroupBox4;
         private CustomControl.ControlCustom.CTextBox txtTimTenNL;
