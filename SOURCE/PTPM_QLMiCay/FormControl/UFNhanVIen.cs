@@ -50,6 +50,7 @@ namespace FormControl
         {
             if (e.RowIndex >= 0)
             {
+               
                 txtID.Text = dgvNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txtHoTen.Text = dgvNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtGioiTinh.Text = dgvNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();

@@ -11,6 +11,7 @@ using CustomControl.FormCustom;
 using BLL_DAL;
 using CustomControl.ControlCustom;
 using Microsoft.VisualBasic;
+using Bunifu.Framework.UI;
 
 
 namespace FormControl.Forms
@@ -20,6 +21,9 @@ namespace FormControl.Forms
        
         private TaiKhoan taikhoan = null;
         private int tableNumber;
+
+        ThuatToan _thuatToan = new ThuatToan();
+
         public frmChonMon(int tableNumber)
         {
             InitializeComponent();
@@ -44,30 +48,36 @@ namespace FormControl.Forms
         {
             return soBan;
         }
+        public void createBtnMon(List<Mon> mons)
+        {
+            foreach (Mon i in mons)
+            {
+                Image image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Images\" + i.M_IMG + "");
+                BunifuTileButton button = new BunifuTileButton();
+                button.Image = image;
+                button.BackColor = Color.Transparent;
+                button.Size = new Size(400, 250);
+                button.LabelText = i.M_Ten + "\nGiá:" + i.M_Gia + " VNĐ";
+                button.Font = new Font("Arial", 12, FontStyle.Bold);
+                button.ForeColor = Color.Black;
+                button.color = Color.Transparent;
+                button.colorActive = Color.GhostWhite;
+                button.Padding= new Padding(0,0,0,20);
+                button.BackgroundImageLayout = ImageLayout.Stretch;
+                button.Tag = i;
+                flowLayoutPanel1.Controls.Add(button);
+                button.Click += bt_Click;
+
+            }
+        }
         public void createBtnAllMon()
         {
             DAL_Mon mdal = new DAL_Mon();
             //List<Mon> l = mdal.LoadAllMon();
             flowLayoutPanel1.Controls.Clear();
-            foreach (Mon i in mdal.LoadAllMon())
-            {
-                Button bt = new Button();
-                Image image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Images\" + i.M_IMG + "");
-                bt.BackgroundImage = image;
-                bt.ImageAlign = ContentAlignment.TopCenter;
-                bt.TextAlign = ContentAlignment.BottomCenter;
-                bt.FlatStyle = FlatStyle.Flat;
-                bt.FlatAppearance.BorderSize = 0;
-                bt.Size = new Size(219, 178);
-                bt.Text =  i.M_Ten + "\nGiá:" + i.M_Gia+" VNĐ";
-                bt.Font = new Font("Arial", 12, FontStyle.Bold);
-                bt.BackgroundImageLayout = ImageLayout.Stretch;
-                bt.Tag = i;
-                flowLayoutPanel1.Controls.Add(bt);
-                bt.Click += bt_Click;
-            }
-            
+            createBtnMon(mdal.LoadAllMon());
         }
+
         public void createBtnDanhMuc()
         {
             DAL_DanhMuc dmdal = new DAL_DanhMuc();
@@ -98,27 +108,25 @@ namespace FormControl.Forms
             btGoiY.Click += btdm_Click;
 
         }
+
         public void loadMonByIDDM(int id)
         {
             DAL_Mon mdal = new DAL_Mon();
             flowLayoutPanel1.Controls.Clear();
-            foreach (Mon i in mdal.getMonByIDDM(id))
+            createBtnMon(mdal.getMonByIDDM(id));
+        }
+
+        public void loadMonGoiY()
+        {
+            List<string> tenMons = new List<string>();
+            foreach (DataGridViewRow item in dgvOD.Rows)
             {
-                Button bt = new Button();
-                Image image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Images\" + i.M_IMG + "");
-                bt.Image = image;
-                bt.ImageAlign = ContentAlignment.TopCenter;
-                bt.TextAlign = ContentAlignment.BottomCenter;
-                bt.FlatStyle = FlatStyle.Flat;
-                bt.FlatAppearance.BorderSize = 0;
-                bt.Size = new Size(219, 178);
-                bt.Text = i.M_Ten + "\nGiá:" + i.M_Gia + " VNĐ";
-                bt.Font = new Font("Arial", 12, FontStyle.Bold);
-                bt.BackgroundImageLayout = ImageLayout.Stretch;
-                flowLayoutPanel1.Controls.Add(bt);
-                bt.Click += bt_Click;
-                
+                tenMons.Add(item.Cells[1].Value.ToString());
             }
+
+            flowLayoutPanel1.Controls.Clear();
+            List<Mon> monGoiY = _thuatToan.GetTop5MonGoiY(tenMons);
+            createBtnMon(monGoiY);
         }
 
         void btdm_Click(object sender, EventArgs e)
@@ -127,6 +135,10 @@ namespace FormControl.Forms
             if (clickedButton.Text == "Tất cả")
             {
                 createBtnAllMon();
+            }
+            else if (clickedButton.Text == "Gợi ý")
+            {
+                loadMonGoiY();
             }
             else
             {
@@ -180,7 +192,7 @@ namespace FormControl.Forms
         private int currentOrderNumber = 1;
         void bt_Click(object sender, EventArgs e)
         {
-            Button bt = sender as Button;
+            BunifuTileButton bt = sender as BunifuTileButton;
             if (bt != null)
             {
                 Mon mon = bt.Tag as Mon;
@@ -223,22 +235,30 @@ namespace FormControl.Forms
         {
             DAL_HoaDon dalHd = new DAL_HoaDon();    
             DAL_Order dalOr = new DAL_Order();
-            DataGridViewRow row = dgvOD.CurrentRow;
+            //DataGridViewRow row = dgvOD.CurrentRow;
             HoaDon hd = dalHd.insert(taikhoan.TK_NhanVien,tableNumber);
+            foreach(DataGridViewRow row in dgvOD.Rows)
+            {
 
-            string tenMon = row.Cells["Ten_Mon"].Value.ToString();
-            int SoLuong = int.Parse(row.Cells["SoLuong"].Value.ToString());
-            int DonGia = int.Parse(row.Cells["DonGia"].Value.ToString());
-            int Gia = int.Parse(row.Cells["Gia"].Value.ToString());
-            string GhiChu = "";
-            DateTime ThoiGian = DateTime.Now;
-            dalOr.insertOrder(tenMon,hd.HD_Id, SoLuong, ThoiGian, DonGia);
+                string tenMon = row.Cells["Ten_Mon"].Value.ToString();
+                int SoLuong = int.Parse(row.Cells["SoLuong"].Value.ToString());
+                int DonGia = int.Parse(row.Cells["DonGia"].Value.ToString());
+                int Gia = int.Parse(row.Cells["Gia"].Value.ToString());
+                string GhiChu = "";
+                DateTime ThoiGian = DateTime.Now;
+                dalOr.insertOrder(tenMon, hd.HD_Id, SoLuong, ThoiGian, DonGia);
+               
+            }    
+
             MessageBox.Show("Gọi món thành công~~");
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-
+            int ttien = int.Parse(txtThanhTien.Text.ToString());
+            DAL_HoaDon dalHd = new DAL_HoaDon();
+            dalHd.PayHD(tableNumber, ttien);
+            MessageBox.Show("Bàn "+tableNumber+" đã thanh toán thành công!");
         }
 
         private void frmChonMon_Load(object sender, EventArgs e)
@@ -255,16 +275,19 @@ namespace FormControl.Forms
             if (hd.HD_TrangThai == 0)
             {
                 
+
                 List<OrDer> or = dalOr.getOrderList(hd.HD_Id);
                 for(int i = 0; i < or.Count; i++)
                 {
-                    DataGridViewRow row = (DataGridViewRow)(dgvOD.Rows[0].Clone());
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dgvOD);
                     row.Cells[0].Value = i + 1;
                     row.Cells[1].Value = or[i].M_Ten;
                     row.Cells[2].Value = or[i].O_DonGia;
                     row.Cells[3].Value = or[i].O_SoLuong;
                     row.Cells[4].Value = or[i].O_DonGia * or[i].O_SoLuong;
                     dgvOD.Rows.Add(row);
+                    UpdateTotalPrice();
                 }
 
             }

@@ -182,6 +182,7 @@ namespace FormControl.Forms
                     int donGia = int.Parse(row.Cells[5].Value.ToString());
                     ctNhapDal.insert(nlId, hd.HDN_Id, sl, donGia);
                     ctDal.updateDeliveredQuantity(pdID, nlId, sl);
+                    nlDal.updateQuantity(nlId, sl, _user.TK_NhanVien);
                 }
                 Message.Message.showCreateSuccessfully("hóa đơn nhập có mã " + hd.HDN_Id);
                 loadIncredientOrderDetail();

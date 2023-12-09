@@ -51,9 +51,6 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="Report">
-      <HintPath>..\Report\bin\Debug\Report.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -257,6 +254,10 @@
     <ProjectReference Include="..\CustomControl\CustomControl.csproj">
       <Project>{694652D6-5CBD-4201-B81F-5525F5A15691}</Project>
       <Name>CustomControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Report\Report.csproj">
+      <Project>{a54a434c-792e-42d5-ae91-6c819f6657b7}</Project>
+      <Name>Report</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -159,6 +159,7 @@
             this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHoaDon.Textcolor = System.Drawing.Color.Black;
             this.btnHoaDon.TextFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnThoat
             // 

@@ -21,13 +21,21 @@ namespace BLL_DAL
             or.O_SoLuong = soLuong;
             or.O_ThoiGian  = thoiGian;
             or.O_DonGia = donGia;
-            _context.OrDers.InsertOnSubmit( or );
+            or.O_Gia = donGia * soLuong;
+            _context.OrDers.InsertOnSubmit(or);
             _context.SubmitChanges();
         }
         public List<OrDer> getOrderList(int HD_id)
         {
             return _context.OrDers.Where(t=>t.HD_Id == HD_id).ToList();
         }
+
+        public List<string> getTenMonTheoHDID(int idHD)
+        {
+            var tenMon = _context.OrDers.Where(o => o.HD_Id == idHD).Select(o => o.M_Ten).ToList();
+            return tenMon;
+        }
+
         //private int GenerateUniqueHD_Id()
         //{
         //    // Lấy ID lớn nhất hiện tại trong bảng HOADON

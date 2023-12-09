@@ -138,6 +138,7 @@ namespace PTPM_QLMiCay.GUI
             this.txt_MK.Size = new System.Drawing.Size(370, 29);
             this.txt_MK.TabIndex = 2;
             this.txt_MK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_MK.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_MK_KeyDown);
             // 
             // bunifuSeparator2
             // 

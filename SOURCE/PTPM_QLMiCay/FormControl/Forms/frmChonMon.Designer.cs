@@ -77,6 +77,7 @@
             // 
             // dgvOD
             // 
+            this.dgvOD.AllowUserToAddRows = false;
             this.dgvOD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOD.BackgroundColor = System.Drawing.Color.White;
             this.dgvOD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -278,6 +279,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmChonMon";
             this.Text = "frmChonMon";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChonMon_Load);
             this.panel1.ResumeLayout(false);
             this.cGroupBox2.ResumeLayout(false);

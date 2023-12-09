@@ -64,5 +64,13 @@ namespace PTPM_QLMiCay.GUI
         {
 
         }
+
+        private void txt_MK_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btn_DN_Click(sender, e);
+            }
+        }
     }
 }

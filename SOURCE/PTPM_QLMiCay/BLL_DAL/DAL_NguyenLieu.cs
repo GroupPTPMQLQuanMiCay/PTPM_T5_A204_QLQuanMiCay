@@ -24,7 +24,7 @@ namespace BLL_DAL
         public object getIncredientBySupplier(int Id)
         {
             return _context.NguyenLieus.Where(nl => nl.isDeleted == false).Where(i => i.NCC_Id == Id)
-                            .Select(i => new {i.NL_Id, i.NL_Ten, i.NL_DonViTinh, i.NL_SoLuong})
+                            .Select(i => new { i.NL_Id, i.NL_Ten, i.NL_DonViTinh, i.NL_SoLuong })
                             .ToList();
         }
 
@@ -58,7 +58,8 @@ namespace BLL_DAL
                 _context.NguyenLieus.InsertOnSubmit(nl);
                 _context.SubmitChanges();
                 return true;
-            } catch
+            }
+            catch
             {
                 return false;
             }
@@ -72,11 +73,11 @@ namespace BLL_DAL
                 int sl = int.Parse(soLuong);
                 int nccID = int.Parse(nccId);
                 NguyenLieu nlieu = _context.NguyenLieus.Where(nl => nl.NL_Id == nl_ID).FirstOrDefault();
-                if(nlieu != null)
+                if (nlieu != null)
                 {
                     nlieu.NL_Ten = ten;
-                    nlieu.NL_DonViTinh= donViTinh;
-                    nlieu.NL_SoLuong= sl;
+                    nlieu.NL_DonViTinh = donViTinh;
+                    nlieu.NL_SoLuong = sl;
                     nlieu.NCC_Id = nccID;
                     nlieu.updatedBy = nguoiDung;
                     nlieu.updatedAt = DateTime.Now;
@@ -112,6 +113,28 @@ namespace BLL_DAL
                 {
                     return false;
                 }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool updateQuantity(int nl_id, int soLuong, string nguoiDung)
+        {
+            try
+            {
+                var nlieu = _context.NguyenLieus.Where(x => x.NL_Id == nl_id && x.isDeleted == false).FirstOrDefault();
+                if (nlieu == null)
+                {
+                    return false;
+                }
+
+                nlieu.NL_SoLuong = nlieu.NL_SoLuong + soLuong;
+                nlieu.updatedAt = DateTime.Now;
+                nlieu.updatedBy = nguoiDung;
+                _context.SubmitChanges();
+                return true;
             }
             catch
             {
