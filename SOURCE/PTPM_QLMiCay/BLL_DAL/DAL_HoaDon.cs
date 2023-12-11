@@ -41,5 +41,28 @@ namespace BLL_DAL
                 _context.SubmitChanges();
             }
         }
+
+        public int removeHD(int Id_hd)
+        {
+            // 0 thanh cong
+            // -1 ngoai le error
+            // -2 khong ton tai
+            try
+            {
+                HoaDon HDTemp = _context.HoaDons.FirstOrDefault(m => m.HD_Id == Id_hd);
+                if (HDTemp != null)//or co ton tai hay khong
+                {
+                    _context.HoaDons.DeleteOnSubmit(HDTemp);
+                    _context.SubmitChanges();
+                    return 0;
+                }
+                return -2;
+
+            }
+            catch (Exception e)
+            {
+                return -1;
+            }
+        }
     }
 }

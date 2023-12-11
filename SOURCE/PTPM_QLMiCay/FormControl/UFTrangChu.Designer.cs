@@ -95,7 +95,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Name = "UFTrangChu";
-            this.Size = new System.Drawing.Size(908, 621);
+            this.Size = new System.Drawing.Size(908, 591);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

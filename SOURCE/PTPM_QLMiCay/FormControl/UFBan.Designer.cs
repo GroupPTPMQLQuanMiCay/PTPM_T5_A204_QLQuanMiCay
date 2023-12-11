@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFBan));
             this.panelLeft = new System.Windows.Forms.Panel();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
+            this.BanTrong = new CustomControl.ControlCustom.CButton();
             this.btnDSbanTrong = new CustomControl.ControlCustom.CButton();
             this.btnChinhSuaBan = new CustomControl.ControlCustom.CButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.BanTrong = new CustomControl.ControlCustom.CButton();
             this.panelLeft.SuspendLayout();
             this.cGroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,32 @@
             this.cGroupBox1.TabIndex = 0;
             this.cGroupBox1.TabStop = false;
             this.cGroupBox1.Text = "Chức năng";
+            // 
+            // BanTrong
+            // 
+            this.BanTrong.ActiveBorderThickness = 1;
+            this.BanTrong.ActiveCornerRadius = 20;
+            this.BanTrong.ActiveFillColor = System.Drawing.Color.Orange;
+            this.BanTrong.ActiveForecolor = System.Drawing.Color.White;
+            this.BanTrong.ActiveLineColor = System.Drawing.Color.Orange;
+            this.BanTrong.BackColor = System.Drawing.Color.White;
+            this.BanTrong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BanTrong.BackgroundImage")));
+            this.BanTrong.ButtonText = "Bàn trống";
+            this.BanTrong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BanTrong.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.BanTrong.ForeColor = System.Drawing.Color.Orange;
+            this.BanTrong.IdleBorderThickness = 1;
+            this.BanTrong.IdleCornerRadius = 20;
+            this.BanTrong.IdleFillColor = System.Drawing.Color.White;
+            this.BanTrong.IdleForecolor = System.Drawing.Color.Orange;
+            this.BanTrong.IdleLineColor = System.Drawing.Color.Orange;
+            this.BanTrong.Location = new System.Drawing.Point(37, 84);
+            this.BanTrong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BanTrong.Name = "BanTrong";
+            this.BanTrong.Size = new System.Drawing.Size(163, 41);
+            this.BanTrong.TabIndex = 22;
+            this.BanTrong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BanTrong.Click += new System.EventHandler(this.BanTrong_Click);
             // 
             // btnDSbanTrong
             // 
@@ -134,32 +160,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(852, 606);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // BanTrong
-            // 
-            this.BanTrong.ActiveBorderThickness = 1;
-            this.BanTrong.ActiveCornerRadius = 20;
-            this.BanTrong.ActiveFillColor = System.Drawing.Color.Orange;
-            this.BanTrong.ActiveForecolor = System.Drawing.Color.White;
-            this.BanTrong.ActiveLineColor = System.Drawing.Color.Orange;
-            this.BanTrong.BackColor = System.Drawing.Color.White;
-            this.BanTrong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BanTrong.BackgroundImage")));
-            this.BanTrong.ButtonText = "Bàn trống";
-            this.BanTrong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BanTrong.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BanTrong.ForeColor = System.Drawing.Color.Orange;
-            this.BanTrong.IdleBorderThickness = 1;
-            this.BanTrong.IdleCornerRadius = 20;
-            this.BanTrong.IdleFillColor = System.Drawing.Color.White;
-            this.BanTrong.IdleForecolor = System.Drawing.Color.Orange;
-            this.BanTrong.IdleLineColor = System.Drawing.Color.Orange;
-            this.BanTrong.Location = new System.Drawing.Point(37, 84);
-            this.BanTrong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BanTrong.Name = "BanTrong";
-            this.BanTrong.Size = new System.Drawing.Size(163, 41);
-            this.BanTrong.TabIndex = 22;
-            this.BanTrong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BanTrong.Click += new System.EventHandler(this.BanTrong_Click);
             // 
             // UFBan
             // 

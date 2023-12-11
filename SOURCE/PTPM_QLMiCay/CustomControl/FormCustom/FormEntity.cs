@@ -21,7 +21,7 @@ namespace CustomControl.FormCustom
             //this.FormBorderStyle = FormBorderStyle.None;
             this.MouseDown += FormEntity_MouseDown;
             this.MouseMove += FormEntity_MouseMove;
-            
+            //this.Size = new Size(1207, 700);
         }
 
         private void FormEntity_MouseDown(object sender, MouseEventArgs e)

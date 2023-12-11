@@ -52,7 +52,7 @@ namespace FormControl.Forms
         {
             foreach (Mon i in mons)
             {
-                Image image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Images\" + i.M_IMG + "");
+                Image image = Image.FromFile(@"D:\1.Univer\Semester 7\Smart Application Software Development\PTPM\PTPM_T5_A204_QLQuanMiCay\SOURCE\PTPM_QLMiCay\CustomControl\Images\"+i.M_IMG +"");
                 BunifuTileButton button = new BunifuTileButton();
                 button.Image = image;
                 button.BackColor = Color.Transparent;
@@ -289,6 +289,7 @@ namespace FormControl.Forms
                     dgvOD.Rows.Add(row);
                     UpdateTotalPrice();
                 }
+                loadTableEmty();
 
             }
             else
@@ -297,5 +298,52 @@ namespace FormControl.Forms
             }
              
         }
+
+        public void loadTableEmty()
+        {
+            DAL_Ban dalBan = new DAL_Ban(); 
+
+            List<int> banList = dalBan.loadBanHD(); 
+            CboBanTrong.DataSource = banList;
+            CboBanTrong.DisplayMember = "B_SoBan";
+
+            
+        }
+
+        private void btnChuyenBan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DAL_Order dalOR = new DAL_Order();
+                DAL_HoaDon dalHD = new DAL_HoaDon();
+
+                int newtable = int.Parse(CboBanTrong.SelectedValue.ToString());
+                int oldtable = tableNumber;
+                HoaDon hd_oldTable = dalHD.getLatestHD(oldtable);
+                List<OrDer> order_oldTable = dalOR.getOrderList(hd_oldTable.HD_Id);
+
+
+                //thêm cái hóa đơn cho bàn cần chuyển tới.
+                HoaDon hd_newtable = dalHD.insert(taikhoan.TK_NhanVien, newtable);
+                foreach (var or in order_oldTable)
+                {
+                    dalOR.insertOrder(or.M_Ten, hd_newtable.HD_Id, or.O_SoLuong, or.O_ThoiGian, or.O_DonGia);
+                }
+
+                //Xóa thoongg tin bàn củ
+                foreach (var or in order_oldTable)
+                {
+                    dalOR.removeMon(hd_oldTable.HD_Id, or.M_Ten);
+
+                }
+                dalHD.removeHD(hd_oldTable.HD_Id);
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
+        }
+       
     }
 }
