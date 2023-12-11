@@ -37,12 +37,34 @@ namespace PTPM_QLMiCay.GUI
             panel_Body.Controls.Add(childForm);
             panel_Body.Dock = DockStyle.Fill;
         }
-        private void btnTrangChu_Click(object sender, EventArgs e)
+
+
+
+        private void fTrangChu_Load(object sender, EventArgs e)
         {
             OpenChildFormCT(ufTrangChu);
         }
 
-        private void fTrangChu_Load(object sender, EventArgs e)
+        private void ShowNhomQuyen(object sender, EventArgs e)
+        {
+            OpenChildFormCT(ufNhomQuyen);
+        }
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void fTrangChu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.formDangNhap.Show();
+        }
+
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
         {
             OpenChildFormCT(ufTrangChu);
         }
@@ -51,7 +73,7 @@ namespace PTPM_QLMiCay.GUI
         {
             ufNguyenLieu = new UFNguyenLieu(taiKhoan);
 
-            if(taiKhoan.TK_NguoiDung!="sa")
+            if (taiKhoan.TK_NguoiDung != "sa")
             {
                 int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_NL");
 
@@ -162,49 +184,6 @@ namespace PTPM_QLMiCay.GUI
             OpenChildFormCT(ufNhanVien);
         }
 
-        private void btnQuyen_Click(object sender, EventArgs e)
-        {
-            ufQuyen = new UFQuyen();
-            if (taiKhoan.TK_NguoiDung != "sa")
-            {
-                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_Q");
-
-                if (id == 0 || id == 1)
-                {
-                    MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
-                    ufQuyen = null;
-                }
-                else if (id == 2)
-                {
-                    MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
-
-                    ufQuyen.Enabled = false;
-                }
-                else
-                    ufQuyen.Enabled = true;
-            }
-
-            if(ufQuyen!=null)
-            {
-                ufQuyen.ShowNhomQuyen += ShowNhomQuyen;
-                OpenChildFormCT(ufQuyen);
-            }
-
-        }
-        private void ShowNhomQuyen(object sender, EventArgs e)
-        {
-            OpenChildFormCT(ufNhomQuyen);
-        }
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void fTrangChu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Program.formDangNhap.Show();
-        }
-
         private void btnBan_Click(object sender, EventArgs e)
         {
             ufBan = new UFBan(taiKhoan);
@@ -231,11 +210,53 @@ namespace PTPM_QLMiCay.GUI
             {
                 OpenChildFormCT(ufBan);
             }
-
-            //OpenChildFormCT(ufBan);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuyen_Click_1(object sender, EventArgs e)
+        {
+            ufQuyen = new UFQuyen();
+            if (taiKhoan.TK_NguoiDung != "sa")
+            {
+                int id = dal_PhanQuyen.getQuyenID(taiKhoan.TK_NguoiDung, "MH_Q");
+
+                if (id == 0 || id == 1)
+                {
+                    MessageBox.Show("Bạn không có quyền truy cập", "Thông Báo");
+                    ufQuyen = null;
+                }
+                else if (id == 2)
+                {
+                    MessageBox.Show("Bạn không có quyền thao tác", "Thông Báo");
+
+                    ufQuyen.Enabled = false;
+                }
+                else
+                    ufQuyen.Enabled = true;
+            }
+
+            if (ufQuyen != null)
+            {
+                ufQuyen.ShowNhomQuyen += ShowNhomQuyen;
+                OpenChildFormCT(ufQuyen);
+            }
+        }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel_Body_Paint(object sender, PaintEventArgs e)
         {
 
         }

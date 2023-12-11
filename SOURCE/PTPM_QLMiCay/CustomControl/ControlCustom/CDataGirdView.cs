@@ -11,7 +11,6 @@ namespace CustomControl.ControlCustom
             this.Margin = new Padding(3, 3, 3, 3);
             //this.AllowUserToResizeRows = false;
             //DataGridViewCellStyle alternatingRowsStyle = new DataGridViewCellStyle();
-            //alternatingRowsStyle.SelectionBackColor = Color.Orange;
             //alternatingRowsStyle.ForeColor = Color.Orange;
             //alternatingRowsStyle.Font = new Font("Segoe UI", 9,FontStyle.Regular, (GraphicsUnit)3,0,false);
             //this.AlternatingRowsDefaultCellStyle = alternatingRowsStyle;
@@ -20,7 +19,12 @@ namespace CustomControl.ControlCustom
             this.Dock = DockStyle.Fill;
             this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.RowHeadersVisible = false;
-            this.GridColor = Color.White;
+            this.GridColor = Color.FromArgb(128, 128, 255);
+            this.ForeColor = Color.Black;
+            this.Font = new Font("Segoe UI", 13);
+            DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
+            cellStyle.BackColor = Color.WhiteSmoke;
+            this.AlternatingRowsDefaultCellStyle = cellStyle;
         }
     }
 }

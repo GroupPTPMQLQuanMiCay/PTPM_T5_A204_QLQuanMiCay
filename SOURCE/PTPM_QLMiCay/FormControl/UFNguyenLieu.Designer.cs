@@ -49,10 +49,10 @@
             this.btnNhapNL = new CustomControl.ControlCustom.CButton();
             this.btnDatNL = new CustomControl.ControlCustom.CButton();
             this.cGroupBox1 = new CustomControl.ControlCustom.CGroupBox();
-            this.cboDonViTinh = new System.Windows.Forms.ComboBox();
-            this.txtDonGia = new CustomControl.ControlCustom.CNumericTextbox();
-            this.txtTenNL = new CustomControl.ControlCustom.CTextBox();
+            this.txtDonGia = new CustomControl.ControlCustom.CTextBox();
             this.txtId = new CustomControl.ControlCustom.CTextBox();
+            this.txtTenNL = new CustomControl.ControlCustom.CTextBox();
+            this.cboDonViTinh = new System.Windows.Forms.ComboBox();
             this.cboNhaCungCap = new CustomControl.ControlCustom.CCombobox();
             this.cLable5 = new CustomControl.ControlCustom.CLable();
             this.cLable4 = new CustomControl.ControlCustom.CLable();
@@ -73,7 +73,7 @@
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(10, 40);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(1076, 35);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(1131, 35);
             this.bunifuSeparator1.TabIndex = 5;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -82,7 +82,7 @@
             // 
             this.cLableTitle1.AutoSize = true;
             this.cLableTitle1.Font = new System.Drawing.Font("Segoe UI", 21F);
-            this.cLableTitle1.ForeColor = System.Drawing.Color.Orange;
+            this.cLableTitle1.ForeColor = System.Drawing.Color.Black;
             this.cLableTitle1.Location = new System.Drawing.Point(7, 1);
             this.cLableTitle1.Name = "cLableTitle1";
             this.cLableTitle1.Size = new System.Drawing.Size(174, 38);
@@ -94,10 +94,10 @@
             this.cGroupBox4.BackColor = System.Drawing.Color.White;
             this.cGroupBox4.Controls.Add(this.drvNguyenLieu);
             this.cGroupBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cGroupBox4.ForeColor = System.Drawing.Color.Orange;
+            this.cGroupBox4.ForeColor = System.Drawing.Color.Black;
             this.cGroupBox4.Location = new System.Drawing.Point(476, 164);
             this.cGroupBox4.Name = "cGroupBox4";
-            this.cGroupBox4.Size = new System.Drawing.Size(610, 414);
+            this.cGroupBox4.Size = new System.Drawing.Size(665, 505);
             this.cGroupBox4.TabIndex = 3;
             this.cGroupBox4.TabStop = false;
             this.cGroupBox4.Text = "Danh sách nguyên liệu";
@@ -106,9 +106,10 @@
             // drvNguyenLieu
             // 
             this.drvNguyenLieu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 13F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.drvNguyenLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.drvNguyenLieu.BackgroundColor = System.Drawing.Color.White;
             this.drvNguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -118,12 +119,13 @@
             this.Column3,
             this.Column4});
             this.drvNguyenLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drvNguyenLieu.GridColor = System.Drawing.Color.White;
+            this.drvNguyenLieu.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.drvNguyenLieu.GridColor = System.Drawing.Color.WhiteSmoke;
             this.drvNguyenLieu.Location = new System.Drawing.Point(3, 25);
             this.drvNguyenLieu.Name = "drvNguyenLieu";
             this.drvNguyenLieu.RowHeadersVisible = false;
             this.drvNguyenLieu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.drvNguyenLieu.Size = new System.Drawing.Size(604, 386);
+            this.drvNguyenLieu.Size = new System.Drawing.Size(659, 477);
             this.drvNguyenLieu.TabIndex = 0;
             this.drvNguyenLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drvNguyenLieu_CellClick);
             // 
@@ -160,7 +162,7 @@
             this.cGroupBox3.BackColor = System.Drawing.Color.White;
             this.cGroupBox3.Controls.Add(this.txtTimTenNL);
             this.cGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cGroupBox3.ForeColor = System.Drawing.Color.Orange;
+            this.cGroupBox3.ForeColor = System.Drawing.Color.Black;
             this.cGroupBox3.Location = new System.Drawing.Point(476, 80);
             this.cGroupBox3.Name = "cGroupBox3";
             this.cGroupBox3.Size = new System.Drawing.Size(379, 69);
@@ -171,19 +173,19 @@
             // txtTimTenNL
             // 
             this.txtTimTenNL.BackColor = System.Drawing.Color.White;
-            this.txtTimTenNL.BorderColorFocused = System.Drawing.Color.Orange;
-            this.txtTimTenNL.BorderColorIdle = System.Drawing.Color.Orange;
-            this.txtTimTenNL.BorderColorMouseHover = System.Drawing.Color.Orange;
+            this.txtTimTenNL.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtTimTenNL.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtTimTenNL.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.txtTimTenNL.BorderThickness = 1;
             this.txtTimTenNL.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTimTenNL.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtTimTenNL.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.txtTimTenNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTimTenNL.isPassword = false;
             this.txtTimTenNL.Location = new System.Drawing.Point(7, 29);
-            this.txtTimTenNL.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimTenNL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimTenNL.Name = "txtTimTenNL";
             this.txtTimTenNL.Size = new System.Drawing.Size(360, 29);
-            this.txtTimTenNL.TabIndex = 11;
+            this.txtTimTenNL.TabIndex = 0;
             this.txtTimTenNL.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTimTenNL.OnValueChanged += new System.EventHandler(this.txtTimTenNL_OnValueChanged);
             // 
@@ -198,7 +200,7 @@
             this.cGroupBox2.Controls.Add(this.btnNhapNL);
             this.cGroupBox2.Controls.Add(this.btnDatNL);
             this.cGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cGroupBox2.ForeColor = System.Drawing.Color.Orange;
+            this.cGroupBox2.ForeColor = System.Drawing.Color.Black;
             this.cGroupBox2.Location = new System.Drawing.Point(3, 312);
             this.cGroupBox2.Name = "cGroupBox2";
             this.cGroupBox2.Size = new System.Drawing.Size(458, 266);
@@ -210,51 +212,51 @@
             // 
             this.btnLuu.ActiveBorderThickness = 1;
             this.btnLuu.ActiveCornerRadius = 20;
-            this.btnLuu.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnLuu.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnLuu.ActiveForecolor = System.Drawing.Color.White;
-            this.btnLuu.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnLuu.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnLuu.BackColor = System.Drawing.Color.White;
             this.btnLuu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLuu.BackgroundImage")));
             this.btnLuu.ButtonText = "Lưu";
             this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnLuu.ForeColor = System.Drawing.Color.Orange;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnLuu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnLuu.IdleBorderThickness = 1;
             this.btnLuu.IdleCornerRadius = 20;
             this.btnLuu.IdleFillColor = System.Drawing.Color.White;
-            this.btnLuu.IdleForecolor = System.Drawing.Color.Orange;
-            this.btnLuu.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnLuu.Location = new System.Drawing.Point(134, 217);
+            this.btnLuu.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLuu.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLuu.Location = new System.Drawing.Point(134, 213);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(163, 41);
-            this.btnLuu.TabIndex = 24;
+            this.btnLuu.Size = new System.Drawing.Size(163, 45);
+            this.btnLuu.TabIndex = 29;
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
             // btnSua
             // 
             this.btnSua.ActiveBorderThickness = 1;
             this.btnSua.ActiveCornerRadius = 20;
-            this.btnSua.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnSua.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSua.ActiveForecolor = System.Drawing.Color.White;
-            this.btnSua.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnSua.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSua.BackColor = System.Drawing.Color.White;
             this.btnSua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSua.BackgroundImage")));
             this.btnSua.ButtonText = "Sửa";
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnSua.ForeColor = System.Drawing.Color.Orange;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSua.IdleBorderThickness = 1;
             this.btnSua.IdleCornerRadius = 20;
             this.btnSua.IdleFillColor = System.Drawing.Color.White;
-            this.btnSua.IdleForecolor = System.Drawing.Color.Orange;
-            this.btnSua.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnSua.Location = new System.Drawing.Point(318, 166);
+            this.btnSua.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSua.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSua.Location = new System.Drawing.Point(319, 162);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(87, 41);
-            this.btnSua.TabIndex = 23;
+            this.btnSua.Size = new System.Drawing.Size(86, 45);
+            this.btnSua.TabIndex = 28;
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -262,25 +264,25 @@
             // 
             this.btnXoa.ActiveBorderThickness = 1;
             this.btnXoa.ActiveCornerRadius = 20;
-            this.btnXoa.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnXoa.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnXoa.ActiveForecolor = System.Drawing.Color.White;
-            this.btnXoa.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnXoa.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnXoa.BackColor = System.Drawing.Color.White;
             this.btnXoa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.BackgroundImage")));
             this.btnXoa.ButtonText = "Xóa";
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnXoa.ForeColor = System.Drawing.Color.Orange;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnXoa.IdleBorderThickness = 1;
             this.btnXoa.IdleCornerRadius = 20;
             this.btnXoa.IdleFillColor = System.Drawing.Color.White;
-            this.btnXoa.IdleForecolor = System.Drawing.Color.Orange;
-            this.btnXoa.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnXoa.Location = new System.Drawing.Point(166, 166);
+            this.btnXoa.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXoa.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXoa.Location = new System.Drawing.Point(167, 162);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(87, 41);
-            this.btnXoa.TabIndex = 23;
+            this.btnXoa.Size = new System.Drawing.Size(86, 45);
+            this.btnXoa.TabIndex = 27;
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -288,25 +290,25 @@
             // 
             this.btnThem.ActiveBorderThickness = 1;
             this.btnThem.ActiveCornerRadius = 20;
-            this.btnThem.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnThem.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnThem.ActiveForecolor = System.Drawing.Color.White;
-            this.btnThem.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnThem.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnThem.BackColor = System.Drawing.Color.White;
             this.btnThem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThem.BackgroundImage")));
             this.btnThem.ButtonText = "Thêm";
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnThem.ForeColor = System.Drawing.Color.Orange;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnThem.IdleBorderThickness = 1;
             this.btnThem.IdleCornerRadius = 20;
             this.btnThem.IdleFillColor = System.Drawing.Color.White;
-            this.btnThem.IdleForecolor = System.Drawing.Color.Orange;
-            this.btnThem.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnThem.Location = new System.Drawing.Point(10, 168);
+            this.btnThem.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnThem.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnThem.Location = new System.Drawing.Point(11, 162);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(87, 41);
-            this.btnThem.TabIndex = 23;
+            this.btnThem.Size = new System.Drawing.Size(86, 45);
+            this.btnThem.TabIndex = 26;
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -314,25 +316,25 @@
             // 
             this.btnHoaDon.ActiveBorderThickness = 1;
             this.btnHoaDon.ActiveCornerRadius = 20;
-            this.btnHoaDon.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnHoaDon.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnHoaDon.ActiveForecolor = System.Drawing.Color.White;
-            this.btnHoaDon.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnHoaDon.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnHoaDon.BackColor = System.Drawing.Color.White;
             this.btnHoaDon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHoaDon.BackgroundImage")));
             this.btnHoaDon.ButtonText = "Hóa đơn nhập";
             this.btnHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnHoaDon.ForeColor = System.Drawing.Color.Orange;
+            this.btnHoaDon.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnHoaDon.IdleBorderThickness = 1;
             this.btnHoaDon.IdleCornerRadius = 20;
             this.btnHoaDon.IdleFillColor = System.Drawing.Color.White;
-            this.btnHoaDon.IdleForecolor = System.Drawing.Color.Orange;
-            this.btnHoaDon.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnHoaDon.Location = new System.Drawing.Point(124, 91);
+            this.btnHoaDon.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnHoaDon.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnHoaDon.Location = new System.Drawing.Point(134, 91);
             this.btnHoaDon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(163, 41);
-            this.btnHoaDon.TabIndex = 22;
+            this.btnHoaDon.Size = new System.Drawing.Size(163, 45);
+            this.btnHoaDon.TabIndex = 25;
             this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
@@ -340,24 +342,24 @@
             // 
             this.btnNhapNL.ActiveBorderThickness = 1;
             this.btnNhapNL.ActiveCornerRadius = 20;
-            this.btnNhapNL.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnNhapNL.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnNhapNL.ActiveForecolor = System.Drawing.Color.White;
-            this.btnNhapNL.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnNhapNL.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnNhapNL.BackColor = System.Drawing.Color.White;
             this.btnNhapNL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNhapNL.BackgroundImage")));
             this.btnNhapNL.ButtonText = "Nhập nguyên liệu";
             this.btnNhapNL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNhapNL.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnNhapNL.ForeColor = System.Drawing.Color.Orange;
+            this.btnNhapNL.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnNhapNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnNhapNL.IdleBorderThickness = 1;
             this.btnNhapNL.IdleCornerRadius = 20;
             this.btnNhapNL.IdleFillColor = System.Drawing.Color.White;
-            this.btnNhapNL.IdleForecolor = System.Drawing.Color.Orange;
-            this.btnNhapNL.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnNhapNL.Location = new System.Drawing.Point(242, 40);
+            this.btnNhapNL.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnNhapNL.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnNhapNL.Location = new System.Drawing.Point(242, 36);
             this.btnNhapNL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNhapNL.Name = "btnNhapNL";
-            this.btnNhapNL.Size = new System.Drawing.Size(163, 41);
+            this.btnNhapNL.Size = new System.Drawing.Size(163, 45);
             this.btnNhapNL.TabIndex = 22;
             this.btnNhapNL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnNhapNL.Click += new System.EventHandler(this.btnNhapNL_Click);
@@ -366,24 +368,24 @@
             // 
             this.btnDatNL.ActiveBorderThickness = 1;
             this.btnDatNL.ActiveCornerRadius = 20;
-            this.btnDatNL.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnDatNL.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDatNL.ActiveForecolor = System.Drawing.Color.White;
-            this.btnDatNL.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnDatNL.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDatNL.BackColor = System.Drawing.Color.White;
             this.btnDatNL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDatNL.BackgroundImage")));
             this.btnDatNL.ButtonText = "Đặt nguyên liệu";
             this.btnDatNL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDatNL.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnDatNL.ForeColor = System.Drawing.Color.Orange;
+            this.btnDatNL.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnDatNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDatNL.IdleBorderThickness = 1;
             this.btnDatNL.IdleCornerRadius = 20;
             this.btnDatNL.IdleFillColor = System.Drawing.Color.White;
-            this.btnDatNL.IdleForecolor = System.Drawing.Color.Orange;
-            this.btnDatNL.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnDatNL.Location = new System.Drawing.Point(10, 40);
+            this.btnDatNL.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDatNL.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDatNL.Location = new System.Drawing.Point(11, 36);
             this.btnDatNL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDatNL.Name = "btnDatNL";
-            this.btnDatNL.Size = new System.Drawing.Size(163, 41);
+            this.btnDatNL.Size = new System.Drawing.Size(163, 45);
             this.btnDatNL.TabIndex = 22;
             this.btnDatNL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDatNL.Click += new System.EventHandler(this.btnDatNL_Click);
@@ -391,10 +393,10 @@
             // cGroupBox1
             // 
             this.cGroupBox1.BackColor = System.Drawing.Color.White;
-            this.cGroupBox1.Controls.Add(this.cboDonViTinh);
             this.cGroupBox1.Controls.Add(this.txtDonGia);
-            this.cGroupBox1.Controls.Add(this.txtTenNL);
             this.cGroupBox1.Controls.Add(this.txtId);
+            this.cGroupBox1.Controls.Add(this.txtTenNL);
+            this.cGroupBox1.Controls.Add(this.cboDonViTinh);
             this.cGroupBox1.Controls.Add(this.cboNhaCungCap);
             this.cGroupBox1.Controls.Add(this.cLable5);
             this.cGroupBox1.Controls.Add(this.cLable4);
@@ -402,7 +404,7 @@
             this.cGroupBox1.Controls.Add(this.cLable2);
             this.cGroupBox1.Controls.Add(this.cLable1);
             this.cGroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cGroupBox1.ForeColor = System.Drawing.Color.Orange;
+            this.cGroupBox1.ForeColor = System.Drawing.Color.Black;
             this.cGroupBox1.Location = new System.Drawing.Point(3, 80);
             this.cGroupBox1.Name = "cGroupBox1";
             this.cGroupBox1.Size = new System.Drawing.Size(458, 226);
@@ -411,6 +413,60 @@
             this.cGroupBox1.Text = "Thông Tin Nguyên Liệu";
             this.cGroupBox1.Enter += new System.EventHandler(this.cGroupBox1_Enter);
             // 
+            // txtDonGia
+            // 
+            this.txtDonGia.BackColor = System.Drawing.Color.White;
+            this.txtDonGia.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtDonGia.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtDonGia.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtDonGia.BorderThickness = 1;
+            this.txtDonGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.txtDonGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDonGia.isPassword = false;
+            this.txtDonGia.Location = new System.Drawing.Point(242, 119);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(203, 29);
+            this.txtDonGia.TabIndex = 0;
+            this.txtDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.White;
+            this.txtId.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtId.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtId.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtId.BorderThickness = 1;
+            this.txtId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtId.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.txtId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtId.isPassword = false;
+            this.txtId.Location = new System.Drawing.Point(11, 118);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(203, 29);
+            this.txtId.TabIndex = 0;
+            this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtTenNL
+            // 
+            this.txtTenNL.BackColor = System.Drawing.Color.White;
+            this.txtTenNL.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtTenNL.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtTenNL.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtTenNL.BorderThickness = 1;
+            this.txtTenNL.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenNL.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.txtTenNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTenNL.isPassword = false;
+            this.txtTenNL.Location = new System.Drawing.Point(242, 54);
+            this.txtTenNL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenNL.Name = "txtTenNL";
+            this.txtTenNL.Size = new System.Drawing.Size(203, 29);
+            this.txtTenNL.TabIndex = 0;
+            this.txtTenNL.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // cboDonViTinh
             // 
             this.cboDonViTinh.FormattingEnabled = true;
@@ -418,60 +474,6 @@
             this.cboDonViTinh.Name = "cboDonViTinh";
             this.cboDonViTinh.Size = new System.Drawing.Size(202, 29);
             this.cboDonViTinh.TabIndex = 8;
-            // 
-            // txtDonGia
-            // 
-            this.txtDonGia.BackColor = System.Drawing.Color.White;
-            this.txtDonGia.BorderColorFocused = System.Drawing.Color.Orange;
-            this.txtDonGia.BorderColorIdle = System.Drawing.Color.Orange;
-            this.txtDonGia.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.txtDonGia.BorderThickness = 1;
-            this.txtDonGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDonGia.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.txtDonGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDonGia.isPassword = false;
-            this.txtDonGia.Location = new System.Drawing.Point(242, 118);
-            this.txtDonGia.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(203, 29);
-            this.txtDonGia.TabIndex = 0;
-            this.txtDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtTenNL
-            // 
-            this.txtTenNL.BackColor = System.Drawing.Color.White;
-            this.txtTenNL.BorderColorFocused = System.Drawing.Color.Orange;
-            this.txtTenNL.BorderColorIdle = System.Drawing.Color.Orange;
-            this.txtTenNL.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.txtTenNL.BorderThickness = 1;
-            this.txtTenNL.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenNL.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.txtTenNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTenNL.isPassword = false;
-            this.txtTenNL.Location = new System.Drawing.Point(242, 54);
-            this.txtTenNL.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenNL.Name = "txtTenNL";
-            this.txtTenNL.Size = new System.Drawing.Size(203, 29);
-            this.txtTenNL.TabIndex = 7;
-            this.txtTenNL.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtId
-            // 
-            this.txtId.BackColor = System.Drawing.Color.White;
-            this.txtId.BorderColorFocused = System.Drawing.Color.Orange;
-            this.txtId.BorderColorIdle = System.Drawing.Color.Orange;
-            this.txtId.BorderColorMouseHover = System.Drawing.Color.Orange;
-            this.txtId.BorderThickness = 1;
-            this.txtId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtId.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.txtId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtId.isPassword = false;
-            this.txtId.Location = new System.Drawing.Point(10, 118);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(203, 29);
-            this.txtId.TabIndex = 0;
-            this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // cboNhaCungCap
             // 
@@ -488,7 +490,7 @@
             // 
             this.cLable5.AutoSize = true;
             this.cLable5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cLable5.ForeColor = System.Drawing.Color.Orange;
+            this.cLable5.ForeColor = System.Drawing.Color.Black;
             this.cLable5.Location = new System.Drawing.Point(238, 29);
             this.cLable5.Name = "cLable5";
             this.cLable5.Size = new System.Drawing.Size(121, 21);
@@ -499,7 +501,7 @@
             // 
             this.cLable4.AutoSize = true;
             this.cLable4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cLable4.ForeColor = System.Drawing.Color.Orange;
+            this.cLable4.ForeColor = System.Drawing.Color.Black;
             this.cLable4.Location = new System.Drawing.Point(238, 93);
             this.cLable4.Name = "cLable4";
             this.cLable4.Size = new System.Drawing.Size(76, 21);
@@ -510,7 +512,7 @@
             // 
             this.cLable3.AutoSize = true;
             this.cLable3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cLable3.ForeColor = System.Drawing.Color.Orange;
+            this.cLable3.ForeColor = System.Drawing.Color.Black;
             this.cLable3.Location = new System.Drawing.Point(7, 159);
             this.cLable3.Name = "cLable3";
             this.cLable3.Size = new System.Drawing.Size(90, 21);
@@ -521,7 +523,7 @@
             // 
             this.cLable2.AutoSize = true;
             this.cLable2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cLable2.ForeColor = System.Drawing.Color.Orange;
+            this.cLable2.ForeColor = System.Drawing.Color.Black;
             this.cLable2.Location = new System.Drawing.Point(6, 93);
             this.cLable2.Name = "cLable2";
             this.cLable2.Size = new System.Drawing.Size(28, 21);
@@ -532,7 +534,7 @@
             // 
             this.cLable1.AutoSize = true;
             this.cLable1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cLable1.ForeColor = System.Drawing.Color.Orange;
+            this.cLable1.ForeColor = System.Drawing.Color.Black;
             this.cLable1.Location = new System.Drawing.Point(7, 29);
             this.cLable1.Name = "cLable1";
             this.cLable1.Size = new System.Drawing.Size(108, 21);
@@ -543,7 +545,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.cLableTitle1);
             this.Controls.Add(this.cGroupBox4);
@@ -551,7 +553,7 @@
             this.Controls.Add(this.cGroupBox2);
             this.Controls.Add(this.cGroupBox1);
             this.Name = "UFNguyenLieu";
-            this.Size = new System.Drawing.Size(1107, 605);
+            this.Size = new System.Drawing.Size(1164, 685);
             this.Load += new System.EventHandler(this.UFNguyenLieu_Load);
             this.cGroupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.drvNguyenLieu)).EndInit();
@@ -568,32 +570,32 @@
 
         private CustomControl.ControlCustom.CGroupBox cGroupBox1;
         private CustomControl.ControlCustom.CGroupBox cGroupBox2;
-        private CustomControl.ControlCustom.CTextBox txtId;
         private CustomControl.ControlCustom.CCombobox cboNhaCungCap;
         private CustomControl.ControlCustom.CLable cLable5;
         private CustomControl.ControlCustom.CLable cLable4;
         private CustomControl.ControlCustom.CLable cLable3;
         private CustomControl.ControlCustom.CLable cLable2;
         private CustomControl.ControlCustom.CLable cLable1;
-        private CustomControl.ControlCustom.CTextBox txtTenNL;
-        private CustomControl.ControlCustom.CButton btnHoaDon;
-        private CustomControl.ControlCustom.CButton btnNhapNL;
-        private CustomControl.ControlCustom.CButton btnDatNL;
-        private CustomControl.ControlCustom.CButton btnLuu;
-        private CustomControl.ControlCustom.CButton btnThem;
         private CustomControl.ControlCustom.CGroupBox cGroupBox3;
         private CustomControl.ControlCustom.CGroupBox cGroupBox4;
-        private CustomControl.ControlCustom.CTextBox txtTimTenNL;
         private CustomControl.ControlCustom.CDataGirdView drvNguyenLieu;
         private CustomControl.ControlCustom.CLableTitle cLableTitle1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private CustomControl.ControlCustom.CNumericTextbox txtDonGia;
         private System.Windows.Forms.ComboBox cboDonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private CustomControl.ControlCustom.CButton btnSua;
+        private CustomControl.ControlCustom.CTextBox txtTenNL;
+        private CustomControl.ControlCustom.CTextBox txtId;
+        private CustomControl.ControlCustom.CTextBox txtDonGia;
+        private CustomControl.ControlCustom.CButton btnDatNL;
+        private CustomControl.ControlCustom.CButton btnNhapNL;
+        private CustomControl.ControlCustom.CButton btnHoaDon;
+        private CustomControl.ControlCustom.CButton btnThem;
         private CustomControl.ControlCustom.CButton btnXoa;
+        private CustomControl.ControlCustom.CButton btnSua;
+        private CustomControl.ControlCustom.CButton btnLuu;
+        private CustomControl.ControlCustom.CTextBox txtTimTenNL;
     }
 }

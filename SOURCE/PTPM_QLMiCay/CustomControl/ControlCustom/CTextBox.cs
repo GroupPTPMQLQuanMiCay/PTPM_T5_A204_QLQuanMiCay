@@ -8,10 +8,10 @@ namespace CustomControl.ControlCustom
         public CTextBox() 
         {   
             this.BackColor = Color.White;
-            this.BorderColorFocused = Color.Orange;
-            this.BorderColorIdle = Color.Orange;
-            this.BorderColorMouseHover = Color.Orange;
-            this.Font = new Font("Century Gothic", 10);
+            this.BorderColorFocused = Color.FromArgb(128, 128, 255); 
+            this.BorderColorIdle = Color.FromArgb(128, 128, 255);
+            this.BorderColorMouseHover = Color.FromArgb(128, 128, 255);
+            this.Font = new Font("Segoe UI", 13);
             this.BorderThickness = 1;
             this.TabIndex = 0;
             this.Size=new Size(203, 29);

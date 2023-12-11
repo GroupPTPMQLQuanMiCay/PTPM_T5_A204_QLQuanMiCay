@@ -283,9 +283,9 @@ namespace FormControl.Forms
                     row.CreateCells(dgvOD);
                     row.Cells[0].Value = i + 1;
                     row.Cells[1].Value = or[i].M_Ten;
-                    row.Cells[2].Value = or[i].O_DonGia;
+                    row.Cells[2].Value = or[i].O_Gia;
                     row.Cells[3].Value = or[i].O_SoLuong;
-                    row.Cells[4].Value = or[i].O_DonGia * or[i].O_SoLuong;
+                    row.Cells[4].Value = or[i].O_Gia * or[i].O_SoLuong;
                     dgvOD.Rows.Add(row);
                     UpdateTotalPrice();
                 }

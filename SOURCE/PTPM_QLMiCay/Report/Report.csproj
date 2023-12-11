@@ -64,6 +64,12 @@
     <Compile Include="Global.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Syncfusion.Compression.Base.dll" />
+    <Content Include="Syncfusion.DocIO.Base.dll" />
+    <Content Include="Syncfusion.OfficeChart.Base.dll" />
+    <Content Include="Syncfusion.XlsIO.Base.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

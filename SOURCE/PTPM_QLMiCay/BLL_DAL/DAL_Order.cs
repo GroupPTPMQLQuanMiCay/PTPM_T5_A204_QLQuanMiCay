@@ -20,7 +20,7 @@ namespace BLL_DAL
             or.HD_Id = idHD;
             or.O_SoLuong = soLuong;
             or.O_ThoiGian  = thoiGian;
-            or.O_DonGia = donGia;
+            or.O_Gia = donGia;
             or.O_Gia = donGia * soLuong;
             _context.OrDers.InsertOnSubmit(or);
             _context.SubmitChanges();

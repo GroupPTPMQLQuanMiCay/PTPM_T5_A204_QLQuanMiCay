@@ -58,27 +58,6 @@ namespace FormControl
             drvNguyenLieu.DataSource = nguyenLieu.getAllIncredient();
         }
 
-        private void txtTimTenNL_OnValueChanged(object sender, EventArgs e)
-        {
-            string tenNL = txtTimTenNL.Text.Trim();
-
-            try
-            {
-                if ("".Equals(tenNL))
-                {
-                    drvNguyenLieu.DataSource = nguyenLieu.getAllIncredient();
-                }
-                else
-                {
-                    drvNguyenLieu.DataSource = nguyenLieu.getIncredientName(tenNL);
-                }
-            }
-            catch
-            {
-                return;
-            }
-        }
-
         private void cboNhaCungCap_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -108,58 +87,6 @@ namespace FormControl
                 txtTenNL.Text = row.Cells[1].Value.ToString();
                 cboDonViTinh.Text = row.Cells[2].Value.ToString();
                 txtDonGia.Text = row.Cells[3].Value.ToString();
-            }
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            IsAdd = btnLuu.Enabled = true;
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (IsAdd)
-            {
-                if (checkUserInputForAdding())
-                {
-                    try
-                    {
-                        if (nguyenLieu.insert(txtTenNL.Text, cboDonViTinh.Text, txtDonGia.Text, cboNhaCungCap.SelectedValue.ToString(), taiKhoan.TK_NhanVien))
-                        {
-                            MessageBox.Show("Thêm nguyên liệu thành công");
-                            loadIncredientTable();
-                        }
-                    }
-                    catch
-                    {
-                        Message.Message.showFailedDBExecution("thêm nguyên liệu", "nguyên liệu");
-                    } finally
-                    {
-                        btnLuu.Enabled = IsAdd = false;
-                    }
-                } 
-            }
-            else
-            {
-                if (checkUserInputForAdjusting())
-                {
-                    try
-                    {
-                        if (nguyenLieu.update(txtId.Text ,txtTenNL.Text, cboDonViTinh.Text, txtDonGia.Text, cboNhaCungCap.SelectedValue.ToString(), taiKhoan.TK_NhanVien))
-                        {
-                            MessageBox.Show("Cập nhật nguyên liệu thành công");
-                            loadIncredientTable();
-                        }
-                    }
-                    catch
-                    {
-                        Message.Message.showFailedDBExecution("sửa nguyên liệu", "nguyên liệu");
-                    }
-                    finally
-                    {
-                        btnLuu.Enabled = IsAdd = false;
-                    }
-                }
             }
         }
 
@@ -205,16 +132,42 @@ namespace FormControl
             return true;
         }
 
+        private void btnDatNL_Click(object sender, EventArgs e)
+        {
+            frmDatNguyenLieu frm = new frmDatNguyenLieu(taiKhoan);
+            frm.Show();
+        }
+
+        private void btnNhapNL_Click(object sender, EventArgs e)
+        {
+            frmNhapNguyenLieu frm = new frmNhapNguyenLieu(taiKhoan);
+            frm.Show();
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            frmHoaDonNhap frm = new frmHoaDonNhap(taiKhoan);
+            frm.Show();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            IsAdd = btnLuu.Enabled = true;
+        }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string nl_id = txtId.Text;
-            if (string.IsNullOrEmpty(nl_id)){
+            if (string.IsNullOrEmpty(nl_id))
+            {
                 Message.Message.showMissingInfoMessage("mã nguyên liệu", "xóa nguyên liệu");
                 return;
-            } else
+            }
+            else
             {
-                try { 
-                    if(nguyenLieu.delete(nl_id, taiKhoan.TK_NhanVien))
+                try
+                {
+                    if (nguyenLieu.delete(nl_id, taiKhoan.TK_NhanVien))
                     {
                         MessageBox.Show("Xóa nguyên liệu thành công");
                         loadIncredientTable();
@@ -233,22 +186,74 @@ namespace FormControl
             btnLuu.Enabled = true;
         }
 
-        private void btnDatNL_Click(object sender, EventArgs e)
+        private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            frmDatNguyenLieu frm = new frmDatNguyenLieu(taiKhoan);
-            frm.Show();
+            if (IsAdd)
+            {
+                if (checkUserInputForAdding())
+                {
+                    try
+                    {
+                        if (nguyenLieu.insert(txtTenNL.Text, cboDonViTinh.Text, txtDonGia.Text, cboNhaCungCap.SelectedValue.ToString(), taiKhoan.TK_NhanVien))
+                        {
+                            MessageBox.Show("Thêm nguyên liệu thành công");
+                            loadIncredientTable();
+                        }
+                    }
+                    catch
+                    {
+                        Message.Message.showFailedDBExecution("thêm nguyên liệu", "nguyên liệu");
+                    }
+                    finally
+                    {
+                        btnLuu.Enabled = IsAdd = false;
+                    }
+                }
+            }
+            else
+            {
+                if (checkUserInputForAdjusting())
+                {
+                    try
+                    {
+                        if (nguyenLieu.update(txtId.Text, txtTenNL.Text, cboDonViTinh.Text, txtDonGia.Text, cboNhaCungCap.SelectedValue.ToString(), taiKhoan.TK_NhanVien))
+                        {
+                            MessageBox.Show("Cập nhật nguyên liệu thành công");
+                            loadIncredientTable();
+                        }
+                    }
+                    catch
+                    {
+                        Message.Message.showFailedDBExecution("sửa nguyên liệu", "nguyên liệu");
+                    }
+                    finally
+                    {
+                        btnLuu.Enabled = IsAdd = false;
+                    }
+                }
+            }
+
         }
 
-        private void btnNhapNL_Click(object sender, EventArgs e)
+        private void txtTimTenNL_OnValueChanged(object sender, EventArgs e)
         {
-            frmNhapNguyenLieu frm = new frmNhapNguyenLieu(taiKhoan);
-            frm.Show();
-        }
+            string tenNL = txtTimTenNL.Text.Trim();
 
-        private void btnHoaDon_Click(object sender, EventArgs e)
-        {
-            frmHoaDonNhap frm = new frmHoaDonNhap(taiKhoan);
-            frm.Show();
+            try
+            {
+                if ("".Equals(tenNL))
+                {
+                    drvNguyenLieu.DataSource = nguyenLieu.getAllIncredient();
+                }
+                else
+                {
+                    drvNguyenLieu.DataSource = nguyenLieu.getIncredientName(tenNL);
+                }
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }
