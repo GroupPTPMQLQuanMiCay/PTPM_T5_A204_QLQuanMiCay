@@ -36,6 +36,29 @@ namespace BLL_DAL
             return tenMon;
         }
 
+        public int removeMon(int Id_hd,string tenmon)
+        {
+            // 0 thanh cong
+            // -1 ngoai le error
+            // -2 khong ton tai
+            try
+            {
+                OrDer orTemp = _context.OrDers.FirstOrDefault(m => m.HD_Id == Id_hd && m.M_Ten == tenmon);
+                if(orTemp != null)//or co ton tai hay khong
+                {
+                    _context.OrDers.DeleteOnSubmit(orTemp);
+                    _context.SubmitChanges();
+                    return 0;
+                }
+                return -2;
+
+            }
+            catch (Exception e)
+            {
+                return -1;
+            }
+        }
+
         //private int GenerateUniqueHD_Id()
         //{
         //    // Lấy ID lớn nhất hiện tại trong bảng HOADON

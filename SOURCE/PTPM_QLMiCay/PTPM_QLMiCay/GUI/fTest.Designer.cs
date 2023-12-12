@@ -419,7 +419,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 776);
+            this.ClientSize = new System.Drawing.Size(1271, 661);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cGroupBox2);
             this.Controls.Add(this.cCombobox1);

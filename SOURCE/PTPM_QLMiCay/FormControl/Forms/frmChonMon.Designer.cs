@@ -46,6 +46,8 @@
             this.cLable2 = new CustomControl.ControlCustom.CLable();
             this.fpnelTop = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnChuyenBan = new CustomControl.ControlCustom.CButton();
+            this.CboBanTrong = new CustomControl.ControlCustom.CCombobox();
             this.panel1.SuspendLayout();
             this.cGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOD)).BeginInit();
@@ -125,6 +127,8 @@
             // cGroupBox1
             // 
             this.cGroupBox1.BackColor = System.Drawing.Color.White;
+            this.cGroupBox1.Controls.Add(this.CboBanTrong);
+            this.cGroupBox1.Controls.Add(this.btnChuyenBan);
             this.cGroupBox1.Controls.Add(this.txtBan);
             this.cGroupBox1.Controls.Add(this.cLable1);
             this.cGroupBox1.Controls.Add(this.btnThanhToan);
@@ -135,7 +139,7 @@
             this.cGroupBox1.ForeColor = System.Drawing.Color.Orange;
             this.cGroupBox1.Location = new System.Drawing.Point(12, 271);
             this.cGroupBox1.Name = "cGroupBox1";
-            this.cGroupBox1.Size = new System.Drawing.Size(433, 193);
+            this.cGroupBox1.Size = new System.Drawing.Size(433, 295);
             this.cGroupBox1.TabIndex = 1;
             this.cGroupBox1.TabStop = false;
             this.cGroupBox1.Text = "Thông tin chi tiết";
@@ -191,7 +195,7 @@
             this.btnThanhToan.Location = new System.Drawing.Point(229, 127);
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(176, 41);
+            this.btnThanhToan.Size = new System.Drawing.Size(179, 41);
             this.btnThanhToan.TabIndex = 22;
             this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
@@ -214,10 +218,10 @@
             this.btnGoiMon.IdleFillColor = System.Drawing.Color.White;
             this.btnGoiMon.IdleForecolor = System.Drawing.Color.Orange;
             this.btnGoiMon.IdleLineColor = System.Drawing.Color.Orange;
-            this.btnGoiMon.Location = new System.Drawing.Point(22, 127);
+            this.btnGoiMon.Location = new System.Drawing.Point(26, 127);
             this.btnGoiMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGoiMon.Name = "btnGoiMon";
-            this.btnGoiMon.Size = new System.Drawing.Size(176, 41);
+            this.btnGoiMon.Size = new System.Drawing.Size(182, 41);
             this.btnGoiMon.TabIndex = 22;
             this.btnGoiMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGoiMon.Click += new System.EventHandler(this.btnGoiMon_Click);
@@ -269,6 +273,42 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 635);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
+            // btnChuyenBan
+            // 
+            this.btnChuyenBan.ActiveBorderThickness = 1;
+            this.btnChuyenBan.ActiveCornerRadius = 20;
+            this.btnChuyenBan.ActiveFillColor = System.Drawing.Color.Orange;
+            this.btnChuyenBan.ActiveForecolor = System.Drawing.Color.White;
+            this.btnChuyenBan.ActiveLineColor = System.Drawing.Color.Orange;
+            this.btnChuyenBan.BackColor = System.Drawing.Color.White;
+            this.btnChuyenBan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChuyenBan.BackgroundImage")));
+            this.btnChuyenBan.ButtonText = "Chuyển bàn";
+            this.btnChuyenBan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChuyenBan.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnChuyenBan.ForeColor = System.Drawing.Color.Orange;
+            this.btnChuyenBan.IdleBorderThickness = 1;
+            this.btnChuyenBan.IdleCornerRadius = 20;
+            this.btnChuyenBan.IdleFillColor = System.Drawing.Color.White;
+            this.btnChuyenBan.IdleForecolor = System.Drawing.Color.Orange;
+            this.btnChuyenBan.IdleLineColor = System.Drawing.Color.Orange;
+            this.btnChuyenBan.Location = new System.Drawing.Point(26, 200);
+            this.btnChuyenBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnChuyenBan.Name = "btnChuyenBan";
+            this.btnChuyenBan.Size = new System.Drawing.Size(182, 41);
+            this.btnChuyenBan.TabIndex = 22;
+            this.btnChuyenBan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnChuyenBan.Click += new System.EventHandler(this.btnChuyenBan_Click);
+            // 
+            // CboBanTrong
+            // 
+            this.CboBanTrong.FormattingEnabled = true;
+            this.CboBanTrong.ItemHeight = 23;
+            this.CboBanTrong.Location = new System.Drawing.Point(229, 204);
+            this.CboBanTrong.Name = "CboBanTrong";
+            this.CboBanTrong.Size = new System.Drawing.Size(179, 29);
+            this.CboBanTrong.TabIndex = 24;
+            this.CboBanTrong.UseSelectable = true;
+            // 
             // frmChonMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,5 +349,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private CustomControl.ControlCustom.CTextBox txtBan;
         private CustomControl.ControlCustom.CLable cLable1;
+        private CustomControl.ControlCustom.CCombobox CboBanTrong;
+        private CustomControl.ControlCustom.CButton btnChuyenBan;
     }
 }
