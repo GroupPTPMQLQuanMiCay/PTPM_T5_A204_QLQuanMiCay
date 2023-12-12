@@ -12,7 +12,7 @@ namespace BLL_DAL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -20,6 +20,16 @@ namespace BLL_DAL.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True")]
+        public string QLQuanMiCayConnectionString2 {
+            get {
+                return ((string)(this["QLQuanMiCayConnectionString2"]));
             }
         }
         
@@ -42,42 +52,6 @@ namespace BLL_DAL.Properties {
         public string QLQuanMiCayConnectionString4 {
             get {
                 return ((string)(this["QLQuanMiCayConnectionString4"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<SerializableConnectionString xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">
-  <ConnectionString>Data Source=DESKTOP-KCB97U3\HONGTHAM;Initial Catalog=QLQuanMiCay;User ID=sa;Password=123</ConnectionString>
-  <ProviderName>System.Data.SqlClient</ProviderName>
-</SerializableConnectionString>")]
-        public string QLQuanMiCayConnectionString {
-            get {
-                return ((string)(this["QLQuanMiCayConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<SerializableConnectionString xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">
-  <ConnectionString>Data Source=DESKTOP-KCB97U3\HONGTHAM;Initial Catalog=QLQuanMiCay;Persist Security Info=True;User ID=sa;Password=123</ConnectionString>
-  <ProviderName>System.Data.SqlClient</ProviderName>
-</SerializableConnectionString>")]
-        public string QLQuanMiCayConnectionString1 {
-            get {
-                return ((string)(this["QLQuanMiCayConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U88ERP0;Initial Catalog=QLQuanMiCay;Integrated Security=True")]
-        public string QLQuanMiCayConnectionString2 {
-            get {
-                return ((string)(this["QLQuanMiCayConnectionString2"]));
             }
         }
     }

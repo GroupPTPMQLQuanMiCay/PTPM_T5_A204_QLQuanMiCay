@@ -17,5 +17,9 @@ namespace FormControl
             InitializeComponent();
         }
 
+        private void UFDatNguyenLieu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

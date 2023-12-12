@@ -30,6 +30,11 @@ namespace BLL_DAL
                 _context.SubmitChanges();
                
         }
+
+        public object loadData()
+        {
+            return _context.DanhMucs.Select(x => new { x.DM_Id, x.DM_Ten }).ToList();
+        }
    
     }
 }

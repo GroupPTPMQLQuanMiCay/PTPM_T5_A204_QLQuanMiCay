@@ -78,7 +78,7 @@
             this.cTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cTextBox5.isPassword = false;
             this.cTextBox5.Location = new System.Drawing.Point(228, 39);
-            this.cTextBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.cTextBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cTextBox5.Name = "cTextBox5";
             this.cTextBox5.Size = new System.Drawing.Size(203, 29);
             this.cTextBox5.TabIndex = 0;
@@ -145,6 +145,7 @@
             this.cDataGirdView2.BackgroundColor = System.Drawing.Color.White;
             this.cDataGirdView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cDataGirdView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cDataGirdView2.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.cDataGirdView2.GridColor = System.Drawing.Color.White;
             this.cDataGirdView2.Location = new System.Drawing.Point(3, 25);
             this.cDataGirdView2.Name = "cDataGirdView2";
@@ -240,6 +241,7 @@
             this.cDataGirdView1.BackgroundColor = System.Drawing.Color.White;
             this.cDataGirdView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cDataGirdView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cDataGirdView1.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.cDataGirdView1.GridColor = System.Drawing.Color.White;
             this.cDataGirdView1.Location = new System.Drawing.Point(3, 25);
             this.cDataGirdView1.Name = "cDataGirdView1";
@@ -307,7 +309,7 @@
             this.cTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cTextBox4.isPassword = false;
             this.cTextBox4.Location = new System.Drawing.Point(242, 138);
-            this.cTextBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.cTextBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cTextBox4.Name = "cTextBox4";
             this.cTextBox4.Size = new System.Drawing.Size(203, 29);
             this.cTextBox4.TabIndex = 5;
@@ -336,7 +338,7 @@
             this.cTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cTextBox3.isPassword = false;
             this.cTextBox3.Location = new System.Drawing.Point(11, 209);
-            this.cTextBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.cTextBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cTextBox3.Name = "cTextBox3";
             this.cTextBox3.Size = new System.Drawing.Size(203, 29);
             this.cTextBox3.TabIndex = 3;
@@ -375,7 +377,7 @@
             this.cTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cTextBox2.isPassword = false;
             this.cTextBox2.Location = new System.Drawing.Point(11, 138);
-            this.cTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.cTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cTextBox2.Name = "cTextBox2";
             this.cTextBox2.Size = new System.Drawing.Size(203, 29);
             this.cTextBox2.TabIndex = 1;
@@ -404,7 +406,7 @@
             this.cTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cTextBox1.isPassword = false;
             this.cTextBox1.Location = new System.Drawing.Point(11, 68);
-            this.cTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.cTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cTextBox1.Name = "cTextBox1";
             this.cTextBox1.Size = new System.Drawing.Size(203, 29);
             this.cTextBox1.TabIndex = 0;
@@ -470,6 +472,7 @@
             this.Controls.Add(this.cButtonClose1);
             this.Name = "UFDatNguyenLieu";
             this.Size = new System.Drawing.Size(1124, 759);
+            this.Load += new System.EventHandler(this.UFDatNguyenLieu_Load);
             this.cGroupBox5.ResumeLayout(false);
             this.cGroupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cDataGirdView2)).EndInit();

@@ -19,6 +19,7 @@ namespace PTPM_QLMiCay.GUI
         UFBan ufBan = new UFBan();
         UFNhomQuyen ufNhomQuyen = new UFNhomQuyen();
         DAL_PhanQuyen dal_PhanQuyen = new DAL_PhanQuyen();
+        UFMon ufMon = new UFMon();
 
         public fTrangChu()
         {
@@ -259,6 +260,12 @@ namespace PTPM_QLMiCay.GUI
         private void panel_Body_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnMon_Click(object sender, EventArgs e)
+        {
+            ufMon = new UFMon();
+            OpenChildFormCT(ufMon);
         }
     }
 }

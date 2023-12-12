@@ -140,6 +140,12 @@
     <Compile Include="UFLichSuGia.Designer.cs">
       <DependentUpon>UFLichSuGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="UFMon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFMon.Designer.cs">
+      <DependentUpon>UFMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="UFNguyenLieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UFLichSuGia.resx">
       <DependentUpon>UFLichSuGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFMon.resx">
+      <DependentUpon>UFMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UFNguyenLieu.resx">
       <DependentUpon>UFNguyenLieu.cs</DependentUpon>

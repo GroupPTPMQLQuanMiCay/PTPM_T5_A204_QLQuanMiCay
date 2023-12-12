@@ -28,10 +28,29 @@ namespace BLL_DAL
                             .ToList();
         }
 
+        public object getIncredientTableMon()
+        {
+            return _context.NguyenLieus.Where(nl => nl.isDeleted == false)
+                            .Select(i => new { i.NL_Id, i.NL_Ten})
+                            .ToList();
+        }
+
         public object getIncredientName(string incredientName)
         {
             return _context.NguyenLieus.Where(i => i.NL_Ten.Contains(incredientName) && i.isDeleted == false)
                             .Select(i => new { i.NL_Id, i.NL_Ten, i.NL_DonViTinh, i.NL_SoLuong })
+                            .ToList();
+        }
+
+        public NguyenLieu getIncredientByName(string incredientName)
+        {
+            return _context.NguyenLieus.Where(i => i.NL_Ten.Contains(incredientName) && i.isDeleted == false)
+                            .FirstOrDefault();
+        }
+
+        public List<Mon_Co_NL> getIncredientByMon(string mon)
+        {
+            return _context.Mon_Co_NLs.Where(i => i.M_Ten == mon)
                             .ToList();
         }
 

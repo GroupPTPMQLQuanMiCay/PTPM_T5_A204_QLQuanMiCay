@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTrangChu));
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnThoat = new CustomControl.ControlCustom.CButtonFlat();
             this.btnDoanhThu = new CustomControl.ControlCustom.CButtonFlat();
             this.btnQuyen = new CustomControl.ControlCustom.CButtonFlat();
             this.btnHoaDon = new CustomControl.ControlCustom.CButtonFlat();
@@ -42,7 +43,7 @@
             this.lblNhanVien = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Body = new System.Windows.Forms.Panel();
-            this.btnThoat = new CustomControl.ControlCustom.CButtonFlat();
+            this.btnMon = new CustomControl.ControlCustom.CButtonFlat();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnMon);
             this.bunifuGradientPanel1.Controls.Add(this.btnThoat);
             this.bunifuGradientPanel1.Controls.Add(this.btnDoanhThu);
             this.bunifuGradientPanel1.Controls.Add(this.btnQuyen);
@@ -70,9 +72,44 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(200, 600);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(200, 634);
             this.bunifuGradientPanel1.TabIndex = 0;
             this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(105)))), ((int)(((byte)(130)))));
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
+            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnThoat.BorderRadius = 0;
+            this.btnThoat.ButtonText = "THOÁT";
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.DisabledColor = System.Drawing.Color.Gray;
+            this.btnThoat.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnThoat.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnThoat.Iconimage")));
+            this.btnThoat.Iconimage_right = null;
+            this.btnThoat.Iconimage_right_Selected = null;
+            this.btnThoat.Iconimage_Selected = null;
+            this.btnThoat.IconMarginLeft = 0;
+            this.btnThoat.IconMarginRight = 0;
+            this.btnThoat.IconRightVisible = true;
+            this.btnThoat.IconRightZoom = 0D;
+            this.btnThoat.IconVisible = true;
+            this.btnThoat.IconZoom = 90D;
+            this.btnThoat.IsTab = false;
+            this.btnThoat.Location = new System.Drawing.Point(0, 586);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
+            this.btnThoat.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnThoat.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnThoat.selected = false;
+            this.btnThoat.Size = new System.Drawing.Size(200, 48);
+            this.btnThoat.TabIndex = 21;
+            this.btnThoat.Text = "THOÁT";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Textcolor = System.Drawing.Color.White;
+            this.btnThoat.TextFont = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
             // 
             // btnDoanhThu
             // 
@@ -95,7 +132,7 @@
             this.btnDoanhThu.IconVisible = true;
             this.btnDoanhThu.IconZoom = 90D;
             this.btnDoanhThu.IsTab = false;
-            this.btnDoanhThu.Location = new System.Drawing.Point(0, 477);
+            this.btnDoanhThu.Location = new System.Drawing.Point(0, 538);
             this.btnDoanhThu.Name = "btnDoanhThu";
             this.btnDoanhThu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
             this.btnDoanhThu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -130,7 +167,7 @@
             this.btnQuyen.IconVisible = true;
             this.btnQuyen.IconZoom = 90D;
             this.btnQuyen.IsTab = false;
-            this.btnQuyen.Location = new System.Drawing.Point(0, 429);
+            this.btnQuyen.Location = new System.Drawing.Point(0, 490);
             this.btnQuyen.Name = "btnQuyen";
             this.btnQuyen.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
             this.btnQuyen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -165,7 +202,7 @@
             this.btnHoaDon.IconVisible = true;
             this.btnHoaDon.IconZoom = 90D;
             this.btnHoaDon.IsTab = false;
-            this.btnHoaDon.Location = new System.Drawing.Point(0, 339);
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 387);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
             this.btnHoaDon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -200,7 +237,7 @@
             this.btnBan.IconVisible = true;
             this.btnBan.IconZoom = 90D;
             this.btnBan.IsTab = false;
-            this.btnBan.Location = new System.Drawing.Point(0, 291);
+            this.btnBan.Location = new System.Drawing.Point(1, 339);
             this.btnBan.Name = "btnBan";
             this.btnBan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
             this.btnBan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -235,7 +272,7 @@
             this.btnNhanVien.IconVisible = true;
             this.btnNhanVien.IconZoom = 90D;
             this.btnNhanVien.IsTab = false;
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 243);
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 291);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
             this.btnNhanVien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -270,7 +307,7 @@
             this.btnDanhMuc.IconVisible = true;
             this.btnDanhMuc.IconZoom = 90D;
             this.btnDanhMuc.IsTab = false;
-            this.btnDanhMuc.Location = new System.Drawing.Point(0, 195);
+            this.btnDanhMuc.Location = new System.Drawing.Point(0, 243);
             this.btnDanhMuc.Name = "btnDanhMuc";
             this.btnDanhMuc.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
             this.btnDanhMuc.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -305,7 +342,7 @@
             this.btnNhaCungCap.IconVisible = true;
             this.btnNhaCungCap.IconZoom = 90D;
             this.btnNhaCungCap.IsTab = false;
-            this.btnNhaCungCap.Location = new System.Drawing.Point(0, 147);
+            this.btnNhaCungCap.Location = new System.Drawing.Point(0, 195);
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
             this.btnNhaCungCap.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -414,50 +451,50 @@
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Body.Location = new System.Drawing.Point(200, 0);
             this.panel_Body.Name = "panel_Body";
-            this.panel_Body.Size = new System.Drawing.Size(916, 600);
+            this.panel_Body.Size = new System.Drawing.Size(916, 634);
             this.panel_Body.TabIndex = 1;
             this.panel_Body.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Body_Paint);
             // 
-            // btnThoat
+            // btnMon
             // 
-            this.btnThoat.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(105)))), ((int)(((byte)(130)))));
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
-            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnThoat.BorderRadius = 0;
-            this.btnThoat.ButtonText = "THOÁT";
-            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.DisabledColor = System.Drawing.Color.Gray;
-            this.btnThoat.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnThoat.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnThoat.Iconimage")));
-            this.btnThoat.Iconimage_right = null;
-            this.btnThoat.Iconimage_right_Selected = null;
-            this.btnThoat.Iconimage_Selected = null;
-            this.btnThoat.IconMarginLeft = 0;
-            this.btnThoat.IconMarginRight = 0;
-            this.btnThoat.IconRightVisible = true;
-            this.btnThoat.IconRightZoom = 0D;
-            this.btnThoat.IconVisible = true;
-            this.btnThoat.IconZoom = 90D;
-            this.btnThoat.IsTab = false;
-            this.btnThoat.Location = new System.Drawing.Point(0, 525);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
-            this.btnThoat.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnThoat.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnThoat.selected = false;
-            this.btnThoat.Size = new System.Drawing.Size(200, 48);
-            this.btnThoat.TabIndex = 21;
-            this.btnThoat.Text = "THOÁT";
-            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Textcolor = System.Drawing.Color.White;
-            this.btnThoat.TextFont = new System.Drawing.Font("Segoe UI", 13F);
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
+            this.btnMon.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(105)))), ((int)(((byte)(130)))));
+            this.btnMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
+            this.btnMon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMon.BorderRadius = 0;
+            this.btnMon.ButtonText = "MÓN";
+            this.btnMon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMon.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMon.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMon.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMon.Iconimage")));
+            this.btnMon.Iconimage_right = null;
+            this.btnMon.Iconimage_right_Selected = null;
+            this.btnMon.Iconimage_Selected = null;
+            this.btnMon.IconMarginLeft = 0;
+            this.btnMon.IconMarginRight = 0;
+            this.btnMon.IconRightVisible = true;
+            this.btnMon.IconRightZoom = 0D;
+            this.btnMon.IconVisible = true;
+            this.btnMon.IconZoom = 90D;
+            this.btnMon.IsTab = false;
+            this.btnMon.Location = new System.Drawing.Point(1, 147);
+            this.btnMon.Name = "btnMon";
+            this.btnMon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(132)))), ((int)(((byte)(163)))));
+            this.btnMon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnMon.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnMon.selected = false;
+            this.btnMon.Size = new System.Drawing.Size(199, 48);
+            this.btnMon.TabIndex = 22;
+            this.btnMon.Text = "MÓN";
+            this.btnMon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMon.Textcolor = System.Drawing.Color.White;
+            this.btnMon.TextFont = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnMon.Click += new System.EventHandler(this.btnMon_Click);
             // 
             // fTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 600);
+            this.ClientSize = new System.Drawing.Size(1116, 634);
             this.Controls.Add(this.panel_Body);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Name = "fTrangChu";
@@ -487,5 +524,6 @@
         private CustomControl.ControlCustom.CButtonFlat btnQuyen;
         private CustomControl.ControlCustom.CButtonFlat btnDoanhThu;
         private CustomControl.ControlCustom.CButtonFlat btnThoat;
+        private CustomControl.ControlCustom.CButtonFlat btnMon;
     }
 }
